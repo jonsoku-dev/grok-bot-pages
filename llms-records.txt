@@ -650,3 +650,174 @@ risks:
 smallestUsefulExperiment: overview·skills-routines·approvals 페이지만 읽고 현재 Radar Bot의
   Skill/Routine/승인 게이트를 1:1 대조. 새 Routine·외부 게시·GitHub/SoT 쓰기 없음.
 ```
+
+## rohann-shetty-gitbook-downloader-docusaurus-llms-txt
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/24/regional-signal/international/rohann-shetty-gitbook-downloader-docusaurus-llms-txt.yaml
+- sha256: 31a3773da5aa415f7fdff366d90ae583fe0c9b3dae5417a27de875f0c7a97d28
+- primaryUrl: https://github.com/RohannShetty/gitbook-downloader
+
+```yaml
+schemaVersion: regional-signal/v1
+id: rohann-shetty-gitbook-downloader-docusaurus-llms-txt
+collectionDate: '2026-08-24'
+primaryCategory: international
+relatedCategories: []
+originBasis: GitHub repository owned by RohannShetty; public description and owner login indicate an international individual project with no Korea/Japan organization affiliation stated
+originalTitle: RohannShetty/gitbook-downloader
+originalLanguage: en
+koreanSummary: GitBook, Mintlify, Docusaurus, ReadTheDocs 문서를 LLM용 Markdown, RAG JSONL, llms.txt, PDF로 변환하는 CLI/GUI/FastMCP 도구.
+source: github_repository
+canonicalId: github:RohannShetty/gitbook-downloader
+primaryUrl: https://github.com/RohannShetty/gitbook-downloader
+author: RohannShetty
+project: gitbook-downloader
+publishedAt: '2026-06-21T14:48:32Z'
+observedFacts:
+- Public GitHub description states it turns GitBook, Mintlify, Docusaurus, and ReadTheDocs portals into LLM-ready Markdown, vector RAG JSONL, llms.txt, and offline PDFs, with CLI, desktop GUI, and FastMCP server.
+- Repository created_at 2026-06-21T14:48:32Z; pushed_at 2026-08-23T18:13:04Z; updated_at 2026-08-23T18:13:14Z per GitHub search snapshot.
+- Topics in snapshot include docusaurus, llms-txt, mcp-server, rag, cli.
+- Language listed as Python; stargazers_count 2 in the discovery snapshot.
+- WebFetch of the public repo page on 2026-08-24 confirms the same description and 2 stars.
+interpretation: Actively pushed within the last 30 days; explicitly automates llms.txt export from Docusaurus documentation portals.
+relatedRefs:
+- https://github.com/RohannShetty/gitbook-downloader
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/RohannShetty/gitbook-downloader
+- https://github.com/RohannShetty/gitbook-downloader/commits/master.atom
+- https://github.com/RohannShetty
+verifiedAt: '2026-08-24T10:05:00Z'
+contradictions:
+- defaultBranch=master; commits/master.atom latest=2026-08-23T18:12:41Z (패킷 pushed_at=2026-08-23T18:13:04Z와 수초 차이).
+judgeAction: EXPERIMENT
+judgeRationale: DocHarvest가 Docusaurus 포함 문서를 Markdown·llms.txt·RAG JSONL로 컴파일하고 FastMCP 8툴을 노출해 coding agents·MCP·context interest에 직접. 창 직전 push·pip/MCP 경로 명확. 인기 비가중.
+expectedBenefit: 문서 포털→llms.txt/book.md/pages + Cursor/Claude Code MCP로 search/read/download 자동화.
+switchingCost: pip install gitbook-downloader 또는 `gitbook-dl mcp`면 낮~중간. GUI/라이브러리 경로는 중간.
+maturity: developing
+risks:
+- 크롤/추출 정확도는 사이트별 편차.
+- 개인 유지 프로젝트; API 변경 가능.
+- 대량 크롤 시 ToS·부하.
+smallestUsefulExperiment: '`pip install gitbook-downloader` 후 공개 Docusaurus docs URL 하나 `gitbook-dl capture <url>`로 llms.txt 생성만 확인. 외부 게시 없음.'
+recordStatus: approved
+```
+
+## supersuitup-curated-wiki-integrations-llms-txt
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/24/regional-signal/international/supersuitup-curated-wiki-integrations-llms-txt.yaml
+- sha256: cdd28bcd97f045460ff6d938e170866e05953ef3fa1338674bfaec2b4232197c
+- primaryUrl: https://github.com/SupersuitUp/curated-wiki-integrations
+
+```yaml
+schemaVersion: regional-signal/v1
+id: supersuitup-curated-wiki-integrations-llms-txt
+collectionDate: '2026-08-24'
+primaryCategory: international
+relatedCategories: []
+originBasis: GitHub repository owned by SupersuitUp; public repo metadata and description indicate an international individual/community project with no Korea/Japan org affiliation stated
+originalTitle: SupersuitUp/curated-wiki-integrations
+originalLanguage: en
+koreanSummary: Docusaurus 위키용 드롭인 레시피 저장소로, llms.txt 생성기를 포함한다.
+source: github_repository
+canonicalId: github:SupersuitUp/curated-wiki-integrations
+primaryUrl: https://github.com/SupersuitUp/curated-wiki-integrations
+author: SupersuitUp
+project: curated-wiki-integrations
+publishedAt: '2026-05-13T18:35:49Z'
+observedFacts:
+- 'Public GitHub description states: Drop-in recipes for Docusaurus wikis: llms.txt generator, more to come.'
+- Repository created_at 2026-05-13T18:35:49Z; pushed_at 2026-08-10T16:48:33Z; updated_at 2026-08-10T16:49:12Z per GitHub search snapshot.
+- Language listed as TypeScript; stargazers_count 0 in the discovery snapshot.
+- WebFetch of the public repo page on 2026-08-24 confirms the same description and 0 stars / 0 forks.
+interpretation: Recent public recipe repo specifically naming a Docusaurus llms.txt generator; useful candidate for Docusaurus llms.txt automation discovery.
+relatedRefs:
+- https://github.com/SupersuitUp/curated-wiki-integrations
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/SupersuitUp/curated-wiki-integrations
+- https://github.com/SupersuitUp/curated-wiki-integrations/commits/main.atom
+- https://github.com/SupersuitUp
+verifiedAt: '2026-08-24T10:05:00Z'
+contradictions:
+- commits/main.atom latest updated=2026-08-10T16:48:26Z (패킷 pushed_at=2026-08-10T16:48:33Z와 수초 차이).
+- 공개 HTML에서 primary language 문자열을 확정하지 못함(TypeScript 주장 미재현). 설명·스타 0·생성시각은 확인.
+judgeAction: WATCH
+judgeRationale: Docusaurus용 generate-llms-txt 드롭인 레시피는 키워드에 맞으나 레시피 뱅크 일부이고 MCP/에이전트 런타임이 아님. 최근 push는 8/10, 스타 비가중. README는 private 취지를 말하나 공개 확인됨.
+expectedBenefit: Docusaurus 3에 llms.txt 생성기를 복사해 넣는 INTEGRATE.md 패턴 참고.
+switchingCost: 레시피 복사·config 수정이면 낮음. 폐쇄 위키용 다른 레시피와 묶이면 중간.
+maturity: early
+risks:
+- 공개 레포인데 README가 private trust boundary를 전제.
+- TypeScript primary language 미재현(패킷 contradictions).
+- 단일 레시피 품질·유지보수 깊이 불명.
+smallestUsefulExperiment: integrations/generate-llms-txt/INTEGRATE.md만 읽고 출력 경로·빌드 훅을 확인. 설치·게시 없음.
+recordStatus: approved
+```
+
+## wbaxterh-pokedocs-docusaurus-llms-txt
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/24/regional-signal/international/wbaxterh-pokedocs-docusaurus-llms-txt.yaml
+- sha256: caceb1c27fa6a2602bafd23adc4f92622821cc64793b871b5bc57a5592a1cfa7
+- primaryUrl: https://github.com/wbaxterh/pokedocs
+
+```yaml
+schemaVersion: regional-signal/v1
+id: wbaxterh-pokedocs-docusaurus-llms-txt
+collectionDate: '2026-08-24'
+primaryCategory: international
+relatedCategories: []
+originBasis: GitHub repository owned by wbaxterh; public description indicates an international individual project with no Korea/Japan organization affiliation stated
+originalTitle: wbaxterh/pokedocs
+originalLanguage: en
+koreanSummary: Docusaurus 기반 에이전트 네이티브 문서 프레임워크로, 페이지별 llms.txt와 마크다운 트윈 생성을 표방한다.
+source: github_repository
+canonicalId: github:wbaxterh/pokedocs
+primaryUrl: https://github.com/wbaxterh/pokedocs
+author: wbaxterh
+project: pokedocs
+publishedAt: '2026-07-14T23:24:39Z'
+observedFacts:
+- 'Public GitHub description states: Agent-native docs framework on Docusaurus — build-time mermaid, one-line branding, llms.txt + markdown twins for every page, zero-signup search, deploy anywhere.'
+- Repository created_at 2026-07-14T23:24:39Z; pushed_at 2026-08-10T18:30:23Z; updated_at 2026-07-31T20:13:05Z per GitHub search snapshot.
+- Language listed as TypeScript; stargazers_count 0 in the discovery snapshot.
+- WebFetch of the public repo page on 2026-08-24 confirms the same description and 0 stars / 0 forks.
+interpretation: Docusaurus-based framework that claims automated llms.txt and markdown twin generation per page; activity within the last 30 days.
+relatedRefs:
+- https://github.com/wbaxterh/pokedocs
+sourceWarnings:
+- Unauthenticated GitHub API rate limit blocked deeper repo/release detail fetches during discovery; facts rely on search snapshot plus public page WebFetch.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/wbaxterh/pokedocs
+- https://github.com/wbaxterh/pokedocs/commits/main.atom
+- https://github.com/wbaxterh/pokedocs/activity
+- https://github.com/wbaxterh
+verifiedAt: '2026-08-24T10:05:00Z'
+contradictions:
+- 패킷 pushed_at=2026-08-10T18:30:23Z는 activity의 빈 브랜치 생성(refs/heads/fix/check-date-prefix-doc-ids, commitsCount=0) 시각. commits/main.atom 최신은 2026-07-31T20:12:55Z(패킷 updated_at과 정합).
+- 작성자 프로필 location=Long Beach, CA, USA (international 근거 보강).
+- 공개 HTML에서 primary language 문자열을 확정하지 못함(TypeScript 주장 미재현).
+judgeAction: WATCH
+judgeRationale: 페이지별 llms.txt·마크다운 트윈을 표방하는 Docusaurus 에이전트 네이티브 프레임이나, main 활동은 7/31이고 8/10 push는 빈 브랜치. 자동화 증거보다 프레임 주장 비중.
+expectedBenefit: 빌드타임 llms.txt+markdown twins 아이디어 관찰.
+switchingCost: 프레임 교체면 높음. 문서만 보면 낮음.
+maturity: experimental
+risks:
+- pushed_at가 빈 브랜치 생성 시각(패킷 contradictions).
+- main Atom 최신 7/31로 창 내 실질 커밋 약함.
+- language 문자열 미재현.
+smallestUsefulExperiment: README의 llms.txt 생성 주장만 확인. 마이그레이션 실험 보류.
+recordStatus: approved
+```
