@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Grok Bot AI 인텔리전스</title>
+        <link>https://jonsoku-dev.github.io/grok-bot-pages/blog</link>
+        <description>한국·일본·국제 AI Engineering과 AX Intelligence 승인 보고서.</description>
+        <lastBuildDate>Sun, 23 Aug 2026 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>ko</language>
+        <copyright>Grok Bot Control Plane</copyright>
+        <item>
+            <title><![CDATA[지금 시험해볼 AI 엔지니어링 도구 8가지]]></title>
+            <link>https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar</link>
+            <guid>https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar</guid>
+            <pubDate>Sun, 23 Aug 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[한국·일본·국제 공개 자료 8건을 원문, 관측 사실, 판단, 한계와 다음 실험까지 연결해 정리했습니다.]]></description>
+            <content:encoded><![CDATA[<p>이번 목록에서 바로 도입할 도구는 없습니다. 대신 지금 하는 일과 가까운 후보 세 가지가 보였습니다. <code>nomadamas-jikji</code>는 문서 탐색 비용, <code>nika</code>는 반복 작업의 재현성, <code>marm-memory</code>는 에이전트 기억의 품질을 작은 실험으로 비교할 가치가 있습니다. 나머지는 읽기 또는 관찰 대상으로 남겼습니다.</p>
+<p>사실의 SoT는 frontmatter의 8개 YAML 레코드이고, 이 글은 그 레코드를 사람이 읽기 쉽게 묶은 해설입니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="왜-중요한가">왜 중요한가<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#%EC%99%9C-%EC%A4%91%EC%9A%94%ED%95%9C%EA%B0%80" class="hash-link" aria-label="왜 중요한가에 대한 직접 링크" title="왜 중요한가에 대한 직접 링크" translate="no">​</a></h2>
+<p>도구 이름만 모은 목록은 금방 낡습니다. 실제로 도움이 되려면 무엇을 확인했고, 왜 관심을 가졌으며, 어느 조건에서 버릴지를 함께 남겨야 합니다. 이번 레코드는 원문 URL, 관측 사실, 해석, 위험, 판단 이유와 가장 작은 실험을 분리했습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="한국">한국<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#%ED%95%9C%EA%B5%AD" class="hash-link" aria-label="한국에 대한 직접 링크" title="한국에 대한 직접 링크" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="토스증권의-llm-서빙-회고--toss-llm-serving">토스증권의 LLM 서빙 회고 — <code>toss-llm-serving</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#%ED%86%A0%EC%8A%A4%EC%A6%9D%EA%B6%8C%EC%9D%98-llm-%EC%84%9C%EB%B9%99-%ED%9A%8C%EA%B3%A0--toss-llm-serving" class="hash-link" aria-label="토스증권의-llm-서빙-회고--toss-llm-serving에 대한 직접 링크" title="토스증권의-llm-서빙-회고--toss-llm-serving에 대한 직접 링크" translate="no">​</a></h3>
+<p><a href="https://toss.tech/article/tech_talk_talk_2" target="_blank" rel="noopener noreferrer" class="">토스 기술 글</a>은 여러 오픈소스·자체 튜닝 모델을 실제 서비스에 올리면서 겪은 프레임워크 의존성과 타임아웃 문제를 다룹니다. 새 모델 소개보다 운영 장애를 어떤 질문으로 쪼개는지가 유용합니다.</p>
+<ul>
+<li class="">판단: <code>READ</code>. 현재 LLM 서비스의 최근 타임아웃을 모델, 배치, GPU, 네트워크와 프레임워크 계층으로 다시 분류할 때 참고합니다.</li>
+<li class="">한계: 한 회사의 운영 회고이며 전체 인프라와 독립 재현 결과는 공개되지 않았습니다.</li>
+<li class="">다음 행동: 최근 장애 20건을 같은 분류 축으로 재검토해 실제 진단 누락이 줄어드는지 확인합니다.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="로컬-문서-지도를-만드는-jikji--nomadamas-jikji">로컬 문서 지도를 만드는 Jikji — <code>nomadamas-jikji</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#%EB%A1%9C%EC%BB%AC-%EB%AC%B8%EC%84%9C-%EC%A7%80%EB%8F%84%EB%A5%BC-%EB%A7%8C%EB%93%9C%EB%8A%94-jikji--nomadamas-jikji" class="hash-link" aria-label="로컬-문서-지도를-만드는-jikji--nomadamas-jikji에 대한 직접 링크" title="로컬-문서-지도를-만드는-jikji--nomadamas-jikji에 대한 직접 링크" translate="no">​</a></h3>
+<p><a href="https://github.com/NomaDamas/jikji" target="_blank" rel="noopener noreferrer" class="">Jikji</a>는 원본을 옮기지 않고 <code>.jikji</code> 지도와 검색 인덱스를 만들어 에이전트의 반복 탐색을 줄이려는 도구입니다. 현재 배포 표면은 Rust CLI이고, 프로젝트가 제시한 551건 벤치마크는 토큰·시간·호출 감소를 주장합니다.</p>
+<ul>
+<li class="">판단: <code>EXPERIMENT</code>. 이 저장소의 문서 탐색 문제와 직접 맞닿아 있습니다.</li>
+<li class="">한계: 수치는 자체 벤치마크입니다. <code>prepare</code>가 AGENTS.md 계열 파일을 수정할 수 있으므로 격리 폴더와 <code>--no-agent-rules</code>가 필요합니다.</li>
+<li class="">다음 행동: 비민감 문서 100개에서 기존 <code>rg</code> 검색과 Hit@1, 소요 시간, 토큰, 파일 변경을 비교합니다.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="한국-서비스-스킬-모음-k-skill--nomadamas-k-skill">한국 서비스 스킬 모음 k-skill — <code>nomadamas-k-skill</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#%ED%95%9C%EA%B5%AD-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%8A%A4%ED%82%AC-%EB%AA%A8%EC%9D%8C-k-skill--nomadamas-k-skill" class="hash-link" aria-label="한국-서비스-스킬-모음-k-skill--nomadamas-k-skill에 대한 직접 링크" title="한국-서비스-스킬-모음-k-skill--nomadamas-k-skill에 대한 직접 링크" translate="no">​</a></h3>
+<p><a href="https://github.com/NomaDamas/k-skill" target="_blank" rel="noopener noreferrer" class="">k-skill</a>은 교통, 공공정보, 중고거래와 문서 도구 등 한국 서비스용 스킬을 한 저장소에 모읍니다. 폭이 넓다는 점은 장점이지만, 전체 설치는 필요 이상의 권한과 유지보수 위험을 함께 가져옵니다.</p>
+<ul>
+<li class="">판단: <code>WATCH</code>. 필요한 스킬 하나가 생겼을 때 해당 디렉터리만 검토합니다.</li>
+<li class="">한계: 외부 서비스 약관, 인증, 쓰기 범위와 코드 품질이 스킬마다 다릅니다.</li>
+<li class="">다음 행동: 실제 요구가 생기기 전에는 설치하지 않고, 후보 하나를 고르면 읽기 전용 여부와 네트워크·자격증명 경계를 먼저 검사합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="일본">일본<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#%EC%9D%BC%EB%B3%B8" class="hash-link" aria-label="일본에 대한 직접 링크" title="일본에 대한 직접 링크" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="일본-주소-정규화-mcp--staddress-mcp">일본 주소 정규화 MCP — <code>staddress-mcp</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#%EC%9D%BC%EB%B3%B8-%EC%A3%BC%EC%86%8C-%EC%A0%95%EA%B7%9C%ED%99%94-mcp--staddress-mcp" class="hash-link" aria-label="일본-주소-정규화-mcp--staddress-mcp에 대한 직접 링크" title="일본-주소-정규화-mcp--staddress-mcp에 대한 직접 링크" translate="no">​</a></h3>
+<p><a href="https://zenn.dev/staddress/articles/b601f14a21c5c5" target="_blank" rel="noopener noreferrer" class="">Staddress 공식 글</a>은 일본 주소 정규화·지오코딩을 MCP 도구로 제공하는 방법을 설명합니다. 도구는 읽기 전용 힌트를 선언하고 공식 SDK를 사용하지만 Free 계정과 API 키가 필요합니다.</p>
+<ul>
+<li class="">판단: <code>WATCH</code>. 일본 주소 정제가 필요한 업무가 생겼을 때 후보가 됩니다.</li>
+<li class="">한계: 주소는 개인정보가 될 수 있고, 무료 플랜과 호출 제한은 변할 수 있습니다.</li>
+<li class="">다음 행동: 실데이터가 아닌 공개 시설 주소 20건으로 정확도, 신뢰도, 오류 유형과 외부 전송 범위를 확인합니다.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pgroonga를-읽기-전용으로-여는-mcp--pgroonga-mcp">PGroonga를 읽기 전용으로 여는 MCP — <code>pgroonga-mcp</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#pgroonga%EB%A5%BC-%EC%9D%BD%EA%B8%B0-%EC%A0%84%EC%9A%A9%EC%9C%BC%EB%A1%9C-%EC%97%AC%EB%8A%94-mcp--pgroonga-mcp" class="hash-link" aria-label="pgroonga를-읽기-전용으로-여는-mcp--pgroonga-mcp에 대한 직접 링크" title="pgroonga를-읽기-전용으로-여는-mcp--pgroonga-mcp에 대한 직접 링크" translate="no">​</a></h3>
+<p><a href="https://github.com/askdkc/pgroonga-mcp" target="_blank" rel="noopener noreferrer" class="">pgroonga-mcp</a>는 임의 SQL·DDL·repair를 노출하지 않고 검색과 진단만 허용합니다. 비슈퍼유저, 비BYPASSRLS 역할과 스키마·테이블 allowlist를 권장한다는 점이 더 중요합니다.</p>
+<ul>
+<li class="">판단: <code>WATCH</code>. 에이전트용 데이터베이스 도구를 좁게 설계한 참고 사례로 봅니다.</li>
+<li class="">한계: 신생 프로젝트이며 역할이나 allowlist를 잘못 잡으면 민감 데이터가 노출됩니다.</li>
+<li class="">다음 행동: 합성 일본어 테이블에서 검색 10건, RLS 차단, timeout과 응답 크기 제한만 검증합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="국제">국제<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#%EA%B5%AD%EC%A0%9C" class="hash-link" aria-label="국제에 대한 직접 링크" title="국제에 대한 직접 링크" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="로컬-우선-에이전트-메모리--marm-memory">로컬 우선 에이전트 메모리 — <code>marm-memory</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#%EB%A1%9C%EC%BB%AC-%EC%9A%B0%EC%84%A0-%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8-%EB%A9%94%EB%AA%A8%EB%A6%AC--marm-memory" class="hash-link" aria-label="로컬-우선-에이전트-메모리--marm-memory에 대한 직접 링크" title="로컬-우선-에이전트-메모리--marm-memory에 대한 직접 링크" translate="no">​</a></h3>
+<p><a href="https://github.com/Lyellr88/marm-memory" target="_blank" rel="noopener noreferrer" class="">MARM</a>은 세션 기억, 코드 인덱스와 개념 그래프를 SQLite 기반 MCP 표면에 묶습니다. 여러 에이전트가 같은 프로젝트 기억을 다룰 때 매력적이지만 현재 사용 중인 ai-memory와 역할이 겹칩니다.</p>
+<ul>
+<li class="">판단: <code>EXPERIMENT</code>. 도입 검토가 아니라 격리 비교가 목적입니다.</li>
+<li class="">한계: 성능은 자체 벤치마크이고, 임베딩·그래프 마이그레이션은 복구 비용을 만듭니다.</li>
+<li class="">다음 행동: 테스트 저장소 50개 세션에서 동일 질의의 정확도, 지연과 중복률을 기존 메모리와 비교합니다.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="macos-네이티브-코딩-에이전트--beet-code">macOS 네이티브 코딩 에이전트 — <code>beet-code</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#macos-%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C-%EC%BD%94%EB%94%A9-%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8--beet-code" class="hash-link" aria-label="macos-네이티브-코딩-에이전트--beet-code에 대한 직접 링크" title="macos-네이티브-코딩-에이전트--beet-code에 대한 직접 링크" translate="no">​</a></h3>
+<p><a href="https://github.com/Mesutcydev/beet-code" target="_blank" rel="noopener noreferrer" class="">Beet Code</a>는 Apple Silicon용 Swift 앱에서 MLX 로컬 모델, BYOK 원격 엔진, hooks, MCP와 로컬 API를 함께 제공합니다.</p>
+<ul>
+<li class="">판단: <code>EXPERIMENT</code>, 단 비민감 저장소의 읽기 전용 범위에 한합니다.</li>
+<li class="">한계: 2026-08-18 생성된 초기 프로젝트로 운영 근거가 거의 없고 Apple Silicon에 묶입니다. 암호화 세션 주장도 별도 검증이 필요합니다.</li>
+<li class="">다음 행동: 네트워크를 차단한 테스트 Mac에서 로컬 모델의 코드 설명 5건과 파일·권한 변화를 기록합니다.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="반복-작업을-yaml로-고정하는-nika--nika">반복 작업을 YAML로 고정하는 Nika — <code>nika</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#%EB%B0%98%EB%B3%B5-%EC%9E%91%EC%97%85%EC%9D%84-yaml%EB%A1%9C-%EA%B3%A0%EC%A0%95%ED%95%98%EB%8A%94-nika--nika" class="hash-link" aria-label="반복-작업을-yaml로-고정하는-nika--nika에 대한 직접 링크" title="반복-작업을-yaml로-고정하는-nika--nika에 대한 직접 링크" translate="no">​</a></h3>
+<p><a href="https://github.com/supernovae-st/nika" target="_blank" rel="noopener noreferrer" class="">Nika</a>는 반복 AI 작업을 YAML과 Rust 실행기로 저장하고 정적 검사·LSP·읽기 전용 MCP를 붙입니다. 현재 Grok Routine의 “프롬프트만 있는 자동화”를 실행 가능한 워크플로로 바꾸는 방향과 닮았습니다.</p>
+<ul>
+<li class="">판단: <code>EXPERIMENT</code>. 반복 가능한 읽기 전용 작업 하나만 변환합니다.</li>
+<li class="">한계: 새 DSL과 실행기를 운영해야 하며 AGPL-3.0 라이선스 경계를 확인해야 합니다.</li>
+<li class="">다음 행동: 외부 쓰기가 없는 주간 Markdown 요약 한 건을 변환해 결과, 실패 처리와 검토 비용을 현재 Routine과 비교합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="판단">판단<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#%ED%8C%90%EB%8B%A8" class="hash-link" aria-label="판단에 대한 직접 링크" title="판단에 대한 직접 링크" translate="no">​</a></h2>
+<p>우선순위는 <code>Jikji → Nika → MARM</code>입니다. 세 후보 모두 현재 문제와 가깝지만, 도입이 아니라 작은 비교 실험만 허용합니다. Staddress와 PGroonga MCP는 구체적인 일본 데이터 요구가 생길 때까지 기다립니다. k-skill은 모음 전체가 아니라 필요한 스킬 하나만 검토합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="한계">한계<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#%ED%95%9C%EA%B3%84" class="hash-link" aria-label="한계에 대한 직접 링크" title="한계에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class="">GitHub 프로젝트의 기능·성능·보안 설명은 대부분 제작자 주장입니다. <code>VERIFIED</code>는 원문에 그 설명이 존재함을 확인했다는 뜻입니다.</li>
+<li class="">별 수와 최근 push는 관심도와 활동성을 보여줄 뿐 품질을 증명하지 않습니다.</li>
+<li class="">이 백필은 2026-08-23의 공개 상태에 묶여 있습니다. 설치나 도입 전에 현재 라이선스, 릴리스, 권한과 의존성을 다시 확인해야 합니다.</li>
+<li class="">일본은 기준을 충족한 항목이 두 건뿐입니다. 숫자를 맞추려고 약한 후보를 넣지 않았습니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="근거">근거<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ai-engineering-radar#%EA%B7%BC%EA%B1%B0" class="hash-link" aria-label="근거에 대한 직접 링크" title="근거에 대한 직접 링크" translate="no">​</a></h2>
+<p>각 항목의 구조화된 관측·판단은 frontmatter의 <code>records</code> 경로에 있습니다. 공개 원문은 본문 제목 링크와 <code>sourceLinks</code>에서 바로 열 수 있습니다.</p>]]></content:encoded>
+            <category>ai-engineering</category>
+            <category>radar</category>
+            <category>korea</category>
+            <category>japan</category>
+            <category>international</category>
+        </item>
+        <item>
+            <title><![CDATA[AI가 업무를 바꾼 세 장면과 아직 답하지 못한 질문]]></title>
+            <link>https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ax-intelligence</link>
+            <guid>https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ax-intelligence</guid>
+            <pubDate>Sun, 23 Aug 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[신한투자증권, 미쓰비시UFJ은행, Nordre Follo 사례에서 바뀐 업무 흐름과 사람이 계속 맡는 책임을 비교합니다.]]></description>
+            <content:encoded><![CDATA[<p>세 사례의 공통점은 “AI를 썼다”가 아닙니다. 사람이 하던 긴 문서 읽기와 구조화 초안을 에이전트가 맡고, 원본 보존·검토·최종 판단은 사람에게 남겼습니다. 반대로 세 사례 모두 공개 수치만으로 정확도와 총비용을 판단하기는 어렵습니다.</p>
+<p>아래 세 YAML 레코드가 사실의 SoT이고, 본문은 업무 흐름과 판단을 비교한 해설입니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="왜-중요한가">왜 중요한가<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ax-intelligence#%EC%99%9C-%EC%A4%91%EC%9A%94%ED%95%9C%EA%B0%80" class="hash-link" aria-label="왜 중요한가에 대한 직접 링크" title="왜 중요한가에 대한 직접 링크" translate="no">​</a></h2>
+<p>AX 사례는 도구 이름보다 “업무가 전후로 어떻게 달라졌는가”가 핵심입니다. 세 사례를 같은 틀로 보면 자동화가 잘 맞는 구간과 사람이 빠지면 안 되는 구간이 분명해집니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="한국-계약서-읽기와-입력을-하나의-흐름으로">한국: 계약서 읽기와 입력을 하나의 흐름으로<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ax-intelligence#%ED%95%9C%EA%B5%AD-%EA%B3%84%EC%95%BD%EC%84%9C-%EC%9D%BD%EA%B8%B0%EC%99%80-%EC%9E%85%EB%A0%A5%EC%9D%84-%ED%95%98%EB%82%98%EC%9D%98-%ED%9D%90%EB%A6%84%EC%9C%BC%EB%A1%9C" class="hash-link" aria-label="한국: 계약서 읽기와 입력을 하나의 흐름으로에 대한 직접 링크" title="한국: 계약서 읽기와 입력을 하나의 흐름으로에 대한 직접 링크" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="신한투자증권--shinhan-securities-contract-agent">신한투자증권 — <code>shinhan-securities-contract-agent</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ax-intelligence#%EC%8B%A0%ED%95%9C%ED%88%AC%EC%9E%90%EC%A6%9D%EA%B6%8C--shinhan-securities-contract-agent" class="hash-link" aria-label="신한투자증권--shinhan-securities-contract-agent에 대한 직접 링크" title="신한투자증권--shinhan-securities-contract-agent에 대한 직접 링크" translate="no">​</a></h3>
+<p><a href="https://www.yna.co.kr/view/AKR20260818061300017" target="_blank" rel="noopener noreferrer" class="">연합뉴스 보도</a>에 따르면 기존에는 담당자 3~4명이 이메일로 받은 약 50쪽의 장외파생상품 계약서를 읽고 약 50개 항목을 사내 시스템에 직접 입력했습니다. Gemini Enterprise 기반 에이전트와 내부 오케스트레이터를 적용한 뒤에는 계약서 분석에서 입력까지 이어지고, 담당자가 결과를 확인합니다.</p>
+<ul>
+<li class="">보고된 변화: 클로즈드 베타에서 건당 약 2시간이 약 5분으로 줄었다고 회사 측은 설명했습니다.</li>
+<li class="">사람의 책임: 추출과 입력 결과를 최종 확인하고 금융 규제와 내부 통제를 책임집니다.</li>
+<li class="">판단: 문서 접수 → 구조화 추출 → 시스템 입력 제안 → 사람 확인이라는 패턴은 재사용할 만합니다.</li>
+<li class="">한계: 표본 수, 추출 정확도, 예외율, 재작업률과 잘못된 입력의 영향이 공개되지 않았습니다. 수치는 회사·공급자 발표이며 독립 감사 결과가 아닙니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="일본-자유-생성의-실패를-도메인-구조로-줄이기">일본: 자유 생성의 실패를 도메인 구조로 줄이기<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ax-intelligence#%EC%9D%BC%EB%B3%B8-%EC%9E%90%EC%9C%A0-%EC%83%9D%EC%84%B1%EC%9D%98-%EC%8B%A4%ED%8C%A8%EB%A5%BC-%EB%8F%84%EB%A9%94%EC%9D%B8-%EA%B5%AC%EC%A1%B0%EB%A1%9C-%EC%A4%84%EC%9D%B4%EA%B8%B0" class="hash-link" aria-label="일본: 자유 생성의 실패를 도메인 구조로 줄이기에 대한 직접 링크" title="일본: 자유 생성의 실패를 도메인 구조로 줄이기에 대한 직접 링크" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="미쓰비시ufj은행--mufg-ai-flowchart">미쓰비시UFJ은행 — <code>mufg-ai-flowchart</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ax-intelligence#%EB%AF%B8%EC%93%B0%EB%B9%84%EC%8B%9Cufj%EC%9D%80%ED%96%89--mufg-ai-flowchart" class="hash-link" aria-label="미쓰비시ufj은행--mufg-ai-flowchart에 대한 직접 링크" title="미쓰비시ufj은행--mufg-ai-flowchart에 대한 직접 링크" translate="no">​</a></h3>
+<p><a href="https://www.itmedia.co.jp/enterprise/articles/2608/21/news019.html" target="_blank" rel="noopener noreferrer" class="">ITmedia가 AWS Summit Japan 발표를 재구성한 기사</a>에 따르면, 기존에는 지식 보유자가 본부 약 600쪽과 각 해외 거점의 수백~수천 쪽 절차서를 읽어 흐름도를 만들고 차이를 비교했습니다. AI 흐름도는 작성·비교·자연어 수정을 돕고, 약 2만 개 트리플로 만든 오ント롤로지와 지식 그래프가 표현 차이를 정규화합니다.</p>
+<ul>
+<li class="">보고된 변화: 흐름도 작성·비교·수정 공수가 사례당 11인일에서 1인일로 줄어들 것으로 예상했습니다.</li>
+<li class="">사람의 책임: 트리플과 흐름도를 검토·수정하고, 관계자 협의와 최종 절차 결정을 맡습니다.</li>
+<li class="">실패에서 얻은 것: 생성형 AI만 사용한 초기 프로토타입은 흐름을 잘못 이해하고 지나치게 단순하거나 화려한 결과를 만들었습니다. 도메인 구조와 사람의 교정을 추가한 뒤 방향이 바뀌었습니다.</li>
+<li class="">한계: 90%는 운영 확정 실적이 아니라 예상치입니다. 관계자 협의에 필요한 1~2인월은 줄지 않으며, 기사는 기업 발표에 기반한 2차 자료입니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="국제-공공-의견을-요약하되-원본과-검토를-남기기">국제: 공공 의견을 요약하되 원본과 검토를 남기기<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ax-intelligence#%EA%B5%AD%EC%A0%9C-%EA%B3%B5%EA%B3%B5-%EC%9D%98%EA%B2%AC%EC%9D%84-%EC%9A%94%EC%95%BD%ED%95%98%EB%90%98-%EC%9B%90%EB%B3%B8%EA%B3%BC-%EA%B2%80%ED%86%A0%EB%A5%BC-%EB%82%A8%EA%B8%B0%EA%B8%B0" class="hash-link" aria-label="국제: 공공 의견을 요약하되 원본과 검토를 남기기에 대한 직접 링크" title="국제: 공공 의견을 요약하되 원본과 검토를 남기기에 대한 직접 링크" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nordre-follo-지방정부--nordre-follo-hearing-agent">Nordre Follo 지방정부 — <code>nordre-follo-hearing-agent</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ax-intelligence#nordre-follo-%EC%A7%80%EB%B0%A9%EC%A0%95%EB%B6%80--nordre-follo-hearing-agent" class="hash-link" aria-label="nordre-follo-지방정부--nordre-follo-hearing-agent에 대한 직접 링크" title="nordre-follo-지방정부--nordre-follo-hearing-agent에 대한 직접 링크" translate="no">​</a></h3>
+<p><a href="https://www.technologyrecord.com/article/nordre-follo-municipality-modernises-public-hearing-workflows-with-microsoft-copilot-studio" target="_blank" rel="noopener noreferrer" class="">Technology Record 사례</a>와 <a href="https://www.atea.no/kundereferanser/norde-follo-kommune-1/?pid=3b1733d9-adef-4b74-8b69-2cedb52ea3ec" target="_blank" rel="noopener noreferrer" class="">Atea의 구현 사례</a>는 노르웨이 Nordre Follo의 공청회 흐름을 설명합니다. 과거에는 담당자가 PDF 의견서를 옮겨 읽고 주제를 추출해 Word 보고서로 합쳤습니다. 지금은 원본 PDF를 기록 관리 시스템에 보존한 뒤 Copilot Studio 에이전트가 요약·분류·표 초안을 만들고 담당자가 모두 검토합니다.</p>
+<ul>
+<li class="">운영 근거: 개발 환경에서 8개 공청회 주기로 파일럿하고 정확도를 확인한 뒤 2025년 11월 운영으로 옮겼다고 설명합니다.</li>
+<li class="">사람의 책임: 모든 요약을 수동 검토하고 편집하며 공공 의사결정과 공개 책임을 집니다.</li>
+<li class="">판단: 원본 기록 보존 → AI 초안 → 전수 검토라는 경계는 공공 문서뿐 아니라 기업 규정·고객 의견에도 적용할 수 있습니다.</li>
+<li class="">한계: 평가 표본과 합격 기준, 개인정보·이의제기 절차, 감사된 시간 절감·정확도·오류율은 공개되지 않았습니다. 두 자료 모두 구현 생태계와 이해관계가 있습니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="판단">판단<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ax-intelligence#%ED%8C%90%EB%8B%A8" class="hash-link" aria-label="판단에 대한 직접 링크" title="판단에 대한 직접 링크" translate="no">​</a></h2>
+<p>세 사례에서 가져올 설계 원칙은 네 가지입니다.</p>
+<ol>
+<li class="">AI가 원문을 덮어쓰지 않고 원본과 초안을 분리합니다.</li>
+<li class="">자유 생성이 흔들리면 더 큰 모델보다 도메인 스키마·오ント롤로지·지식 그래프를 먼저 검토합니다.</li>
+<li class="">시간 절감만 보지 않고 정확도, 예외, 재작업, 사람 검토 시간과 실패 비용을 함께 측정합니다.</li>
+<li class="">사람의 최종 책임을 문구로만 남기지 말고 실제 승인 단계와 감사 기록으로 구현합니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="한계">한계<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ax-intelligence#%ED%95%9C%EA%B3%84" class="hash-link" aria-label="한계에 대한 직접 링크" title="한계에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class="">세 사례 모두 독립 감사 보고서가 아니라 기업·구현 파트너·산업 매체의 공개 자료에 의존합니다.</li>
+<li class=""><code>VERIFIED</code>는 업무 흐름과 공개 주장을 출처에서 확인했다는 뜻입니다. 주장한 성과가 일반적으로 재현된다는 뜻은 아닙니다.</li>
+<li class="">한국 수치는 클로즈드 베타, 일본 수치는 예상, 국제 사례는 정량 성과 미공개입니다. 같은 막대그래프로 비교할 수 없습니다.</li>
+<li class="">실제 도입 판단에는 데이터 분류, 오류 정정, 책임 소재, 총비용과 운영 중단 절차가 더 필요합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="근거">근거<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/23/ax-intelligence#%EA%B7%BC%EA%B1%B0" class="hash-link" aria-label="근거에 대한 직접 링크" title="근거에 대한 직접 링크" translate="no">​</a></h2>
+<p>각 사례의 이전·이후 워크플로, 사람 책임, 거버넌스, 평가, 수치, 한계와 검증 URL은 frontmatter의 <code>records</code> 세 파일에 보존했습니다.</p>]]></content:encoded>
+            <category>ax-intelligence</category>
+            <category>korea</category>
+            <category>japan</category>
+            <category>international</category>
+            <category>workflow</category>
+        </item>
+    </channel>
+</rss>

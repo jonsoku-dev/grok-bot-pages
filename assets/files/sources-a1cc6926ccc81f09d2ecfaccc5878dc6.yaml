@@ -1,0 +1,143 @@
+version: 1
+
+policy:
+  paidExternalApi: deny
+  externalWrite: deny
+  candidateTrust: untrusted_until_evidence_verifier
+  deferredResume: explicit_human_approval
+  regionalCategories:
+    requiredEveryRun: [korea, japan, international]
+    outputSections: [korea, japan, international]
+    noForcedQuota: true
+    onNoVerifiedSignal: report_empty_category
+    classification:
+      basis: project_author_organization_or_official_announcement_regional_context
+      languageAloneForbidden: true
+      requiredEvidence: [primaryCategory, relatedCategories, originBasis]
+      preserve: [originalTitle, originalLanguage]
+      explanation: koreanSummary
+    handoff:
+      schemaVersion: regional-signal/v1
+      mode: full_packet
+      recordShape: flat_record_per_candidate
+      summaryOnly: deny
+      requiredCandidateFields: [schemaVersion, id, collectionDate, primaryCategory, relatedCategories, originBasis, originalTitle, originalLanguage, koreanSummary, source, canonicalId, primaryUrl, author, project, publishedAt, observedFacts, interpretation, relatedRefs, sourceWarnings, verificationStatus]
+      sourceValues: [technical_article, github_repository, official_release, public_case_study]
+      verifierAdds: [verificationStatus, verificationEvidenceUrls, verifiedAt, contradictions]
+      judgeAdds: [judgeAction, judgeRationale, expectedBenefit, switchingCost, maturity, risks, smallestUsefulExperiment]
+      maturityValues: [experimental, early, developing, stable, mature]
+      arrayFields: [relatedCategories, observedFacts, relatedRefs, sourceWarnings, verificationEvidenceUrls, contradictions, risks]
+      writerAdds: [recordStatus]
+      canonicalPathPattern: intelligence/signals/{YYYY}/{MM}/{DD}/regional-signal/{region}/{id}.yaml
+      writerGate: data_quality_pass_and_explicit_human_approval
+      onMissing: reject_and_request_resend
+      immutableFields: [primaryCategory, relatedCategories, originBasis, originalTitle, originalLanguage, source, canonicalId, primaryUrl, author, project, publishedAt, observedFacts, interpretation, relatedRefs, sourceWarnings]
+    categories:
+      korea:
+        label: 한국
+        primaryLanguages: [ko]
+        discoveryQuerySeeds: [한국 AI 개발, 한국 오픈소스, 한국 연구기관 AI]
+      japan:
+        label: 일본
+        primaryLanguages: [ja]
+        discoveryQuerySeeds: [日本 AI 開発, 日本 オープンソース, 日本 研究機関 AI]
+      international:
+        label: 해외
+        primaryLanguages: [en]
+        discoveryQuerySeeds: [global AI engineering, international open source AI, global AI research]
+
+sources:
+  github-activity:
+    status: active
+    adapter: github_public
+    access: public_read
+    paidExternalApi: false
+    cost: free
+    write: false
+    rate: { maxRequests: 60, perSeconds: 3600, minIntervalSeconds: 1 }
+    failure: { onUnavailable: partial_and_flag, onRateLimit: partial_and_flag }
+    coverageCategories: [korea, japan, international]
+  github-releases:
+    status: active
+    adapter: github_public
+    access: public_read
+    paidExternalApi: false
+    cost: free
+    write: false
+    rate: { maxRequests: 60, perSeconds: 3600, minIntervalSeconds: 1 }
+    failure: { onUnavailable: partial_and_flag, onRateLimit: partial_and_flag }
+    coverageCategories: [korea, japan, international]
+  official-rss:
+    status: active
+    adapter: rss_atom
+    access: public_read
+    paidExternalApi: false
+    cost: free
+    write: false
+    rate: { maxRequests: 30, perSeconds: 3600, minIntervalSeconds: 3 }
+    failure: { onUnavailable: partial_and_flag, onRateLimit: partial_and_flag }
+    coverageCategories: [korea, japan, international]
+  hacker-news:
+    status: active
+    adapter: hacker_news_api
+    access: public_read
+    paidExternalApi: false
+    cost: free
+    write: false
+    rate: { maxRequests: 30, perSeconds: 3600, minIntervalSeconds: 2 }
+    failure: { onUnavailable: partial_and_flag, onRateLimit: partial_and_flag }
+    coverageCategories: [international]
+  bluesky-appview:
+    status: active
+    adapter: bluesky_appview
+    access: public_read
+    paidExternalApi: false
+    cost: free
+    write: false
+    rate: { maxRequests: 30, perSeconds: 3600, minIntervalSeconds: 2 }
+    failure: { onUnavailable: partial_and_flag, onRateLimit: partial_and_flag }
+    coverageCategories: [korea, japan, international]
+  bluesky-jetstream:
+    status: deferred
+    adapter: none
+    access: public_read
+    paidExternalApi: false
+    cost: free
+    write: false
+    rate: { maxRequests: 30, perSeconds: 3600, minIntervalSeconds: 2 }
+    failure: { onUnavailable: partial_and_flag, onRateLimit: partial_and_flag }
+    reason: operational_streaming_deferred
+    resume: explicit_human_approval
+    coverageCategories: [korea, japan, international]
+  arxiv-atom:
+    status: active
+    adapter: rss_atom
+    access: public_read
+    paidExternalApi: false
+    cost: free
+    write: false
+    rate: { maxRequests: 20, perSeconds: 3600, minIntervalSeconds: 3 }
+    failure: { onUnavailable: partial_and_flag, onRateLimit: partial_and_flag }
+    coverageCategories: [international]
+  mastodon:
+    status: active
+    adapter: mastodon_public
+    access: public_read
+    paidExternalApi: false
+    cost: free
+    write: false
+    rate: { maxRequests: 30, perSeconds: 3600, minIntervalSeconds: 2 }
+    failure: { onUnavailable: partial_and_flag, onRateLimit: partial_and_flag }
+    coverageCategories: [korea, japan, international]
+  x:
+    status: deferred
+    adapter: none
+    access: public_read
+    paidExternalApi: false
+    cost: paid_if_resumed
+    write: false
+    rate: { maxRequests: 1, perSeconds: 86400, minIntervalSeconds: 0 }
+    failure: { onUnavailable: partial_and_flag, onRateLimit: partial_and_flag }
+    reason: paid_api_deferred_by_user
+    resume: explicit_human_approval
+    coverageCategories: [korea, japan, international]
