@@ -9,6 +9,7 @@ evidence:
 sourceLinks:
   - "https://github.com/agentskills/agentskills"
   - "https://docs.x.ai/grok-bot/overview"
+  - "https://folarin.dev/blog/what-are-agent-skills-progressive-disclosure"
   - "https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/"
   - "https://github.com/RohannShetty/gitbook-downloader"
   - "https://github.com/snapsynapse/skill-provenance"
@@ -16,13 +17,18 @@ sourceLinks:
   - "https://github.com/vercel-labs/skills"
   - "https://github.com/wbaxterh/pokedocs"
   - "https://code.claude.com/docs/ja/discover-plugins"
+  - "https://smartscope.blog/generative-ai/github-copilot/github-copilot-skills-guide/"
+  - "https://aitrends.jp/articles/99381"
   - "https://data-newbie.tistory.com/1163"
   - "https://duckssi.tistory.com/423"
+  - "https://heyoonow.tistory.com/265"
   - "https://inma.tistory.com/210"
+  - "https://nobase-appdev.tistory.com/57"
   - "https://best-onedevyjuns.tistory.com/156"
 records:
   - "intelligence/signals/2026/08/24/regional-signal/international/agentskills-open-standard-skill-md.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/grok-bot-official-workflow-docs.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/international/intl-folarin-agent-skills-progressive-disclosure-explained.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/nvidia-skillevaluator-agent-skill-performance.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/rohann-shetty-gitbook-downloader-docusaurus-llms-txt.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/snapsynapse-skill-provenance-v6-1-0.yaml"
@@ -30,9 +36,13 @@ records:
   - "intelligence/signals/2026/08/24/regional-signal/international/vercel-labs-skills-cli-find-add-update.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/wbaxterh-pokedocs-docusaurus-llms-txt.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-claude-discover-plugins-marketplace-autoupdate.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/japan/japan-smartscope-copilot-skills-progressive-disclosure.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-aitrends-langchain-mda-skills-progressive-disclosure.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-data-newbie-radar-skillevaluator-20260822.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-duckssi-claude-plugin-marketplace-command-source.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-heyoonow-skill-md-supply-chain-env-20260805.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-inma-claude-codex-agents-skills-config.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-tistory-nobase-skills-mcp-plugin-separation.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-tistory-skill-plugin-marketplace-internal-standard.yaml"
 ---
 
@@ -51,6 +61,17 @@ records:
 이 글은 확인된 핵심 내용과 추천 이유, 주의할 점, 다음 단계를 함께 보여줍니다.
 
 ## 한국
+
+### [AI Trends / LangChain Managed Deep Agents](https://aitrends.jp/articles/99381) — `korea-aitrends-langchain-mda-skills-progressive-disclosure`
+
+AI Trends가 LangChain Managed Deep Agents에서 skills/ + SKILL.md(YAML frontmatter name·description + 마크다운 본문)로 스킬을 패키징하고, Progressive Disclosure(점진적 공개)로 필요 시에만 상세를 로드해 컨텍스트를 절약하는 방법을 정리. mda dev/mda deploy·Context Hub 공유와 question-asking 스킬 예시를 포함. 2026-08-19 게시(유튜브 원문 기반 AI 요약).
+
+- 왜 중요한가: name/description 선공개·본문 지연 로드·mda deploy/Context Hub 공유 패턴.
+- 추천: **읽기** — LangChain Managed Deep Agents에서 SKILL.md 메타만 두고 필요 시 본문을 로드하는 Progressive Disclosure를 한국어로 정리. 점진적 컨텍스트 공개 토픽에 직접. MDA 특화.
+- 주의할 점:
+  - LangChain MDA 제품 맥락; 범용 agentskills 로더와 차이 가능.
+  - 미디어/트렌드 글; 벤치 수치 없음.
+- 다음 단계: 점진적 공개 정의 절만 agentskills.io overview와 대조. 배포 실험 없음.
 
 ### [data-newbie.tistory.com](https://data-newbie.tistory.com/1163) — `korea-data-newbie-radar-skillevaluator-20260822`
 
@@ -75,6 +96,17 @@ data-newbie 레이더(2026-08-23 게시)가 NVIDIA Technical Blog(2026-08-19)의
   - command-source 플러그인은 의존성으로 pull-in 불가(본문).
 - 다음 단계: 글과 code.claude.com plugin-marketplaces의 command source 절만 대조. 명령 실행 실험 없음.
 
+### [heyoonow.tistory.com](https://heyoonow.tistory.com/265) — `korea-heyoonow-skill-md-supply-chain-env-20260805`
+
+헤이나우가 2026-08-05 기준으로 Codex 제3자 스킬·SKILL.md 공급망 공격을 정리. SKILL.md는 README가 아니라 에이전트가 따르는 운영 지침이며, 파일·셸·네트워크 권한이 겹치면 .env·클라우드 자격증명이 유출될 수 있다고 설명. Snyk ToxicSkills(3,984개 중 악성 페이로드 76건, 91%가 자연어 지시 기반)를 인용하고, 설치 전 위험 패턴 점검·샌드박스 테스트·네트워크 차단·자동 승인 회피·버전 고정 등 방어 체크리스트를 제시.
+
+- 왜 중요한가: 스킬 설치 전 권한/egress 체크리스트와 악성 비율 연구 인용 경로.
+- 추천: **읽기** — 제3자 SKILL.md를 실행 의존성으로 보고 .env 유출 삼중 조건·Snyk ToxicSkills 수치를 정리. Agent Skills 보안·공급망 토픽에 직접. 2차 합성.
+- 주의할 점:
+  - 개인 블로그; Snyk/arXiv 수치는 1차 재확인 필요.
+  - 2026-02 Snyk 스냅샷과 현재 마켓 상이 가능.
+- 다음 단계: 삼중 조건(.env 가독·수집·egress)만 자사 스킬 정책에 매핑. 스캔 실행 없음.
+
 ### [inma.tistory.com](https://inma.tistory.com/210) — `korea-inma-claude-codex-agents-skills-config`
 
 Junhong Kim이 Claude Code와 Codex의 AGENTS.md/CLAUDE.md, Rules, SKILL.md, Subagent, MCP 역할을 비교하고, Skill은 Agent Skills 오픈 포맷(SKILL.md)이라 Codex가 .agents/skills를 쓰며 Claude Code는 .claude/skills에서 심볼릭 링크로 공통 Skill을 공유할 수 있다고 정리한 글. 2026-07-15 게시, 2026-08-17 수정.
@@ -86,6 +118,17 @@ Junhong Kim이 Claude Code와 Codex의 AGENTS.md/CLAUDE.md, Rules, SKILL.md, Sub
   - 게시 2026-07-15는 선호 창보다 이름, 수정 8/17만 창 안.
   - 클라이언트별 SKILL.md 확장 키 호환은 문서마다 다름.
 - 다음 단계: 글의 .agents/skills ↔ .claude/skills 링크 절만 읽고 현재 스킬 경로와 대조. 링크 생성·게시 없음.
+
+### [nobase-appdev.tistory.com](https://nobase-appdev.tistory.com/57) — `korea-tistory-nobase-skills-mcp-plugin-separation`
+
+개발하는 전뚠뚠이 Agent Skill(SKILL.md 폴더·점진적 공개)을 재사용 워크플로/매뉴얼로, MCP를 외부 도구·리소스·프롬프트 연결 프로토콜로, 플러그인을 배포 묶음으로 구분한다. 판단 공식은 반복 절차→스킬, 외부 데이터·실행→MCP/커넥터, 설치·공유→플러그인. 2026-08-09 게시.
+
+- 왜 중요한가: 역할 결정 트리와 progressive disclosure 스킬 vs 도구 노출 MCP 경계를 체크리스트화.
+- 추천: **읽기** — 반복 절차→Skill, 외부 데이터·실행→MCP, 설치·공유→플러그인 공식이 MCP/Skills 역할 분리 토픽에 직접. 한국 실무 합성.
+- 주의할 점:
+  - 개인 블로그; 공식 스펙 아님.
+  - 플러그인에 MCP를 넣는 번들 모델은 제품마다 상이.
+- 다음 단계: 판단 공식 3줄만 자사 스킬/MCP 목록에 매핑. 구현·게시 없음.
 
 ### [소소한 지식 공유방 (best-onedevyjuns.tistory.com)](https://best-onedevyjuns.tistory.com/156) — `korea-tistory-skill-plugin-marketplace-internal-standard`
 
@@ -113,6 +156,17 @@ Claude Code 일본어 공식 문서가 플러그인 마켓플레이스에서 검
   - 서드파티 마켓 기본 auto-update off.
 - 다음 단계: 自動更新を構成する 절만 EN 페이지와 대조. 설치 실험 없음.
 
+### [SmartScope / GitHub Copilot Agent Skills](https://smartscope.blog/generative-ai/github-copilot/github-copilot-skills-guide/) — `japan-smartscope-copilot-skills-progressive-disclosure`
+
+SmartScope가 GitHub Copilot Agent Skills의 SKILL.md 작성·배치·settings와 Progressive Disclosure(段階的ローディング) L1 메타데이터→L2 본문→L3 리소스 3단계 로드를 도해로 설명한다. Custom Instructions(상시)와 Skills(온디맨드) 구분, .github/skills 예시, agentskills.io 오픈 포맷 언급. 페이지 개정 시각 2026-07-28 12:27:06 JST.
+
+- 왜 중요한가: 3단계 로드 모델과 .github/skills 퀵스타트를 설계 체크리스트로 사용.
+- 추천: **읽기** — Copilot Agent Skills의 L1 메타→L2 본문→L3 리소스 3단계 Progressive Disclosure 도해와 상시 Instructions vs 온디맨드 Skills 구분이 설계 토픽에 강함.
+- 주의할 점:
+  - 게시 시각이 git-revision 플러그인 기준(article:published\_time 없음).
+  - Copilot 전용 경로; 다른 에이전트와 세부 상이.
+- 다음 단계: L1/L2/L3 도해만 자사 스킬 로더 단계와 매핑. 설치 없음.
+
 ## 국제
 
 ### [Agent Skills](https://github.com/agentskills/agentskills) — `agentskills-open-standard-skill-md`
@@ -139,6 +193,17 @@ agentskills.io와 GitHub agentskills/agentskills가 SKILL.md 기반 Agent Skills
   - datePublished/Modified가 UTC 자정 placeholder라 당일 시각 미확인.
   - 이벤트 트리거가 Cursor 계정 연동에 묶임.
 - 다음 단계: overview·skills-routines·approvals 페이지만 읽고 현재 Radar Bot의 Skill/Routine/승인 게이트를 1:1 대조. 새 Routine·외부 게시·GitHub/SoT 쓰기 없음.
+
+### [folarin.dev](https://folarin.dev/blog/what-are-agent-skills-progressive-disclosure) — `intl-folarin-agent-skills-progressive-disclosure-explained`
+
+Folarin Akinloye가 Agent Skill을 SKILL.md(+선택 scripts/references) 폴더로 정의하고, Progressive Disclosure를 Discovery(항상 name·description)→Activation(매칭 시 본문)→Execution(참조 파일/스크립트 출력만) 3단계로 설명. 시스템 프롬프트 일괄 적재 대비 상시 비용·발화 비용·번들 비용을 분리하는 설계로 서술. 2026-08-02 게시.
+
+- 왜 중요한가: 약한 description의 under-fire 실패 모드와 3단계 비용 모델을 스킬 작성 가이드에 반영.
+- 추천: **읽기** — Discovery→Activation→Execution으로 Progressive Disclosure를 비용 분리(상시/발화/번들) 관점에서 설명한 국제 심화 글. 토픽명과  Congruent.
+- 주의할 점:
+  - 개인 블로그; 공식 스펙 해설에 가까우나 normative 아님.
+  - dateModified가 datePublished보다 앞선 메타 이상(패킷 관측).
+- 다음 단계: 3단계 정의만 SKILL.md 작성 체크리스트에 옮김. 실험 실행 없음.
 
 ### [NVIDIA SkillEvaluator](https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/) — `nvidia-skillevaluator-agent-skill-performance`
 

@@ -714,6 +714,62 @@ smallestUsefulExperiment: overview·skills-routines·approvals 페이지만 읽�
   Skill/Routine/승인 게이트를 1:1 대조. 새 Routine·외부 게시·GitHub/SoT 쓰기 없음.
 ```
 
+## intl-folarin-agent-skills-progressive-disclosure-explained
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/24/regional-signal/international/intl-folarin-agent-skills-progressive-disclosure-explained.yaml
+- sha256: 1953aac0452d06c9c6fee2c2796c54cd19b2ade348d0958fc0f36c06c9d8d171
+- primaryUrl: https://folarin.dev/blog/what-are-agent-skills-progressive-disclosure
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: intl-folarin-agent-skills-progressive-disclosure-explained
+collectionDate: '2026-08-24'
+primaryCategory: international
+relatedCategories: []
+originBasis: English personal technical essay by London-based AI product engineer Folarin Akinloye (folarin.dev); international (UK) origin analysis dedicated to Agent Skills progressive disclosure design—not region-specific product docs.
+originalTitle: What Are Agent Skills? Progressive Disclosure Explained
+originalLanguage: en
+koreanSummary: Folarin Akinloye가 Agent Skill을 SKILL.md(+선택 scripts/references) 폴더로 정의하고, Progressive Disclosure를 Discovery(항상 name·description)→Activation(매칭 시 본문)→Execution(참조 파일/스크립트 출력만) 3단계로 설명. 시스템 프롬프트 일괄 적재 대비 상시 비용·발화 비용·번들 비용을 분리하는 설계로 서술. 2026-08-02 게시.
+source: technical_article
+canonicalId: folarin.dev:what-are-agent-skills-progressive-disclosure
+primaryUrl: https://folarin.dev/blog/what-are-agent-skills-progressive-disclosure
+author: Folarin Akinloye
+project: folarin.dev
+publishedAt: '2026-08-02T22:00:00+00:00'
+observedFacts:
+- article:published_time / datePublished 2026-08-02T22:00:00+00:00; dateModified 2026-08-02T17:26:34.36782+00:00 (collected 2026-08-24).
+- Defines an Agent Skill as a folder with required SKILL.md (frontmatter name/description + markdown body) and optional bundled scripts/references/assets.
+- 'Explains progressive disclosure as three stages: Discovery (startup metadata for every skill), Activation (full SKILL.md when task matches description), Execution (specific referenced file contents or script output never source).'
+- Argues the design decouples standing install cost, activation cost, and bundled-material cost—unlike stuffing expertise into a system prompt—and notes a fat SKILL.md body taxes later turns because it stays in session context after trigger.
+- Warns that weak descriptions under-fire (skill never loads) and positions progressive disclosure as the mechanism already used across coding assistants and CLI agents reading the same SKILL.md shape.
+interpretation: Canonical international deep-dive titled on progressive disclosure itself—clearest public design rationale for Agent Skills layered context reveal within the collection window.
+relatedRefs:
+- https://agentskills.io/
+- https://learn.microsoft.com/en-us/agent-framework/agents/skills
+sourceWarnings:
+- Independent essay, not an official agentskills.io specification page.
+- Does not cite a single normative token budget table; stage costs are described qualitatively plus Discovery as a metadata line per skill.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://folarin.dev/blog/what-are-agent-skills-progressive-disclosure
+verifiedAt: '2026-08-24T14:49:00Z'
+contradictions:
+- dateModified=['2026-08-02T17:26:34.36782+00:00'] 는 publishedAt보다 이른 시각(패킷 sourceWarnings 가능 영역).
+judgeAction: READ
+judgeRationale: Discovery→Activation→Execution으로 Progressive Disclosure를 비용 분리(상시/발화/번들) 관점에서 설명한 국제 심화 글. 토픽명과  Congruent.
+expectedBenefit: 약한 description의 under-fire 실패 모드와 3단계 비용 모델을 스킬 작성 가이드에 반영.
+switchingCost: 문서 낮음.
+maturity: developing
+risks:
+- 개인 블로그; 공식 스펙 해설에 가까우나 normative 아님.
+- dateModified가 datePublished보다 앞선 메타 이상(패킷 관측).
+smallestUsefulExperiment: 3단계 정의만 SKILL.md 작성 체크리스트에 옮김. 실험 실행 없음.
+```
+
 ## nvidia-skillevaluator-agent-skill-performance
 
 - artifactRole: factual_sot
@@ -1120,6 +1176,117 @@ risks:
 smallestUsefulExperiment: 自動更新を構成する 절만 EN 페이지와 대조. 설치 실험 없음.
 ```
 
+## japan-smartscope-copilot-skills-progressive-disclosure
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/24/regional-signal/japan/japan-smartscope-copilot-skills-progressive-disclosure.yaml
+- sha256: fb5a7a165967c3dfd9e058a59ce60ae5b65d4f350e80648ee567455553a4ac39
+- primaryUrl: https://smartscope.blog/generative-ai/github-copilot/github-copilot-skills-guide/
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: japan-smartscope-copilot-skills-progressive-disclosure
+collectionDate: '2026-08-24'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Japanese SmartScope technical blog (smartscope.blog) guide to GitHub Copilot Agent Skills; Japan-hosted practitioner documentation of Progressive Disclosure (段階的ローディング) for SKILL.md—not language-only classification.
+originalTitle: GitHub Copilot Agent Skills ガイド【2026年最新】SKILL.mdの書き方から実践活用まで
+originalLanguage: ja
+koreanSummary: SmartScope가 GitHub Copilot Agent Skills의 SKILL.md 작성·배치·settings와 Progressive Disclosure(段階的ローディング) L1 메타데이터→L2 본문→L3 리소스 3단계 로드를 도해로 설명한다. Custom Instructions(상시)와 Skills(온디맨드) 구분, .github/skills 예시, agentskills.io 오픈 포맷 언급. 페이지 개정 시각 2026-07-28 12:27:06 JST.
+source: technical_article
+canonicalId: smartscope:github-copilot-skills-guide
+primaryUrl: https://smartscope.blog/generative-ai/github-copilot/github-copilot-skills-guide/
+author: SmartScope
+project: SmartScope / GitHub Copilot Agent Skills
+publishedAt: '2026-07-28T12:27:06+09:00'
+observedFacts:
+- Page git-revision-date-localized plugin shows 2026年7月28日 12:27:06 JST (collected 2026-08-24); no separate article:published_time meta.
+- Dedicated section Progressive Disclosure（段階的ローディング） diagrams L1 discovery (name+description only), L2 instruction load (full SKILL.md body), L3 resource expansion (scripts/templates on demand).
+- 'Contrasts Copilot context layers: always-on copilot-instructions.md, path-matched .instructions.md (applyTo), and on-demand SKILL.md Agent Skills packages.'
+- States Agent Skills follow the open format at agentskills.io and that Progressive Disclosure loads only needed skills on demand for context efficiency vs stuffing all rules.
+- Includes quickstart creating .github/skills/webapp-testing/SKILL.md with YAML name/description and a Procedure body; covers VS Code settings and personal vs repo skill placement.
+interpretation: Strong Japan-locale design guide for progressive context disclosure of Agent Skills inside Copilot—maps the three-level load model to practical SKILL.md authoring and Custom Instructions boundaries.
+relatedRefs:
+- https://agentskills.io/
+- https://docs.github.com/en/copilot
+sourceWarnings:
+- publishedAt taken from localized git revision datetime on the page, not article:published_time.
+- Vendor Copilot feature surface may differ by product tier; treat ecosystem support claims as author-reported as of the page revision date.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://smartscope.blog/generative-ai/github-copilot/github-copilot-skills-guide/
+verifiedAt: '2026-08-24T14:49:00Z'
+contradictions:
+- article:published_time 메타 없음; git-revision-date 2026年7月28日 12:27:06 JST로 패킷 publishedAt=2026-07-28T12:27:06+09:00과 정합.
+judgeAction: READ
+judgeRationale: Copilot Agent Skills의 L1 메타→L2 본문→L3 리소스 3단계 Progressive Disclosure 도해와 상시 Instructions vs 온디맨드 Skills 구분이 설계 토픽에 강함.
+expectedBenefit: 3단계 로드 모델과 .github/skills 퀵스타트를 설계 체크리스트로 사용.
+switchingCost: 문서 낮음. Copilot 설정 적용은 중간.
+maturity: developing
+risks:
+- 게시 시각이 git-revision 플러그인 기준(article:published_time 없음).
+- Copilot 전용 경로; 다른 에이전트와 세부 상이.
+smallestUsefulExperiment: L1/L2/L3 도해만 자사 스킬 로더 단계와 매핑. 설치 없음.
+```
+
+## korea-aitrends-langchain-mda-skills-progressive-disclosure
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/24/regional-signal/korea/korea-aitrends-langchain-mda-skills-progressive-disclosure.yaml
+- sha256: 2809d57bb9827f8a393420a528ec0c65ae073a1b2b09faeb51406ab1d6a10e8b
+- primaryUrl: https://aitrends.jp/articles/99381
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: korea-aitrends-langchain-mda-skills-progressive-disclosure
+collectionDate: '2026-08-24'
+primaryCategory: korea
+relatedCategories: []
+originBasis: Korean-language AI Trends (aitrends.jp) article summarizing a LangChain Managed Deep Agents Skills tutorial; Korea-hosted public media covering Progressive Disclosure for SKILL.md context loading—not language-only classification.
+originalTitle: LangChain Managed Deep Agents에 Skills를 추가하고 관리하는 방법.
+originalLanguage: ko
+koreanSummary: AI Trends가 LangChain Managed Deep Agents에서 skills/ + SKILL.md(YAML frontmatter name·description + 마크다운 본문)로 스킬을 패키징하고, Progressive Disclosure(점진적 공개)로 필요 시에만 상세를 로드해 컨텍스트를 절약하는 방법을 정리. mda dev/mda deploy·Context Hub 공유와 question-asking 스킬 예시를 포함. 2026-08-19 게시(유튜브 원문 기반 AI 요약).
+source: technical_article
+canonicalId: aitrends.jp:articles:99381
+primaryUrl: https://aitrends.jp/articles/99381
+author: AI Trends
+project: AI Trends / LangChain Managed Deep Agents
+publishedAt: '2026-08-19T17:09:09Z'
+observedFacts:
+- Page meta article:published_time and datePublished 2026-08-19T17:09:09Z (collected 2026-08-24).
+- States Skills package reusable procedures as directories with SKILL.md (YAML frontmatter name/description + markdown body) under project skills/.
+- Defines Progressive Disclosure (점진적 공개) as loading only basic skill metadata first and reading full SKILL.md detail only when needed, to optimize context-window/token use.
+- Describes local test via mda dev and deploy/share via mda deploy to LangSmith Context Hub so skills can be shared across agents.
+- Includes a question-asking skill example (skills/qa/SKILL.md) that triggers follow-up questions when the user request is vague; page marks content as an AI-generated summary of a source video (youtube watch?v=Lhru0yMI2as).
+interpretation: Korea-facing public explanation of Agent Skills progressive context disclosure applied to LangChain Managed Deep Agents—directly on-topic for designing layered SKILL.md metadata→body loading.
+relatedRefs:
+- https://docs.langchain.com/oss/python/deepagents/skills
+- https://www.youtube.com/watch?v=Lhru0yMI2as
+sourceWarnings:
+- Page explicitly states the summary was AI-generated from a source video; verify details against the YouTube original and LangChain docs.
+- Does not publish a full three-level token budget table; focuses on metadata-first then on-demand SKILL.md load.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://aitrends.jp/articles/99381
+verifiedAt: '2026-08-24T14:49:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: LangChain Managed Deep Agents에서 SKILL.md 메타만 두고 필요 시 본문을 로드하는 Progressive Disclosure를 한국어로 정리. 점진적 컨텍스트 공개 토픽에 직접. MDA 특화.
+expectedBenefit: name/description 선공개·본문 지연 로드·mda deploy/Context Hub 공유 패턴.
+switchingCost: 문서 낮음. MDA 스택 없으면 이식 중간.
+maturity: developing
+risks:
+- LangChain MDA 제품 맥락; 범용 agentskills 로더와 차이 가능.
+- 미디어/트렌드 글; 벤치 수치 없음.
+smallestUsefulExperiment: 점진적 공개 정의 절만 agentskills.io overview와 대조. 배포 실험 없음.
+```
+
 ## korea-data-newbie-radar-skillevaluator-20260822
 
 - artifactRole: factual_sot
@@ -1233,6 +1400,62 @@ risks:
 smallestUsefulExperiment: 글과 code.claude.com plugin-marketplaces의 command source 절만 대조. 명령 실행 실험 없음.
 ```
 
+## korea-heyoonow-skill-md-supply-chain-env-20260805
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/24/regional-signal/korea/korea-heyoonow-skill-md-supply-chain-env-20260805.yaml
+- sha256: 4a1bebee86aea1cc4d03cbc77fb4a2bdaa2e9e0f6f8b720fd6ab3ac0732e098d
+- primaryUrl: https://heyoonow.tistory.com/265
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: korea-heyoonow-skill-md-supply-chain-env-20260805
+collectionDate: '2026-08-24'
+primaryCategory: korea
+relatedCategories:
+- international
+originBasis: Korean-language technical post on Korea-hosted Tistory blog heyoonow.tistory.com (헤이나우); Korea-origin practitioner security review of Agent Skill / SKILL.md supply-chain risk for Codex users—not language-only classification.
+originalTitle: 무료 Codex 스킬 설치했다가 .env 털린다? SKILL.md 공급망 공격의 실체
+originalLanguage: ko
+koreanSummary: 헤이나우가 2026-08-05 기준으로 Codex 제3자 스킬·SKILL.md 공급망 공격을 정리. SKILL.md는 README가 아니라 에이전트가 따르는 운영 지침이며, 파일·셸·네트워크 권한이 겹치면 .env·클라우드 자격증명이 유출될 수 있다고 설명. Snyk ToxicSkills(3,984개 중 악성 페이로드 76건, 91%가 자연어 지시 기반)를 인용하고, 설치 전 위험 패턴 점검·샌드박스 테스트·네트워크 차단·자동 승인 회피·버전 고정 등 방어 체크리스트를 제시.
+source: technical_article
+canonicalId: tistory:heyoonow:265
+primaryUrl: https://heyoonow.tistory.com/265
+author: 헤이나우 (heyoonow)
+project: heyoonow.tistory.com
+publishedAt: '2026-08-05T11:06:45+09:00'
+observedFacts:
+- Page meta article:published_time 2026-08-05T11:06:45+09:00 (collected 2026-08-24).
+- States SKILL.md is operational guidance the agent loads and follows, not a passive README; skills may include scripts/, references/, assets/, agents/openai.yaml.
+- 'Frames .env theft as requiring three conditions: readable secrets paths, collection/processing steps, and an egress channel (HTTP/webhook/remote script/package).'
+- 'Cites Snyk ToxicSkills (2026-02-05): 3,984 skills scanned; 36.82% with at least one flaw; 13.4% critical; 76 human-confirmed malicious payloads; 91% of malicious samples combined prompt injection with traditional malware patterns.'
+- 'Publishes defender checklist: review SKILL.md/scripts for remote-exec patterns, ignore-previous-instructions, broad .env/home scans; test in isolated folders with fake secrets; disable auto-approve; pin commits; rotate credentials if a suspect skill already ran.'
+interpretation: 'Korea-origin security-review signal on Agent Skills supply-chain defense: treats third-party skills as executable dependencies and documents practical pre-install review and runtime containment for Codex/Agent Skills.'
+relatedRefs:
+- https://snyk.io/blog/toxicskills-malicious-ai-agent-skills/
+- https://labs.zenity.io/post/attackers-target-agents-via-the-skill-supply-chain
+sourceWarnings:
+- Personal blog synthesis citing Snyk/arXiv/OpenAI docs; primary numeric claims should be verified against original research.
+- Focuses on Codex skill packaging; patterns generalize to other Agent Skills marketplaces but are not marketplace-operator disclosures.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://heyoonow.tistory.com/265
+verifiedAt: '2026-08-24T14:51:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 제3자 SKILL.md를 실행 의존성으로 보고 .env 유출 삼중 조건·Snyk ToxicSkills 수치를 정리. Agent Skills 보안·공급망 토픽에 직접. 2차 합성.
+expectedBenefit: 스킬 설치 전 권한/egress 체크리스트와 악성 비율 연구 인용 경로.
+switchingCost: 문서 낮음.
+maturity: developing
+risks:
+- 개인 블로그; Snyk/arXiv 수치는 1차 재확인 필요.
+- 2026-02 Snyk 스냅샷과 현재 마켓 상이 가능.
+smallestUsefulExperiment: 삼중 조건(.env 가독·수집·egress)만 자사 스킬 정책에 매핑. 스캔 실행 없음.
+```
+
 ## korea-inma-claude-codex-agents-skills-config
 
 - artifactRole: factual_sot
@@ -1288,6 +1511,61 @@ risks:
 - 클라이언트별 SKILL.md 확장 키 호환은 문서마다 다름.
 smallestUsefulExperiment: 글의 .agents/skills ↔ .claude/skills 링크 절만 읽고 현재 스킬 경로와 대조. 링크 생성·게시 없음.
 recordStatus: approved
+```
+
+## korea-tistory-nobase-skills-mcp-plugin-separation
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/24/regional-signal/korea/korea-tistory-nobase-skills-mcp-plugin-separation.yaml
+- sha256: ec844fa18829fdc699ce28f81cf1642d919fc2e2447706dcbd8c52f5f58801fb
+- primaryUrl: https://nobase-appdev.tistory.com/57
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: korea-tistory-nobase-skills-mcp-plugin-separation
+collectionDate: '2026-08-24'
+primaryCategory: korea
+relatedCategories: []
+originBasis: Korean-language Tistory technical blog (nobase-appdev.tistory.com / 개발하는 전뚠뚠); Korea-hosted personal tech blog that separates Agent Skills, MCP, and plugins by layer—not language-only classification.
+originalTitle: 에이전트 AI 스킬은 필수인가? MCP·플러그인과 정확히 구분하기
+originalLanguage: ko
+koreanSummary: 개발하는 전뚠뚠이 Agent Skill(SKILL.md 폴더·점진적 공개)을 재사용 워크플로/매뉴얼로, MCP를 외부 도구·리소스·프롬프트 연결 프로토콜로, 플러그인을 배포 묶음으로 구분한다. 판단 공식은 반복 절차→스킬, 외부 데이터·실행→MCP/커넥터, 설치·공유→플러그인. 2026-08-09 게시.
+source: technical_article
+canonicalId: tistory:nobase-appdev:57
+primaryUrl: https://nobase-appdev.tistory.com/57
+author: 개발하는 전뚠뚠
+project: nobase-appdev.tistory.com
+publishedAt: '2026-08-09T21:54:36+09:00'
+observedFacts:
+- article:published_time and article:modified_time both 2026-08-09T21:54:36+09:00 per page meta (collected 2026-08-24).
+- Defines Agent Skill as a reusable workflow folder with required SKILL.md plus optional scripts/, references/, assets/, using progressive disclosure (name/description first).
+- States MCP servers expose tools, resources, and prompts so agents can discover and call external data/execution capabilities—unlike skills, which do not by themselves create external API/DB access.
+- Treats plugins as installable bundles that may package skills, connectors, MCP servers, and UI.
+- 'Gives an explicit decision formula: repeating procedure → skill; external data/execution → MCP or connector; install/share/distribute → plugin; one-off simple request → plain natural language.'
+interpretation: Korea-origin practitioner signal that frames MCP vs Agent Skills as complementary role layers (procedure vs connectivity), with plugins as packaging—directly on-topic for MCP/Skills role-separation patterns.
+relatedRefs:
+- https://agentskills.io/home
+- https://modelcontextprotocol.io/
+sourceWarnings:
+- Personal blog synthesis of public Agent Skills / MCP concepts; not an official Anthropic or MCP project announcement.
+- Install examples center on OpenAI Codex paths; other agent products may use different skill directories.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://nobase-appdev.tistory.com/57
+verifiedAt: '2026-08-24T14:48:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 반복 절차→Skill, 외부 데이터·실행→MCP, 설치·공유→플러그인 공식이 MCP/Skills 역할 분리 토픽에 직접. 한국 실무 합성.
+expectedBenefit: 역할 결정 트리와 progressive disclosure 스킬 vs 도구 노출 MCP 경계를 체크리스트화.
+switchingCost: 문서 대조 낮음.
+maturity: developing
+risks:
+- 개인 블로그; 공식 스펙 아님.
+- 플러그인에 MCP를 넣는 번들 모델은 제품마다 상이.
+smallestUsefulExperiment: 판단 공식 3줄만 자사 스킬/MCP 목록에 매핑. 구현·게시 없음.
 ```
 
 ## korea-tistory-skill-plugin-marketplace-internal-standard
