@@ -26,36 +26,49 @@ canonical path, source commit, content hash, freshness, evidence와 action을 �
 ## 지금 읽을 결과
 
 
-공개 원문에 묶인 인텔리전스 레코드 11건을 두 편의 글로 정리했습니다. AI 엔지니어링 후보 8건과 실제 업무 변화 사례 3건입니다.
+현재 공개된 인텔리전스 3편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
 
-## 실제로 얻은 인텔리전스
+## 최신 인텔리전스
 
-### [지금 시험해볼 AI 엔지니어링 도구 8가지](../blog/2026/08/23/ai-engineering-radar)
+### [2026-08-24 AI Engineering Radar](/blog/2026/08/24/ai-engineering-radar)
 
-- 한국: [토스증권 LLM 서빙 회고](https://toss.tech/article/tech_talk_talk_2)는 운영 장애를 읽을 자료, [Jikji](https://github.com/NomaDamas/jikji)는 문서 탐색 실험, [k-skill](https://github.com/NomaDamas/k-skill)은 필요한 스킬만 선별 검토할 후보입니다.
-- 일본: [Staddress MCP](https://zenn.dev/staddress/articles/b601f14a21c5c5)와 [PGroonga MCP](https://github.com/askdkc/pgroonga-mcp)는 일본 주소·검색 요구가 생겼을 때 검토합니다. 개인정보와 데이터베이스 권한 경계를 먼저 확인해야 합니다.
-- 국제: [MARM](https://github.com/Lyellr88/marm-memory), [Beet Code](https://github.com/Mesutcydev/beet-code), [Nika](https://github.com/supernovae-st/nika)는 각각 기억, 로컬 모델, 반복 워크플로의 작은 비교 실험 후보입니다.
+한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
 
-### [AI가 업무를 바꾼 세 장면과 아직 답하지 못한 질문](../blog/2026/08/23/ax-intelligence)
+- 기준일: 2026-08-24
+- 분류: AI 엔지니어링
+- 추천: **작게 실험**
+- 근거 레코드: 1건 — `grok-bot-official-workflow-docs`
+- 공개 원문: [원문 1](https://docs.x.ai/grok-bot/overview)
 
-- 한국 사례는 계약서 분석과 입력 초안을 에이전트가 맡고 담당자가 결과를 확인합니다. 공개된 시간 단축 수치는 클로즈드 베타 자체 보고입니다.
-- 일본 사례는 자유 생성의 실패를 오ント롤로지, 지식 그래프와 사람 교정으로 줄였습니다. 90% 절감은 확정 실적이 아니라 예상치입니다.
-- 국제 사례는 공청회 PDF 원본을 보존하고 AI가 요약·분류 초안을 만든 뒤 담당자가 전수 검토합니다. 감사된 시간·정확도 수치는 공개되지 않았습니다.
+### [지금 시험해볼 AI 엔지니어링 도구 8가지](/blog/2026/08/23/ai-engineering-radar)
 
-## 다음 행동
+한국·일본·국제 공개 자료 8건을 원문, 핵심 내용, 추천 이유, 주의할 점과 다음 실험까지 연결해 정리했습니다.
 
-1. `Jikji`를 비민감 문서에서 기존 검색과 비교합니다.
-2. `Nika`로 외부 쓰기가 없는 반복 요약 한 건만 재현합니다.
-3. `MARM`과 기존 메모리의 동일 질의 정확도·중복률을 비교합니다.
+- 기준일: 2026-08-23
+- 분류: AI 엔지니어링
+- 추천: **작게 실험**
+- 근거 레코드: 8건 — `toss-llm-serving`, `nomadamas-jikji`, `nomadamas-k-skill`, `staddress-mcp`, `pgroonga-mcp`, `marm-memory`, `beet-code`, `nika`
+- 공개 원문: [원문 1](https://toss.tech/article/tech_talk_talk_2) · [원문 2](https://github.com/NomaDamas/jikji) · [원문 3](https://github.com/NomaDamas/k-skill) · [원문 4](https://zenn.dev/staddress/articles/b601f14a21c5c5) · [원문 5](https://github.com/askdkc/pgroonga-mcp)
 
-어느 후보도 즉시 도입으로 승격하지 않았습니다.
+### [AI가 업무를 바꾼 세 장면과 아직 답하지 못한 질문](/blog/2026/08/23/ax-intelligence)
 
-## 근거와 한계
+신한투자증권, 미쓰비시UFJ은행, Nordre Follo 사례에서 바뀐 업무 흐름과 사람이 계속 맡는 책임을 비교합니다.
 
-- 항목별 사실 SoT는 [`intelligence/signals/2026/08/23/`](https://github.com/jonsoku-dev/grok-bot/tree/main/intelligence/signals/2026/08/23)에 있습니다.
-- `VERIFIED`는 공개 출처에 해당 사실·주장이 존재함을 확인했다는 뜻이며 독립 감사나 재현 성공을 뜻하지 않습니다.
-- GitHub 프로젝트의 기능·보안·성능 설명은 대부분 제작자 주장입니다. 설치 전에 현재 커밋, 라이선스, 권한과 의존성을 다시 확인해야 합니다.
-- 일본은 기준을 충족한 항목이 두 건뿐입니다. 숫자를 맞추기 위해 약한 후보를 추가하지 않았습니다.
+- 기준일: 2026-08-23
+- 분류: AX 인텔리전스
+- 추천: **읽기**
+- 근거 레코드: 3건 — `shinhan-securities-contract-agent`, `mufg-ai-flowchart`, `nordre-follo-hearing-agent`
+- 공개 원문: [원문 1](https://www.yna.co.kr/view/AKR20260818061300017) · [원문 2](https://www.fnnews.com/news/202608181028437199) · [원문 3](https://www.itmedia.co.jp/enterprise/articles/2608/21/news019.html) · [원문 4](https://www.technologyrecord.com/article/nordre-follo-municipality-modernises-public-hearing-workflows-with-microsoft-copilot-studio) · [원문 5](https://www.atea.no/kundereferanser/norde-follo-kommune-1/?pid=3b1733d9-adef-4b74-8b69-2cedb52ea3ec)
+
+## 어떻게 읽을까
+
+- 제목과 설명으로 읽을 글을 고릅니다.
+- `추천`은 읽기·지켜보기·작게 실험 등 현재 판단이며 자동 도입 결정이 아닙니다.
+- 근거 레코드와 공개 원문은 주장을 다시 확인할 때 사용합니다.
+
+## 데이터와 글의 역할
+
+관찰·검증 세부 필드는 `intelligence/signals/**`에 보존합니다. 독자용 글은 그 데이터를 그대로 노출하지 않고 핵심 내용, 추천 이유, 주의할 점과 다음 단계로 편집합니다.
 
 ---
 
@@ -461,13 +474,13 @@ deterministic draft; it cannot overwrite an existing archive report.
 
 이번 목록에서 바로 도입할 도구는 없습니다. 대신 지금 하는 일과 가까운 후보 세 가지가 보였습니다. `nomadamas-jikji`는 문서 탐색 비용, `nika`는 반복 작업의 재현성, `marm-memory`는 에이전트 기억의 품질을 작은 실험으로 비교할 가치가 있습니다. 나머지는 읽기 또는 관찰 대상으로 남겼습니다.
 
-사실의 SoT는 frontmatter의 8개 YAML 레코드이고, 이 글은 그 레코드를 사람이 읽기 쉽게 묶은 해설입니다.
+이 글은 검증된 근거 레코드 8건을 사람이 읽기 쉽게 묶은 해설입니다.
 
 <!-- truncate -->
 
 ## 왜 중요한가
 
-도구 이름만 모은 목록은 금방 낡습니다. 실제로 도움이 되려면 무엇을 확인했고, 왜 관심을 가졌으며, 어느 조건에서 버릴지를 함께 남겨야 합니다. 이번 레코드는 원문 URL, 관측 사실, 해석, 위험, 판단 이유와 가장 작은 실험을 분리했습니다.
+도구 이름만 모은 목록은 금방 낡습니다. 실제로 도움이 되려면 무엇을 확인했고, 왜 관심을 가졌으며, 어느 조건에서 버릴지를 함께 남겨야 합니다. 이번 글은 원문 URL, 핵심 내용, 추천 이유, 주의할 점과 가장 작은 실험을 연결했습니다.
 
 ## 한국
 
@@ -552,7 +565,7 @@ deterministic draft; it cannot overwrite an existing archive report.
 
 ## 근거
 
-각 항목의 구조화된 관측·판단은 frontmatter의 `records` 경로에 있습니다. 공개 원문은 본문 제목 링크와 `sourceLinks`에서 바로 열 수 있습니다.
+세부 검증 정보는 근거 레코드에 보존했고, 공개 원문은 각 항목의 제목 링크에서 바로 열 수 있습니다.
 
 ---
 
@@ -561,7 +574,7 @@ deterministic draft; it cannot overwrite an existing archive report.
 
 세 사례의 공통점은 “AI를 썼다”가 아닙니다. 사람이 하던 긴 문서 읽기와 구조화 초안을 에이전트가 맡고, 원본 보존·검토·최종 판단은 사람에게 남겼습니다. 반대로 세 사례 모두 공개 수치만으로 정확도와 총비용을 판단하기는 어렵습니다.
 
-아래 세 YAML 레코드가 사실의 SoT이고, 본문은 업무 흐름과 판단을 비교한 해설입니다.
+이 글은 검증된 근거 레코드 세 건을 바탕으로 업무 흐름과 판단을 비교한 해설입니다.
 
 <!-- truncate -->
 
@@ -620,20 +633,20 @@ AX 사례는 도구 이름보다 “업무가 전후로 어떻게 달라졌는�
 
 ## 근거
 
-각 사례의 이전·이후 워크플로, 사람 책임, 거버넌스, 평가, 수치, 한계와 검증 URL은 frontmatter의 `records` 세 파일에 보존했습니다.
+각 사례의 이전·이후 흐름, 사람 책임, 평가, 수치, 한계와 검증 URL은 근거 레코드에 보존했습니다.
 
 ---
 
 ## 2026-08-24 AI Engineering Radar
 
 
-이 글은 검증된 항목별 SoT 레코드에서 생성했습니다. 사실을 수정하려면 글이 아니라 원본 레코드와 검증 근거를 먼저 고쳐야 합니다.
+이 글은 검증된 공개 자료와 근거 레코드에서 작성했습니다. 내용을 고칠 때는 글보다 근거를 먼저 바로잡습니다.
 
 <!-- truncate -->
 
 ## 왜 중요한가
 
-이 보고서는 이름을 나열하지 않고 관측 사실, 판단, 한계와 다음 행동을 함께 남깁니다.
+이 글은 확인된 핵심 내용과 추천 이유, 주의할 점, 다음 단계를 함께 보여줍니다.
 
 ## 한국
 
@@ -649,29 +662,14 @@ EMPTY — 이 권역에서 기준을 충족한 검증 레코드가 없습니다.
 
 2026-08-11에 갱신된 xAI Grok Bot 공식 문서는 사용자 계정 단위 공유 영속 클라우드 VM(파일·브라우저 세션·앱 로그인 공유, Bot별 화면), Bot 간 메시징·핸드오프, Skill(재사용 절차)·Routine(스케줄/이벤트)을 제품 기본 모델로 서술한다. 다 Bot이 한 컴퓨터에서 협업하는 이 저장소 운영에 맞닿은 공식 워크플로 신호다.
 
-- 관측:
-  - https://docs.x.ai/grok-bot/overview HTML/JSON-LD: datePublished=2026-08-11T00:00:00Z, dateModified=2026-08-11T00:00:00Z; UI 'Last updated: August 11, 2026' (re-fetched 2026-08-24 for measurement regional-pipeline-20260824-grokbot-docs-v2).
-  - https://docs.x.ai/grok-bot/skills-routines-and-automations HTML/JSON-LD: datePublished=2026-08-11T00:00:00Z, dateModified=2026-08-11T00:00:00Z; UI 'Last updated: August 11, 2026'.
-  - Overview: each Bot runs on a persistent cloud VM with browser, filesystem, terminal; connectors/MCP when available; computer use for apps without clean API.
-  - Overview 'Bots share one computer': all Bots share one user-scoped persistent cloud computer (files, browser sessions, app logins); isolated to account not individual Bot; each Bot has its own screen; parallel use without separate security boundaries.
-  - Overview: Bots message each other, share context in threads/group chats, pass ownership; can learn workflows from live demonstration and persist as routine.
-  - Skills/routines: skill = reusable instructions; routine = schedule or supported event trigger; skills available across Bots; Settings→Plugins; / for skills, @ for Bots/groups/routines/connectors.
-  - Teach a task: up to ten minutes visible computer interaction, no mic audio; draft skill; secure handoff for credentials; test before scheduling.
-  - Routines: owning Bot, schedule/timezone, inputs, expected result, approval boundary, missing-source policy; background while laptop closed; Cursor account event integrations separate from Slack/GitHub plugins.
-  - Limits: up to 50 routines per Bot; 20 most recent run records kept; delete immediate no undo.
-  - Trust design: preparation before execution; approval for send/purchase/delete/publish/production changes.
-- 판단: `READ` — 공식 Grok Bot 문서가 공유 영속 VM·Bot 메시징·Skill/Routine·승인 게이트를 제품 기본값으로 명시해 Grok·agent skills·harness interest 및 다 Bot 레이더 운영과 직접 맞닿음. 이미 플랫폼 사용 중이라 ADOPT/EXPERIMENT보다 문서 흡수(READ). 지리 비가중.
-- 한계:
-  - datePublished/dateModified are calendar midnight UTC (2026-08-11T00:00:00Z); sub-day timestamp not provided.
-  - originalTitle uses overview H1 'Grok Bot'; companion page title is 'Skills and routines'.
-  - measurementId: regional-pipeline-20260824-grokbot-docs-v2
-  - expectedCanonicalPath: intelligence/signals/2026/08/24/regional-signal/international/grok-bot-official-workflow-docs.yaml
-  - X/paid APIs unused; no GitHub write in discovery.
+- 왜 중요한가: 계정 단위 공유 컴퓨터·Bot별 화면·Skill 전역 가용·Routine·승인 후 실행 경계를 운영 체크리스트로 고정할 수 있다.
+- 추천: **읽기** — 공식 Grok Bot 문서가 공유 영속 VM·Bot 메시징·Skill/Routine·승인 게이트를 제품 기본값으로 명시해 Grok·agent skills·harness interest 및 다 Bot 레이더 운영과 직접 맞닿음. 이미 플랫폼 사용 중이라 ADOPT/EXPERIMENT보다 문서 흡수(READ). 지리 비가중.
+- 주의할 점:
   - 공유 VM은 Bot 간 별도 보안 경계가 없음(문서 명시).
   - 문서 브랜드 SpaceXAI Docs vs author xAI 표기 불일치.
   - datePublished/Modified가 UTC 자정 placeholder라 당일 시각 미확인.
   - 이벤트 트리거가 Cursor 계정 연동에 묶임.
-- 다음 행동: overview·skills-routines·approvals 페이지만 읽고 현재 Radar Bot의 Skill/Routine/승인 게이트를 1:1 대조. 새 Routine·외부 게시·GitHub/SoT 쓰기 없음.
+- 다음 단계: overview·skills-routines·approvals 페이지만 읽고 현재 Radar Bot의 Skill/Routine/승인 게이트를 1:1 대조. 새 Routine·외부 게시·GitHub/SoT 쓰기 없음.
 
 ## 판단
 
@@ -683,7 +681,7 @@ EMPTY — 이 권역에서 기준을 충족한 검증 레코드가 없습니다.
 
 ## 근거
 
-frontmatter의 `records`가 항목별 사실 SoT이며 `sourceLinks`는 독자가 직접 열 수 있는 공개 원문입니다.
+각 항목은 검증된 근거 레코드와 독자가 직접 열 수 있는 공개 원문에 연결되어 있습니다.
 
 ---
 
