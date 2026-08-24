@@ -261,7 +261,7 @@ EMPTY — 이 권역에서 기준을 충족한 검증 레코드가 없습니다.
 
 2026-08-11에 갱신된 xAI Grok Bot 공식 문서는 사용자 계정 단위 공유 영속 클라우드 VM(파일·브라우저 세션·앱 로그인 공유, Bot별 화면), Bot 간 메시징·핸드오프, Skill(재사용 절차)·Routine(스케줄/이벤트)을 제품 기본 모델로 서술한다. 다 Bot이 한 컴퓨터에서 협업하는 이 저장소 운영에 맞닿은 공식 워크플로 신호다.
 
-- 왜 중요한가: 계정 단위 공유 컴퓨터·Bot별 화면·Skill 전역 가용·Routine·승인 후 실행 경계를 운영 체크리스트로 고정할 수 있다.
+- 왜 중요한가: 계정 단위 공유 컴퓨터·Bot별 화면·Skill 전역 가용·Routine(스케줄/Cursor 이벤트)·데모→Skill→승인 후 실행 경계를 운영 체크리스트로 고정.
 - 추천: **읽기** — 공식 Grok Bot 문서가 공유 영속 VM·Bot 메시징·Skill/Routine·승인 게이트를 제품 기본값으로 명시해 Grok·agent skills·harness interest 및 다 Bot 레이더 운영과 직접 맞닿음. 이미 플랫폼 사용 중이라 ADOPT/EXPERIMENT보다 문서 흡수(READ). 지리 비가중.
 - 주의할 점:
   - 공유 VM은 Bot 간 별도 보안 경계가 없음(문서 명시).
@@ -269,6 +269,42 @@ EMPTY — 이 권역에서 기준을 충족한 검증 레코드가 없습니다.
   - datePublished/Modified가 UTC 자정 placeholder라 당일 시각 미확인.
   - 이벤트 트리거가 Cursor 계정 연동에 묶임.
 - 다음 단계: overview·skills-routines·approvals 페이지만 읽고 현재 Radar Bot의 Skill/Routine/승인 게이트를 1:1 대조. 새 Routine·외부 게시·GitHub/SoT 쓰기 없음.
+
+### [gitbook-downloader](https://github.com/RohannShetty/gitbook-downloader) — `rohann-shetty-gitbook-downloader-docusaurus-llms-txt`
+
+GitBook, Mintlify, Docusaurus, ReadTheDocs 문서를 LLM용 Markdown, RAG JSONL, llms.txt, PDF로 변환하는 CLI/GUI/FastMCP 도구.
+
+- 왜 중요한가: 문서 포털→llms.txt/book.md/pages + Cursor/Claude Code MCP로 search/read/download 자동화.
+- 추천: **작게 실험** — DocHarvest가 Docusaurus 포함 문서를 Markdown·llms.txt·RAG JSONL로 컴파일하고 FastMCP 8툴을 노출해 coding agents·MCP·context interest에 직접. 창 직전 push·pip/MCP 경로 명확. 인기 비가중.
+- 주의할 점:
+  - 크롤/추출 정확도는 사이트별 편차.
+  - 개인 유지 프로젝트; API 변경 가능.
+  - 대량 크롤 시 ToS·부하.
+- 다음 단계: \`pip install gitbook-downloader\` 후 공개 Docusaurus docs URL 하나 \`gitbook-dl capture \<url\>\`로 llms.txt 생성만 확인. 외부 게시 없음.
+
+### [curated-wiki-integrations](https://github.com/SupersuitUp/curated-wiki-integrations) — `supersuitup-curated-wiki-integrations-llms-txt`
+
+Docusaurus 위키용 드롭인 레시피 저장소로, llms.txt 생성기를 포함한다.
+
+- 왜 중요한가: Docusaurus 3에 llms.txt 생성기를 복사해 넣는 INTEGRATE.md 패턴 참고.
+- 추천: **지켜보기** — Docusaurus용 generate-llms-txt 드롭인 레시피는 키워드에 맞으나 레시피 뱅크 일부이고 MCP/에이전트 런타임이 아님. 최근 push는 8/10, 스타 비가중. README는 private 취지를 말하나 공개 확인됨.
+- 주의할 점:
+  - 공개 레포인데 README가 private trust boundary를 전제.
+  - TypeScript primary language 미재현(패킷 contradictions).
+  - 단일 레시피 품질·유지보수 깊이 불명.
+- 다음 단계: integrations/generate-llms-txt/INTEGRATE.md만 읽고 출력 경로·빌드 훅을 확인. 설치·게시 없음.
+
+### [pokedocs](https://github.com/wbaxterh/pokedocs) — `wbaxterh-pokedocs-docusaurus-llms-txt`
+
+Docusaurus 기반 에이전트 네이티브 문서 프레임워크로, 페이지별 llms.txt와 마크다운 트윈 생성을 표방한다.
+
+- 왜 중요한가: 빌드타임 llms.txt+markdown twins 아이디어 관찰.
+- 추천: **지켜보기** — 페이지별 llms.txt·마크다운 트윈을 표방하는 Docusaurus 에이전트 네이티브 프레임이나, main 활동은 7/31이고 8/10 push는 빈 브랜치. 자동화 증거보다 프레임 주장 비중.
+- 주의할 점:
+  - pushed\_at가 빈 브랜치 생성 시각(패킷 contradictions).
+  - main Atom 최신 7/31로 창 내 실질 커밋 약함.
+  - language 문자열 미재현.
+- 다음 단계: README의 llms.txt 생성 주장만 확인. 마이그레이션 실험 보류.
 
 ## 판단
 
@@ -298,8 +334,8 @@ EMPTY — 이 권역에서 기준을 충족한 검증 레코드가 없습니다.
 - 기준일: 2026-08-24
 - 분류: AI 엔지니어링
 - 추천: **작게 실험**
-- 근거 레코드: 1건 — `grok-bot-official-workflow-docs`
-- 공개 원문: [원문 1](https://docs.x.ai/grok-bot/overview)
+- 근거 레코드: 4건 — `grok-bot-official-workflow-docs`, `rohann-shetty-gitbook-downloader-docusaurus-llms-txt`, `supersuitup-curated-wiki-integrations-llms-txt`, `wbaxterh-pokedocs-docusaurus-llms-txt`
+- 공개 원문: [원문 1](https://docs.x.ai/grok-bot/overview) · [원문 2](https://github.com/RohannShetty/gitbook-downloader) · [원문 3](https://github.com/SupersuitUp/curated-wiki-integrations) · [원문 4](https://github.com/wbaxterh/pokedocs)
 
 ### [지금 시험해볼 AI 엔지니어링 도구 8가지](/blog/2026/08/23/ai-engineering-radar)
 

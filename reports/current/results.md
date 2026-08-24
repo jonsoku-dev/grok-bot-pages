@@ -10,6 +10,9 @@ evidence:
   - "reports/archive/2026/08/23/ax-intelligence.md"
 sourceLinks:
   - "https://docs.x.ai/grok-bot/overview"
+  - "https://github.com/RohannShetty/gitbook-downloader"
+  - "https://github.com/SupersuitUp/curated-wiki-integrations"
+  - "https://github.com/wbaxterh/pokedocs"
   - "https://toss.tech/article/tech_talk_talk_2"
   - "https://github.com/NomaDamas/jikji"
   - "https://github.com/NomaDamas/k-skill"
@@ -25,6 +28,9 @@ sourceLinks:
   - "https://www.atea.no/kundereferanser/norde-follo-kommune-1/?pid=3b1733d9-adef-4b74-8b69-2cedb52ea3ec"
 records:
   - "intelligence/signals/2026/08/24/regional-signal/international/grok-bot-official-workflow-docs.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/international/rohann-shetty-gitbook-downloader-docusaurus-llms-txt.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/international/supersuitup-curated-wiki-integrations-llms-txt.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/international/wbaxterh-pokedocs-docusaurus-llms-txt.yaml"
   - "intelligence/signals/2026/08/23/regional-signal/korea/toss-llm-serving.yaml"
   - "intelligence/signals/2026/08/23/regional-signal/korea/nomadamas-jikji.yaml"
   - "intelligence/signals/2026/08/23/regional-signal/korea/nomadamas-k-skill.yaml"
@@ -55,8 +61,8 @@ records:
 - 기준일: 2026-08-24
 - 분류: AI 엔지니어링
 - 추천: **작게 실험**
-- 근거 레코드: 1건 — `grok-bot-official-workflow-docs`
-- 공개 원문: [원문 1](https://docs.x.ai/grok-bot/overview)
+- 근거 레코드: 4건 — `grok-bot-official-workflow-docs`, `rohann-shetty-gitbook-downloader-docusaurus-llms-txt`, `supersuitup-curated-wiki-integrations-llms-txt`, `wbaxterh-pokedocs-docusaurus-llms-txt`
+- 공개 원문: [원문 1](https://docs.x.ai/grok-bot/overview) · [원문 2](https://github.com/RohannShetty/gitbook-downloader) · [원문 3](https://github.com/SupersuitUp/curated-wiki-integrations) · [원문 4](https://github.com/wbaxterh/pokedocs)
 
 ### [지금 시험해볼 AI 엔지니어링 도구 8가지](/blog/2026/08/23/ai-engineering-radar)
 
