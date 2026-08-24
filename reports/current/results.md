@@ -11,10 +11,17 @@ evidence:
 sourceLinks:
   - "https://github.com/agentskills/agentskills"
   - "https://docs.x.ai/grok-bot/overview"
+  - "https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/"
   - "https://github.com/RohannShetty/gitbook-downloader"
+  - "https://github.com/snapsynapse/skill-provenance"
   - "https://github.com/SupersuitUp/curated-wiki-integrations"
+  - "https://github.com/vercel-labs/skills"
   - "https://github.com/wbaxterh/pokedocs"
+  - "https://code.claude.com/docs/ja/discover-plugins"
+  - "https://data-newbie.tistory.com/1163"
+  - "https://duckssi.tistory.com/423"
   - "https://inma.tistory.com/210"
+  - "https://best-onedevyjuns.tistory.com/156"
   - "https://toss.tech/article/tech_talk_talk_2"
   - "https://github.com/NomaDamas/jikji"
   - "https://github.com/NomaDamas/k-skill"
@@ -31,10 +38,17 @@ sourceLinks:
 records:
   - "intelligence/signals/2026/08/24/regional-signal/international/agentskills-open-standard-skill-md.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/grok-bot-official-workflow-docs.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/international/nvidia-skillevaluator-agent-skill-performance.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/rohann-shetty-gitbook-downloader-docusaurus-llms-txt.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/international/snapsynapse-skill-provenance-v6-1-0.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/supersuitup-curated-wiki-integrations-llms-txt.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/international/vercel-labs-skills-cli-find-add-update.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/wbaxterh-pokedocs-docusaurus-llms-txt.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/japan/japan-claude-discover-plugins-marketplace-autoupdate.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-data-newbie-radar-skillevaluator-20260822.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-duckssi-claude-plugin-marketplace-command-source.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-inma-claude-codex-agents-skills-config.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-tistory-skill-plugin-marketplace-internal-standard.yaml"
   - "intelligence/signals/2026/08/23/regional-signal/korea/toss-llm-serving.yaml"
   - "intelligence/signals/2026/08/23/regional-signal/korea/nomadamas-jikji.yaml"
   - "intelligence/signals/2026/08/23/regional-signal/korea/nomadamas-k-skill.yaml"
@@ -65,8 +79,8 @@ records:
 - 기준일: 2026-08-24
 - 분류: AI 엔지니어링
 - 추천: **작게 실험**
-- 근거 레코드: 6건 — `agentskills-open-standard-skill-md`, `grok-bot-official-workflow-docs`, `rohann-shetty-gitbook-downloader-docusaurus-llms-txt`, `supersuitup-curated-wiki-integrations-llms-txt`, `wbaxterh-pokedocs-docusaurus-llms-txt`, `korea-inma-claude-codex-agents-skills-config`
-- 공개 원문: [원문 1](https://github.com/agentskills/agentskills) · [원문 2](https://docs.x.ai/grok-bot/overview) · [원문 3](https://github.com/RohannShetty/gitbook-downloader) · [원문 4](https://github.com/SupersuitUp/curated-wiki-integrations) · [원문 5](https://github.com/wbaxterh/pokedocs)
+- 근거 레코드: 13건 — `agentskills-open-standard-skill-md`, `grok-bot-official-workflow-docs`, `nvidia-skillevaluator-agent-skill-performance`, `rohann-shetty-gitbook-downloader-docusaurus-llms-txt`, `snapsynapse-skill-provenance-v6-1-0`, `supersuitup-curated-wiki-integrations-llms-txt`, `vercel-labs-skills-cli-find-add-update`, `wbaxterh-pokedocs-docusaurus-llms-txt`, `japan-claude-discover-plugins-marketplace-autoupdate`, `korea-data-newbie-radar-skillevaluator-20260822`, `korea-duckssi-claude-plugin-marketplace-command-source`, `korea-inma-claude-codex-agents-skills-config`, `korea-tistory-skill-plugin-marketplace-internal-standard`
+- 공개 원문: [원문 1](https://github.com/agentskills/agentskills) · [원문 2](https://docs.x.ai/grok-bot/overview) · [원문 3](https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/) · [원문 4](https://github.com/RohannShetty/gitbook-downloader) · [원문 5](https://github.com/snapsynapse/skill-provenance)
 
 ### [지금 시험해볼 AI 엔지니어링 도구 8가지](/blog/2026/08/23/ai-engineering-radar)
 
