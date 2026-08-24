@@ -5,10 +5,26 @@ action: "EXPERIMENT"
 artifactRole: "reader_facing_derivative"
 publicationChannel: "document"
 evidence:
+  - "reports/archive/2026/08/25/ai-engineering-radar.md"
   - "reports/archive/2026/08/24/ai-engineering-radar.md"
   - "reports/archive/2026/08/23/ai-engineering-radar.md"
   - "reports/archive/2026/08/23/ax-intelligence.md"
 sourceLinks:
+  - "https://github.com/Lyellr88/marm-memory/releases/tag/v2.44.0"
+  - "https://github.com/microsoft/agent-lightning/releases/tag/v1.0.1"
+  - "https://openai.com/index/gpt-5-6-in-kiro"
+  - "https://github.com/xhluca/session-migrate/releases/tag/v0.7.1"
+  - "https://yegge.ai/essays/fences-not-sandboxes/"
+  - "https://developers.cyberagent.co.jp/blog/archives/65362/"
+  - "https://github.com/Nagi-Inaba/pmgs-reference/releases/tag/v0.5.0"
+  - "https://github.com/shuji-bonji/pdf-reader-mcp/releases/tag/v0.12.0"
+  - "https://github.com/takushio2525/tako/releases/tag/v0.7.8"
+  - "https://zenn.dev/clopy/articles/codex-ignore-flags-user-skill-boundary"
+  - "https://zenn.dev/estie/articles/06fc8455ae24cb"
+  - "https://zenn.dev/marvelousu/articles/windows-mcp-vs-computer-use"
+  - "https://zenn.dev/pepabo/articles/even-terminal-lolipop-ztl"
+  - "https://zenn.dev/uehaj/articles/claude-code-supervisor-agent-view"
+  - "https://github.com/NomaDamas/jikji/commit/5cfabeafaee2bbb32e10eb571bcc21e132a2cbdc"
   - "https://github.com/agentskills/agentskills"
   - "https://docs.x.ai/grok-bot/overview"
   - "https://arize.com/blog/how-cheap-models-changed-multi-agent-economics/"
@@ -53,6 +69,21 @@ sourceLinks:
   - "https://www.technologyrecord.com/article/nordre-follo-municipality-modernises-public-hearing-workflows-with-microsoft-copilot-studio"
   - "https://www.atea.no/kundereferanser/norde-follo-kommune-1/?pid=3b1733d9-adef-4b74-8b69-2cedb52ea3ec"
 records:
+  - "intelligence/signals/2026/08/25/regional-signal/international/lyellr88-marm-memory-v2-44-0.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/international/microsoft-agent-lightning-v1-0-1.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/international/openai-gpt-5-6-in-kiro-2026-08-24.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/international/xhluca-session-migrate-v0-7-1.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/international/yegge-fences-not-sandboxes-2026-08-24.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/japan/cyberagent-aja-pam-ai-agent-guardrails.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/japan/github-nagi-inaba-pmgs-reference-v0-5-0.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/japan/github-shuji-bonji-pdf-reader-mcp-v0-12-0.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/japan/github-takushio2525-tako-v0-7-8.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/japan/zenn-clopy-codex-ignore-user-skills.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/japan/zenn-estie-claude-code-cockpit.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/japan/zenn-marvelousu-windows-mcp-vs-computer-use.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/japan/zenn-pepabo-even-g2-ztl-codex-claude.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/japan/zenn-uehaj-claude-code-supervisor-agent-view.yaml"
+  - "intelligence/signals/2026/08/25/regional-signal/korea/github-nomadamas-jikji-native-gui-5cfabea.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/agentskills-open-standard-skill-md.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/grok-bot-official-workflow-docs.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-arize-orchestrator-executor-cheap-models.yaml"
@@ -98,13 +129,23 @@ records:
 
 # 지금 읽을 결과
 
-> 현재 공개된 인텔리전스 3편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
+> 현재 공개된 인텔리전스 4편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
 
 # 지금 읽을 결과
 
-현재 공개된 인텔리전스 3편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
+현재 공개된 인텔리전스 4편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
 
 ## 최신 인텔리전스
+
+### [2026-08-25 AI Engineering Radar](/blog/2026/08/25/ai-engineering-radar)
+
+한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
+
+- 기준일: 2026-08-25
+- 분류: AI 엔지니어링
+- 추천: **작게 실험**
+- 근거 레코드: 15건 — `lyellr88-marm-memory-v2-44-0`, `microsoft-agent-lightning-v1-0-1`, `openai-gpt-5-6-in-kiro-2026-08-24`, `xhluca-session-migrate-v0-7-1`, `yegge-fences-not-sandboxes-2026-08-24`, `cyberagent-aja-pam-ai-agent-guardrails`, `github-nagi-inaba-pmgs-reference-v0-5-0`, `github-shuji-bonji-pdf-reader-mcp-v0-12-0`, `github-takushio2525-tako-v0-7-8`, `zenn-clopy-codex-ignore-user-skills`, `zenn-estie-claude-code-cockpit`, `zenn-marvelousu-windows-mcp-vs-computer-use`, `zenn-pepabo-even-g2-ztl-codex-claude`, `zenn-uehaj-claude-code-supervisor-agent-view`, `github-nomadamas-jikji-native-gui-5cfabea`
+- 공개 원문: [원문 1](https://github.com/Lyellr88/marm-memory/releases/tag/v2.44.0) · [원문 2](https://github.com/microsoft/agent-lightning/releases/tag/v1.0.1) · [원문 3](https://openai.com/index/gpt-5-6-in-kiro) · [원문 4](https://github.com/xhluca/session-migrate/releases/tag/v0.7.1) · [원문 5](https://yegge.ai/essays/fences-not-sandboxes/)
 
 ### [2026-08-24 AI Engineering Radar](/blog/2026/08/24/ai-engineering-radar)
 

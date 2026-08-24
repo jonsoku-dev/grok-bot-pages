@@ -2405,3 +2405,1129 @@ risks:
 - 게시 7월말; 수정 7/29.
 smallestUsefulExperiment: marketplace.json 최소 스키마 절만 읽고 자사 git 카탈로그 초안과 대조. 게시 없음.
 ```
+
+## lyellr88-marm-memory-v2-44-0
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/25/regional-signal/international/lyellr88-marm-memory-v2-44-0.yaml
+- sha256: f5fa05040075ec4fb11715626fa50ed7bbe33bceca3f1587db1ee9ef8fdecf33
+- primaryUrl: https://github.com/Lyellr88/marm-memory/releases/tag/v2.44.0
+
+```yaml
+schemaVersion: regional-signal/v1
+id: lyellr88-marm-memory-v2-44-0
+collectionDate: '2026-08-25'
+primaryCategory: international
+relatedCategories: []
+originBasis: GitHub profile for Ryan Lyell (Lyellr88) lists home location Michigan,
+  USA; marm-memory is an English local-first MCP memory layer, not a KR/JP org.
+originalTitle: 'v2.44.0: Event-Driven Code Graph Auto-Indexing and Evidence-Based
+  Memory Links'
+originalLanguage: en
+koreanSummary: marm-memory v2.44.0이 코드 그래프 자동 인덱싱을 고정 폴링에서 파일시스템 워처 기반 이벤트 구동으로 바꿨다(저장·커밋·브랜치
+  전환·머지 후 수 초 내, 디바운스·재시작 내구성). 같은 태그의 v2.43.0은 메모리 엔티티와 코드 심볼을 모호하지 않은 증거로만 연결한다고
+  적는다.
+source: official_release
+canonicalId: Lyellr88/marm-memory@v2.44.0
+primaryUrl: https://github.com/Lyellr88/marm-memory/releases/tag/v2.44.0
+author: Lyellr88
+project: Lyellr88/marm-memory
+publishedAt: '2026-08-24T10:52:26Z'
+observedFacts:
+- releases.atom updated 2026-08-24T10:52:26Z for tag v2.44.0; newer than skipped v2.41.1
+  (2026-08-22T11:12:06Z).
+- 'Notes say the tag ships two versions: v2.43.0 evidence-based memory–code links
+  and v2.44.0 event-driven indexing.'
+- 'v2.44.0: code graph auto-indexing wakes on save/commit/branch switch/merge via
+  a bundled filesystem watcher with debounce; git re-index trigger hashes the diff
+  against HEAD plus non-ignored untracked files; a periodic reconciliation pass remains
+  for missed events and non-git directories; watcher death is detected and rebuilt;
+  last successful index state is stored durably across restart; a worker that loses
+  the cross-process lease no longer records the repo as current.'
+- GRAPH_AUTO_INDEX_DEBOUNCE_SECONDS and GRAPH_AUTO_INDEX_RECONCILE_SECONDS replace
+  a fixed 30-second poll; old INTERVAL env vars kept as compatibility; 20 tests listed
+  for debounce, catch-up, watcher fallback, lease-loss, and restart baseline.
+- 'v2.43.0: automatic memory–code links only after unambiguous memory-scope-to-repository
+  binding and a unique exact symbol match; missing/ambiguous/unavailable results are
+  not guessed; link evidence stores resolution method, times, symbol, and path.'
+interpretation: Local MCP memory/context layer moving code-graph indexing from poll
+  to evented git/fs triggers, with fail-closed evidence links between memories and
+  symbols. Operational detail is in the notes; no adoption metric is claimed.
+relatedRefs:
+- https://github.com/Lyellr88/marm-memory
+- https://github.com/Lyellr88/marm-memory/releases/tag/v2.42.0
+sourceWarnings:
+- Single GitHub tag bundles v2.43.0 and v2.44.0 notes; publishedAt is the v2.44.0
+  atom updated time.
+- Author location is a GitHub profile field, not a corporate HQ filing.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/Lyellr88/marm-memory/releases/tag/v2.44.0
+- https://github.com/Lyellr88/marm-memory/releases.atom
+verifiedAt: '2026-08-24T21:52:00Z'
+contradictions: []
+judgeAction: EXPERIMENT
+judgeRationale: 로컬 퍼스트 MCP 메모리가 코드 그래프 인덱싱을 30초 폴링에서 fs/git 이벤트 구동으로 바꾸고, 메모리–심볼 링크를
+  모호하면 만들지 않는 fail-closed 증거로 고정. MCP·context engineering에 직접 맞음. 이전 v2.41.1 EXPERIMENT는
+  skip. 이번 태그는 운영적으로 다른 증분이라 중복 IGNORE 아님. 스타/지리가중 없음.
+expectedBenefit: 저장·커밋·브랜치 전환 후 수 초 내 그래프 갱신과, 추측 없는 메모리–코드 링크로 에이전트 컨텍스트 오염을 줄임.
+switchingCost: 로컬 MCP 서버 추가면 중간. 기존 메모리/인덱스 레이어와 병행 가능. 레포 전체 자동 인덱싱을 켜면 watcher·리스
+  운영 부담이 붙음.
+maturity: developing
+risks:
+- 한 태그에 v2.43.0과 v2.44.0 노트가 묶여 있음.
+- 워처 누락·리스 상실·비git 디렉터리 경로가 남고 주기적 reconcile에 의존.
+- 로컬 코드 그래프가 시크릿·생성물을 인덱싱할 수 있음.
+- 이전 v2.41.1 실험이 skip된 같은 프로젝트 후속이라 중복 실험 가능.
+smallestUsefulExperiment: 한 로컬 레포에 v2.44.0만 붙여 파일 저장 1회 후 그래프 갱신과 모호 심볼에서 링크가 안 생기는지만
+  확인. 외부 게시·SoT 쓰기 없음.
+recordStatus: approved
+```
+
+## microsoft-agent-lightning-v1-0-1
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/25/regional-signal/international/microsoft-agent-lightning-v1-0-1.yaml
+- sha256: c6549c26e1f9cb420fe24a98eae4138681d9f9ce0f0a61122b01ee8e2e1b22f4
+- primaryUrl: https://github.com/microsoft/agent-lightning/releases/tag/v1.0.1
+
+```yaml
+schemaVersion: regional-signal/v1
+id: microsoft-agent-lightning-v1-0-1
+collectionDate: '2026-08-25'
+primaryCategory: international
+relatedCategories: []
+originBasis: Microsoft official GitHub release on microsoft/agent-lightning; US multinational
+  org, not KR/JP.
+originalTitle: Agent Lightning v1.0.1
+originalLanguage: en
+koreanSummary: Microsoft Agent Lightning v1.0.1이 Agent Lightning Skill의 첫 공식 릴리스라고
+  명시. 편집 가능한 에이전트와 벤치마크를 주면 코딩 에이전트가 프롬프트·도구·워크플로·모델·추론 설정을 측정 반복으로 개선하도록 안내하며, Claude
+  Code·Codex·GitHub Copilot에 gh skill install로 설치한다고 적는다.
+source: official_release
+canonicalId: microsoft/agent-lightning@v1.0.1
+primaryUrl: https://github.com/microsoft/agent-lightning/releases/tag/v1.0.1
+author: microsoft
+project: microsoft/agent-lightning
+publishedAt: '2026-08-24T09:45:48Z'
+observedFacts:
+- GitHub releases.atom updated 2026-08-24T09:45:48Z for tag v1.0.1 on microsoft/agent-lightning.
+- Release notes state v1.0.1 "marks the first official release of the Agent Lightning
+  Skill, which helps coding agents optimize other AI agents."
+- 'Notes instruct: provide an editable agent and a benchmark; the skill guides systematic
+  improvements to prompts, tools, workflows, models, and reasoning settings, balancing
+  accuracy, cost, latency, and reliability through measured iteration.'
+- 'Install line given for Claude Code, Codex, or GitHub Copilot: `gh skill install
+  microsoft/agent-lightning agent-lightning --agent <agent>`.'
+- Notes also mention strengthened CI, packaging, release automation, documentation,
+  and benchmark reporting.
+- Prior tag v1.0.0 is dated 2026-08-17T04:48:12Z (before this window) and describes
+  RL training with the deployment harness, not this Skill packaging.
+interpretation: 'In-window signal is Agent Skills packaging: a coding-agent skill
+  that treats eval/benchmark loops as the way to improve other agents. v1.0.0 training
+  claims are out of window and are not used as the new fact.'
+relatedRefs:
+- https://github.com/microsoft/agent-lightning
+- https://github.com/microsoft/agent-lightning/releases.atom
+sourceWarnings:
+- Skill effectiveness, benchmark gains, and install success are not independently
+  measured here.
+- v1.0.0 (2026-08-17) SWE-bench numbers in older notes are outside the window.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/microsoft/agent-lightning/releases/tag/v1.0.1
+- https://github.com/microsoft/agent-lightning/releases.atom
+verifiedAt: '2026-08-24T21:52:00Z'
+contradictions: []
+judgeAction: EXPERIMENT
+judgeRationale: 공식 Agent Lightning Skill 첫 릴리스가 코딩 에이전트(Claude Code·Codex·Copilot)로
+  다른 에이전트의 프롬프트·도구·워크플로·모델·추론을 벤치 루프로 개선하라고 명시. Agent Skills·evaluation·harness interest에
+  직접 맞음. 효과 수치는 미측정이고 v1.0.0 RL/SWE-bench는 창 밖이라 ADOPT 아님. 브랜드 비가중. 이 패킷은 international
+  5/5이며 korea 동창은 jikji 로컬 검색 하네스, japan 대응 후보는 이 핸드오프에 없음.
+expectedBenefit: 편집 가능한 에이전트+벤치를 주면 코딩 에이전트가 측정 반복으로 최적화하는 스킬 루프. `gh skill install
+  microsoft/agent-lightning` 경로가 Claude Code/Codex에 바로 붙음.
+switchingCost: 스킬 설치 자체는 낮음. 벤치·편집 가능 에이전트 준비와 측정 루프는 중간. 기본 코딩 에이전트를 Lightning으로
+  바꾸라는 신호가 아님.
+maturity: early
+risks:
+- 스킬 효과·벤치 이득·설치 성공이 이 패스에서 미측정.
+- v1.0.0 학습/SWE-bench 주장을 창 안 사실로 쓰면 안 됨.
+- 다른 에이전트를 코딩 에이전트가 고치게 하면 회귀·비용 폭주 가능.
+smallestUsefulExperiment: 폐기 가능한 에이전트 한 개와 작은 벤치에 `gh skill install microsoft/agent-lightning
+  agent-lightning --agent <agent>`만 적용해 1회 측정 루프. 외부 게시·SoT 쓰기·채택 권고 없음.
+recordStatus: approved
+```
+
+## openai-gpt-5-6-in-kiro-2026-08-24
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/25/regional-signal/international/openai-gpt-5-6-in-kiro-2026-08-24.yaml
+- sha256: c267529960a057ea24d478df09140522432c4162b53cac13743215ed08e4a4be
+- primaryUrl: https://openai.com/index/gpt-5-6-in-kiro
+
+```yaml
+schemaVersion: regional-signal/v1
+id: openai-gpt-5-6-in-kiro-2026-08-24
+collectionDate: '2026-08-25'
+primaryCategory: international
+relatedCategories: []
+originBasis: OpenAI official news post (openai.com/index) about GPT-5.6 in AWS Kiro;
+  US multinational, not KR/JP.
+originalTitle: Advancing price-performance for developers with GPT‑5.6 in Kiro
+originalLanguage: en
+koreanSummary: OpenAI가 2026-08-24에 GPT-5.6 패밀리(Sol·Terra·Luna)를 소프트웨어 개발 에이전트 Kiro에
+  제공한다고 공식 발표. 스펙 기반 계획·코드베이스 컨텍스트·체크포인트 리뷰·property-based testing을 언급하고 OpenAI와 AWS가
+  Kiro 환경을 최적화했다고 적는다.
+source: technical_article
+canonicalId: openai.com/index/gpt-5-6-in-kiro
+primaryUrl: https://openai.com/index/gpt-5-6-in-kiro
+author: OpenAI
+project: OpenAI / Kiro
+publishedAt: '2026-08-24T12:00:00Z'
+observedFacts:
+- OpenAI news RSS item titled "Advancing price-performance for developers with GPT‑5.6
+  in Kiro" has pubDate mapping to 2026-08-24T12:00:00Z; HTML byline is "August 24,
+  2026" / Product / Author OpenAI.
+- Page states the GPT-5.6 model family is now available in Kiro, described as a software
+  development agent, including Sol, Terra, and Luna.
+- Listed Kiro uses include turning requirements into structured implementation plans,
+  multi-step coding tasks, spec-driven development, using codebase and team-standard
+  context, reviewing at checkpoints, and checking implementations with property-based
+  testing.
+- Page states OpenAI and AWS worked together to optimize the Kiro environment and
+  OpenAI models, and points readers to https://kiro.dev/.
+interpretation: Official availability announcement of a frontier model family inside
+  an existing coding-agent product (Kiro), with spec/context/eval workflow language.
+  Not evidence of quality or price-performance gains.
+relatedRefs:
+- https://openai.com/news/rss.xml
+- https://kiro.dev/
+sourceWarnings:
+- RSS timestamp is 12:00:00Z and may be a noon default rather than exact publish time;
+  calendar date is August 24, 2026, still inside the window.
+- Price-performance, iteration-count, and quality claims are vendor copy and were
+  not measured in this pass.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://openai.com/index/gpt-5-6-in-kiro
+- https://openai.com/news/rss.xml
+verifiedAt: '2026-08-24T21:52:00Z'
+contradictions: []
+judgeAction: WATCH
+judgeRationale: GPT-5.6 패밀리(Sol·Terra·Luna)를 Kiro 코딩 에이전트에 넣었다는 공식 가용 공지. 스펙 계획·코드베이스
+  컨텍스트·체크포인트·PBT는 관심사와 인접하나 가격·성능·품질 주장은 벤더 카피. Codex/Claude Code/Grok 교체 근거 아님. 모델
+  브랜드 비가중.
+expectedBenefit: Kiro 쪽 spec/checkpoint/PBT 워크플로와 5.6 패밀리 라우팅이 공개 벤치에 나타나면 모델 라우팅
+  비교 재료가 됨.
+switchingCost: 공지 추적만이면 낮음. Kiro로 기본 코딩 에이전트를 바꾸면 높음.
+maturity: developing
+risks:
+- 가격대비 성능·반복 횟수·품질 주장은 미측정 벤더 카피.
+- RSS 시각 12:00:00Z는 noon 기본값일 수 있음(달력 날짜는 창 안).
+- 가용 공지를 품질 신호로 읽으면 과대평가.
+smallestUsefulExperiment: 공식 페이지만 읽고 spec/checkpoint/PBT 문장을 체크리스트로 옮김. Kiro 가입·모델
+  호출·외부 게시 없음.
+recordStatus: approved
+```
+
+## xhluca-session-migrate-v0-7-1
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/25/regional-signal/international/xhluca-session-migrate-v0-7-1.yaml
+- sha256: 00fb6cafe33c44105749577d0c5123dd63609380597d35bac390a169a26eada9
+- primaryUrl: https://github.com/xhluca/session-migrate/releases/tag/v0.7.1
+
+```yaml
+schemaVersion: regional-signal/v1
+id: xhluca-session-migrate-v0-7-1
+collectionDate: '2026-08-25'
+primaryCategory: international
+relatedCategories: []
+originBasis: GitHub profile for Xing Han Lu (xhluca) lists home location Canada and
+  organization McGill-NLP; not KR/JP.
+originalTitle: session-migrate 0.7.1
+originalLanguage: en
+koreanSummary: session-migrate 0.7.1이 창 안에서 Claude/Pi/Codex 간 제목 지정 세션 전송(smigrate
+  transfer --title)을 추가. 저장소 설명은 Claude Code·Codex·Pi·OpenCode·Copilot CLI·Antigravity·Cursor·Mistral
+  Vibe 세션을 마이그레이션한다고 한다.
+source: official_release
+canonicalId: xhluca/session-migrate@v0.7.1
+primaryUrl: https://github.com/xhluca/session-migrate/releases/tag/v0.7.1
+author: xhluca
+project: xhluca/session-migrate
+publishedAt: '2026-08-21T21:41:05Z'
+observedFacts:
+- releases.atom updated 2026-08-21T21:41:05Z for tag v0.7.1, 8 minutes after window
+  start 2026-08-21T21:33:00Z.
+- '0.7.1 notes: transfer a uniquely titled session with `smigrate transfer --title
+  "..." --from claude --to pi`; exact-title matches are case-insensitive; missing
+  and ambiguous titles fail closed.'
+- 0.7.1 notes also mention a rebuilt native Claude→Pi/Codex demo (one-shot playback,
+  replay control, title-based migration, shared-history highlighting) and install
+  via install.sh or `uv tool install session-migrate`.
+- 'GitHub repo HTML (fetched this pass) description: "Migrate coding agent sessions
+  across Claude Code, Codex, Pi, OpenCode, Copilot CLI, Antigravity, Cursor, and Mistral
+  Vibe"; public repo with 10 stars at fetch time.'
+- 'HN story created_at 2026-08-24T20:44:24Z (2 points at fetch) titled "Session-migrate:
+  Migrate coding agent sessions across Claude Code, Codex, Pi" links to the repository.'
+- Prior tag 0.7.0 (Mistral Vibe as first-class source/target; 64 routes across eight
+  harnesses) is dated 2026-08-21T18:56:39Z, before this window, and is not used as
+  publishedAt.
+interpretation: Small in-window release plus public repo/HN pointer for coding-agent
+  session portability across Claude Code/Codex/Pi and other harnesses. The larger
+  0.7.0 harness expansion is out of window.
+relatedRefs:
+- https://github.com/xhluca/session-migrate
+- https://session-migrate.github.io/install.sh
+sourceWarnings:
+- v0.7.1 is incremental (title-based transfer/demo) relative to out-of-window v0.7.0.
+- Star count is a snapshot (10) and is not a quality metric.
+- Format compatibility boundaries (experimental Cursor, credentials/policy not migrated)
+  are documented by the project and were not re-tested here.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/xhluca/session-migrate/releases/tag/v0.7.1
+- https://github.com/xhluca/session-migrate/releases.atom
+verifiedAt: '2026-08-24T21:52:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Claude Code·Codex·Pi 등 코딩 에이전트 세션 이식 CLI. 창 안 변경은 `--title` 전송과 fail-closed
+  제목 매칭. 8 하네스 확장(v0.7.0)은 창 밖. 상호운용은 harness interest에 맞으나 자격증명/정책 미이관·포맷 호환 미재시험.
+  스타 수 비가중. 실세션 이주는 EXPERIMENT로 올리지 않음.
+expectedBenefit: 같은 제목의 세션을 Claude↔Pi/Codex로 옮기는 최소 경로. 멀티 하네스 운영에서 대화 이력 재입력 비용을
+  줄임.
+switchingCost: '`uv tool install session-migrate`는 낮음. 실제 세션 포맷·자격증명·정책이 안 넘어가면 중간~높음.'
+maturity: early
+risks:
+- 창 안 0.7.1은 제목 전송/데모 증분이고 0.7.0 하네스 확장을 창 안 사실로 쓰면 안 됨.
+- Cursor는 프로젝트도 experimental로 적혀 있고 자격증명/정책은 이관하지 않음.
+- 실세션 이주는 프롬프트·비밀이 다른 하네스 로그로 새어 나갈 수 있음.
+smallestUsefulExperiment: 릴리스 노트와 `smigrate transfer --title` 실패 닫힘 규칙만 읽기. 실세션 이주·외부
+  게시 없음.
+recordStatus: approved
+```
+
+## yegge-fences-not-sandboxes-2026-08-24
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/25/regional-signal/international/yegge-fences-not-sandboxes-2026-08-24.yaml
+- sha256: 39379e16de62c7bfd7422d461dd2df0b49d4814985d61315aadc44528aa1c178
+- primaryUrl: https://yegge.ai/essays/fences-not-sandboxes/
+
+```yaml
+schemaVersion: regional-signal/v1
+id: yegge-fences-not-sandboxes-2026-08-24
+collectionDate: '2026-08-25'
+primaryCategory: international
+relatedCategories: []
+originBasis: Essay on yegge.ai by Steve Yegge (US independent / former Google-Amazon-Sourcegraph);
+  not KR/JP org or author.
+originalTitle: Fences, not Sandboxes
+originalLanguage: en
+koreanSummary: Steve Yegge가 2026-08-24에 에이전트 통제를 샌드박스·가드레일이 아니라 역할·규칙·절차를 명시한 '펜스'(법률
+  체계형 거버넌스)로 해야 한다는 에세이를 공개. 본인 Wheelhouse 소프트웨어 공장과 50–60 에이전트 클러스터에서 에이전트가 constitution·관할·판례
+  유사 장치를 만들었다고 1인칭 서술한다.
+source: technical_article
+canonicalId: yegge.ai/essays/fences-not-sandboxes
+primaryUrl: https://yegge.ai/essays/fences-not-sandboxes/
+author: Steve Yegge
+project: yegge.ai / Wheelhouse
+publishedAt: '2026-08-24T00:00:00Z'
+observedFacts:
+- Page <time datetime="2026-08-24"> on yegge.ai; title "Fences, not Sandboxes".
+- Author describes running an organization of around 50–60 agents (18 Fable "officer"
+  seats plus Sol/Opus fleets) on a local Mac Studio, with only Fable allowed to talk
+  to humans via Slack and email, with the Slack/email boundary called a fence.
+- 'Contrasts industry focus on guardrails, sandboxes, policy management, and context
+  rationing with a governance metaphor: fences as polite role/rule paperwork rather
+  than containment walls.'
+- States agents built "Wheelhouse," about 600k lines of code and tests (mostly bash),
+  using recurring patterns he names fences, ratchets, governors, tripwires, latches,
+  gates, and falsifiers, which he characterizes as a legal system (constitution, courts,
+  jurisdiction, case law) rather than only an engineering harness.
+- HN story 49423146 created_at 2026-08-24T17:28:43Z (21 points / 11 comments at lookup)
+  links to this URL, so the essay was public before window end 2026-08-24T21:33:00Z.
+interpretation: Primary-source international essay arguing coding-agent ops should
+  move from OS sandboxes toward explicit organizational law (roles, paperwork, boundaries).
+  Treat as author narrative and design metaphor, not a measured eval of sandbox vs
+  fence.
+relatedRefs:
+- https://news.ycombinator.com/item?id=49423146
+sourceWarnings:
+- Official page exposes only a calendar date; timestamp is not published.
+- Token spend, agent counts, commit rates, and Wheelhouse size are author-reported
+  and not independently verified.
+- Does not provide a reproducible fence implementation or security proof versus sandboxes.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://yegge.ai/essays/fences-not-sandboxes/
+verifiedAt: '2026-08-24T21:52:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 에이전트 통제를 OS 샌드박스·가드레일이 아니라 역할·규칙·절차(펜스)로 두라는 1차 에세이. sandboxing·harness
+  interest와 맞닿으나 재현 가능한 구현·보안 증명은 없음. 50–60 에이전트·600k LOC는 저자 서술이라 EXPERIMENT/ADOPT
+  아님. HN 점수 비가중.
+expectedBenefit: 장시간 멀티에이전트 운영에서 fence/ratchet/governor/tripwire/latch 어휘와 Slack·이메일
+  경계 설계를 체크리스트로 흡수.
+switchingCost: 에세이 열람만이면 낮음. 샌드박스를 펜스로 교체하는 운영 전환은 높고 이 신호만으로는 정당화되지 않음.
+maturity: early
+risks:
+- 에이전트 수·토큰·Wheelhouse 규모는 저자 보고이며 독립 검증 없음.
+- 샌드박스 포기를 권하는 것처럼 읽히면 격리 계층을 약화할 수 있음.
+- 재현 가능한 fence 구현이나 보안 증명이 없음.
+- 페이지에 시각이 없고 달력 날짜만 있음.
+smallestUsefulExperiment: 에세이 본문만 읽고 현재 에이전트 하네스의 역할/채널 경계를 펜스 어휘로 1:1 대조. 클러스터 재현·외부
+  게시 없음.
+recordStatus: approved
+```
+
+## cyberagent-aja-pam-ai-agent-guardrails
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/25/regional-signal/japan/cyberagent-aja-pam-ai-agent-guardrails.yaml
+- sha256: 937643e147ef125578a08f5c16ba8d949823d1bcd31ed6f168541a0e35a01e7c
+- primaryUrl: https://developers.cyberagent.co.jp/blog/archives/65362/
+
+```yaml
+schemaVersion: regional-signal/v1
+id: cyberagent-aja-pam-ai-agent-guardrails
+collectionDate: '2026-08-25'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official CyberAgent Developers Blog post by 片山, backend engineer at 株式会社AJA
+  (CyberAgent group, Japan). Production DSP on Google Cloud.
+originalTitle: AIエージェントにGoogle Cloudの操作を任せるためのガードレール ─ Google Cloud PAMの導入
+originalLanguage: ja
+koreanSummary: 사이버에이전트 계열 AJA DSP가 AI 에이전트에 클라우드 조작을 맡기면서 상시 Editor/Admin을 Google
+  Cloud PAM JIT 승격으로 바꿨다. 조사는 Viewer로, 변경은 entitlement·승인·최대 24시간 만료로 나눈다.
+source: public_case_study
+canonicalId: cyberagent:developers/65362
+primaryUrl: https://developers.cyberagent.co.jp/blog/archives/65362/
+author: katayan
+project: AJA DSP / Google Cloud PAM
+publishedAt: '2026-08-23T23:00:20Z'
+observedFacts:
+- CyberAgent Developers RSS published the post at 2026-08-23T23:00:20Z (inside window).
+- Author 片山 is a backend engineer at 株式会社AJA; AJA DSP runs video-ad serving on Google
+  Cloud and Kubernetes.
+- Article states AI agents using a human's credentials inherit that IAM; a local 'delete
+  unneeded files' request previously deleted too broadly and required recovery.
+- 'Steady-state Editor/Admin was replaced with Viewer plus purpose-scoped PAM entitlements
+  (example: spanner-migration → roles/spanner.databaseAdmin, max 24h), Terraform-managed,
+  Slack-forwarded approvals, then strong roles removed.'
+- 'Post-migration claim: agents can investigate production but cannot change it until
+  a grant is approved; AJA SSP is separately moving AWS TEAM JIT.'
+interpretation: 'Japan production case: sandboxing for coding/ops agents is done with
+  IAM JIT, not prompts. The interesting split is investigate-vs-mutate as an entitlement
+  boundary.'
+relatedRefs:
+- https://developers.cyberagent.co.jp/blog/archives/65362/
+- https://developers.cyberagent.co.jp/blog/feed
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://developers.cyberagent.co.jp/blog/archives/65362/
+verifiedAt: '2026-08-24T21:54:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 프로덕션 DSP가 에이전트 클라우드 조작을 프롬프트가 아니라 Viewer 조사 / PAM JIT 변경(승인·24h)으로
+  나눈 사례. sandboxing·coding-agents interest와 맞닿고, 같은 창의 Yegge 펜스 에세이보다 재현 가능한 IAM 경계다.
+  인프라 전환이라 EXPERIMENT/ADOPT 아님. 지리·브랜드 비가중.
+expectedBenefit: 조사와 변경을 entitlement로 분리하는 체크리스트. Slack 승인·Terraform 관리·최대 TTL을 에이전트
+  클라우드 권한의 기본 형태로 고정.
+switchingCost: 글 흡수만이면 낮음. 상시 Editor/Admin을 PAM으로 바꾸면 높음.
+maturity: developing
+risks:
+- 에이전트가 사람 자격증명을 물려받는 전제가 남아 있음.
+- PAM 승인 우회·만료 전 남용은 이 글만으로 검증되지 않음.
+- AJA SSP의 AWS TEAM 이전은 별 트랙이라 동일 패턴으로 단정하면 안 됨.
+smallestUsefulExperiment: 본문의 investigate=Viewer / mutate=entitlement 표만 현재 클라우드 IAM과
+  대조. PAM 적용·외부 게시 없음.
+recordStatus: approved
+```
+
+## github-nagi-inaba-pmgs-reference-v0-5-0
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/25/regional-signal/japan/github-nagi-inaba-pmgs-reference-v0-5-0.yaml
+- sha256: 806dcfb2429a4554d32c9f75494b541c33a32354f33847ca43ed0ac8426f2aeb
+- primaryUrl: https://github.com/Nagi-Inaba/pmgs-reference/releases/tag/v0.5.0
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-nagi-inaba-pmgs-reference-v0-5-0
+collectionDate: '2026-08-25'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Project is a local toolkit for Japan Patent Office (JPO) PMGS classification
+  data consumed by Codex and Claude Code. Author Nagi-Inaba (Japan-pass re-check list);
+  GitHub location field empty this pass.
+originalTitle: PMGS Reference v0.5.0 — 特許庁のPMGSデータを、CodexやClaude Codeから根拠付きで検索するためのツール
+originalLanguage: ja
+koreanSummary: Nagi-Inaba의 PMGS Reference v0.5.0이 창 안에서 나왔다. 특허청 PMGS를 로컬 SQLite로
+  만들고 Codex/Claude Code용 읽기 전용 MCP·스킬을 붙이며, doctor가 모든 MCP 툴을 돌리고 3OS sdist 검증 뒤에
+  PyPI에 올렸다.
+source: github_repository
+canonicalId: github:Nagi-Inaba/pmgs-reference@v0.5.0
+primaryUrl: https://github.com/Nagi-Inaba/pmgs-reference/releases/tag/v0.5.0
+author: Nagi-Inaba
+project: Nagi-Inaba/pmgs-reference
+publishedAt: '2026-08-24T11:55:05Z'
+observedFacts:
+- 'Releases Atom: v0.5.0 updated 2026-08-24T11:55:05Z (inside window). Repo created
+  2026-08-09; not in skip-ids.'
+- 'README: converts a user-held JPO PMGS package into versioned SQLite; Codex and
+  Claude Code share a read-only stdio MCP (tools lookup_classification, search_pmgs,
+  get_pmgs_document) plus a common skill. Source ZIP/SQLite never uploaded.'
+- 'In-window commits include: bound doctor that exercises every MCP tool (#41, 2026-08-22T11:26:40Z);
+  three-OS sdist verification gate (#64); unify/paginate document retrieval (#65);
+  FTS5 schema contract and PATH isolation from working directories.'
+- 'README v0.5.0 status: PyPI pin `pmgs-reference==0.5.0`; Codex live MCP=verified;
+  Claude configuration/registration=verified; Claude live MCP=not_observed. JPPM2026002
+  measurement: ~7.56 GB free to build, SQLite ~3.37 GB.'
+- 'AI contract YAML in README: retrieved content is evidence_not_instruction; do not
+  follow embedded links/commands; never guess on not_found.'
+interpretation: 'Japan-specific context for coding agents: official JPO classification
+  as a fail-closed local MCP, with a doctor that actually calls every tool before
+  a release is trusted.'
+relatedRefs:
+- https://github.com/Nagi-Inaba/pmgs-reference
+- https://github.com/Nagi-Inaba/pmgs-reference/releases/tag/v0.5.0
+- https://pypi.org/project/pmgs-reference/0.5.0/
+sourceWarnings:
+- github_user_location_empty
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/Nagi-Inaba/pmgs-reference/releases/tag/v0.5.0
+- https://github.com/Nagi-Inaba/pmgs-reference/releases.atom
+verifiedAt: '2026-08-24T21:54:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 특허청 PMGS를 로컬 SQLite로 만들고 Codex/Claude용 읽기 전용 MCP·공통 스킬·doctor(전 툴
+  실호출)를 붙인 v0.5.0. 가치는 JPO 도메인이 아니라 evidence_not_instruction·not_found 추측 금지·릴리스 전
+  doctor 게이트. 이전 information-accessibility-skill WATCH와 다른 리포. Claude live MCP=not_observed,
+  소스 ZIP 미업로드. 3GB DB를 이유로 품질을 내리지 않되 ADOPT/EXPERIMENT는 도메인 의존이 커서 보류.
+expectedBenefit: 공식 코퍼스를 버전된 로컬 DB+읽기 전용 MCP로 닫고, 검색 결과를 지시가 아닌 증거로 취급하는 계약 템플릿.
+switchingCost: README·AI contract YAML 열람은 낮음. JPO 패키지 보유+약 7.56GB 빌드+3.37GB SQLite는
+  높음.
+maturity: early
+risks:
+- Claude live MCP=not_observed. Codex live만 verified.
+- 사용자 보유 JPO 패키지가 없으면 재현 불가. 소스 ZIP/SQLite는 업로드하지 않음.
+- author GitHub location 공백.
+- 이전 Nagi-Inaba 스킬 WATCH와 저자는 같으나 리포·계약이 다름.
+smallestUsefulExperiment: README의 AI contract YAML과 doctor가 전 MCP 툴을 친다는 릴리스 게이트만
+  읽기. PMGS 빌드·PyPI 설치·외부 게시 없음.
+recordStatus: approved
+```
+
+## github-shuji-bonji-pdf-reader-mcp-v0-12-0
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/25/regional-signal/japan/github-shuji-bonji-pdf-reader-mcp-v0-12-0.yaml
+- sha256: 400c4bfaba113d3bbf92d0dedc92b169be8d2af1908500386e59d71b7080c910
+- primaryUrl: https://github.com/shuji-bonji/pdf-reader-mcp/releases/tag/v0.12.0
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-shuji-bonji-pdf-reader-mcp-v0-12-0
+collectionDate: '2026-08-25'
+primaryCategory: japan
+relatedCategories: []
+originBasis: 'GitHub user shuji-bonji (shuji narumi), Location: Japan. TypeScript
+  developer building MCP servers.'
+originalTitle: pdf-reader-mcp v0.12.0 — テキスト抽出可能性の3値化・render_page・summarize next
+originalLanguage: ja
+koreanSummary: 일본 거주 shuji-bonji의 pdf-reader-mcp v0.12.0이 23일 나왔다. 텍스트 없음을 3상태로 나누고,
+  실제 PNG/JPEG를 주며, 스캔 PDF용 render_page와 관측 기반 next 힌트를 추가했다.
+source: github_repository
+canonicalId: github:shuji-bonji/pdf-reader-mcp@v0.12.0
+primaryUrl: https://github.com/shuji-bonji/pdf-reader-mcp/releases/tag/v0.12.0
+author: shuji-bonji
+project: shuji-bonji/pdf-reader-mcp
+publishedAt: '2026-08-23T14:03:49Z'
+observedFacts:
+- 'GitHub user API/HTML: location Japan. Releases Atom v0.12.0 at 2026-08-23T14:03:49Z
+  (inside window).'
+- 'v0.12.0 commit: text extractability tri-state per ISO 32000-2 §9.10.1 (extracted
+  / no_text_layer / not_extractable / not_observed) on every text path; judged from
+  the file not pdf.js synthetic ToUnicode.'
+- read_images now returns real PNG/JPEG (in-repo encoders, no native addons) with
+  a 4 MB response budget and omitted[] reasons; previously returned raw pdfjs pixel
+  arrays that no viewer could open.
+- New tool render_page (18→19) via optional @hyzyla/pdfium WASM; pages required; pdf.js+canvas
+  was rejected after page.render() segfaults and silent blank pages. summarize.next
+  is observation-named candidate next calls; Skill layer owns sequencing.
+- Same-day marketplace shuji-bonji/claude-plugins added pdf-read Skill (v0.1.0) requiring
+  pdf-reader-mcp v0.12.0+ (commit 2026-08-23T14:30:57Z).
+interpretation: MCP that refuses to collapse 'no text' into one empty string, and
+  keeps read-only by not fetching-and-saving URLs — the Skill is where procedure lives.
+relatedRefs:
+- https://github.com/shuji-bonji/pdf-reader-mcp/releases/tag/v0.12.0
+- https://github.com/shuji-bonji/claude-plugins
+- https://github.com/shuji-bonji/pdf-trust-skill
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/shuji-bonji/pdf-reader-mcp/releases/tag/v0.12.0
+- https://github.com/shuji-bonji/pdf-reader-mcp/releases.atom
+- https://github.com/shuji-bonji
+verifiedAt: '2026-08-24T21:54:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 텍스트 추출을 extracted/no_text_layer/not_extractable/not_observed로 나누고,
+  이미지는 실제 PNG/JPEG, 스캔은 render_page, 순서는 Skill 층. MCP와 Agent Skills 역할 분리와 맞닿음. 코딩
+  에이전트 코어 하네스는 아님. 같은 날 pdf-read Skill이 v0.12.0+를 요구. 도구 카탈로그 교체 근거는 아님.
+expectedBenefit: 빈 문자열로 '텍스트 없음'을 뭉개지 않는 관측 계약. summarize.next는 후보만 주고 Skill이 시퀀스를
+  소유.
+switchingCost: 노트 열람 낮음. 기존 PDF MCP를 교체하면 중간. render_page는 optional pdfium WASM.
+maturity: developing
+risks:
+- pdf.js+canvas는 segfault·빈 페이지로 폐기되어 렌더 경로가 WASM 의존.
+- 4MB 응답 예산으로 omitted[]가 늘 수 있음.
+- Skill 시퀀스가 없으면 next 힌트만으로 루프가 안 닫힘.
+smallestUsefulExperiment: v0.12.0 노트와 pdf-read Skill 의존만 대조. 스캔 PDF 렌더 실험·외부 게시 없음.
+recordStatus: approved
+```
+
+## github-takushio2525-tako-v0-7-8
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/25/regional-signal/japan/github-takushio2525-tako-v0-7-8.yaml
+- sha256: cba4c597c9de3dcab0562c1d9c4c6f28403dbb3fe779bb233eb61ca1ac4ae29f
+- primaryUrl: https://github.com/takushio2525/tako/releases/tag/v0.7.8
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-takushio2525-tako-v0-7-8
+collectionDate: '2026-08-25'
+primaryCategory: japan
+relatedCategories: []
+originBasis: 'GitHub user takushio2525 (TakumiShiozawa): Location 2-17-1 Tsudanuma,
+  Narashino, Chiba, Japan; Chiba Institute of Technology, Department of Computer Science.'
+originalTitle: tako v0.7.8
+originalLanguage: ja
+koreanSummary: 지바공대 takushio2525의 에이전트 함대 터미널 tako가 24일 20:04Z에 nightly v0.7.8을 냈다.
+  컨테이너 없는 sessions, 화면 깜빡임 visual-test, 탭 전환 리사이즈 수정이 들어 있고 Claude Code MCP serve
+  경로가 그대로다.
+source: github_repository
+canonicalId: github:takushio2525/tako@v0.7.8
+primaryUrl: https://github.com/takushio2525/tako/releases/tag/v0.7.8
+author: takushio2525
+project: takushio2525/tako
+publishedAt: '2026-08-24T20:04:44Z'
+observedFacts:
+- 'Releases Atom: tako v0.7.8 at 2026-08-24T20:04:44Z pre-release nightly (inside
+  window end 21:33Z). skip-ids listed v0.7.7 only.'
+- 'Owner API: location Narashino, Chiba, Japan; Chiba Institute of Technology, Department
+  of Computer Science.'
+- 'Release notes vs v0.7.7: tab-switch resize root-cause (#932/#958); font-size propagation
+  to hidden panes; `tako sessions` without a container via two-stage detection (#728/#956);
+  visual-test section for still-frame flicker (#942); IME handler/size fixes; Windows
+  matrix docs.'
+- 'Release body still documents Claude Code one-time MCP: `claude mcp add --scope
+  user tako -- /Applications/tako.app/Contents/MacOS/tako mcp serve`.'
+- 'Asset: tako-v0.7.8-macos-arm64.zip 17.7 MB.'
+interpretation: 'New in-window nightly of a Japan-origin agent-fleet terminal: the
+  delta is observability (visual-test, sessions without a container) rather than a
+  first MCP, but it is a real tag after yesterday''s v0.7.7 skip.'
+relatedRefs:
+- https://github.com/takushio2525/tako/releases/tag/v0.7.8
+- https://github.com/takushio2525/tako
+sourceWarnings:
+- pre_release_nightly
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/takushio2525/tako/releases/tag/v0.7.8
+- https://github.com/takushio2525/tako/releases.atom
+verifiedAt: '2026-08-24T21:54:00Z'
+contradictions: []
+judgeAction: WATCH
+judgeRationale: 에이전트 함대 터미널 nightly. 창 증분은 컨테이너 없는 sessions·visual-test·탭 리사이즈이지 신규
+  MCP가 아님. 이전 v0.7.7 WATCH를 유지. skip-ids는 v0.7.7만 있어서 중복 IGNORE는 아님. pre-release nightly라
+  EXPERIMENT 보류. 스타/지리가중 없음.
+expectedBenefit: 함대 탭의 리사이즈/깜빡임 관측과 컨테이너 없이 세션 목록을 보는 운영 편의. Claude Code MCP serve
+  경로는 유지.
+switchingCost: 노트 추적 낮음. nightly를 일상 함대 UI로 쓰면 중간~높음.
+maturity: early
+risks:
+- v0.7.8은 pre-release nightly. 연속 태그(v0.7.5–7) 위 증분.
+- 자산은 macos-arm64 zip. Windows는 문서 매트릭스만.
+- MCP 경로가 릴리스 본문에 남아 있으나 이번 태그의 신규 사실이 아님.
+smallestUsefulExperiment: v0.7.8 노트에서 sessions/visual-test/#932만 읽고 v0.7.7 WATCH와
+  델타 확인. 설치·외부 게시 없음.
+recordStatus: approved
+```
+
+## zenn-clopy-codex-ignore-user-skills
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/25/regional-signal/japan/zenn-clopy-codex-ignore-user-skills.yaml
+- sha256: 97d4d1911368c318217b161336dcd2f10981ee7fbfececd68b017d4726350244
+- primaryUrl: https://zenn.dev/clopy/articles/codex-ignore-flags-user-skill-boundary
+
+```yaml
+schemaVersion: regional-signal/v1
+id: zenn-clopy-codex-ignore-user-skills
+collectionDate: '2026-08-25'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Zenn.dev author Clopy (Japan technical platform origin basis). Japanese
+  evaluation write-up of Codex CLI skill-catalog isolation.
+originalTitle: Codexのignore flagsだけではユーザースキルを隔離できない
+originalLanguage: ja
+koreanSummary: Clopy가 Codex CLI 0.147.0에서 --ignore-user-config --ignore-rules를 켜도
+  $HOME/.agents/skills 본문의 마커가 그대로 나오는 대조 실험을 기록했다. 플래그만으로 사용자 스킬 격리를 단정하면 안 된다.
+source: technical_article
+canonicalId: zenn:clopy:codex-ignore-flags-user-skill-boundary
+primaryUrl: https://zenn.dev/clopy/articles/codex-ignore-flags-user-skill-boundary
+author: Clopy
+project: Codex CLI user-skill boundary
+publishedAt: '2026-08-22T12:15:27Z'
+observedFacts:
+- Zenn Codex topic feed publishedAt 2026-08-22T12:15:27Z (inside window).
+- 'Pinned case: Codex CLI 0.147.0 on 2026-08-15; control empty HOME vs treatment HOME
+  with only .agents/skills/ambient-probe/SKILL.md holding a random marker absent from
+  prompt/schema/argv.'
+- 'Both runs: `codex -a never exec --sandbox read-only --ephemeral --ignore-user-config
+  --ignore-rules` with --skip-git-repo-check and network_access=false; explicit `$ambient-probe`
+  invocation; 1 live call each, no retry.'
+- Control returned status unavailable / empty; treatment returned loaded plus the
+  exact hidden marker (2 occurrences). Process OK, tool_events=0, workspaces stayed
+  empty.
+- 'Author states flags match docs (config.toml / execpolicy .rules) and are not a
+  bug; they are insufficient as a skill-catalog boundary. Repro harness: node scripts/agent-practice/run-experiment.mjs.'
+interpretation: 'Eval signal: Codex ignore flags are layer-specific. CI/eval runners
+  that inherit developer HOME still inject user Skills unless HOME/skill catalog is
+  independently controlled and empty-HOME oracles fail closed.'
+relatedRefs:
+- https://zenn.dev/clopy/articles/codex-ignore-flags-user-skill-boundary
+sourceWarnings:
+- author_github_not_linked
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/clopy/articles/codex-ignore-flags-user-skill-boundary
+- https://zenn.dev/api/articles/codex-ignore-flags-user-skill-boundary
+verifiedAt: '2026-08-24T21:54:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Codex CLI 0.147.0에서 --ignore-user-config --ignore-rules를 켜도 $HOME/.agents/skills
+  마커가 로드된 대조 실험. Codex·Agent Skills·evaluation·sandboxing에 직접 맞음. 플래그는 config.toml/execpolicy
+  층이고 스킬 카탈로그 경계가 아님. 이미 측정된 평가라 재실험으로 올리지 않음. 버전 고정 결과라 ADOPT 대상 아님.
+expectedBenefit: CI/평가 러너가 개발자 HOME을 물려받으면 사용자 스킬이 주입됨. 빈 HOME oracle과 카탈로그 격리를 실패
+  닫힘으로 고정.
+switchingCost: 글·재현 스크립트 열람은 낮음. 평가 하네스 HOME 분리는 중간.
+maturity: early
+risks:
+- 측정은 Codex CLI 0.147.0 / 2026-08-15 1회+1회. 이후 버전에서 달라질 수 있음.
+- ignore 플래그를 스킬 격리로 오해하면 평가 오염이 남음.
+- author GitHub 미연결(패킷 sourceWarning).
+smallestUsefulExperiment: 본문 대조표와 ignore 플래그 층만 현재 평가 러너 HOME/스킬 경로와 대조. 실 HOME에서
+  Codex 재실행·외부 게시 없음.
+recordStatus: approved
+```
+
+## zenn-estie-claude-code-cockpit
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/25/regional-signal/japan/zenn-estie-claude-code-cockpit.yaml
+- sha256: 41b41bc0c94c5511c788edd3d7a5ecf1fe155a89d7345bc41e964b3cf77e233b
+- primaryUrl: https://zenn.dev/estie/articles/06fc8455ae24cb
+
+```yaml
+schemaVersion: regional-signal/v1
+id: zenn-estie-claude-code-cockpit
+collectionDate: '2026-08-25'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official 株式会社estie (Tokyo real-estate tech, Japan) publication on Zenn
+  (estie テックブログ). Author 山本 (yama-cha-n) is an estie engineer.
+originalTitle: Claude Codeの共有コンテキストをチーム単位で集約するCockpit
+originalLanguage: ja
+koreanSummary: 도쿄 부동산테크 주식회사estie가 Claude Code 공유 컨텍스트와 Skill을 리포지토리가 아니라 팀 단위 Cockpit
+  한 곳에 모았다. system-map.yaml이 라우터이고, Slack @Claude로 비즈니스도 같은 입구를 쓴다.
+source: public_case_study
+canonicalId: zenn:estie:06fc8455ae24cb
+primaryUrl: https://zenn.dev/estie/articles/06fc8455ae24cb
+author: yama-cha-n
+project: estie Cockpit (mru-cockpit)
+publishedAt: '2026-08-24T03:00:06Z'
+observedFacts:
+- 'Zenn claude topic feed publishedAt 2026-08-24T03:00:06Z (inside window). Publication
+  is estie テックブログ; body: 株式会社estie engineer 山本.'
+- Team owns shared Claude Code context and Skills in one Cockpit repo rather than
+  per-repo .claude/skills or a Plugin; in use since 2026-04 (~4 months); ~40 local
+  clones.
+- 'Index/router is system-map.yaml (product ↔ repo ↔ Jira ↔ preview URLs). Claude
+  is told to identify the product there before reading docs/code. Skills listed: delegate,
+  harvest, sentry-triage, pr-review, verify-ui, analyze-usage-log, add-product, add-repository,
+  sync-repos, init-product-claude-md.'
+- Business members ask via Slack Claude Tag (@Claude) using Cockpit as the entry;
+  customer replies stay human-reviewed. /harvest writes session findings to docs/pantry/;
+  humans promote them, they are not auto-canonized.
+- 'Author states unsolved: stale pointers, inability to change code and knowledge
+  in the same PR, and tacit knowledge that only surfaces when someone is absent. They
+  plan to measure self-serve answers vs human edits.'
+interpretation: 'Japan product-team case: context ownership is the team, not the repo,
+  and the Skill pack is useless without a router that keeps most text out of the window.'
+relatedRefs:
+- https://zenn.dev/estie/articles/06fc8455ae24cb
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/estie/articles/06fc8455ae24cb
+- https://zenn.dev/api/articles/06fc8455ae24cb
+verifiedAt: '2026-08-24T21:56:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 팀이 공유 Claude Code 컨텍스트·Skill을 리포별 .claude가 아니라 Cockpit 한 곳에 두고 system-map.yaml로
+  제품→리포→Jira를 고른 뒤 문서를 읽게 함. Claude Code·Agent Skills·context engineering에 직접 맞음.
+  /harvest는 pantry에만 쓰고 사람이 승격. 내부 사례(~4개월)라 설치 EXPERIMENT/ADOPT 아님. 클론 수·지리가중 없음.
+  relatedCategories는 스키마상 [] 유지.
+expectedBenefit: 팀 단위 컨텍스트 소유와 라우터(system-map.yaml)로 창에 텍스트를 덜 넣는 패턴. Slack @Claude
+  입구와 사람 리뷰 고객 회신 경계.
+switchingCost: 글 흡수 낮음. 리포별 Skill을 팀 Cockpit으로 모으면 중간~높음. 코드와 지식을 같은 PR에서 못 바꾸는 미해결이
+  남음.
+maturity: developing
+risks:
+- stale pointer, 코드·지식 동일 PR 불가, 암묵지는 부재 시에만 드러난다고 저자가 적음.
+- self-serve vs 사람 수정은 아직 미측정.
+- Cockpit 리포(mru-cockpit)는 내부라 이 글만으로 재현 설치 불가.
+- 비즈니스 Slack @Claude 입구가 권한·비밀 경계를 글 밖으로 확장할 수 있음.
+smallestUsefulExperiment: system-map.yaml 역할과 /harvest→사람 승격 규칙만 현재 Skill/컨텍스트 배치와
+  대조. Cockpit 복제·Slack 봇 연결·외부 게시 없음.
+recordStatus: approved
+```
+
+## zenn-marvelousu-windows-mcp-vs-computer-use
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/25/regional-signal/japan/zenn-marvelousu-windows-mcp-vs-computer-use.yaml
+- sha256: 371f47faadc1f78917987293c9b69e183e880d9247cb72d15c622ebf9b7d5cda
+- primaryUrl: https://zenn.dev/marvelousu/articles/windows-mcp-vs-computer-use
+
+```yaml
+schemaVersion: regional-signal/v1
+id: zenn-marvelousu-windows-mcp-vs-computer-use
+collectionDate: '2026-08-25'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Zenn.dev author Tom (marvelousu), listed Japan-origin basis for Zenn
+  authors. Same GitHub user later published agent-bridge with Japanese docs.
+originalTitle: Claude Code のデスクトップ操作、内蔵の computer-use ではなく Windows-MCP を使っている理由
+originalLanguage: ja
+koreanSummary: Zenn의 Tom이 같은 메모장 입력 작업을 Claude Code 내장 computer-use(5스텝, 픽셀)와 Windows-MCP
+  UI Automation 스냅샷(2스텝, 이름 지정)으로 비교했다. 일본어 Windows에서는 PYTHONUTF8=1이 필요하고, UIA가 없는
+  앱은 vision으로 돌아간다.
+source: technical_article
+canonicalId: zenn:marvelousu:windows-mcp-vs-computer-use
+primaryUrl: https://zenn.dev/marvelousu/articles/windows-mcp-vs-computer-use
+author: Tom (marvelousu)
+project: Windows-MCP vs Claude Code computer-use
+publishedAt: '2026-08-22T08:27:40Z'
+observedFacts:
+- 'Zenn feed publishedAt 2026-08-22T08:27:40Z (inside window). Author page: 半導体のデジタル設計が本業;
+  GitHub https://github.com/marvelousu (location field empty).'
+- 'Same notepad task: computer-use used screenshot + left_click + ctrl+a + Delete
+  + type (5 ops after launch). Windows-MCP used Snapshot then Type loc=[806,635] clear=true
+  (2 ops).'
+- 'Install path recorded: `claude mcp add windows-mcp -s user -e PYTHONUTF8=1 -- uvx
+  windows-mcp serve`; without PYTHONUTF8, cp932 UnicodeEncodeError crashes before
+  any UI action.'
+- First uvx start hit CONNECT_TIMEOUT 30041ms so tools never registered; pre-running
+  `uvx windows-mcp serve --help` warmed the cache.
+- Measured 2026-08-20 on Windows 11 Claude Code desktop + PyPI windows-mcp via uvx.
+  Claude Code's own desktop window had an empty UIA tree, so name targeting failed
+  there.
+interpretation: 'A measured computer-use vs MCP swap: structure beats pixels when
+  UI Automation exists, and Japanese Windows encoding is a hard MCP bring-up bug,
+  not a model issue.'
+relatedRefs:
+- https://zenn.dev/marvelousu/articles/windows-mcp-vs-computer-use
+- https://github.com/CursorTouch/Windows-MCP
+sourceWarnings:
+- github_user_location_empty
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/marvelousu/articles/windows-mcp-vs-computer-use
+- https://zenn.dev/api/articles/windows-mcp-vs-computer-use
+verifiedAt: '2026-08-24T21:54:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 같은 메모장 작업을 computer-use 5스텝(픽셀)과 Windows-MCP 2스텝(UIA)으로 비교한 측정. computer-use·MCP
+  interest에 맞으나 Windows 11 1인 측정이고 UIA 없는 창은 vision으로 후퇴. PYTHONUTF8=1은 모델 문제가 아님.
+  이 패킷만으로 데스크톱 스택 교체 아님.
+expectedBenefit: UIA가 있을 때 구조화 MCP가 픽셀 computer-use보다 짧은 경로라는 대조 데이터. 일본어 Windows
+  인코딩 실패를 bring-up 버그로 분리.
+switchingCost: 글 흡수 낮음. Windows-MCP를 기본 computer-use로 바꾸면 중간이고 UIA 공백 앱에서 회귀.
+maturity: early
+risks:
+- 2026-08-20 Windows 11·Claude Code 데스크톱 1회 측정.
+- Claude Code 자체 창은 UIA 트리가 비어 이름 지정 실패.
+- 첫 uvx가 CONNECT_TIMEOUT이면 툴이 등록되지 않음.
+- author GitHub location 공백(패킷 sourceWarning).
+smallestUsefulExperiment: 본문 스텝 수·PYTHONUTF8=1·UIA 공백 후퇴만 읽기. Windows-MCP 설치·외부 게시
+  없음.
+recordStatus: approved
+```
+
+## zenn-pepabo-even-g2-ztl-codex-claude
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/25/regional-signal/japan/zenn-pepabo-even-g2-ztl-codex-claude.yaml
+- sha256: f604b2d8d68e88f4c01083b7fa9aa7d10292306d971aed93e7fdea12a0671dd0
+- primaryUrl: https://zenn.dev/pepabo/articles/even-terminal-lolipop-ztl
+
+```yaml
+schemaVersion: regional-signal/v1
+id: zenn-pepabo-even-g2-ztl-codex-claude
+collectionDate: '2026-08-25'
+primaryCategory: japan
+relatedCategories: []
+originBasis: GMOペパボ株式会社 (GMO Pepabo, Japan) official Zenn publication. Author yukyu
+  lists affiliation GMOペパボ エンジニア.
+originalTitle: Even G2 からロリポップ！ゼロトラストリンク経由で Codex と Claude Code を操作する
+originalLanguage: ja
+koreanSummary: GMO페파보 엔지니어가 Even G2 안경에서 로리팝 ZTL로 Mac의 Codex/Claude Code 세션을 조작했다.
+  --expose 없이 utun4에 Even Terminal 0.6.5를 묶고, iPhone ZTL IP의 200 GET /api/sessions를
+  남겼다.
+source: technical_article
+canonicalId: zenn:pepabo:even-terminal-lolipop-ztl
+primaryUrl: https://zenn.dev/pepabo/articles/even-terminal-lolipop-ztl
+author: yukyu
+project: Even Terminal + ロリポップ！ゼロトラストリンク
+publishedAt: '2026-08-24T15:59:36Z'
+observedFacts:
+- Zenn claudecode/codex topic feeds publishedAt 2026-08-24T15:59:36Z (inside window).
+  Publication is GMOペパボ株式会社.
+- 'Even G2 does not talk to the Mac directly: the paired iPhone Even App reaches Even
+  Terminal on the Mac. Same-LAN Wi-Fi is the default; this write-up uses ロリポップ！ゼロトラストリンク
+  so Mac and iPhone share a ZTL network instead.'
+- Measured on Even Terminal 0.6.5 with `--provider codex` (README still documents
+  `--interface` as of 0.8.1). Mac ZTL IP was on utun4; start command `even-terminal
+  --interface utun4 --provider codex` advertised Local localhost:3456 plus utun4 ZTL
+  URL with a token QR.
+- After connecting Codex, Even Terminal logged `[<iPhone ZTL IP>] 200 GET /api/sessions?provider=codex`.
+  Author states this avoided temporary `--expose`.
+- Same launch path is documented for Claude Code via `--provider claude`. Token-in-QR
+  is called out as not-to-share.
+interpretation: 'Japan hosting vendor showing a zero-trust path to wear a coding-agent
+  session: the interesting move is binding the agent control plane to a named tunnel
+  interface instead of opening the laptop.'
+relatedRefs:
+- https://zenn.dev/pepabo/articles/even-terminal-lolipop-ztl
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/pepabo/articles/even-terminal-lolipop-ztl
+- https://zenn.dev/api/articles/even-terminal-lolipop-ztl
+verifiedAt: '2026-08-24T21:56:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Even G2가 맥에 직접 붙지 않고, 로리팝 ZTL utun4에 Even Terminal을 묶어 --expose 없이
+  Codex/Claude Code 세션을 조작. Codex·Claude Code·harness 원격 제어와 맞닿음. 측정은 Even Terminal
+  0.6.5의 200 GET /api/sessions. 안경·ZTL 전제라 EXPERIMENT 아님. 벤더·지리가중 없음. relatedCategories는
+  [] 유지.
+expectedBenefit: 코딩 에이전트 제어면을 임시 공개가 아니라 이름 있는 제로트러스트 인터페이스에 묶는 경로. Claude는 --provider
+  claude로 동일.
+switchingCost: 글 흡수 낮음. Even G2+ZTL+Even Terminal을 쓰려면 하드웨어·회선이 높음.
+maturity: early
+risks:
+- 실측은 Even Terminal 0.6.5이고 README --interface는 0.8.1 기준이라 버전 어긋남.
+- 토큰이 QR에 들어가며 공유 금지라고만 적음. 유출 시 세션 제어권 상실.
+- 기본은 같은 LAN Wi-Fi. ZTL은 대체 경로이지 일반 원격 접속 표준이 아님.
+- iPhone Even App이 중계하므로 폰 분실·앱 권한이 새 경계가 됨.
+smallestUsefulExperiment: utun4 바인딩과 --expose 회피, QR 토큰 주의만 읽고 현재 원격 세션 노출면과 대조. Even/ZTL
+  가입·외부 게시 없음.
+recordStatus: approved
+```
+
+## zenn-uehaj-claude-code-supervisor-agent-view
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/25/regional-signal/japan/zenn-uehaj-claude-code-supervisor-agent-view.yaml
+- sha256: 539063eb29f18b733c39a5b372656a88b221d4f1fdb8c8f55071daaf21c806a3
+- primaryUrl: https://zenn.dev/uehaj/articles/claude-code-supervisor-agent-view
+
+```yaml
+schemaVersion: regional-signal/v1
+id: zenn-uehaj-claude-code-supervisor-agent-view
+collectionDate: '2026-08-25'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Author 上原 (Junji Uehara) at NTTテクノクロス (NTT TechnoCross, Japan). Published
+  on Zenn.
+originalTitle: ターミナルを閉じてもClaude Codeが動き続ける理由、supervisorデーモンとAgent viewについて
+originalLanguage: ja
+koreanSummary: NTT테크노크로스 우에하라가 Claude Code supervisor 데몬(claude daemon run)과 Agent
+  view를 실측했다. 세션은 프로세스가 아니라 transcript·roster.json이며, 서브에이전트와 백그라운드 세션을 수명·회수 경로로
+  구분한다.
+source: technical_article
+canonicalId: zenn:uehaj:claude-code-supervisor-agent-view
+primaryUrl: https://zenn.dev/uehaj/articles/claude-code-supervisor-agent-view
+author: Junji Uehara
+project: Claude Code supervisor / Agent view
+publishedAt: '2026-08-24T13:09:36Z'
+observedFacts:
+- Zenn topic/llm Atom publishedAt 2026-08-24T13:09:36Z (inside window).
+- Author identifies as 上原 of NTTテクノクロス in the article body.
+- Documents supervisor daemon (claude daemon run) hosting background sessions; Agent
+  view via `claude agents`; empty-prompt ← backgrounds the session (disable with leftArrowOpensAgents
+  / /config).
+- 'Live observation on v2.1.220: `claude daemon status` showed pid 48162, origin transient,
+  8 bg workers in roster.json, sockets under /tmp/cc-daemon-<uid>/, spare-worker prewarm
+  in daemon.log.'
+- States sessions are disk (transcript + roster.json) not processes; idle workers
+  can die and resume; sub-agents die with the parent session while background sessions
+  are independent; env vars such as HTTP_PROXY are captured at daemon spawn, not from
+  the current terminal.
+interpretation: 'Primary-source harness anatomy from a Japanese telco-IT engineer:
+  Claude Code''s durable unit is the session ledger, which is why closing a terminal
+  is not the same as stopping work.'
+relatedRefs:
+- https://zenn.dev/uehaj/articles/claude-code-supervisor-agent-view
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/uehaj/articles/claude-code-supervisor-agent-view
+- https://zenn.dev/api/articles/claude-code-supervisor-agent-view
+verifiedAt: '2026-08-24T21:54:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Claude Code supervisor 데몬과 Agent view를 v2.1.220에서 실측. 세션 단위가 프로세스가
+  아니라 transcript·roster.json이고 서브에이전트와 백그라운드 세션 수명이 다름. Claude Code·harness·context에
+  직접 맞음. 해부 글이라 설치 실험은 불필요.
+expectedBenefit: 터미널을 닫아도 작업이 남는 이유와 HTTP_PROXY가 데몬 spawn 시점에 고정되는 점을 운영 체크리스트로 둠.
+switchingCost: 글 대조만이면 낮음. 데몬/Agent view를 기본 워크플로로 바꾸면 중간.
+maturity: developing
+risks:
+- 실측 버전이 v2.1.220이라 이후 릴리스에서 roster/socket 경로가 바뀔 수 있음.
+- 빈 프롬프트 ← 가 세션을 백그라운드하므로 실수로 분리될 수 있음.
+smallestUsefulExperiment: 글의 daemon status·roster.json·서브 vs 백그라운드 수명만 현재 Claude Code
+  설정과 대조. 새 데몬 기동·외부 게시 없음.
+recordStatus: approved
+```
+
+## github-nomadamas-jikji-native-gui-5cfabea
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/25/regional-signal/korea/github-nomadamas-jikji-native-gui-5cfabea.yaml
+- sha256: 075309cddb8813ef675f8d27981bde8da7cafa2f5de760240cdf90bf1ea177f2
+- primaryUrl: https://github.com/NomaDamas/jikji/commit/5cfabeafaee2bbb32e10eb571bcc21e132a2cbdc
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-nomadamas-jikji-native-gui-5cfabea
+collectionDate: '2026-08-25'
+primaryCategory: korea
+relatedCategories: []
+originBasis: GitHub org NomaDamas profile (https://github.com/NomaDamas, HTTP 200)
+  sets itemprop=location to 'Korea, South' and describes the org as an AI open-source
+  hacker house in Seoul, Korea; commit author Cheol-H-Jeong profile lists Home location
+  Seoul.
+originalTitle: 'feat: complete native Rust management GUI'
+originalLanguage: en
+koreanSummary: NomaDamas/jikji 커밋 5cfabea(2026-08-24T20:34:44Z)가 네이티브 Rust 관리 GUI를
+  추가했고(+1229/−35), 같은 날 fe2a545가 코딩 파일 본문 기본 인덱싱을 넣었다.
+source: github_repository
+canonicalId: github:NomaDamas/jikji@5cfabea
+primaryUrl: https://github.com/NomaDamas/jikji/commit/5cfabeafaee2bbb32e10eb571bcc21e132a2cbdc
+author: Cheol-H-Jeong
+project: NomaDamas/jikji
+publishedAt: '2026-08-24T20:34:44Z'
+observedFacts:
+- NomaDamas org HTML https://github.com/NomaDamas returned HTTP 200 and contains <span
+  itemprop="location">Korea, South</span> plus the phrase 'An AI open-source hacker
+  house in Seoul, Korea.'
+- 'Cheol-H-Jeong profile https://github.com/Cheol-H-Jeong returned HTTP 200 with aria-label
+  ''Home location: Seoul'' and p-label ''Seoul''.'
+- 'https://github.com/NomaDamas/jikji/commits/main.atom returned HTTP 200; entry title
+  ''feat: complete native Rust management GUI'', author Cheol-H-Jeong, updated 2026-08-24T20:34:44Z,
+  link commit 5cfabeafaee2bbb32e10eb571bcc21e132a2cbdc.'
+- Commit HTML https://github.com/NomaDamas/jikji/commit/5cfabeafaee2bbb32e10eb571bcc21e132a2cbdc
+  returned HTTP 200; page title matches the commit subject; authoredDate/committedDate
+  2026-08-25T05:34:44.000+09:00 (equals 2026-08-24T20:34:44Z); reported 1229 additions
+  and 35 deletions; paths include crates/jikji-cli/src/gui_commands.rs, gui_commands/http.rs,
+  gui_commands/routing.rs, tests/agent_gui_bench_parity.rs, tests/gui_root_management.rs,
+  crates/jikji-core/src/storage.rs.
+- 'Same atom lists same-day commit fe2a545e7661c731a8ab2b5942589f920fa5059d titled
+  ''feat: index coding file bodies by default'' updated 2026-08-24T20:12:56Z (HTTP
+  200 commit page reports 125 additions, 3 deletions).'
+- README.md (https://raw.githubusercontent.com/NomaDamas/jikji/main/README.md HTTP
+  200) states Jikji is local file discovery for AI agents, ships skills/jikji/SKILL.md,
+  and that `jikji find` builds a multi-query multi-route candidate slate so agents
+  avoid repeated ls/find/grep crawls.
+interpretation: 'This looks like a continuation of the Jikji Rust port: a native management
+  GUI plus default indexing of source-file bodies, aimed at lowering agent filesystem-discovery
+  cost. It is a new commit after skipped jikji@a824fb2, not a tagged release.'
+relatedRefs:
+- https://github.com/NomaDamas/jikji
+- https://github.com/NomaDamas/jikji/commits/main.atom
+- https://github.com/NomaDamas/jikji/commit/fe2a545e7661c731a8ab2b5942589f920fa5059d
+- https://github.com/NomaDamas/jikji/blob/main/skills/jikji/SKILL.md
+- https://raw.githubusercontent.com/NomaDamas/jikji/main/README.md
+sourceWarnings:
+- Verified via GitHub HTML and commits.atom (HTTP 200); HTML responses had no x-ratelimit-remaining
+  header.
+- GitHub /search HTML returned 429 this pass; candidate found via known-org Atom/HTML,
+  not global search.
+- No GitHub release tag in window for jikji (releases.atom empty aside from feed shell).
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/NomaDamas
+- https://github.com/Cheol-H-Jeong
+- https://github.com/NomaDamas/jikji/commits/main.atom
+- https://github.com/NomaDamas/jikji/commit/5cfabeafaee2bbb32e10eb571bcc21e132a2cbdc
+- https://github.com/NomaDamas/jikji/commit/fe2a545e7661c731a8ab2b5942589f920fa5059d
+- https://raw.githubusercontent.com/NomaDamas/jikji/main/README.md
+verifiedAt: '2026-08-24T21:50:00Z'
+contradictions: []
+judgeAction: EXPERIMENT
+judgeRationale: 로컬 파일 발견·멀티쿼리 멀티라우트 slate(`jikji find`)와 SKILL.md가 context engineering·Agent
+  Skills·agent harness에 직접 맞닿음. 창 변경은 네이티브 Rust 관리 GUI(+1229/−35)와 같은 날 코딩 파일 본문 기본
+  인덱싱(fe2a545). 이전 jikji@a824fb2 EXPERIMENT가 skip된 뒤의 후속 커밋이라 재판정은 유지하되, 태그 없는 커밋이라
+  ADOPT는 아님. 이 패킷은 korea 1/1이고 japan/international 대응 후보는 없음. 지리·인기 비가중.
+expectedBenefit: 에이전트가 ls/find/grep 크롤을 반복하지 않고 후보 slate를 한 번에 받는 로컬 검색 하네스. 본문 기본
+  인덱싱으로 파일명만이 아닌 코드 내용 질의 가능. GUI는 인덱스/라우트 점검용.
+switchingCost: CLI 설치는 낮음. 본문 인덱싱 기본화로 prepare 비용은 중간. 관리 GUI/HTTP 표면을 켜면 운영 부담이 추가됨.
+  기존 탐색 워크플로 교체는 아님.
+maturity: developing
+risks:
+- 창 안 릴리스 태그 없음. 커밋 단위라 CLI/GUI API가 바로 바뀔 수 있음.
+- 관리 GUI·HTTP 경로가 CLI 단독보다 공격면을 넓힘.
+- 코딩 파일 본문 기본 인덱싱이 시크릿·대용량·생성물을 포함할 수 있음.
+- 이전 a824fb2 EXPERIMENT가 skip된 같은 프로젝트 후속이라 중복 실험 가능.
+smallestUsefulExperiment: 한 로컬 레포에서 `jikji find ROOT "query" --json` 1회와 skills/jikji/SKILL.md만
+  대조. GUI는 로컬 루트 관리 화면만 확인. 외부 게시·SoT 쓰기·채택 권고 없음.
+recordStatus: approved
+```
