@@ -9,6 +9,7 @@ evidence:
 sourceLinks:
   - "https://github.com/agentskills/agentskills"
   - "https://docs.x.ai/grok-bot/overview"
+  - "https://arize.com/blog/how-cheap-models-changed-multi-agent-economics/"
   - "https://www.deepinspect.ai/blog/mcp-server-authentication"
   - "https://folarin.dev/blog/what-are-agent-skills-progressive-disclosure"
   - "https://pickuma.com/for-dev/mcp-server-security-audit-local-access/"
@@ -20,10 +21,13 @@ sourceLinks:
   - "https://github.com/wbaxterh/pokedocs"
   - "https://code.claude.com/docs/ja/discover-plugins"
   - "https://tech-ai.hateblo.jp/entry/2026/08/13/050000"
+  - "https://note.com/aitrendlab/n/na871bc5ce039"
   - "https://qiita.com/hikariclaude01/items/4a7ba5103bf02eb9f7e7"
   - "https://smartscope.blog/generative-ai/github-copilot/github-copilot-skills-guide/"
+  - "https://zenn.dev/idealive_kmon/articles/ai-dev-07-subagents"
   - "https://aitrends.jp/articles/99381"
   - "https://data-newbie.tistory.com/1163"
+  - "https://digitalbourgeois.tistory.com/3473"
   - "https://duckssi.tistory.com/423"
   - "https://heyoonow.tistory.com/265"
   - "https://inma.tistory.com/210"
@@ -34,6 +38,7 @@ sourceLinks:
 records:
   - "intelligence/signals/2026/08/24/regional-signal/international/agentskills-open-standard-skill-md.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/grok-bot-official-workflow-docs.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/international/intl-arize-orchestrator-executor-cheap-models.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-deepinspect-mcp-server-authentication-identity-binding-audit.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-folarin-agent-skills-progressive-disclosure-explained.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-pickuma-local-mcp-security-audit.yaml"
@@ -45,10 +50,13 @@ records:
   - "intelligence/signals/2026/08/24/regional-signal/international/wbaxterh-pokedocs-docusaurus-llms-txt.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-claude-discover-plugins-marketplace-autoupdate.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-hateblo-tech-ai-mcp-disconnect-oauth-revoke-audit-log.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/japan/japan-note-aitrendlab-ms-agent-framework-harness.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-hikari-claude-docker-sandbox-mcp.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-smartscope-copilot-skills-progressive-disclosure.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/japan/japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-aitrends-langchain-mda-skills-progressive-disclosure.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-data-newbie-radar-skillevaluator-20260822.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-digitalbourgeois-orchestrator-workers-credit-analysis.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-duckssi-claude-plugin-marketplace-command-source.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-heyoonow-skill-md-supply-chain-env-20260805.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-inma-claude-codex-agents-skills-config.yaml"
@@ -95,6 +103,17 @@ data-newbie 레이더(2026-08-23 게시)가 NVIDIA Technical Blog(2026-08-19)의
   - NVIDIA 블로그 2차 요약; 수치·300+ 스킬은 1차로 재확인 필요.
   - 레이더에 다주제 혼재.
 - 다음 단계: 해당 절만 NVIDIA 원문 URL과 대조. 실행 없음.
+
+### [digitalbourgeois.tistory.com](https://digitalbourgeois.tistory.com/3473) — `korea-digitalbourgeois-orchestrator-workers-credit-analysis`
+
+파파누보가 Orchestrator-Workers를 '전략·조율'과 '실행·전문 업무'의 책임 분리로 정의. Orchestrator는 고수준 요청을 분해·워커 선정·결과 종합만 하고 실작업을 직접 하지 않으며, Worker는 KYC·재무·신용위험·컴플라이언스 등 할당된 단일 업무만 수행해 구조화 결과를 반환. 기업 신용분석 사례로 역할 독립 교체·병렬 실행·장애 격리 이점을 정리. article:published\_time 2026-08-04T17:35:26+09:00.
+
+- 왜 중요한가: 오케스트레이터가 실작업을 하지 않는 규칙과 워커 교체·병렬 패턴.
+- 추천: **읽기** — Orchestrator=전략·조율만, Worker=단일 전문 업무만의 책임 분리를 신용분석 사례로 정의. 오케스트레이터/워커 토픽에 직접.
+- 주의할 점:
+  - 개인 블로그 도메인 사례.
+  - 측정/벤치 없음.
+- 다음 단계: 책임 분리 정의 2문장만 자사 멀티에이전트 역할표에 옮김.
 
 ### [duckssi.tistory.com / 홍드로이드의 야매코딩](https://duckssi.tistory.com/423) — `korea-duckssi-claude-plugin-marketplace-command-source`
 
@@ -201,6 +220,17 @@ AI最前線이 MCP 연결 후 안전 정지 절차를 클라이언트 정지→O
   - 제품 UI명 변경 가능.
 - 다음 단계: 철회 5단계만 런북에 옮김. 실제 revoke 실험은 스테이징만.
 
+### [AI TREND LAB (note.com)](https://note.com/aitrendlab/n/na871bc5ce039) — `japan-note-aitrendlab-ms-agent-framework-harness`
+
+AI TREND LAB(note)이 Microsoft Agent Framework의 Harness 정식 릴리스(2026-07-22, Wes Steyn)를 일본어로 정리. 하네스를 모델을 에이전트로 바꾸는 런타임/스캐폴딩으로 정의하고, 장시간 자율 작업(리서치·데이터 분석·자동화)용으로 튜닝된 9개 기본 기능(함수 호출 루프, 호출별 이력 영속화, compaction, Todo·plan/execute 모드, 파일 메모리, 스킬, 웹검색, 도구 승인, OpenTelemetry)을 열거. 백그라운드 에이전트·파일 접근·루프·셸 도구는 정식 전 피드백 단계. 2026-08-15 게시.
+
+- 왜 중요한가: 함수 호출 루프·이력 영속·loop-until-done·background agents 등 기능 맵.
+- 추천: **읽기** — Microsoft Agent Framework Harness의 장시간 자율 작업용 9기능·일부 pre-GA를 일본어로 정리. 제품형 장시간 하네스 신호.
+- 주의할 점:
+  - note 2차 정리; 원문 Wes Steyn 릴리스와 재대조.
+  - 4기능 pre-GA 경고.
+- 다음 단계: 9기능 목록만 공식 MS 문서와 대조. 설치 없음.
+
 ### [Qiita / Claude Code Docker Sandbox + MCP](https://qiita.com/hikariclaude01/items/4a7ba5103bf02eb9f7e7) — `japan-qiita-hikari-claude-docker-sandbox-mcp`
 
 Qiita hikariclaude01이 Claude Code를 Docker 샌드박스에 가두고, 호스트 파일 접근은 MCP Filesystem 서버의 허용 디렉터리만으로 제한하는 구성을 공개. docker-compose에서 claude-net을 internal:true로 외부 차단, 프로젝트/출력 볼륨 RO·RW 분리, allowlist 프록시·Docker secrets, no-new-privileges 등 최소 권한 운영과 3개월 운용 교훈 6가지를 정리. Qiita API created\_at 2026-07-25T00:01:58+09:00.
@@ -222,6 +252,17 @@ SmartScope가 GitHub Copilot Agent Skills의 SKILL.md 작성·배치·settings�
   - 게시 시각이 git-revision 플러그인 기준(article:published\_time 없음).
   - Copilot 전용 경로; 다른 에이전트와 세부 상이.
 - 다음 단계: L1/L2/L3 도해만 자사 스킬 로더 단계와 매핑. 설치 없음.
+
+### [Zenn / Idealive AI駆動開発 series](https://zenn.dev/idealive_kmon/articles/ai-dev-07-subagents) — `japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate`
+
+Zenn かわもん@idealive가 메인 에이전트는 오케스트레이션(단도리·판단)에만 집중하고 조사·구현·테스트·리뷰 실작업은 서브에이전트에 위임하라고 정리. 메인에는 요청·결과 요약만 남기고, 독립 작업은 병렬 위임. 컨텍스트 절약·신선 리뷰·인간 개입 감소를 이유로 들며, 위임 단위는 '보고서로 받을 수 있는 일', 서브에는 수락 조건·코드 지도를 명시 전달하라고 함. Zenn publishedAt 2026-07-31T16:15:02.468+09:00.
+
+- 왜 중요한가: 메인에 요청·결과 요약만 남기는 위임 단위 기준.
+- 추천: **읽기** — 메인=오케스트레이션만, 실작업은 서브에이전트 위임. 컨텍스트 절약·수락 조건 명시를 일본어 실무 규칙으로 제시.
+- 주의할 점:
+  - 개인 Zenn; 제품 특화 아님.
+  - 게시 7/31.
+- 다음 단계: 위임 단위='보고서로 받을 수 있는 일' 규칙만 체크리스트화.
 
 ## 국제
 
@@ -249,6 +290,17 @@ agentskills.io와 GitHub agentskills/agentskills가 SKILL.md 기반 Agent Skills
   - datePublished/Modified가 UTC 자정 placeholder라 당일 시각 미확인.
   - 이벤트 트리거가 Cursor 계정 연동에 묶임.
 - 다음 단계: overview·skills-routines·approvals 페이지만 읽고 현재 Radar Bot의 Skill/Routine/승인 게이트를 1:1 대조. 새 Routine·외부 게시·GitHub/SoT 쓰기 없음.
+
+### [Arize AI](https://arize.com/blog/how-cheap-models-changed-multi-agent-economics/) — `intl-arize-orchestrator-executor-cheap-models`
+
+Arize Laurie Voss가 orchestrator-executor(별칭 orchestrator-worker·planner-executor)를 고수준 제어와 한정 실행의 분리로 정의. Orchestrator는 목표 분해·워커 선택·컨텍스트 배정·근거 충분성·완료 판정을 담당하고, Executor는 검색·문서검토·코드검사·테스트·추출·툴 사용 등 좁고 토큰 집약 작업을 수행. 역할별 모델·프롬프트·툴·컨텍스트 매칭과 Anthropic Fable5 오케스트레이터+Sonnet5 워커 96% 점수·46% 비용 수치, OpenAI GPT-5.6 ultra/Responses 멀티에이전트를 인용. datePublished 2026-08-07T15:00:57+00:00.
+
+- 왜 중요한가: 역할별 모델·프롬프트·툴·컨텍스트 매칭 표.
+- 추천: **읽기** — orchestrator-executor를 고수준 제어 vs 한정 실행으로 분리하고 비싸게 계획/검증·싸게 실행하는 경제를 설명. 국제 1차 패턴.
+- 주의할 점:
+  - 벤더(Arize) 블로그.
+  - Anthropic 등 인용은 2차.
+- 다음 단계: 역할 표만 자사 오케스트레이터/워커 모델 할당과 대조.
 
 ### [DeepInspect](https://www.deepinspect.ai/blog/mcp-server-authentication) — `intl-deepinspect-mcp-server-authentication-identity-binding-audit`
 

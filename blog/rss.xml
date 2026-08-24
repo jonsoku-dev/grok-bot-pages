@@ -45,6 +45,19 @@
 </li>
 <li class="">다음 단계: 해당 절만 NVIDIA 원문 URL과 대조. 실행 없음.</li>
 </ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="digitalbourgeoististorycom--korea-digitalbourgeois-orchestrator-workers-credit-analysis"><a href="https://digitalbourgeois.tistory.com/3473" target="_blank" rel="noopener noreferrer" class="">digitalbourgeois.tistory.com</a> — <code>korea-digitalbourgeois-orchestrator-workers-credit-analysis</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/24/ai-engineering-radar#digitalbourgeoististorycom--korea-digitalbourgeois-orchestrator-workers-credit-analysis" class="hash-link" aria-label="digitalbourgeoististorycom--korea-digitalbourgeois-orchestrator-workers-credit-analysis에 대한 직접 링크" title="digitalbourgeoististorycom--korea-digitalbourgeois-orchestrator-workers-credit-analysis에 대한 직접 링크" translate="no">​</a></h3>
+<p>파파누보가 Orchestrator-Workers를 '전략·조율'과 '실행·전문 업무'의 책임 분리로 정의. Orchestrator는 고수준 요청을 분해·워커 선정·결과 종합만 하고 실작업을 직접 하지 않으며, Worker는 KYC·재무·신용위험·컴플라이언스 등 할당된 단일 업무만 수행해 구조화 결과를 반환. 기업 신용분석 사례로 역할 독립 교체·병렬 실행·장애 격리 이점을 정리. article<!-- -->:published<!-- -->_time 2026-08-04T17:35:26+09:00.</p>
+<ul>
+<li class="">왜 중요한가: 오케스트레이터가 실작업을 하지 않는 규칙과 워커 교체·병렬 패턴.</li>
+<li class="">추천: <strong>읽기</strong> — Orchestrator=전략·조율만, Worker=단일 전문 업무만의 책임 분리를 신용분석 사례로 정의. 오케스트레이터/워커 토픽에 직접.</li>
+<li class="">주의할 점:<!-- -->
+<ul>
+<li class="">개인 블로그 도메인 사례.</li>
+<li class="">측정/벤치 없음.</li>
+</ul>
+</li>
+<li class="">다음 단계: 책임 분리 정의 2문장만 자사 멀티에이전트 역할표에 옮김.</li>
+</ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="duckssitistorycom--홍드로이드의-야매코딩--korea-duckssi-claude-plugin-marketplace-command-source"><a href="https://duckssi.tistory.com/423" target="_blank" rel="noopener noreferrer" class="">duckssi.tistory.com / 홍드로이드의 야매코딩</a> — <code>korea-duckssi-claude-plugin-marketplace-command-source</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/24/ai-engineering-radar#duckssitistorycom--%ED%99%8D%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%9D%98-%EC%95%BC%EB%A7%A4%EC%BD%94%EB%94%A9--korea-duckssi-claude-plugin-marketplace-command-source" class="hash-link" aria-label="duckssitistorycom--홍드로이드의-야매코딩--korea-duckssi-claude-plugin-marketplace-command-source에 대한 직접 링크" title="duckssitistorycom--홍드로이드의-야매코딩--korea-duckssi-claude-plugin-marketplace-command-source에 대한 직접 링크" translate="no">​</a></h3>
 <p>홍드로이드가 Claude Code 플러그인 마켓플레이스 소스 중 command 방식을 정리한 글. 설치 시 사용자 PC에서 셸 명령을 실행해 출력 폴더를 플러그인으로 쓰고, 설치·갱신뿐 아니라 세션 시작 후 백그라운드로도 재실행된다고 설명. 2026-08-17 공식 plugin-marketplaces 문서 확인 기준으로 작성.</p>
 <ul>
@@ -167,6 +180,19 @@
 </li>
 <li class="">다음 단계: 철회 5단계만 런북에 옮김. 실제 revoke 실험은 스테이징만.</li>
 </ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-trend-lab-notecom--japan-note-aitrendlab-ms-agent-framework-harness"><a href="https://note.com/aitrendlab/n/na871bc5ce039" target="_blank" rel="noopener noreferrer" class="">AI TREND LAB (note.com)</a> — <code>japan-note-aitrendlab-ms-agent-framework-harness</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/24/ai-engineering-radar#ai-trend-lab-notecom--japan-note-aitrendlab-ms-agent-framework-harness" class="hash-link" aria-label="ai-trend-lab-notecom--japan-note-aitrendlab-ms-agent-framework-harness에 대한 직접 링크" title="ai-trend-lab-notecom--japan-note-aitrendlab-ms-agent-framework-harness에 대한 직접 링크" translate="no">​</a></h3>
+<p>AI TREND LAB(note)이 Microsoft Agent Framework의 Harness 정식 릴리스(2026-07-22, Wes Steyn)를 일본어로 정리. 하네스를 모델을 에이전트로 바꾸는 런타임/스캐폴딩으로 정의하고, 장시간 자율 작업(리서치·데이터 분석·자동화)용으로 튜닝된 9개 기본 기능(함수 호출 루프, 호출별 이력 영속화, compaction, Todo·plan/execute 모드, 파일 메모리, 스킬, 웹검색, 도구 승인, OpenTelemetry)을 열거. 백그라운드 에이전트·파일 접근·루프·셸 도구는 정식 전 피드백 단계. 2026-08-15 게시.</p>
+<ul>
+<li class="">왜 중요한가: 함수 호출 루프·이력 영속·loop-until-done·background agents 등 기능 맵.</li>
+<li class="">추천: <strong>읽기</strong> — Microsoft Agent Framework Harness의 장시간 자율 작업용 9기능·일부 pre-GA를 일본어로 정리. 제품형 장시간 하네스 신호.</li>
+<li class="">주의할 점:<!-- -->
+<ul>
+<li class="">note 2차 정리; 원문 Wes Steyn 릴리스와 재대조.</li>
+<li class="">4기능 pre-GA 경고.</li>
+</ul>
+</li>
+<li class="">다음 단계: 9기능 목록만 공식 MS 문서와 대조. 설치 없음.</li>
+</ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="qiita--claude-code-docker-sandbox--mcp--japan-qiita-hikari-claude-docker-sandbox-mcp"><a href="https://qiita.com/hikariclaude01/items/4a7ba5103bf02eb9f7e7" target="_blank" rel="noopener noreferrer" class="">Qiita / Claude Code Docker Sandbox + MCP</a> — <code>japan-qiita-hikari-claude-docker-sandbox-mcp</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/24/ai-engineering-radar#qiita--claude-code-docker-sandbox--mcp--japan-qiita-hikari-claude-docker-sandbox-mcp" class="hash-link" aria-label="qiita--claude-code-docker-sandbox--mcp--japan-qiita-hikari-claude-docker-sandbox-mcp에 대한 직접 링크" title="qiita--claude-code-docker-sandbox--mcp--japan-qiita-hikari-claude-docker-sandbox-mcp에 대한 직접 링크" translate="no">​</a></h3>
 <p>Qiita hikariclaude01이 Claude Code를 Docker 샌드박스에 가두고, 호스트 파일 접근은 MCP Filesystem 서버의 허용 디렉터리만으로 제한하는 구성을 공개. docker-compose에서 claude-net을 internal<!-- -->:true<!-- -->로 외부 차단, 프로젝트/출력 볼륨 RO·RW 분리, allowlist 프록시·Docker secrets, no-new-privileges 등 최소 권한 운영과 3개월 운용 교훈 6가지를 정리. Qiita API created_at 2026-07-25T00:01:58+09:00.</p>
 <ul>
@@ -192,6 +218,19 @@
 </ul>
 </li>
 <li class="">다음 단계: L1/L2/L3 도해만 자사 스킬 로더 단계와 매핑. 설치 없음.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="zenn--idealive-ai駆動開発-series--japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate"><a href="https://zenn.dev/idealive_kmon/articles/ai-dev-07-subagents" target="_blank" rel="noopener noreferrer" class="">Zenn / Idealive AI駆動開発 series</a> — <code>japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/24/ai-engineering-radar#zenn--idealive-ai%E9%A7%86%E5%8B%95%E9%96%8B%E7%99%BA-series--japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate" class="hash-link" aria-label="zenn--idealive-ai駆動開発-series--japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate에 대한 직접 링크" title="zenn--idealive-ai駆動開発-series--japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate에 대한 직접 링크" translate="no">​</a></h3>
+<p>Zenn かわもん@idealive가 메인 에이전트는 오케스트레이션(단도리·판단)에만 집중하고 조사·구현·테스트·리뷰 실작업은 서브에이전트에 위임하라고 정리. 메인에는 요청·결과 요약만 남기고, 독립 작업은 병렬 위임. 컨텍스트 절약·신선 리뷰·인간 개입 감소를 이유로 들며, 위임 단위는 '보고서로 받을 수 있는 일', 서브에는 수락 조건·코드 지도를 명시 전달하라고 함. Zenn publishedAt 2026-07-31T16:15:02.468+09:00.</p>
+<ul>
+<li class="">왜 중요한가: 메인에 요청·결과 요약만 남기는 위임 단위 기준.</li>
+<li class="">추천: <strong>읽기</strong> — 메인=오케스트레이션만, 실작업은 서브에이전트 위임. 컨텍스트 절약·수락 조건 명시를 일본어 실무 규칙으로 제시.</li>
+<li class="">주의할 점:<!-- -->
+<ul>
+<li class="">개인 Zenn; 제품 특화 아님.</li>
+<li class="">게시 7/31.</li>
+</ul>
+</li>
+<li class="">다음 단계: 위임 단위='보고서로 받을 수 있는 일' 규칙만 체크리스트화.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="국제">국제<a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/24/ai-engineering-radar#%EA%B5%AD%EC%A0%9C" class="hash-link" aria-label="국제에 대한 직접 링크" title="국제에 대한 직접 링크" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="agent-skills--agentskills-open-standard-skill-md"><a href="https://github.com/agentskills/agentskills" target="_blank" rel="noopener noreferrer" class="">Agent Skills</a> — <code>agentskills-open-standard-skill-md</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/24/ai-engineering-radar#agent-skills--agentskills-open-standard-skill-md" class="hash-link" aria-label="agent-skills--agentskills-open-standard-skill-md에 대한 직접 링크" title="agent-skills--agentskills-open-standard-skill-md에 대한 직접 링크" translate="no">​</a></h3>
@@ -222,6 +261,19 @@
 </ul>
 </li>
 <li class="">다음 단계: overview·skills-routines·approvals 페이지만 읽고 현재 Radar Bot의 Skill/Routine/승인 게이트를 1:1 대조. 새 Routine·외부 게시·GitHub/SoT 쓰기 없음.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="arize-ai--intl-arize-orchestrator-executor-cheap-models"><a href="https://arize.com/blog/how-cheap-models-changed-multi-agent-economics/" target="_blank" rel="noopener noreferrer" class="">Arize AI</a> — <code>intl-arize-orchestrator-executor-cheap-models</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/24/ai-engineering-radar#arize-ai--intl-arize-orchestrator-executor-cheap-models" class="hash-link" aria-label="arize-ai--intl-arize-orchestrator-executor-cheap-models에 대한 직접 링크" title="arize-ai--intl-arize-orchestrator-executor-cheap-models에 대한 직접 링크" translate="no">​</a></h3>
+<p>Arize Laurie Voss가 orchestrator-executor(별칭 orchestrator-worker·planner-executor)를 고수준 제어와 한정 실행의 분리로 정의. Orchestrator는 목표 분해·워커 선택·컨텍스트 배정·근거 충분성·완료 판정을 담당하고, Executor는 검색·문서검토·코드검사·테스트·추출·툴 사용 등 좁고 토큰 집약 작업을 수행. 역할별 모델·프롬프트·툴·컨텍스트 매칭과 Anthropic Fable5 오케스트레이터+Sonnet5 워커 96% 점수·46% 비용 수치, OpenAI GPT-5.6 ultra/Responses 멀티에이전트를 인용. datePublished 2026-08-07T15:00:57+00:00.</p>
+<ul>
+<li class="">왜 중요한가: 역할별 모델·프롬프트·툴·컨텍스트 매칭 표.</li>
+<li class="">추천: <strong>읽기</strong> — orchestrator-executor를 고수준 제어 vs 한정 실행으로 분리하고 비싸게 계획/검증·싸게 실행하는 경제를 설명. 국제 1차 패턴.</li>
+<li class="">주의할 점:<!-- -->
+<ul>
+<li class="">벤더(Arize) 블로그.</li>
+<li class="">Anthropic 등 인용은 2차.</li>
+</ul>
+</li>
+<li class="">다음 단계: 역할 표만 자사 오케스트레이터/워커 모델 할당과 대조.</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="deepinspect--intl-deepinspect-mcp-server-authentication-identity-binding-audit"><a href="https://www.deepinspect.ai/blog/mcp-server-authentication" target="_blank" rel="noopener noreferrer" class="">DeepInspect</a> — <code>intl-deepinspect-mcp-server-authentication-identity-binding-audit</code><a href="https://jonsoku-dev.github.io/grok-bot-pages/blog/2026/08/24/ai-engineering-radar#deepinspect--intl-deepinspect-mcp-server-authentication-identity-binding-audit" class="hash-link" aria-label="deepinspect--intl-deepinspect-mcp-server-authentication-identity-binding-audit에 대한 직접 링크" title="deepinspect--intl-deepinspect-mcp-server-authentication-identity-binding-audit에 대한 직접 링크" translate="no">​</a></h3>
 <p>DeepInspect가 MCP 경계에서 OAuth 2.1+PKCE 인증, RFC 8707 audience 결속, 검사 계층의 per-tool 스코프·on-behalf-of 추적, 그리고 주체·도구·정책 규칙·인자 해시·allow/block을 담는 결정 단위 감사 레코드를 설명한다. article<!-- -->:published<!-- -->_time 2026-08-17.</p>

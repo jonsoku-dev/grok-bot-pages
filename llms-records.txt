@@ -714,6 +714,81 @@ smallestUsefulExperiment: overview·skills-routines·approvals 페이지만 읽�
   Skill/Routine/승인 게이트를 1:1 대조. 새 Routine·외부 게시·GitHub/SoT 쓰기 없음.
 ```
 
+## intl-arize-orchestrator-executor-cheap-models
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/24/regional-signal/international/intl-arize-orchestrator-executor-cheap-models.yaml
+- sha256: 3eebbd17cbadb8d49eea1312f837db79ae8d6475624f60326e9fda98b14276e8
+- primaryUrl: https://arize.com/blog/how-cheap-models-changed-multi-agent-economics/
+
+```yaml
+schemaVersion: regional-signal/v1
+id: intl-arize-orchestrator-executor-cheap-models
+collectionDate: '2026-08-24'
+primaryCategory: international
+relatedCategories: []
+originBasis: English Arize AI Agent Engineering blog by Laurie Voss (arize.com); international
+  practitioner/analysis article on orchestrator-executor responsibility split and
+  multi-agent economics—not region-specific product docs.
+originalTitle: How cheap models changed multi-agent economics
+originalLanguage: en
+koreanSummary: Arize Laurie Voss가 orchestrator-executor(별칭 orchestrator-worker·planner-executor)를
+  고수준 제어와 한정 실행의 분리로 정의. Orchestrator는 목표 분해·워커 선택·컨텍스트 배정·근거 충분성·완료 판정을 담당하고, Executor는
+  검색·문서검토·코드검사·테스트·추출·툴 사용 등 좁고 토큰 집약 작업을 수행. 역할별 모델·프롬프트·툴·컨텍스트 매칭과 Anthropic Fable5
+  오케스트레이터+Sonnet5 워커 96% 점수·46% 비용 수치, OpenAI GPT-5.6 ultra/Responses 멀티에이전트를 인용.
+  datePublished 2026-08-07T15:00:57+00:00.
+source: technical_article
+canonicalId: arize:blog:how-cheap-models-changed-multi-agent-economics
+primaryUrl: https://arize.com/blog/how-cheap-models-changed-multi-agent-economics/
+author: Laurie Voss
+project: Arize AI
+publishedAt: '2026-08-07T15:00:57+00:00'
+observedFacts:
+- Page meta article:published_time 2026-08-07T15:00:57+00:00; article:modified_time
+  2026-08-18T01:43:21+00:00; author Laurie Voss (collected 2026-08-24).
+- Defines orchestrator-executor as separating high-level control from bounded execution;
+  notes aliases orchestrator-worker, planner-executor, coordinator-worker.
+- 'Role table: Orchestrator owns task decomposition, delegation, synthesis, verification,
+  retries, and stopping; Executor owns bounded research/coding/extraction/review/tool-heavy
+  subtasks selected for cost-per-successful-task and brief adherence.'
+- States each worker can have its own model, prompt, tools, and context so teams match
+  capability to role; cites Anthropic Managed Agents isolated threads and OpenAI GPT-5.6
+  ultra / Responses API multi-agent beta.
+- 'Cites Anthropic BrowseComp figure: Fable 5 orchestrator directing Sonnet 5 workers
+  retained 96% of an all-Fable team''s score at 46% of the cost—used to argue the
+  separation became the economic default once cheap executors were good enough.'
+interpretation: 'Strong international signal that the orchestrator must not be the
+  executor: plan/verify on an expensive model, run bounded work on cheap specialist
+  workers—responsibility separation as production default.'
+relatedRefs:
+- https://www.anthropic.com/engineering/built-multi-agent-research-system
+- https://arize.com/blog/
+sourceWarnings:
+- Vendor blog (Arize observability platform) with demo CTA; vendor-cited Anthropic/OpenAI
+  numbers should be checked against primary sources.
+- Model marketing names (Fable 5, Sonnet 5, GPT-5.6) are as stated in-article as of
+  Aug 2026—confirm current product SKUs before quoting externally.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://arize.com/blog/how-cheap-models-changed-multi-agent-economics/
+verifiedAt: '2026-08-24T14:58:00Z'
+contradictions:
+- dateModified=['2026-08-18T01:43:21+00:00']
+judgeAction: READ
+judgeRationale: orchestrator-executor를 고수준 제어 vs 한정 실행으로 분리하고 비싸게 계획/검증·싸게 실행하는 경제를
+  설명. 국제 1차 패턴.
+expectedBenefit: 역할별 모델·프롬프트·툴·컨텍스트 매칭 표.
+switchingCost: 문서 낮음. 모델 라우팅 도입은 중간.
+maturity: developing
+risks:
+- 벤더(Arize) 블로그.
+- Anthropic 등 인용은 2차.
+smallestUsefulExperiment: 역할 표만 자사 오케스트레이터/워커 모델 할당과 대조.
+recordStatus: approved
+```
+
 ## intl-deepinspect-mcp-server-authentication-identity-binding-audit
 
 - artifactRole: factual_sot
@@ -1343,6 +1418,80 @@ risks:
 smallestUsefulExperiment: 철회 5단계만 런북에 옮김. 실제 revoke 실험은 스테이징만.
 ```
 
+## japan-note-aitrendlab-ms-agent-framework-harness
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/24/regional-signal/japan/japan-note-aitrendlab-ms-agent-framework-harness.yaml
+- sha256: 663183eea0201f30fb8599df45f9cfa16193d3f6cd51ee11b1bf84cd412d770c
+- primaryUrl: https://note.com/aitrendlab/n/na871bc5ce039
+
+```yaml
+schemaVersion: regional-signal/v1
+id: japan-note-aitrendlab-ms-agent-framework-harness
+collectionDate: '2026-08-24'
+primaryCategory: japan
+relatedCategories:
+- international
+originBasis: Japanese-language note.com article by AI TREND LAB summarizing Microsoft
+  Agent Framework Harness release for long-running autonomous agents; Japan-hosted
+  public technical commentary with primary cite to Microsoft developer blog.
+originalTitle: AIに「長時間働かせる」ほど設計が重要になる――Microsoftが公開したエージェントを動かす「ハーネス」の正体
+originalLanguage: ja
+koreanSummary: AI TREND LAB(note)이 Microsoft Agent Framework의 Harness 정식 릴리스(2026-07-22,
+  Wes Steyn)를 일본어로 정리. 하네스를 모델을 에이전트로 바꾸는 런타임/스캐폴딩으로 정의하고, 장시간 자율 작업(리서치·데이터 분석·자동화)용으로
+  튜닝된 9개 기본 기능(함수 호출 루프, 호출별 이력 영속화, compaction, Todo·plan/execute 모드, 파일 메모리, 스킬,
+  웹검색, 도구 승인, OpenTelemetry)을 열거. 백그라운드 에이전트·파일 접근·루프·셸 도구는 정식 전 피드백 단계. 2026-08-15
+  게시.
+source: technical_article
+canonicalId: note:aitrendlab:na871bc5ce039
+primaryUrl: https://note.com/aitrendlab/n/na871bc5ce039
+author: AI TREND LAB
+project: AI TREND LAB (note.com)
+publishedAt: '2026-08-15T01:27:40+09:00'
+observedFacts:
+- note page datePublished 2026-08-15T01:27:40.000+09:00 (collected 2026-08-24).
+- Defines an agent harness as scaffolding/runtime that turns a language model into
+  an agent that can call tools, work multi-step tasks, remember prior work, and keep
+  going until finished.
+- 'Reports Microsoft Agent Framework Harness ships with nine default capabilities
+  tuned for long-running autonomous work: function-calling loop, per-invocation history
+  persistence, context compaction, Todo + plan/execute mode tracking, file memory,
+  skills, web search, tool approvals, and OpenTelemetry telemetry.'
+- States four features (background agents, file access, loop-until-done, shell tool)
+  are usable but pre-GA with warnings pending more customer feedback.
+- 'Primary Microsoft blog cited: https://devblogs.microsoft.com/agent-framework/the-microsoft-agent-framework-harness-is-now-released/
+  with datePublished 2026-07-22T08:54:03+00:00 (also inside the 30-day window).'
+interpretation: Japan-facing public write-up of a concrete long-running agent harness
+  product design (Microsoft Agent Framework Harness)—useful regional signal for how
+  long-horizon execution scaffolding is being productized.
+relatedRefs:
+- https://devblogs.microsoft.com/agent-framework/the-microsoft-agent-framework-harness-is-now-released/
+- https://learn.microsoft.com/agent-framework/agents/harness
+sourceWarnings:
+- Secondary Japanese commentary on a Microsoft first-party announcement; independent
+  third-party benchmarks are not provided.
+- relatedCategories includes international because the underlying product/docs are
+  Microsoft (US) while the selected page is Japan-hosted Japanese commentary.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://note.com/aitrendlab/n/na871bc5ce039
+verifiedAt: '2026-08-24T14:56:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Microsoft Agent Framework Harness의 장시간 자율 작업용 9기능·일부 pre-GA를 일본어로
+  정리. 제품형 장시간 하네스 신호.
+expectedBenefit: 함수 호출 루프·이력 영속·loop-until-done·background agents 등 기능 맵.
+switchingCost: 문서 낮음. MS 프레임 도입은 중간~높음.
+maturity: early
+risks:
+- note 2차 정리; 원문 Wes Steyn 릴리스와 재대조.
+- 4기능 pre-GA 경고.
+smallestUsefulExperiment: 9기능 목록만 공식 MS 문서와 대조. 설치 없음.
+recordStatus: approved
+```
+
 ## japan-qiita-hikari-claude-docker-sandbox-mcp
 
 - artifactRole: factual_sot
@@ -1455,6 +1604,76 @@ risks:
 smallestUsefulExperiment: L1/L2/L3 도해만 자사 스킬 로더 단계와 매핑. 설치 없음.
 ```
 
+## japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/24/regional-signal/japan/japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate.yaml
+- sha256: 393a165a2acc5213d5453c07b587cf2ad671aee8d1cd273c0825d7b02f7dfe33
+- primaryUrl: https://zenn.dev/idealive_kmon/articles/ai-dev-07-subagents
+
+```yaml
+schemaVersion: regional-signal/v1
+id: japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate
+collectionDate: '2026-08-24'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Japanese Zenn technical article by かわもん@idealive (idealive_kmon); Japan-hosted
+  Idealive series piece on keeping the main agent on orchestration and delegating
+  execution to subagents—not language-only classification.
+originalTitle: 【AI駆動開発 8】サブエージェントに委譲する — メインの頭をパンパンにしない
+originalLanguage: ja
+koreanSummary: Zenn かわもん@idealive가 메인 에이전트는 오케스트레이션(단도리·판단)에만 집중하고 조사·구현·테스트·리뷰 실작업은
+  서브에이전트에 위임하라고 정리. 메인에는 요청·결과 요약만 남기고, 독립 작업은 병렬 위임. 컨텍스트 절약·신선 리뷰·인간 개입 감소를 이유로
+  들며, 위임 단위는 '보고서로 받을 수 있는 일', 서브에는 수락 조건·코드 지도를 명시 전달하라고 함. Zenn publishedAt 2026-07-31T16:15:02.468+09:00.
+source: technical_article
+canonicalId: zenn:idealive_kmon:ai-dev-07-subagents
+primaryUrl: https://zenn.dev/idealive_kmon/articles/ai-dev-07-subagents
+author: かわもん@idealive (idealive_kmon)
+project: Zenn / Idealive AI駆動開発 series
+publishedAt: '2026-07-31T16:15:02.468+09:00'
+observedFacts:
+- Zenn article header/API publishedAt 2026-07-31T16:15:02.468+09:00 (display 2026/07/31);
+  author username idealive_kmon / かわもん@idealive (collected 2026-08-24).
+- 'Prescription: keep the main agent on orchestration (scheduling and judgment) and
+  delegate actual work—investigation, implementation, test, review—to subagents as
+  whole work units.'
+- States only a summary of what was asked and what came back should remain in the
+  main context; independent units may run on multiple subagents concurrently.
+- 'Gives three reasons: protect the main context window so late-task accuracy does
+  not collapse; subagents work faster/more accurately without long shared history;
+  fresh-context review by a subagent that did not implement the change reduces bias.'
+- 'Ops tips: delegate only work receivable as a report (avoid chatty micro-steps);
+  explicitly pass acceptance criteria and a code map because subagents do not see
+  the main conversation; frames main=orchestration / sub=execution as the base for
+  human hands-off of whole tasks.'
+interpretation: 'Japan-locale hands-on rule for orchestrator/worker responsibility:
+  main never does the work, only plans and integrates; workers execute bounded units—directly
+  on-topic for separation of duties.'
+relatedRefs:
+- https://zenn.dev/idealive_kmon
+sourceWarnings:
+- Company internal AI-driven-development series (Idealive) published on Zenn; short
+  essay, not a framework benchmark.
+- Assumes Claude Code-style subagent tooling; adapt handoff contracts to your runtime.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/idealive_kmon/articles/ai-dev-07-subagents
+verifiedAt: '2026-08-24T14:58:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 메인=오케스트레이션만, 실작업은 서브에이전트 위임. 컨텍스트 절약·수락 조건 명시를 일본어 실무 규칙으로 제시.
+expectedBenefit: 메인에 요청·결과 요약만 남기는 위임 단위 기준.
+switchingCost: 문서 낮음. 워크플로 변경은 중간.
+maturity: developing
+risks:
+- 개인 Zenn; 제품 특화 아님.
+- 게시 7/31.
+smallestUsefulExperiment: 위임 단위='보고서로 받을 수 있는 일' 규칙만 체크리스트화.
+recordStatus: approved
+```
+
 ## korea-aitrends-langchain-mda-skills-progressive-disclosure
 
 - artifactRole: factual_sot
@@ -1564,6 +1783,79 @@ risks:
 - NVIDIA 블로그 2차 요약; 수치·300+ 스킬은 1차로 재확인 필요.
 - 레이더에 다주제 혼재.
 smallestUsefulExperiment: 해당 절만 NVIDIA 원문 URL과 대조. 실행 없음.
+```
+
+## korea-digitalbourgeois-orchestrator-workers-credit-analysis
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/24/regional-signal/korea/korea-digitalbourgeois-orchestrator-workers-credit-analysis.yaml
+- sha256: 4afca58b6a135b66582058359ccc535577f1f98e06ada4c46677590b80ae63f2
+- primaryUrl: https://digitalbourgeois.tistory.com/3473
+
+```yaml
+schemaVersion: regional-signal/v1
+id: korea-digitalbourgeois-orchestrator-workers-credit-analysis
+collectionDate: '2026-08-24'
+primaryCategory: korea
+relatedCategories: []
+originBasis: Korean-language Tistory technical blog (digitalbourgeois.tistory.com
+  / 평범한 직장인이 사는 세상) by 파파누보; Korea-hosted practitioner essay on Orchestrator-Workers
+  role separation for enterprise credit analysis—not language-only classification.
+originalTitle: 복잡한 금융 업무를 효율화하는 AI 에이전트 아키텍처, Orchestrator-Workers 패턴
+originalLanguage: ko
+koreanSummary: 파파누보가 Orchestrator-Workers를 '전략·조율'과 '실행·전문 업무'의 책임 분리로 정의. Orchestrator는
+  고수준 요청을 분해·워커 선정·결과 종합만 하고 실작업을 직접 하지 않으며, Worker는 KYC·재무·신용위험·컴플라이언스 등 할당된 단일 업무만
+  수행해 구조화 결과를 반환. 기업 신용분석 사례로 역할 독립 교체·병렬 실행·장애 격리 이점을 정리. article:published_time
+  2026-08-04T17:35:26+09:00.
+source: technical_article
+canonicalId: tistory:digitalbourgeois:3473
+primaryUrl: https://digitalbourgeois.tistory.com/3473
+author: 파파누보
+project: digitalbourgeois.tistory.com
+publishedAt: '2026-08-04T17:35:26+09:00'
+observedFacts:
+- Page meta article:published_time 2026-08-04T17:35:26+09:00; article:modified_time
+  2026-08-04T17:36:02+09:00 (collected 2026-08-24).
+- Defines Orchestrator-Workers as an architecture of one Orchestrator that manages
+  the whole job plus specialized Workers; states the core is separating roles so a
+  single agent does not own every step.
+- States Orchestrator receives the high-level request, decomposes work, selects Workers,
+  collects results, and produces the final answer—and explicitly that Orchestrator
+  does not perform every task itself (strategy/coordination only).
+- States each Worker focuses on one concrete assigned task (e.g. KYC, Financial, Credit
+  Risk, Compliance agents in a Company X credit-analysis flow) and need not know the
+  full end-to-end job; returns structured results to the Orchestrator.
+- 'Lists operational benefits of the separation: independent Worker swap/update, parallel
+  execution when tasks are independent, and failure localization to a specific Worker
+  rather than a monolithic agent.'
+interpretation: 'Clear Korea-origin signal on orchestrator vs worker responsibility
+  split: Orchestrator=strategy/coordination, Worker=bounded specialist execution,
+  illustrated with a finance credit-analysis decomposition.'
+relatedRefs:
+- https://www.anthropic.com/engineering/built-multi-agent-research-system
+sourceWarnings:
+- Independent practitioner Tistory essay with a finance domain walkthrough; treat
+  Worker agent names as illustrative design, not a shipped product.
+- No primary Anthropic/framework citation block in-page beyond the pattern framing;
+  verify against vendor docs before production adoption.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://digitalbourgeois.tistory.com/3473
+verifiedAt: '2026-08-24T14:58:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Orchestrator=전략·조율만, Worker=단일 전문 업무만의 책임 분리를 신용분석 사례로 정의. 오케스트레이터/워커
+  토픽에 직접.
+expectedBenefit: 오케스트레이터가 실작업을 하지 않는 규칙과 워커 교체·병렬 패턴.
+switchingCost: 문서 낮음.
+maturity: developing
+risks:
+- 개인 블로그 도메인 사례.
+- 측정/벤치 없음.
+smallestUsefulExperiment: 책임 분리 정의 2문장만 자사 멀티에이전트 역할표에 옮김.
+recordStatus: approved
 ```
 
 ## korea-duckssi-claude-plugin-marketplace-command-source
