@@ -7,15 +7,19 @@ publicationChannel: "document"
 evidence:
   - "intelligence/signals/2026/08/24/regional-signal/"
 sourceLinks:
+  - "https://github.com/agentskills/agentskills"
   - "https://docs.x.ai/grok-bot/overview"
   - "https://github.com/RohannShetty/gitbook-downloader"
   - "https://github.com/SupersuitUp/curated-wiki-integrations"
   - "https://github.com/wbaxterh/pokedocs"
+  - "https://inma.tistory.com/210"
 records:
+  - "intelligence/signals/2026/08/24/regional-signal/international/agentskills-open-standard-skill-md.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/grok-bot-official-workflow-docs.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/rohann-shetty-gitbook-downloader-docusaurus-llms-txt.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/supersuitup-curated-wiki-integrations-llms-txt.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/wbaxterh-pokedocs-docusaurus-llms-txt.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-inma-claude-codex-agents-skills-config.yaml"
 ---
 
 # 2026-08-24 AI Engineering Radar
@@ -34,13 +38,35 @@ records:
 
 ## 한국
 
-EMPTY — 이 권역에서 기준을 충족한 검증 레코드가 없습니다.
+### [inma.tistory.com](https://inma.tistory.com/210) — `korea-inma-claude-codex-agents-skills-config`
+
+Junhong Kim이 Claude Code와 Codex의 AGENTS.md/CLAUDE.md, Rules, SKILL.md, Subagent, MCP 역할을 비교하고, Skill은 Agent Skills 오픈 포맷(SKILL.md)이라 Codex가 .agents/skills를 쓰며 Claude Code는 .claude/skills에서 심볼릭 링크로 공통 Skill을 공유할 수 있다고 정리한 글. 2026-07-15 게시, 2026-08-17 수정.
+
+- 왜 중요한가: 공용 스킬 디렉터리 규약과 MCP를 별층으로 두는 체크리스트, ln -s로 Claude/Codex 동시 소비 패턴.
+- 추천: **읽기** — Claude Code·Codex의 SKILL.md/AGENTS.md/Rules/MCP 역할 분리와 .agents/skills 정본+Claude 심볼릭 링크 공유가 Agent Skills 상호운용 키워드에 직접. 실무 합성글이라 ADOPT 아님. japan EMPTY 비가중.
+- 주의할 점:
+  - 개인 블로그 합성(공식 발표 아님).
+  - 게시 2026-07-15는 선호 창보다 이름, 수정 8/17만 창 안.
+  - 클라이언트별 SKILL.md 확장 키 호환은 문서마다 다름.
+- 다음 단계: 글의 .agents/skills ↔ .claude/skills 링크 절만 읽고 현재 스킬 경로와 대조. 링크 생성·게시 없음.
 
 ## 일본
 
 EMPTY — 이 권역에서 기준을 충족한 검증 레코드가 없습니다.
 
 ## 국제
+
+### [Agent Skills](https://github.com/agentskills/agentskills) — `agentskills-open-standard-skill-md`
+
+agentskills.io와 GitHub agentskills/agentskills가 SKILL.md 기반 Agent Skills 오픈 포맷(필수 name/description 프론트매터, 선택 scripts·references·assets, progressive disclosure)을 정의한다. Claude Code·ChatGPT/Codex·Cursor 등 다수 클라이언트가 동일 포맷을 지원한다고 명시하며, 2026-08-09까지 클라이언트 쇼케이스 커밋이 이어졌다.
+
+- 왜 중요한가: name/description 필수·progressive disclosure·scripts/references/assets 계약을 스킬 작성 정본으로 고정.
+- 추천: **읽기** — SKILL.md 오픈 포맷·스펙·다클라이언트 쇼케이스가 Codex/Claude/Cursor 상호운용의 1차 공개 근거. MCP 대체 아닌 절차 패키징 층. 창 내 쇼케이스 커밋 있음. 지리·스타 비가중.
+- 주의할 점:
+  - 리포 생성은 2025-12(창 밖); 쇼케이스 멤버십은 문서 주장.
+  - allowed-tools 등 experimental 필드.
+  - 제품별 실제 로더 차이 가능.
+- 다음 단계: specification.md의 필수 프론트매터만 기존 SKILL.md 하나와 diff. 실험 실행·외부 게시 없음.
 
 ### [Grok Bot](https://docs.x.ai/grok-bot/overview) — `grok-bot-official-workflow-docs`
 

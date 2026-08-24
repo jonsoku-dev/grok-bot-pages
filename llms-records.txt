@@ -555,6 +555,69 @@ risks:
 smallestUsefulExperiment: 현재 LLM 서비스의 최근 타임아웃 20건을 프레임워크·모델·배치·GPU·네트워크 지표로 다시 분류해 글의 진단 질문이 유효한지 확인한다.
 ```
 
+## agentskills-open-standard-skill-md
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/24/regional-signal/international/agentskills-open-standard-skill-md.yaml
+- sha256: 4161373533298e1f1b08050be147be9ce0bfa9f2a79b3b272c287404f07bb0b6
+- primaryUrl: https://github.com/agentskills/agentskills
+
+```yaml
+schemaVersion: regional-signal/v1
+id: agentskills-open-standard-skill-md
+collectionDate: '2026-08-24'
+primaryCategory: international
+relatedCategories: []
+originBasis: Official Agent Skills specification repo and docs site (agentskills.io / github.com/agentskills/agentskills); Anthropic-originated open standard with multi-vendor client showcase—not region-specific.
+originalTitle: Agent Skills — Specification and overview (SKILL.md open format)
+originalLanguage: en
+koreanSummary: agentskills.io와 GitHub agentskills/agentskills가 SKILL.md 기반 Agent Skills 오픈 포맷(필수 name/description 프론트매터, 선택 scripts·references·assets, progressive disclosure)을 정의한다. Claude Code·ChatGPT/Codex·Cursor 등 다수 클라이언트가 동일 포맷을 지원한다고 명시하며, 2026-08-09까지 클라이언트 쇼케이스 커밋이 이어졌다.
+source: github_repository
+canonicalId: github:agentskills/agentskills
+primaryUrl: https://github.com/agentskills/agentskills
+author: agentskills (open standard; originally developed by Anthropic)
+project: Agent Skills
+publishedAt: '2026-08-09T20:36:04Z'
+observedFacts:
+- Public docs at https://agentskills.io/home.md define a skill as a folder with required SKILL.md (metadata + instructions) and optional scripts/, references/, assets/.
+- https://agentskills.io/specification.md requires YAML frontmatter fields name and description; optional license, compatibility, metadata, allowed-tools (experimental).
+- Overview states the format was originally developed by Anthropic, released as an open standard, and supports cross-product reuse of the same skill across compatible agents.
+- Client showcase/docs list many adopters including Claude Code, ChatGPT & Codex, Cursor, Gemini CLI, GitHub Copilot, VS Code, and others.
+- GitHub commits/main.atom shows active updates in-window, e.g. 2026-08-09 OpenClaw client showcase, 2026-08-09 Hermes Agent, 2026-08-03 ChatGPT/Codex branding, 2026-08-04 metadata clarification.
+interpretation: Primary public source for portable SKILL.md Agent Skills interoperability across Codex, Claude Code, Cursor and similar agents; complementary to MCP (tool connectivity) rather than a replacement—skills package procedural workflows that agents may combine with MCP tools.
+relatedRefs:
+- https://agentskills.io/home
+- https://agentskills.io/specification
+- https://agentskills.io/clients
+- https://github.com/agentskills/agentskills/commits/main.atom
+sourceWarnings:
+- Open-standard launch predates the 30-day window (late 2025); included as the still-primary public specification with in-window commit activity.
+- Star/fork counts on GitHub HTML can be incomplete without auth; treat showcase membership as documentation claims unless separately verified per product.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/agentskills/agentskills
+- https://github.com/agentskills/agentskills/commits/main.atom
+- https://agentskills.io/home.md
+- https://agentskills.io/specification.md
+- https://agentskills.io/clients
+verifiedAt: '2026-08-24T11:32:00Z'
+contradictions:
+- 패킷 publishedAt=2026-08-09T20:36:04Z는 commits/main.atom의 OpenClaw showcase 커밋 시각과 일치(리포 createdAt=2025-12-16로 창 밖 생성).
+judgeAction: READ
+judgeRationale: SKILL.md 오픈 포맷·스펙·다클라이언트 쇼케이스가 Codex/Claude/Cursor 상호운용의 1차 공개 근거. MCP 대체 아닌 절차 패키징 층. 창 내 쇼케이스 커밋 있음. 지리·스타 비가중.
+expectedBenefit: name/description 필수·progressive disclosure·scripts/references/assets 계약을 스킬 작성 정본으로 고정.
+switchingCost: 스펙 읽기 낮음. 기존 스킬을 스펙에 맞추면 낮~중간.
+maturity: stable
+risks:
+- 리포 생성은 2025-12(창 밖); 쇼케이스 멤버십은 문서 주장.
+- allowed-tools 등 experimental 필드.
+- 제품별 실제 로더 차이 가능.
+smallestUsefulExperiment: specification.md의 필수 프론트매터만 기존 SKILL.md 하나와 diff. 실험 실행·외부 게시 없음.
+recordStatus: approved
+```
+
 ## grok-bot-official-workflow-docs
 
 - artifactRole: factual_sot
@@ -819,5 +882,62 @@ risks:
 - main Atom 최신 7/31로 창 내 실질 커밋 약함.
 - language 문자열 미재현.
 smallestUsefulExperiment: README의 llms.txt 생성 주장만 확인. 마이그레이션 실험 보류.
+recordStatus: approved
+```
+
+## korea-inma-claude-codex-agents-skills-config
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/24/regional-signal/korea/korea-inma-claude-codex-agents-skills-config.yaml
+- sha256: af6b8eae9fc10c70cd9903b1eb4d5ccee42398f4393fe5c28cc8abd04cb304c4
+- primaryUrl: https://inma.tistory.com/210
+
+```yaml
+schemaVersion: regional-signal/v1
+id: korea-inma-claude-codex-agents-skills-config
+collectionDate: '2026-08-24'
+primaryCategory: korea
+relatedCategories: []
+originBasis: Korean-language technical post on Tistory by author Junhong Kim (inma.tistory.com); Korea-hosted personal tech blog, not language-only classification.
+originalTitle: '[Coding Agent] Claude Code와 Codex의 프로젝트 설정 구조 이해하기'
+originalLanguage: ko
+koreanSummary: Junhong Kim이 Claude Code와 Codex의 AGENTS.md/CLAUDE.md, Rules, SKILL.md, Subagent, MCP 역할을 비교하고, Skill은 Agent Skills 오픈 포맷(SKILL.md)이라 Codex가 .agents/skills를 쓰며 Claude Code는 .claude/skills에서 심볼릭 링크로 공통 Skill을 공유할 수 있다고 정리한 글. 2026-07-15 게시, 2026-08-17 수정.
+source: technical_article
+canonicalId: tistory:inma:210
+primaryUrl: https://inma.tistory.com/210
+author: Junhong Kim
+project: inma.tistory.com
+publishedAt: '2026-07-15T00:16:29+09:00'
+observedFacts:
+- Article published_time 2026-07-15T00:16:29+09:00 and modified_time 2026-08-17T22:15:18+09:00 per page meta (collected 2026-08-24).
+- 'Compares Claude Code vs Codex configuration surfaces: AGENTS.md/CLAUDE.md, rules, SKILL.md workflows, subagents, and MCP.'
+- States Skill is based on the Agent Skills open format centered on a skill directory with required SKILL.md (YAML frontmatter name/description + Markdown body) plus optional scripts/, references/, assets/.
+- Documents Codex skill discovery at ~/.agents/skills/ (user) and .agents/skills/ (project), noting Skills uniquely use .agents rather than .codex.
+- Recommends keeping shared skills under .agents/skills/ as canonical and linking into .claude/skills for Claude Code via symbolic links.
+interpretation: Korea-origin practitioner write-up on reusable SKILL.md across Claude Code and Codex, with MCP treated as a separate external-tool layer alongside skills—directly on-topic for Agent Skills interoperability and MCP coexistence.
+relatedRefs:
+- https://agentskills.io/home
+- https://developers.openai.com/codex/skills
+sourceWarnings:
+- Primary publish date is 2026-07-15 (slightly before preferred 2026-07-25 window); page was modified 2026-08-17 within window.
+- Personal blog synthesis of vendor docs; not an official Anthropic/OpenAI announcement.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://inma.tistory.com/210
+verifiedAt: '2026-08-24T11:32:00Z'
+contradictions:
+- 한글 요약의 "심볼릭 링크" 표현은 본문에서 English "Symbolic Link" / `ln -s` 예시로 확인(문자열 "심볼릭" 자체는 없음).
+judgeAction: READ
+judgeRationale: Claude Code·Codex의 SKILL.md/AGENTS.md/Rules/MCP 역할 분리와 .agents/skills 정본+Claude 심볼릭 링크 공유가 Agent Skills 상호운용 키워드에 직접. 실무 합성글이라 ADOPT 아님. japan EMPTY 비가중.
+expectedBenefit: 공용 스킬 디렉터리 규약과 MCP를 별층으로 두는 체크리스트, ln -s로 Claude/Codex 동시 소비 패턴.
+switchingCost: 문서 대조 낮음. 기존 .claude/skills를 .agents로 옮기면 중간.
+maturity: developing
+risks:
+- 개인 블로그 합성(공식 발표 아님).
+- 게시 2026-07-15는 선호 창보다 이름, 수정 8/17만 창 안.
+- 클라이언트별 SKILL.md 확장 키 호환은 문서마다 다름.
+smallestUsefulExperiment: 글의 .agents/skills ↔ .claude/skills 링크 절만 읽고 현재 스킬 경로와 대조. 링크 생성·게시 없음.
 recordStatus: approved
 ```
