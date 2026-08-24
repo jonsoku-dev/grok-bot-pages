@@ -845,6 +845,85 @@ risks:
 smallestUsefulExperiment: audience binding·per-decision audit 필드만 스펙/체크리스트에 매핑.
 ```
 
+## intl-devto-techtrails-orchestrator-decompose-synthesize
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/24/regional-signal/international/intl-devto-techtrails-orchestrator-decompose-synthesize.yaml
+- sha256: 1721f68f9eb882d9cdac252707d9a94c2596128c5c9c4d3bede13f45e756d49b
+- primaryUrl: https://dev.to/techtrails/the-orchestrator-in-agentic-systems-4oap
+
+```yaml
+schemaVersion: regional-signal/v1
+id: intl-devto-techtrails-orchestrator-decompose-synthesize
+collectionDate: '2026-08-24'
+primaryCategory: international
+relatedCategories: []
+originBasis: English DEV Community / Tech Trails article by Deepak Patil (deepcodr);
+  international practitioner essay defining orchestrator responsibilities as decompose→route→state-manage→synthesise
+  with minimal Python and framework notes—not region-specific product docs.
+originalTitle: The Orchestrator in Agentic Systems
+originalLanguage: en
+koreanSummary: DEV Tech Trails(Deepak Patil)가 오케스트레이터 책임을 목표 분해·워커 라우팅·워크플로 상태 관리·최종
+  합성 네 가지로만 한정하고 실행(API/코드/검색)은 워커에 맡기라고 주장. 최소 Python 예시는 plan JSON→worker.run→synthesis
+  LLM 호출이며, 결과 분기 시 replan 루프와 실패 모드(과위임·경직된 계획·조용한 워커 실패·컨텍스트 과부하)를 정리. LangGraph/AutoGen/CrewAI
+  비교 포함. DEV API published_at 2026-08-08T09:20:28Z.
+source: technical_article
+canonicalId: devto:techtrails:the-orchestrator-in-agentic-systems-4oap
+primaryUrl: https://dev.to/techtrails/the-orchestrator-in-agentic-systems-4oap
+author: Deepak Patil (deepcodr) / Tech Trails
+project: DEV Community / Tech Trails
+publishedAt: '2026-08-08T09:20:28Z'
+observedFacts:
+- DEV.to API reports published_at/created_at 2026-08-08T09:20:28Z for /techtrails/the-orchestrator-in-agentic-systems-4oap;
+  organization Tech Trails; author Deepak Patil (deepcodr); tags techtrails, ai, genai,
+  agents (collected 2026-08-24).
+- 'Defines exactly four orchestrator responsibilities: decompose the goal into subtasks;
+  route each to a capable worker; manage state as results arrive (including plan changes);
+  synthesise partial worker outputs into a final answer and decide completion.'
+- 'Minimal Python sample: LLM returns a JSON plan of {task, worker} steps; orchestrator
+  executes workers only; second LLM call synthesises verbatim collected results—author
+  stresses no early summarization before synthesis and no tool calls inside the orchestrator
+  loop.'
+- 'Shows a replan variant: after each worker result, an LLM check may replace the
+  remaining plan JSON; loop ends when the plan is empty rather than after a fixed
+  step count.'
+- 'Lists failure modes tied to decompose/integrate quality: over-delegation (underspecified
+  tasks → garbage synthesis), plan rigidity without replan, silent worker failures
+  returning empty values, and context overload from accumulating raw worker outputs—mitigations
+  include typed task schemas, loud typed errors, and passing summaries unless raw
+  content is required for synthesis; also contrasts LangGraph StateGraph, AutoGen
+  GroupChatManager, and CrewAI Process.hierarchical.'
+interpretation: International signal that frames result integration as a deliberate
+  synthesis step owned by a non-executing orchestrator, with replan and typed handoffs
+  as the practical controls around decomposition.
+relatedRefs:
+- https://langchain-ai.github.io/langgraph/
+- https://microsoft.github.io/autogen/
+- https://docs.crewai.com/
+sourceWarnings:
+- Independent DEV Community essay under Tech Trails org; framework guidance is author
+  opinion as of publish date.
+- Code snippets are illustrative (llm()/worker.run helpers not provided as a runnable
+  package).
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://dev.to/techtrails/the-orchestrator-in-agentic-systems-4oap
+verifiedAt: '2026-08-24T15:05:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 오케스트레이터를 분해·라우팅·상태·합성 4책임으로 한정하고 실행은 워커, 합성은 별도 LLM. replan 포함. VERIFIED.
+expectedBenefit: plan JSON→worker→synthesis 최소 패턴과 과위임 실패 모드.
+switchingCost: 문서 낮음.
+maturity: developing
+risks:
+- DEV.to 에세이; 헬퍼 미제공.
+- 샘플은 illustrative.
+smallestUsefulExperiment: 4책임 목록만 역할표에 대조. 실행 없음.
+recordStatus: approved
+```
+
 ## intl-folarin-agent-skills-progressive-disclosure-explained
 
 - artifactRole: factual_sot
@@ -1546,6 +1625,81 @@ risks:
 - 개인 Qiita; 템플릿 리포는 추후 공개 예정.
 - 게시 7/25; 환경별 Docker 권한 차이.
 smallestUsefulExperiment: compose의 internal:true·볼륨 RO/RW·filesystem MCP 경로만 dry-run으로 검토. 실에이전트 실행 보류 가능.
+```
+
+## japan-qiita-made-in-jp2525-rag-multiagent-decompose
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-made-in-jp2525-rag-multiagent-decompose.yaml
+- sha256: f283240a1e708dd6c6657aec513de6dd1e58177164039715aebc4b61478ead1e
+- primaryUrl: https://qiita.com/made_in_jp2525/items/6e895d589d606f3d264a
+
+```yaml
+schemaVersion: regional-signal/v1
+id: japan-qiita-made-in-jp2525-rag-multiagent-decompose
+collectionDate: '2026-08-24'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Japanese Qiita technical article by made_in_jp2525; Japan-hosted practitioner
+  guide on how to split RAG into multi-agents and integrate worker results via Orchestrator-Worker(+Critic)—not
+  language-only classification.
+originalTitle: RAGをマルチエージェント化する設計パターン — どう分けて、どう実装するか
+originalLanguage: ja
+koreanSummary: Qiita made_in_jp2525가 RAG를 멀티에이전트로 나눌 때 기능·데이터소스·도메인·롤(Orchestrator-Worker+Critic)
+  네 축을 제시. Orchestrator는 의도 해석·작업 분해·복수 Worker 결과 통합만 하고 검색 상세는 갖지 않으며, Worker는 독립
+  컨텍스트로 병렬 실행·상호 이력 비공유, Critic이 출처·모순을 검증. 구현은 Tool Use→MCP 검색 에이전트 분리→Managed Agents
+  병렬 Worker로 단계 성숙시키고, 처음부터 전축 분할하지 말라고 권고. Qiita API created_at 2026-08-14T11:41:56+09:00.
+source: technical_article
+canonicalId: qiita:made_in_jp2525:6e895d589d606f3d264a
+primaryUrl: https://qiita.com/made_in_jp2525/items/6e895d589d606f3d264a
+author: made_in_jp2525
+project: Qiita / multi-agent RAG (Claude API Tool Use / MCP / Managed Agents)
+publishedAt: '2026-08-14T11:41:56+09:00'
+observedFacts:
+- Qiita API v2 reports created_at/updated_at 2026-08-14T11:41:56+09:00 for item 6e895d589d606f3d264a;
+  tags include マルチエージェント, rag, LLM, Claude, AIエージェント (collected 2026-08-24).
+- 'Defines four decomposition axes: functional pipeline (rewrite→retrieve→rerank→generate→verify),
+  data-source workers, domain/business specialists, and role axis Orchestrator-Worker(+optional
+  Critic).'
+- 'Orchestrator-Worker mermaid flow: Orchestrator plans/delegates search tasks to
+  isolated Workers (e.g. wiki/manual/web), integrates returned hits, then Critic/Verifier
+  checks citations/contradictions before final answer—or loops back on NG.'
+- States Workers do not share conversation history; all needed intent/constraints/output
+  format must be packed into the Orchestrator’s task brief; Workers may run in parallel
+  on separate context windows so heavy reads do not crowd Orchestrator thinking tokens.
+- 'Implementation maturity ladder: (1) Tool Use loop with Workers as tools, (2) carve
+  retrieval agents as MCP servers, (3) Managed Agents multi-agent sessions for parallel
+  Workers; tips warn against redundant near-duplicate Workers and against splitting
+  all axes at once—add Critic only where wrong answers have real harm.'
+interpretation: Clear Japan-locale how-to for the topic’s two halves—how to decompose
+  (four axes) and how to integrate (Orchestrator merge + Critic verify)—grounded in
+  Claude/RAG production practice.
+relatedRefs:
+- https://www.anthropic.com/engineering/building-effective-agents
+- https://modelcontextprotocol.io/
+sourceWarnings:
+- Personal Qiita article (1 like at collection); Managed Agents / beta tool_runner
+  APIs may change—treat code samples as illustrative.
+- Author notes multi-agent is not always correct and cites Anthropic’s start-simple
+  guidance; cost/latency tradeoffs are author opinion.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://qiita.com/made_in_jp2525/items/6e895d589d606f3d264a
+verifiedAt: '2026-08-24T15:05:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 기능·데이터소스·도메인·롤 4축 분해와 Orchestrator 통합+Critic 검증, Worker 이력 비공유. VERIFIED.
+expectedBenefit: 분해 축과 통합·Critic 검증 흐름.
+switchingCost: 문서 낮음. RAG 스택 반영은 중간.
+maturity: developing
+risks:
+- 개인 Qiita.
+- Managed Agents/beta API 시변.
+- 벤치 수치 없음.
+smallestUsefulExperiment: 4축+Critic 역할만 자사 오케스트레이션 표에 옮김.
+recordStatus: approved
 ```
 
 ## japan-smartscope-copilot-skills-progressive-disclosure

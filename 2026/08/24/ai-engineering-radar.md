@@ -11,6 +11,7 @@ sourceLinks:
   - "https://docs.x.ai/grok-bot/overview"
   - "https://arize.com/blog/how-cheap-models-changed-multi-agent-economics/"
   - "https://www.deepinspect.ai/blog/mcp-server-authentication"
+  - "https://dev.to/techtrails/the-orchestrator-in-agentic-systems-4oap"
   - "https://folarin.dev/blog/what-are-agent-skills-progressive-disclosure"
   - "https://pickuma.com/for-dev/mcp-server-security-audit-local-access/"
   - "https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/"
@@ -23,6 +24,7 @@ sourceLinks:
   - "https://tech-ai.hateblo.jp/entry/2026/08/13/050000"
   - "https://note.com/aitrendlab/n/na871bc5ce039"
   - "https://qiita.com/hikariclaude01/items/4a7ba5103bf02eb9f7e7"
+  - "https://qiita.com/made_in_jp2525/items/6e895d589d606f3d264a"
   - "https://smartscope.blog/generative-ai/github-copilot/github-copilot-skills-guide/"
   - "https://zenn.dev/idealive_kmon/articles/ai-dev-07-subagents"
   - "https://aitrends.jp/articles/99381"
@@ -40,6 +42,7 @@ records:
   - "intelligence/signals/2026/08/24/regional-signal/international/grok-bot-official-workflow-docs.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-arize-orchestrator-executor-cheap-models.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-deepinspect-mcp-server-authentication-identity-binding-audit.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/international/intl-devto-techtrails-orchestrator-decompose-synthesize.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-folarin-agent-skills-progressive-disclosure-explained.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-pickuma-local-mcp-security-audit.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/nvidia-skillevaluator-agent-skill-performance.yaml"
@@ -52,6 +55,7 @@ records:
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-hateblo-tech-ai-mcp-disconnect-oauth-revoke-audit-log.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-note-aitrendlab-ms-agent-framework-harness.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-hikari-claude-docker-sandbox-mcp.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-made-in-jp2525-rag-multiagent-decompose.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-smartscope-copilot-skills-progressive-disclosure.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-aitrends-langchain-mda-skills-progressive-disclosure.yaml"
@@ -242,6 +246,18 @@ Qiita hikariclaude01이 Claude Code를 Docker 샌드박스에 가두고, 호스�
   - 게시 7/25; 환경별 Docker 권한 차이.
 - 다음 단계: compose의 internal:true·볼륨 RO/RW·filesystem MCP 경로만 dry-run으로 검토. 실에이전트 실행 보류 가능.
 
+### [Qiita / multi-agent RAG (Claude API Tool Use / MCP / Managed Agents)](https://qiita.com/made_in_jp2525/items/6e895d589d606f3d264a) — `japan-qiita-made-in-jp2525-rag-multiagent-decompose`
+
+Qiita made\_in\_jp2525가 RAG를 멀티에이전트로 나눌 때 기능·데이터소스·도메인·롤(Orchestrator-Worker+Critic) 네 축을 제시. Orchestrator는 의도 해석·작업 분해·복수 Worker 결과 통합만 하고 검색 상세는 갖지 않으며, Worker는 독립 컨텍스트로 병렬 실행·상호 이력 비공유, Critic이 출처·모순을 검증. 구현은 Tool Use→MCP 검색 에이전트 분리→Managed Agents 병렬 Worker로 단계 성숙시키고, 처음부터 전축 분할하지 말라고 권고. Qiita API created\_at 2026-08-14T11:41:56+09:00.
+
+- 왜 중요한가: 분해 축과 통합·Critic 검증 흐름.
+- 추천: **읽기** — 기능·데이터소스·도메인·롤 4축 분해와 Orchestrator 통합+Critic 검증, Worker 이력 비공유. VERIFIED.
+- 주의할 점:
+  - 개인 Qiita.
+  - Managed Agents/beta API 시변.
+  - 벤치 수치 없음.
+- 다음 단계: 4축+Critic 역할만 자사 오케스트레이션 표에 옮김.
+
 ### [SmartScope / GitHub Copilot Agent Skills](https://smartscope.blog/generative-ai/github-copilot/github-copilot-skills-guide/) — `japan-smartscope-copilot-skills-progressive-disclosure`
 
 SmartScope가 GitHub Copilot Agent Skills의 SKILL.md 작성·배치·settings와 Progressive Disclosure(段階的ローディング) L1 메타데이터→L2 본문→L3 리소스 3단계 로드를 도해로 설명한다. Custom Instructions(상시)와 Skills(온디맨드) 구분, .github/skills 예시, agentskills.io 오픈 포맷 언급. 페이지 개정 시각 2026-07-28 12:27:06 JST.
@@ -312,6 +328,17 @@ DeepInspect가 MCP 경계에서 OAuth 2.1+PKCE 인증, RFC 8707 audience 결속,
   - 벤더 블로그(DeepInspect 홍보).
   - 아키텍처 주장은 공식 스펙과 재대조 필요.
 - 다음 단계: audience binding·per-decision audit 필드만 스펙/체크리스트에 매핑.
+
+### [DEV Community / Tech Trails](https://dev.to/techtrails/the-orchestrator-in-agentic-systems-4oap) — `intl-devto-techtrails-orchestrator-decompose-synthesize`
+
+DEV Tech Trails(Deepak Patil)가 오케스트레이터 책임을 목표 분해·워커 라우팅·워크플로 상태 관리·최종 합성 네 가지로만 한정하고 실행(API/코드/검색)은 워커에 맡기라고 주장. 최소 Python 예시는 plan JSON→worker.run→synthesis LLM 호출이며, 결과 분기 시 replan 루프와 실패 모드(과위임·경직된 계획·조용한 워커 실패·컨텍스트 과부하)를 정리. LangGraph/AutoGen/CrewAI 비교 포함. DEV API published\_at 2026-08-08T09:20:28Z.
+
+- 왜 중요한가: plan JSON→worker→synthesis 최소 패턴과 과위임 실패 모드.
+- 추천: **읽기** — 오케스트레이터를 분해·라우팅·상태·합성 4책임으로 한정하고 실행은 워커, 합성은 별도 LLM. replan 포함. VERIFIED.
+- 주의할 점:
+  - DEV.to 에세이; 헬퍼 미제공.
+  - 샘플은 illustrative.
+- 다음 단계: 4책임 목록만 역할표에 대조. 실행 없음.
 
 ### [folarin.dev](https://folarin.dev/blog/what-are-agent-skills-progressive-disclosure) — `intl-folarin-agent-skills-progressive-disclosure-explained`
 
