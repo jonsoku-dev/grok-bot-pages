@@ -29,7 +29,7 @@ policy:
       arrayFields: [relatedCategories, observedFacts, relatedRefs, sourceWarnings, verificationEvidenceUrls, contradictions, risks]
       writerAdds: [recordStatus]
       canonicalPathPattern: intelligence/signals/{YYYY}/{MM}/{DD}/regional-signal/{region}/{id}.yaml
-      writerGate: data_quality_pass_and_explicit_human_approval
+      writerGate: data_quality_pass_and_public_auto_policy
       onMissing: reject_and_request_resend
       immutableFields: [primaryCategory, relatedCategories, originBasis, originalTitle, originalLanguage, source, canonicalId, primaryUrl, author, project, publishedAt, observedFacts, interpretation, relatedRefs, sourceWarnings]
     categories:

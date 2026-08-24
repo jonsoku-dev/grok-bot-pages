@@ -121,12 +121,21 @@ Slack and Gmail operate on an approved current document through `canonical-conte
 GitHub-to-channel copying should be deterministic. Semantic digesting, selection, or audience
 adaptation can be agentic.
 
+The daily public path is policy-authorized automation: one complete public-only `VERIFIED` record
+is enough for GitHub SoT Writer to persist through the connected GitHub plugin. The SoT push wakes
+the deterministic `publish-intelligence` Action, which creates a missing report with `EMPTY`
+sections for absent regions, validates it, commits it, and deploys the public Docusaurus build.
+The Action also runs daily at 07:30 Asia/Tokyo as a fallback. Existing approved records and reports
+are preserved rather than overwritten.
+
 ## Security boundaries
 
 - Never treat separate bots as a security boundary.
 - Company confidential knowledge must not enter the personal repository.
 - Shared templates may contain methodology and public research only.
-- External writes default to human approval.
-- Document writes require approval bound to the exact content hash and target path.
+- External writes default to human approval. The only standing exception is the typed public-only
+  record and blog path authorized by `config/policies.yaml` and `config/reporting.yaml`.
+- Manual Document Publisher writes require approval bound to the exact content hash and target path;
+  deterministic public-blog creation is authorized by the policy gate and remains append-only.
 - Operational evidence is never admitted as a factual source record.
 - Destructive lifecycle actions default to `retain`.
