@@ -9,7 +9,9 @@ evidence:
 sourceLinks:
   - "https://github.com/agentskills/agentskills"
   - "https://docs.x.ai/grok-bot/overview"
+  - "https://www.deepinspect.ai/blog/mcp-server-authentication"
   - "https://folarin.dev/blog/what-are-agent-skills-progressive-disclosure"
+  - "https://pickuma.com/for-dev/mcp-server-security-audit-local-access/"
   - "https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/"
   - "https://github.com/RohannShetty/gitbook-downloader"
   - "https://github.com/snapsynapse/skill-provenance"
@@ -17,18 +19,24 @@ sourceLinks:
   - "https://github.com/vercel-labs/skills"
   - "https://github.com/wbaxterh/pokedocs"
   - "https://code.claude.com/docs/ja/discover-plugins"
+  - "https://tech-ai.hateblo.jp/entry/2026/08/13/050000"
+  - "https://qiita.com/hikariclaude01/items/4a7ba5103bf02eb9f7e7"
   - "https://smartscope.blog/generative-ai/github-copilot/github-copilot-skills-guide/"
   - "https://aitrends.jp/articles/99381"
   - "https://data-newbie.tistory.com/1163"
   - "https://duckssi.tistory.com/423"
   - "https://heyoonow.tistory.com/265"
   - "https://inma.tistory.com/210"
+  - "https://storycompiler.tistory.com/684"
+  - "https://aiarchitect.tistory.com/22"
   - "https://nobase-appdev.tistory.com/57"
   - "https://best-onedevyjuns.tistory.com/156"
 records:
   - "intelligence/signals/2026/08/24/regional-signal/international/agentskills-open-standard-skill-md.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/grok-bot-official-workflow-docs.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/international/intl-deepinspect-mcp-server-authentication-identity-binding-audit.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-folarin-agent-skills-progressive-disclosure-explained.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/international/intl-pickuma-local-mcp-security-audit.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/nvidia-skillevaluator-agent-skill-performance.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/rohann-shetty-gitbook-downloader-docusaurus-llms-txt.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/snapsynapse-skill-provenance-v6-1-0.yaml"
@@ -36,12 +44,16 @@ records:
   - "intelligence/signals/2026/08/24/regional-signal/international/vercel-labs-skills-cli-find-add-update.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/wbaxterh-pokedocs-docusaurus-llms-txt.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-claude-discover-plugins-marketplace-autoupdate.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/japan/japan-hateblo-tech-ai-mcp-disconnect-oauth-revoke-audit-log.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-hikari-claude-docker-sandbox-mcp.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-smartscope-copilot-skills-progressive-disclosure.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-aitrends-langchain-mda-skills-progressive-disclosure.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-data-newbie-radar-skillevaluator-20260822.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-duckssi-claude-plugin-marketplace-command-source.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-heyoonow-skill-md-supply-chain-env-20260805.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-inma-claude-codex-agents-skills-config.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-storycompiler-local-mcp-no-auth.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-tistory-aiarchitect-mcp-server-security-checklist-oauth-audit.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-tistory-nobase-skills-mcp-plugin-separation.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-tistory-skill-plugin-marketplace-internal-standard.yaml"
 ---
@@ -119,6 +131,28 @@ Junhong Kim이 Claude Code와 Codex의 AGENTS.md/CLAUDE.md, Rules, SKILL.md, Sub
   - 클라이언트별 SKILL.md 확장 키 호환은 문서마다 다름.
 - 다음 단계: 글의 .agents/skills ↔ .claude/skills 링크 절만 읽고 현재 스킬 경로와 대조. 링크 생성·게시 없음.
 
+### [storycompiler.tistory.com](https://storycompiler.tistory.com/684) — `korea-storycompiler-local-mcp-no-auth`
+
+아프니까 개발자다가 로컬 stdio MCP는 스펙상 OAuth 인증 대상이 아니며(환경에서 자격증명 취득), 클라이언트와 동일 사용자 권한·환경변수를 상속해 운영된다고 정리. 1차 위협은 미검증 npx 패키지의 임의 코드 실행이며, tool poisoning·shadowing·rug pull은 도구 설명문 메타데이터 경로로 은닉된다고 설명. 통제는 프로토콜 밖—전체 명령 명시 승인·샌드박스·게시자 신뢰—이며 샌드박스만이 피해 상한을 낮춘다고 결론. article:published\_time 2026-08-04T21:00:40+09:00.
+
+- 왜 중요한가: stdio=선택한 RCE 관점과 도구 설명문 메타데이터 독성 경로 체크리스트.
+- 추천: **읽기** — 로컬 stdio MCP는 OAuth 대상이 아니고 클라이언트와 동일 UID·환경을 상속한다고 정리. 미검증 npx·tool poisoning을 1차 위협으로. 로컬 MCP 안전 운영 토픽에 직접.
+- 주의할 점:
+  - 생성 AI 보조 초안(저자 고지).
+  - 개인 블로그 합성.
+- 다음 단계: stdio 권한 상속·poisoning 정의만 자사 MCP allowlist 정책과 매핑.
+
+### [AI 아키텍처 기술 블로그 (aiarchitect.tistory.com)](https://aiarchitect.tistory.com/22) — `korea-tistory-aiarchitect-mcp-server-security-checklist-oauth-audit`
+
+AI아키텍트가 2026-07-28 MCP 사양 기준으로 원격 MCP Server 배포 전 보안 체크리스트를 정리한다. OAuth Resource Server로서 Token Signature·Issuer·Audience 매요청 검증, Token Passthrough 금지, 최소 Scope+객체·Tenant 재인가, 그리고 감사 로그를 REQUEST\_RECEIVED~SIDE\_EFFECT\_COMMITTED 결정/실행 이벤트로 분리해 Correlation Chain으로 남기라고 한다. 2026-07-30 게시.
+
+- 왜 중요한가: 요청 단위 Signature/Issuer/Audience 검증과 REQUEST→AUTH→EXEC 상관 감사 필드.
+- 추천: **읽기** — 2026-07-28 MCP 사양 기준 원격 서버 OAuth RS 검증·passthrough 금지·최소 scope·감사 이벤트 체인 체크리스트. 권한·인증·감사 토픽에 직접.
+- 주의할 점:
+  - 개인 블로그 합성.
+  - 스펙 개정 시 체크리스트 드리프트.
+- 다음 단계: 섹션 27 감사 이벤트 목록만 자사 로그 스키마와 대조.
+
 ### [nobase-appdev.tistory.com](https://nobase-appdev.tistory.com/57) — `korea-tistory-nobase-skills-mcp-plugin-separation`
 
 개발하는 전뚠뚠이 Agent Skill(SKILL.md 폴더·점진적 공개)을 재사용 워크플로/매뉴얼로, MCP를 외부 도구·리소스·프롬프트 연결 프로토콜로, 플러그인을 배포 묶음으로 구분한다. 판단 공식은 반복 절차→스킬, 외부 데이터·실행→MCP/커넥터, 설치·공유→플러그인. 2026-08-09 게시.
@@ -155,6 +189,28 @@ Claude Code 일본어 공식 문서가 플러그인 마켓플레이스에서 검
   - datePublished 없음(PARTIAL 수준의 시각 한계는 없으나 스냅샷 의존).
   - 서드파티 마켓 기본 auto-update off.
 - 다음 단계: 自動更新を構成する 절만 EN 페이지와 대조. 설치 실험 없음.
+
+### [AI最前線 (tech-ai.hateblo.jp)](https://tech-ai.hateblo.jp/entry/2026/08/13/050000) — `japan-hateblo-tech-ai-mcp-disconnect-oauth-revoke-audit-log`
+
+AI最前線이 MCP 연결 후 안전 정지 절차를 클라이언트 정지→OAuth 인가 철회→PAT·API키 실효→통신 확인→기록 순으로 정리한다. 감사 로그에는 시각·주체·서버·자격증명 식별자·스코프·툴·대상 자원·승인·결과·상관 ID를 남기고, 액세스 토큰·비밀·문서 전문은 남기지 말라고 한다. datePublished 2026-08-13(+09).
+
+- 왜 중요한가: 철회 순서와 비밀 미기록 감사 템플릿.
+- 추천: **읽기** — MCP 안전 정지=클라이언트 정지→OAuth 철회→PAT 실효→통신 확인→기록. 감사 필드 keep/exclude 규칙을 명시. 권한 생명주기 사례.
+- 주의할 점:
+  - 서드파티 블로그; 콘솔 경로 시변.
+  - 제품 UI명 변경 가능.
+- 다음 단계: 철회 5단계만 런북에 옮김. 실제 revoke 실험은 스테이징만.
+
+### [Qiita / Claude Code Docker Sandbox + MCP](https://qiita.com/hikariclaude01/items/4a7ba5103bf02eb9f7e7) — `japan-qiita-hikari-claude-docker-sandbox-mcp`
+
+Qiita hikariclaude01이 Claude Code를 Docker 샌드박스에 가두고, 호스트 파일 접근은 MCP Filesystem 서버의 허용 디렉터리만으로 제한하는 구성을 공개. docker-compose에서 claude-net을 internal:true로 외부 차단, 프로젝트/출력 볼륨 RO·RW 분리, allowlist 프록시·Docker secrets, no-new-privileges 등 최소 권한 운영과 3개월 운용 교훈 6가지를 정리. Qiita API created\_at 2026-07-25T00:01:58+09:00.
+
+- 왜 중요한가: 컨테이너 경계+최소 MCP 경로 템플릿.
+- 추천: **작게 실험** — Claude Code를 Docker 샌드박스에 두고 호스트 접근을 MCP filesystem 허용 디렉터리로만 제한. internal 네트워크·RO/RW 분리는 로컬 MCP 안전 운영의 실무 패턴.
+- 주의할 점:
+  - 개인 Qiita; 템플릿 리포는 추후 공개 예정.
+  - 게시 7/25; 환경별 Docker 권한 차이.
+- 다음 단계: compose의 internal:true·볼륨 RO/RW·filesystem MCP 경로만 dry-run으로 검토. 실에이전트 실행 보류 가능.
 
 ### [SmartScope / GitHub Copilot Agent Skills](https://smartscope.blog/generative-ai/github-copilot/github-copilot-skills-guide/) — `japan-smartscope-copilot-skills-progressive-disclosure`
 
@@ -194,6 +250,17 @@ agentskills.io와 GitHub agentskills/agentskills가 SKILL.md 기반 Agent Skills
   - 이벤트 트리거가 Cursor 계정 연동에 묶임.
 - 다음 단계: overview·skills-routines·approvals 페이지만 읽고 현재 Radar Bot의 Skill/Routine/승인 게이트를 1:1 대조. 새 Routine·외부 게시·GitHub/SoT 쓰기 없음.
 
+### [DeepInspect](https://www.deepinspect.ai/blog/mcp-server-authentication) — `intl-deepinspect-mcp-server-authentication-identity-binding-audit`
+
+DeepInspect가 MCP 경계에서 OAuth 2.1+PKCE 인증, RFC 8707 audience 결속, 검사 계층의 per-tool 스코프·on-behalf-of 추적, 그리고 주체·도구·정책 규칙·인자 해시·allow/block을 담는 결정 단위 감사 레코드를 설명한다. article:published\_time 2026-08-17.
+
+- 왜 중요한가: audience 결속+툴 단위 인가+결정 감사 레코드 설계 참고.
+- 추천: **읽기** — OAuth 2.1+PKCE·RFC 8707 audience·per-tool 스코프·결정 단위 감사(주체·도구·정책·인자 해시·allow/block)를 묶은 국제 패턴 글.
+- 주의할 점:
+  - 벤더 블로그(DeepInspect 홍보).
+  - 아키텍처 주장은 공식 스펙과 재대조 필요.
+- 다음 단계: audience binding·per-decision audit 필드만 스펙/체크리스트에 매핑.
+
 ### [folarin.dev](https://folarin.dev/blog/what-are-agent-skills-progressive-disclosure) — `intl-folarin-agent-skills-progressive-disclosure-explained`
 
 Folarin Akinloye가 Agent Skill을 SKILL.md(+선택 scripts/references) 폴더로 정의하고, Progressive Disclosure를 Discovery(항상 name·description)→Activation(매칭 시 본문)→Execution(참조 파일/스크립트 출력만) 3단계로 설명. 시스템 프롬프트 일괄 적재 대비 상시 비용·발화 비용·번들 비용을 분리하는 설계로 서술. 2026-08-02 게시.
@@ -204,6 +271,17 @@ Folarin Akinloye가 Agent Skill을 SKILL.md(+선택 scripts/references) 폴더�
   - 개인 블로그; 공식 스펙 해설에 가까우나 normative 아님.
   - dateModified가 datePublished보다 앞선 메타 이상(패킷 관측).
 - 다음 단계: 3단계 정의만 SKILL.md 작성 체크리스트에 옮김. 실험 실행 없음.
+
+### [Pickuma](https://pickuma.com/for-dev/mcp-server-security-audit-local-access/) — `intl-pickuma-local-mcp-security-audit`
+
+Pickuma가 로컬 stdio MCP는 샌드박스된 플러그인이 아니라 클라이언트 자식 프로세스로 동일 UID·홈·~/.ssh·~/.aws·.env·아웃바운드 네트워크를 상속한다고 설명. ps/lsof/strace(또는 fs\_usage)로 PID별 열린 파일·소켓·실제 도구 호출 시 파일 접근을 감사하는 10분 절차와, 버전 고정·bwrap/컨테이너(--network none)·서버별 최소 스코프 자격증명 등 업데이트 후에도 유지되는 봉쇄를 제시. datePublished 2026-08-12T13:24:27.222Z.
+
+- 왜 중요한가: PID별 열린 파일·소켓·도구 호출 시 접근 실측 워크플로.
+- 추천: **작게 실험** — stdio MCP가 샌드박스 플러그인이 아님을 전제로 ps/lsof/strace 10분 감사 절차를 제공. 일상 안전 운영 how-to.
+- 주의할 점:
+  - 어필리에이트 고지 있는 개인 가이드.
+  - OS별 도구(fs\_usage 등) 상이.
+- 다음 단계: 허용된 로컬 MCP 하나에서 \`ps\`/\`lsof\`만으로 argv·열린 파일 확인. 게시 없음.
 
 ### [NVIDIA SkillEvaluator](https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/) — `nvidia-skillevaluator-agent-skill-performance`
 

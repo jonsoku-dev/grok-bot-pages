@@ -714,6 +714,62 @@ smallestUsefulExperiment: overview·skills-routines·approvals 페이지만 읽�
   Skill/Routine/승인 게이트를 1:1 대조. 새 Routine·외부 게시·GitHub/SoT 쓰기 없음.
 ```
 
+## intl-deepinspect-mcp-server-authentication-identity-binding-audit
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/24/regional-signal/international/intl-deepinspect-mcp-server-authentication-identity-binding-audit.yaml
+- sha256: ca5a5a11e5f1580c191f3d5315222fb4bf2e395bd9e38b388e3d088a627537a5
+- primaryUrl: https://www.deepinspect.ai/blog/mcp-server-authentication
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: intl-deepinspect-mcp-server-authentication-identity-binding-audit
+collectionDate: '2026-08-24'
+primaryCategory: international
+relatedCategories: []
+originBasis: English-language DeepInspect engineering blog (deepinspect.ai); US/international vendor technical article on MCP OAuth identity binding and per-decision audit records—not region-specific.
+originalTitle: 'MCP Server Authentication: Identity Binding at the Model Context Protocol Boundary'
+originalLanguage: en
+koreanSummary: DeepInspect가 MCP 경계에서 OAuth 2.1+PKCE 인증, RFC 8707 audience 결속, 검사 계층의 per-tool 스코프·on-behalf-of 추적, 그리고 주체·도구·정책 규칙·인자 해시·allow/block을 담는 결정 단위 감사 레코드를 설명한다. article:published_time 2026-08-17.
+source: technical_article
+canonicalId: deepinspect:blog:mcp-server-authentication
+primaryUrl: https://www.deepinspect.ai/blog/mcp-server-authentication
+author: Parminder Singh
+project: DeepInspect
+publishedAt: '2026-08-17T18:54:45Z'
+observedFacts:
+- article:published_time and datePublished both 2026-08-17T18:54:45Z; article:author Parminder Singh (collected 2026-08-24).
+- Summarizes MCP OAuth 2.1 Authorization Code + PKCE flow with well-known discovery and Bearer access tokens on subsequent MCP requests.
+- Requires audience binding via RFC 8707 resource indicators and rejects tokens issued for another MCP server; forbids forwarding the client token unmodified to upstream APIs (confused-deputy / token passthrough).
+- Describes an inspection layer that validates tokens, extracts subject, enforces per-tool OAuth scopes and argument constraints, and carries human on_behalf_of alongside the agent caller.
+- 'Defines audit record groups: Identity (subject, principal type, on-behalf-of, roles/groups), Request (provider, tool name, argument hash), Policy (policy version, matched rule ID/effect/reason), Decision (allow/block, latency_ms).'
+interpretation: International primary-pattern write-up tying MCP authentication (OAuth subject+audience) to authorization and a concrete per-decision audit schema—usable as a latest-case reference for MCP permission/auth/audit logging.
+relatedRefs:
+- https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization
+- https://datatracker.ietf.org/doc/html/rfc8707
+- https://adamarant.com/en/blog/harden-an-mcp-server-for-enterprise-sso-audit-gateway
+sourceWarnings:
+- Vendor blog that also promotes DeepInspect as an inline inspection product; treat architecture claims as illustrative unless corroborated against MCP official specs.
+- Some deployment guidance (shared-secret pitfalls, Article 19 identity) reflects the author's compliance framing and may not map 1:1 to every jurisdiction.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://www.deepinspect.ai/blog/mcp-server-authentication
+verifiedAt: '2026-08-24T14:53:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: OAuth 2.1+PKCE·RFC 8707 audience·per-tool 스코프·결정 단위 감사(주체·도구·정책·인자 해시·allow/block)를 묶은 국제 패턴 글.
+expectedBenefit: audience 결속+툴 단위 인가+결정 감사 레코드 설계 참고.
+switchingCost: 문서 낮음. 인라인 inspection 제품 도입은 별도.
+maturity: developing
+risks:
+- 벤더 블로그(DeepInspect 홍보).
+- 아키텍처 주장은 공식 스펙과 재대조 필요.
+smallestUsefulExperiment: audience binding·per-decision audit 필드만 스펙/체크리스트에 매핑.
+```
+
 ## intl-folarin-agent-skills-progressive-disclosure-explained
 
 - artifactRole: factual_sot
@@ -768,6 +824,61 @@ risks:
 - 개인 블로그; 공식 스펙 해설에 가까우나 normative 아님.
 - dateModified가 datePublished보다 앞선 메타 이상(패킷 관측).
 smallestUsefulExperiment: 3단계 정의만 SKILL.md 작성 체크리스트에 옮김. 실험 실행 없음.
+```
+
+## intl-pickuma-local-mcp-security-audit
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/24/regional-signal/international/intl-pickuma-local-mcp-security-audit.yaml
+- sha256: 53c523150027508f3ea3808676cd259c0e3b1de630c937887385d62c62c7a157
+- primaryUrl: https://pickuma.com/for-dev/mcp-server-security-audit-local-access/
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: intl-pickuma-local-mcp-security-audit
+collectionDate: '2026-08-24'
+primaryCategory: international
+relatedCategories: []
+originBasis: English Pickuma developer security guide (pickuma.com); international practitioner article on auditing and containing local stdio MCP server reach—not region-specific product docs.
+originalTitle: 'MCP Server Security: How to Audit What a Local MCP Server Can Actually Reach'
+originalLanguage: en
+koreanSummary: Pickuma가 로컬 stdio MCP는 샌드박스된 플러그인이 아니라 클라이언트 자식 프로세스로 동일 UID·홈·~/.ssh·~/.aws·.env·아웃바운드 네트워크를 상속한다고 설명. ps/lsof/strace(또는 fs_usage)로 PID별 열린 파일·소켓·실제 도구 호출 시 파일 접근을 감사하는 10분 절차와, 버전 고정·bwrap/컨테이너(--network none)·서버별 최소 스코프 자격증명 등 업데이트 후에도 유지되는 봉쇄를 제시. datePublished 2026-08-12T13:24:27.222Z.
+source: technical_article
+canonicalId: pickuma:mcp-server-security-audit-local-access
+primaryUrl: https://pickuma.com/for-dev/mcp-server-security-audit-local-access/
+author: Pickuma Editor
+project: Pickuma
+publishedAt: '2026-08-12T13:24:27.222Z'
+observedFacts:
+- Page meta/JSON-LD datePublished 2026-08-12T13:24:27.222Z (collected 2026-08-24).
+- States mainstream clients do not sandbox stdio MCP servers by default; the protocol defines messaging, not OS reachability.
+- 'Lists four spawn-time inheritances for stdio servers: process identity (same user), environment variables, plaintext env blocks in .mcp.json / client configs, and unpinned npx -y resolving to whatever is published today.'
+- 'Provides a four-command audit workflow: ps for argv/user, lsof for open files/cwd, lsof -i for network peers, then fs_usage/strace while exercising one tool call to prove actual filesystem reach.'
+- 'Containment recommendations: pin exact package versions into lockfiles/review, run under bwrap or docker --network none with explicit read-only binds (or a dedicated non-admin account/VM on macOS), and issue per-server least-privilege credentials (e.g. fine-grained GitHub tokens).'
+interpretation: 'Clearest international how-to for day-to-day safe operation of local MCP: measure what each stdio server can reach, then keep containment that survives package updates.'
+relatedRefs:
+- https://modelcontextprotocol.io/
+- https://docs.docker.com/ai/sandboxes/mcp-gateway/
+sourceWarnings:
+- Independent practitioner guide; includes affiliate disclosure for related tooling links.
+- macOS sandbox-exec noted as deprecated; containment guidance is stronger on Linux containers/bwrap.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://pickuma.com/for-dev/mcp-server-security-audit-local-access/
+verifiedAt: '2026-08-24T14:53:00Z'
+contradictions: []
+judgeAction: EXPERIMENT
+judgeRationale: stdio MCP가 샌드박스 플러그인이 아님을 전제로 ps/lsof/strace 10분 감사 절차를 제공. 일상 안전 운영 how-to.
+expectedBenefit: PID별 열린 파일·소켓·도구 호출 시 접근 실측 워크플로.
+switchingCost: 로컬 감사 명령은 낮음.
+maturity: developing
+risks:
+- 어필리에이트 고지 있는 개인 가이드.
+- OS별 도구(fs_usage 등) 상이.
+smallestUsefulExperiment: 허용된 로컬 MCP 하나에서 `ps`/`lsof`만으로 argv·열린 파일 확인. 게시 없음.
 ```
 
 ## nvidia-skillevaluator-agent-skill-performance
@@ -1176,6 +1287,118 @@ risks:
 smallestUsefulExperiment: 自動更新を構成する 절만 EN 페이지와 대조. 설치 실험 없음.
 ```
 
+## japan-hateblo-tech-ai-mcp-disconnect-oauth-revoke-audit-log
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/24/regional-signal/japan/japan-hateblo-tech-ai-mcp-disconnect-oauth-revoke-audit-log.yaml
+- sha256: d1dd00e8dc66849d54350866b652b8d2ddefc983b996df37f1e3e653609e529f
+- primaryUrl: https://tech-ai.hateblo.jp/entry/2026/08/13/050000
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: japan-hateblo-tech-ai-mcp-disconnect-oauth-revoke-audit-log
+collectionDate: '2026-08-24'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Japanese-language Hatena Blog (tech-ai.hateblo.jp / AI最前線); Japan-hosted practitioner guide on revoking MCP permissions and retaining audit logs—not language-only classification.
+originalTitle: MCP接続を許可した後どう止める？OAuth・APIキーの切断と監査ログの残し方
+originalLanguage: ja
+koreanSummary: AI最前線이 MCP 연결 후 안전 정지 절차를 클라이언트 정지→OAuth 인가 철회→PAT·API키 실효→통신 확인→기록 순으로 정리한다. 감사 로그에는 시각·주체·서버·자격증명 식별자·스코프·툴·대상 자원·승인·결과·상관 ID를 남기고, 액세스 토큰·비밀·문서 전문은 남기지 말라고 한다. datePublished 2026-08-13(+09).
+source: technical_article
+canonicalId: hateblo:tech-ai:2026-08-13-050000
+primaryUrl: https://tech-ai.hateblo.jp/entry/2026/08/13/050000
+author: fgbfgb
+project: AI最前線 (tech-ai.hateblo.jp)
+publishedAt: '2026-08-13T05:00:00+09:00'
+observedFacts:
+- Page meta datePublished 2026-08-13T05:00:00+09:00 / article:published_time 2026-08-12T20:00:00Z (collected 2026-08-24).
+- Warns that disabling an MCP server in the client may leave external OAuth grants or PATs intact; safe stop order is client stop → revoke authorization → revoke/rotate credentials → verify connectivity → record.
+- Distinguishes credential types (OAuth consent, PAT/API key, shared service-account key) with different revoke surfaces and blast radius; cites GitHub Copilot CLI docs that logout removes local tokens but does not revoke Authorized OAuth Apps.
+- 'Defines minimum audit fields: time, subject, connection info, credential identifier (client ID / PAT name / key-id fragment), scopes, tool operation, target resource, approval state, result, correlation IDs (request_id/trace_id/session_id).'
+- Explicitly forbids logging access/refresh tokens, PAT/API keys, secrets, cookies, full confidential documents, and secret-bearing prompt/tool-argument plaintext; recommends key-id fragments, hashed resource IDs, classification labels, size, and result codes instead.
+interpretation: 'Japan-origin lifecycle case for MCP permissions after grant: revocation across client/IdP/credential layers plus a concrete audit-log keep/exclude schema usable by small teams—strong regional signal for authn/authz + audit practice.'
+relatedRefs:
+- https://datatracker.ietf.org/doc/html/rfc7009
+- https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization
+sourceWarnings:
+- Third-party Hatena Blog operational guide; product UI names and revoke paths can change and should be checked against each provider's current console.
+- Not a first-party Anthropic/MCP changelog; combines public OAuth RFCs and vendor docs into a practitioner checklist.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://tech-ai.hateblo.jp/entry/2026/08/13/050000
+verifiedAt: '2026-08-24T14:53:00Z'
+contradictions:
+- '패킷 publishedAt=2026-08-13T05:00:00+09:00; page meta도 UTC 2026-08-12T20:00:00Z 병기 가능: [''2026-08-12T20:00:00Z'', ''2026-08-13T05:00:00+09:00'']'
+judgeAction: READ
+judgeRationale: MCP 안전 정지=클라이언트 정지→OAuth 철회→PAT 실효→통신 확인→기록. 감사 필드 keep/exclude 규칙을 명시. 권한 생명주기 사례.
+expectedBenefit: 철회 순서와 비밀 미기록 감사 템플릿.
+switchingCost: 문서 낮음. IdP별 철회 UI는 중간.
+maturity: developing
+risks:
+- 서드파티 블로그; 콘솔 경로 시변.
+- 제품 UI명 변경 가능.
+smallestUsefulExperiment: 철회 5단계만 런북에 옮김. 실제 revoke 실험은 스테이징만.
+```
+
+## japan-qiita-hikari-claude-docker-sandbox-mcp
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-hikari-claude-docker-sandbox-mcp.yaml
+- sha256: 624621ba3ff0d3b335fc048891fd10ed153c5f68a4a526437a89468025cdb842
+- primaryUrl: https://qiita.com/hikariclaude01/items/4a7ba5103bf02eb9f7e7
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: japan-qiita-hikari-claude-docker-sandbox-mcp
+collectionDate: '2026-08-24'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Japanese Qiita technical article by hikariclaude01 (光 久朗土); Japan-hosted practitioner build/ops guide for securing local agent+MCP with Docker sandbox—not language-only classification.
+originalTitle: Claude Code × Docker Sandbox × MCPで作るセキュアなAIエージェント開発環境──構築手順と運用で学んだ6つの教訓
+originalLanguage: ja
+koreanSummary: Qiita hikariclaude01이 Claude Code를 Docker 샌드박스에 가두고, 호스트 파일 접근은 MCP Filesystem 서버의 허용 디렉터리만으로 제한하는 구성을 공개. docker-compose에서 claude-net을 internal:true로 외부 차단, 프로젝트/출력 볼륨 RO·RW 분리, allowlist 프록시·Docker secrets, no-new-privileges 등 최소 권한 운영과 3개월 운용 교훈 6가지를 정리. Qiita API created_at 2026-07-25T00:01:58+09:00.
+source: technical_article
+canonicalId: qiita:hikariclaude01:4a7ba5103bf02eb9f7e7
+primaryUrl: https://qiita.com/hikariclaude01/items/4a7ba5103bf02eb9f7e7
+author: hikariclaude01 (光 久朗土)
+project: Qiita / Claude Code Docker Sandbox + MCP
+publishedAt: '2026-07-25T00:01:58+09:00'
+observedFacts:
+- Qiita API v2 reports created_at/updated_at 2026-07-25T00:01:58+09:00 for item 4a7ba5103bf02eb9f7e7 (collected 2026-08-24); page also shows Posted at 2026-07-24 (display).
+- 'Architecture: run Claude Code inside a non-root Docker sandbox; route host resource access only through an MCP filesystem server with explicit allowed paths.'
+- 'docker-compose example sets networks.claude-net.internal: true to block direct internet egress; mounts ./project read-only and ./project/output read-write into the MCP filesystem container; applies security_opt no-new-privileges and resource limits.'
+- MCP config example points @modelcontextprotocol/server-filesystem at /data/project and /data/output only so path operations outside that allowlist are rejected at the MCP layer.
+- Adds allowlisted nginx proxy for Anthropic/GitHub APIs, Docker Secrets for API keys (forbids mounting .env / baking SSH keys), plus ops lessons on session persistence, logging, idle auto-stop, and a team template (git clone → docker compose up).
+interpretation: 'Japan-locale hands-on pattern for safely operating local MCP alongside a coding agent: kernel/container boundaries first, then MCP filesystem path allowlists and network egress control—directly on-topic for local MCP secure ops.'
+relatedRefs:
+- https://modelcontextprotocol.io/
+- https://github.com/modelcontextprotocol/servers
+- https://docs.docker.com/
+sourceWarnings:
+- Personal Qiita write-up of one team's sandbox; template repo said to be published later—treat compose snippets as illustrative.
+- Uses npx -y for filesystem server in the sample config; pin versions in production per supply-chain guidance elsewhere.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://qiita.com/hikariclaude01/items/4a7ba5103bf02eb9f7e7
+verifiedAt: '2026-08-24T14:53:00Z'
+contradictions: []
+judgeAction: EXPERIMENT
+judgeRationale: Claude Code를 Docker 샌드박스에 두고 호스트 접근을 MCP filesystem 허용 디렉터리로만 제한. internal 네트워크·RO/RW 분리는 로컬 MCP 안전 운영의 실무 패턴.
+expectedBenefit: 컨테이너 경계+최소 MCP 경로 템플릿.
+switchingCost: compose 적용 중간. 팀 표준화는 높음.
+maturity: developing
+risks:
+- 개인 Qiita; 템플릿 리포는 추후 공개 예정.
+- 게시 7/25; 환경별 Docker 권한 차이.
+smallestUsefulExperiment: compose의 internal:true·볼륨 RO/RW·filesystem MCP 경로만 dry-run으로 검토. 실에이전트 실행 보류 가능.
+```
+
 ## japan-smartscope-copilot-skills-progressive-disclosure
 
 - artifactRole: factual_sot
@@ -1511,6 +1734,119 @@ risks:
 - 클라이언트별 SKILL.md 확장 키 호환은 문서마다 다름.
 smallestUsefulExperiment: 글의 .agents/skills ↔ .claude/skills 링크 절만 읽고 현재 스킬 경로와 대조. 링크 생성·게시 없음.
 recordStatus: approved
+```
+
+## korea-storycompiler-local-mcp-no-auth
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/24/regional-signal/korea/korea-storycompiler-local-mcp-no-auth.yaml
+- sha256: 0290d9491ae364d5eeb4aa5be16ad78f549100a99d11b2514920aa0cb7928fa7
+- primaryUrl: https://storycompiler.tistory.com/684
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: korea-storycompiler-local-mcp-no-auth
+collectionDate: '2026-08-24'
+primaryCategory: korea
+relatedCategories: []
+originBasis: Korean-language Tistory technical blog (storycompiler.tistory.com / 아프니까 개발자다); Korea-hosted practitioner essay dedicated to local stdio MCP server security—not language-only classification.
+originalTitle: The S in MCP stands for Security — 로컬 MCP 서버에는 인증이 없다
+originalLanguage: ko
+koreanSummary: 아프니까 개발자다가 로컬 stdio MCP는 스펙상 OAuth 인증 대상이 아니며(환경에서 자격증명 취득), 클라이언트와 동일 사용자 권한·환경변수를 상속해 운영된다고 정리. 1차 위협은 미검증 npx 패키지의 임의 코드 실행이며, tool poisoning·shadowing·rug pull은 도구 설명문 메타데이터 경로로 은닉된다고 설명. 통제는 프로토콜 밖—전체 명령 명시 승인·샌드박스·게시자 신뢰—이며 샌드박스만이 피해 상한을 낮춘다고 결론. article:published_time 2026-08-04T21:00:40+09:00.
+source: technical_article
+canonicalId: tistory:storycompiler:684
+primaryUrl: https://storycompiler.tistory.com/684
+author: 아프니까 개발자다
+project: storycompiler.tistory.com
+publishedAt: '2026-08-04T21:00:40+09:00'
+observedFacts:
+- Page meta article:published_time 2026-08-04T21:00:40+09:00; article:modified_time 2026-08-18T16:48:20+09:00 (collected 2026-08-24).
+- States MCP authorization spec tells STDIO implementations SHOULD NOT follow the HTTP OAuth flow and instead retrieve credentials from the environment—so local servers have no protocol-level auth/scope/consent screen.
+- Frames attaching a local MCP server as sharing the full host-user privilege boundary (same UID/env), not a narrow scoped grant; cites MCP Security Best Practices Local MCP Server Compromise warnings and example malicious command strings.
+- Explains tool poisoning via tools/list description/inputSchema injected into model context (Invariant Labs-style add tool with hidden sidenote exfil), plus tool shadowing across flat tool namespaces and rug-pull via post-install description/code changes (postmark-mcp 1.0.16 BCC case referenced).
+- 'Concludes remaining controls are outside the protocol: show full command before consent, sandbox the process, and treat package publisher trust as the real decision; sandbox is the only control that lowers the damage ceiling when judgment fails.'
+interpretation: 'Strong Korea-origin signal on how to operate local MCP safely: treat stdio servers as ambient-privileged RCE you opted into, and invest in OS sandboxing plus metadata distrust rather than expecting protocol auth.'
+relatedRefs:
+- https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices
+- https://modelcontextprotocol.io/specification/draft/basic/authorization
+- https://storycompiler.tistory.com/683
+sourceWarnings:
+- Author notes generative AI assisted drafting with human review/edit.
+- Security examples cite third-party research (Invariant Labs, Snyk/postmark-mcp, NSA CSI); verify against primary sources before operational use.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://storycompiler.tistory.com/684
+verifiedAt: '2026-08-24T14:53:00Z'
+contradictions:
+- modified_time=['2026-08-18T16:48:20+09:00'] (패킷 observedFacts와 정합 가능)
+judgeAction: READ
+judgeRationale: 로컬 stdio MCP는 OAuth 대상이 아니고 클라이언트와 동일 UID·환경을 상속한다고 정리. 미검증 npx·tool poisoning을 1차 위협으로. 로컬 MCP 안전 운영 토픽에 직접.
+expectedBenefit: stdio=선택한 RCE 관점과 도구 설명문 메타데이터 독성 경로 체크리스트.
+switchingCost: 문서 낮음.
+maturity: developing
+risks:
+- 생성 AI 보조 초안(저자 고지).
+- 개인 블로그 합성.
+smallestUsefulExperiment: stdio 권한 상속·poisoning 정의만 자사 MCP allowlist 정책과 매핑.
+```
+
+## korea-tistory-aiarchitect-mcp-server-security-checklist-oauth-audit
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/24/regional-signal/korea/korea-tistory-aiarchitect-mcp-server-security-checklist-oauth-audit.yaml
+- sha256: ba421b0566733ffbff6ab3f9e875d88743e4be1928784da659472d5dbe373a49
+- primaryUrl: https://aiarchitect.tistory.com/22
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: korea-tistory-aiarchitect-mcp-server-security-checklist-oauth-audit
+collectionDate: '2026-08-24'
+primaryCategory: korea
+relatedCategories: []
+originBasis: Korean-language Tistory technical blog (aiarchitect.tistory.com / AI 아키텍처 기술 블로그); Korea-hosted practitioner security checklist for remote MCP servers—not language-only classification.
+originalTitle: 'MCP Server 보안 체크리스트: OAuth·Scope·Origin·SSRF·Rate Limit'
+originalLanguage: ko
+koreanSummary: AI아키텍트가 2026-07-28 MCP 사양 기준으로 원격 MCP Server 배포 전 보안 체크리스트를 정리한다. OAuth Resource Server로서 Token Signature·Issuer·Audience 매요청 검증, Token Passthrough 금지, 최소 Scope+객체·Tenant 재인가, 그리고 감사 로그를 REQUEST_RECEIVED~SIDE_EFFECT_COMMITTED 결정/실행 이벤트로 분리해 Correlation Chain으로 남기라고 한다. 2026-07-30 게시.
+source: technical_article
+canonicalId: tistory:aiarchitect:22
+primaryUrl: https://aiarchitect.tistory.com/22
+author: AI아키텍트
+project: AI 아키텍처 기술 블로그 (aiarchitect.tistory.com)
+publishedAt: '2026-07-30T11:07:49+09:00'
+observedFacts:
+- JSON-LD BlogPosting datePublished 2026-07-30T11:07:49+09:00 and article:published_time match (collected 2026-08-24); dateModified 2026-08-22T13:27:19+09:00.
+- 'Anchors the checklist to the 2026-07-28 MCP Streamable HTTP / Authorization release: request-scoped POST, protocol-level session removed, Header/Body mismatch rejection.'
+- States MCP server is an OAuth Resource Server that must independently verify Signature, Issuer, Audience, and time on every request; forbids Token Passthrough and other-resource tokens.
+- 'Section 27 requires separating audit decision vs execution events in one correlation chain: REQUEST_RECEIVED, AUTHENTICATION_DECISION, AUTHORIZATION_DECISION, RATE_LIMIT_DECISION, TOOL_EXECUTION_STARTED, TOOL_EXECUTION_FINISHED, SIDE_EFFECT_COMMITTED.'
+- 'Recommended audit metadata: Timestamp; Request/Trace/Tool Call IDs; opaque Subject/Actor/Client/Tenant IDs; Tool/Action; policy decision+version; allow/deny reason codes; rate class/usage; result status/latency; safe downstream identifiers; projected/digest inputs instead of raw tool args.'
+interpretation: Korea-origin operational checklist that treats MCP authz as layered gates (token→scope→object authz→egress→rate) and makes structured decision/execution audit events an explicit pre-deploy acceptance criterion—directly on-topic for MCP permission, authentication, and audit-log practice.
+relatedRefs:
+- https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization
+- https://aiarchitect.tistory.com/11
+sourceWarnings:
+- Personal/practitioner Tistory synthesis of public MCP 2026-07-28 specs and RFCs; not an official MCP project announcement.
+- SecurityManifest and example hosts are fixtures; org IdP, data classification, and negative-test gates must be revalidated before production use.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://aiarchitect.tistory.com/22
+verifiedAt: '2026-08-24T14:53:00Z'
+contradictions:
+- dateModified=['2026-08-22T13:27:19+09:00']
+judgeAction: READ
+judgeRationale: 2026-07-28 MCP 사양 기준 원격 서버 OAuth RS 검증·passthrough 금지·최소 scope·감사 이벤트 체인 체크리스트. 권한·인증·감사 토픽에 직접.
+expectedBenefit: 요청 단위 Signature/Issuer/Audience 검증과 REQUEST→AUTH→EXEC 상관 감사 필드.
+switchingCost: 문서 낮음. 서버 구현 반영은 중간~높음.
+maturity: developing
+risks:
+- 개인 블로그 합성.
+- 스펙 개정 시 체크리스트 드리프트.
+smallestUsefulExperiment: 섹션 27 감사 이벤트 목록만 자사 로그 스키마와 대조.
 ```
 
 ## korea-tistory-nobase-skills-mcp-plugin-separation
