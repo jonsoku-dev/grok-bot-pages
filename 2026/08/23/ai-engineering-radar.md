@@ -1,128 +1,154 @@
 ---
-title: "지금 시험해볼 AI 엔지니어링 도구 8가지"
+title: "2026-08-23 AI Engineering Radar"
 status: "approved"
 action: "EXPERIMENT"
 artifactRole: "reader_facing_derivative"
 publicationChannel: "document"
 evidence:
-  - "intelligence/signals/2026/08/23/regional-signal/"
-sourceLinks:
-  - "https://toss.tech/article/tech_talk_talk_2"
-  - "https://github.com/NomaDamas/jikji"
-  - "https://github.com/NomaDamas/k-skill"
-  - "https://zenn.dev/staddress/articles/b601f14a21c5c5"
-  - "https://github.com/askdkc/pgroonga-mcp"
-  - "https://github.com/Lyellr88/marm-memory"
-  - "https://github.com/Mesutcydev/beet-code"
-  - "https://github.com/supernovae-st/nika"
-records:
-  - "intelligence/signals/2026/08/23/regional-signal/korea/toss-llm-serving.yaml"
+  - "intelligence/signals/2026/08/23/regional-signal/international/beet-code.yaml"
+  - "intelligence/signals/2026/08/23/regional-signal/international/marm-memory.yaml"
+  - "intelligence/signals/2026/08/23/regional-signal/international/nika.yaml"
+  - "intelligence/signals/2026/08/23/regional-signal/japan/pgroonga-mcp.yaml"
+  - "intelligence/signals/2026/08/23/regional-signal/japan/staddress-mcp.yaml"
   - "intelligence/signals/2026/08/23/regional-signal/korea/nomadamas-jikji.yaml"
   - "intelligence/signals/2026/08/23/regional-signal/korea/nomadamas-k-skill.yaml"
-  - "intelligence/signals/2026/08/23/regional-signal/japan/staddress-mcp.yaml"
-  - "intelligence/signals/2026/08/23/regional-signal/japan/pgroonga-mcp.yaml"
-  - "intelligence/signals/2026/08/23/regional-signal/international/marm-memory.yaml"
+  - "intelligence/signals/2026/08/23/regional-signal/korea/toss-llm-serving.yaml"
+sourceLinks:
+  - "https://github.com/Mesutcydev/beet-code"
+  - "https://github.com/Lyellr88/marm-memory"
+  - "https://github.com/supernovae-st/nika"
+  - "https://github.com/askdkc/pgroonga-mcp"
+  - "https://zenn.dev/staddress/articles/b601f14a21c5c5"
+  - "https://github.com/NomaDamas/jikji"
+  - "https://github.com/NomaDamas/k-skill"
+  - "https://toss.tech/article/tech_talk_talk_2"
+records:
   - "intelligence/signals/2026/08/23/regional-signal/international/beet-code.yaml"
+  - "intelligence/signals/2026/08/23/regional-signal/international/marm-memory.yaml"
   - "intelligence/signals/2026/08/23/regional-signal/international/nika.yaml"
+  - "intelligence/signals/2026/08/23/regional-signal/japan/pgroonga-mcp.yaml"
+  - "intelligence/signals/2026/08/23/regional-signal/japan/staddress-mcp.yaml"
+  - "intelligence/signals/2026/08/23/regional-signal/korea/nomadamas-jikji.yaml"
+  - "intelligence/signals/2026/08/23/regional-signal/korea/nomadamas-k-skill.yaml"
+  - "intelligence/signals/2026/08/23/regional-signal/korea/toss-llm-serving.yaml"
 ---
 
-# 지금 시험해볼 AI 엔지니어링 도구 8가지
+# 2026-08-23 AI Engineering Radar
 
-> 한국·일본·국제 공개 자료 8건을 원문, 핵심 내용, 추천 이유, 주의할 점과 다음 실험까지 연결해 정리했습니다.
+> 한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
 
-# 지금 시험해볼 AI 엔지니어링 도구 8가지
+# 2026-08-23 AI Engineering Radar
 
-이번 목록에서 바로 도입할 도구는 없습니다. 대신 지금 하는 일과 가까운 후보 세 가지가 보였습니다. `nomadamas-jikji`는 문서 탐색 비용, `nika`는 반복 작업의 재현성, `marm-memory`는 에이전트 기억의 품질을 작은 실험으로 비교할 가치가 있습니다. 나머지는 읽기 또는 관찰 대상으로 남겼습니다.
-
-이 글은 검증된 근거 레코드 8건을 사람이 읽기 쉽게 묶은 해설입니다.
+이 글은 검증된 공개 자료와 근거 레코드에서 작성했습니다. 내용을 고칠 때는 글보다 근거를 먼저 바로잡습니다.
 
 <!-- truncate -->
 
 ## 왜 중요한가
 
-도구 이름만 모은 목록은 금방 낡습니다. 실제로 도움이 되려면 무엇을 확인했고, 왜 관심을 가졌으며, 어느 조건에서 버릴지를 함께 남겨야 합니다. 이번 글은 원문 URL, 핵심 내용, 추천 이유, 주의할 점과 가장 작은 실험을 연결했습니다.
+이 글은 확인된 핵심 내용과 추천 이유, 주의할 점, 다음 단계를 함께 보여줍니다.
 
 ## 한국
 
-### 토스증권의 LLM 서빙 회고 — `toss-llm-serving`
+### [jikji](https://github.com/NomaDamas/jikji) — `nomadamas-jikji`
 
-[토스 기술 글](https://toss.tech/article/tech_talk_talk_2)은 여러 오픈소스·자체 튜닝 모델을 실제 서비스에 올리면서 겪은 프레임워크 의존성과 타임아웃 문제를 다룹니다. 새 모델 소개보다 운영 장애를 어떤 질문으로 쪼개는지가 유용합니다.
+AI 에이전트가 원본 파일을 반복 탐색하지 않도록 로컬 파일 지도, 파서 캐시, 검색 인덱스와 지식 그래프를 만드는 도구다.
 
-- 판단: `READ`. 현재 LLM 서비스의 최근 타임아웃을 모델, 배치, GPU, 네트워크와 프레임워크 계층으로 다시 분류할 때 참고합니다.
-- 한계: 한 회사의 운영 회고이며 전체 인프라와 독립 재현 결과는 공개되지 않았습니다.
-- 다음 행동: 최근 장애 20건을 같은 분류 축으로 재검토해 실제 진단 누락이 줄어드는지 확인합니다.
+- 왜 중요한가: 에이전트가 큰 문서 트리에서 관련 파일을 찾는 시간과 토큰을 줄일 수 있다.
+- 추천: **작게 실험** — 로컬·비파괴 설계는 현재 지식 관리 문제와 맞지만 자체 벤치마크와 파일 수정 경계는 직접 검증해야 한다.
+- 주의할 점:
+  - 인덱스 최신성 오류가 잘못된 파일 추천으로 이어질 수 있다.
+  - HWP·Office·미디어 파서의 실제 문서 호환성이 환경마다 다를 수 있다.
+- 다음 단계: 비민감 문서 100개를 복사한 격리 폴더에서 --no-agent-rules로 prepare한 뒤 기존 rg/find와 20개 질의의 정확도·시간·토큰을 비교한다.
 
-### 로컬 문서 지도를 만드는 Jikji — `nomadamas-jikji`
+### [k-skill](https://github.com/NomaDamas/k-skill) — `nomadamas-k-skill`
 
-[Jikji](https://github.com/NomaDamas/jikji)는 원본을 옮기지 않고 `.jikji` 지도와 검색 인덱스를 만들어 에이전트의 반복 탐색을 줄이려는 도구입니다. 현재 배포 표면은 Rust CLI이고, 프로젝트가 제시한 551건 벤치마크는 토큰·시간·호출 감소를 주장합니다.
+교통, 생활, 금융, 공공정보, 검색 등 한국 사용자가 자주 쓰는 서비스를 에이전트 스킬로 묶은 대규모 컬렉션이다.
 
-- 판단: `EXPERIMENT`. 이 저장소의 문서 탐색 문제와 직접 맞닿아 있습니다.
-- 한계: 수치는 자체 벤치마크입니다. `prepare`가 AGENTS.md 계열 파일을 수정할 수 있으므로 격리 폴더와 `--no-agent-rules`가 필요합니다.
-- 다음 행동: 비민감 문서 100개에서 기존 `rg` 검색과 Hit@1, 소요 시간, 토큰, 파일 변경을 비교합니다.
+- 왜 중요한가: 한국 서비스별 연결 방식을 새로 설계하는 시간을 줄이고 기존 구현을 참고할 수 있다.
+- 추천: **지켜보기** — 범위와 한국 서비스 적합성은 높지만 개별 스킬의 보안·신뢰·쓰기 경계를 따로 평가해야 한다.
+- 주의할 점:
+  - 외부 서비스 변경으로 스킬이 쉽게 깨질 수 있다.
+  - 쓰기·예약·구매 계열 스킬은 잘못된 실행의 영향이 크다.
+- 다음 단계: 읽기 전용이면서 인증이 필요 없는 스킬 하나만 격리된 테스트 계정에서 실행하고 입력·출력·외부 요청·실패 동작을 기록한다.
 
-### 한국 서비스 스킬 모음 k-skill — `nomadamas-k-skill`
+### [토스증권 LLM serving](https://toss.tech/article/tech_talk_talk_2) — `toss-llm-serving`
 
-[k-skill](https://github.com/NomaDamas/k-skill)은 교통, 공공정보, 중고거래와 문서 도구 등 한국 서비스용 스킬을 한 저장소에 모읍니다. 폭이 넓다는 점은 장점이지만, 전체 설치는 필요 이상의 권한과 유지보수 위험을 함께 가져옵니다.
+토스증권이 다수의 오픈소스·자체 튜닝 LLM을 운영하면서 타임아웃과 프레임워크 의존성 문제를 진단한 실무 글이다.
 
-- 판단: `WATCH`. 필요한 스킬 하나가 생겼을 때 해당 디렉터리만 검토합니다.
-- 한계: 외부 서비스 약관, 인증, 쓰기 범위와 코드 품질이 스킬마다 다릅니다.
-- 다음 행동: 실제 요구가 생기기 전에는 설치하지 않고, 후보 하나를 고르면 읽기 전용 여부와 네트워크·자격증명 경계를 먼저 검사합니다.
+- 왜 중요한가: LLM 서빙 도입 전에 필요한 관측 지표와 장애 대응 질문을 구체화할 수 있다.
+- 추천: **읽기** — 이미 운영 중인 팀의 장애와 의존성 문제를 직접 다뤄 도입보다 운영 설계에 즉시 참고할 가치가 있다.
+- 주의할 점:
+  - 특정 조직과 프레임워크에 묶인 경험을 일반화할 수 있다.
+  - 공개되지 않은 내부 조건 때문에 같은 결과가 재현되지 않을 수 있다.
+- 다음 단계: 현재 LLM 서비스의 최근 타임아웃 20건을 프레임워크·모델·배치·GPU·네트워크 지표로 다시 분류해 글의 진단 질문이 유효한지 확인한다.
 
 ## 일본
 
-### 일본 주소 정규화 MCP — `staddress-mcp`
+### [pgroonga-mcp](https://github.com/askdkc/pgroonga-mcp) — `pgroonga-mcp`
 
-[Staddress 공식 글](https://zenn.dev/staddress/articles/b601f14a21c5c5)은 일본 주소 정규화·지오코딩을 MCP 도구로 제공하는 방법을 설명합니다. 도구는 읽기 전용 힌트를 선언하고 공식 SDK를 사용하지만 Free 계정과 API 키가 필요합니다.
+PostgreSQL의 PGroonga 인덱스를 MCP에서 읽기 전용으로 검색·진단하도록 제한한 서버다.
 
-- 판단: `WATCH`. 일본 주소 정제가 필요한 업무가 생겼을 때 후보가 됩니다.
-- 한계: 주소는 개인정보가 될 수 있고, 무료 플랜과 호출 제한은 변할 수 있습니다.
-- 다음 행동: 실데이터가 아닌 공개 시설 주소 20건으로 정확도, 신뢰도, 오류 유형과 외부 전송 범위를 확인합니다.
+- 왜 중요한가: 자연어 에이전트가 PGroonga 검색을 사용하면서 임의 SQL과 쓰기 권한을 차단할 수 있다.
+- 추천: **지켜보기** — 읽기 전용·allowlist·RLS 원칙은 좋지만 신생 프로젝트이고 데이터베이스 권한 실수가 고위험이다.
+- 주의할 점:
+  - 스키마 allowlist가 넓으면 의도하지 않은 테이블을 검색할 수 있다.
+  - 응답 크기와 쿼리 비용이 데이터베이스 부하로 이어질 수 있다.
+- 다음 단계: 합성 일본어 문서 테이블과 최소 권한 역할에서 dry-run 설정 후 검색 10건, RLS 차단, timeout, 응답 크기 제한을 검증한다.
 
-### PGroonga를 읽기 전용으로 여는 MCP — `pgroonga-mcp`
+### [staddress-tools](https://zenn.dev/staddress/articles/b601f14a21c5c5) — `staddress-mcp`
 
-[pgroonga-mcp](https://github.com/askdkc/pgroonga-mcp)는 임의 SQL·DDL·repair를 노출하지 않고 검색과 진단만 허용합니다. 비슈퍼유저, 비BYPASSRLS 역할과 스키마·테이블 allowlist를 권장한다는 점이 더 중요합니다.
+일본 주소를 정규화·지오코딩하고 신뢰도와 주소 코드를 반환하는 공식 MCP 서버와 SDK 도구 모음이다.
 
-- 판단: `WATCH`. 에이전트용 데이터베이스 도구를 좁게 설계한 참고 사례로 봅니다.
-- 한계: 신생 프로젝트이며 역할이나 allowlist를 잘못 잡으면 민감 데이터가 노출됩니다.
-- 다음 행동: 합성 일본어 테이블에서 검색 10건, RLS 차단, timeout과 응답 크기 제한만 검증합니다.
+- 왜 중요한가: 일본 주소의 표기 흔들림을 구조화해 검색·배송·고객 데이터 정제 품질을 높일 수 있다.
+- 추천: **지켜보기** — 공식 구현과 사용법은 명확하지만 외부 API·주소 개인정보·요금 경계를 먼저 검토해야 한다.
+- 주의할 점:
+  - 개인정보가 외부 API로 전송될 수 있다.
+  - 지오코딩 결과의 신뢰도와 행정구역 변경 반영 시차가 업무 판단에 영향을 줄 수 있다.
+- 다음 단계: 공개 시설 주소 20건만 사용해 정규화 정확도, 신뢰도, 오류 유형과 API 호출 범위를 측정한다.
 
 ## 국제
 
-### 로컬 우선 에이전트 메모리 — `marm-memory`
+### [beet-code](https://github.com/Mesutcydev/beet-code) — `beet-code`
 
-[MARM](https://github.com/Lyellr88/marm-memory)은 세션 기억, 코드 인덱스와 개념 그래프를 SQLite 기반 MCP 표면에 묶습니다. 여러 에이전트가 같은 프로젝트 기억을 다룰 때 매력적이지만 현재 사용 중인 ai-memory와 역할이 겹칩니다.
+Apple Silicon 전용 macOS 네이티브 코딩 에이전트로 로컬 MLX 모델, 원격 BYOK 엔진, hooks, MCP와 로컬 API를 결합한다.
 
-- 판단: `EXPERIMENT`. 도입 검토가 아니라 격리 비교가 목적입니다.
-- 한계: 성능은 자체 벤치마크이고, 임베딩·그래프 마이그레이션은 복구 비용을 만듭니다.
-- 다음 행동: 테스트 저장소 50개 세션에서 동일 질의의 정확도, 지연과 중복률을 기존 메모리와 비교합니다.
+- 왜 중요한가: 네이티브 macOS에서 로컬·원격 모델을 한 에이전트 인터페이스로 비교할 수 있다.
+- 추천: **작게 실험** — 로컬 모델 통합은 확인할 가치가 있지만 프로젝트 성숙도와 보안 주장이 충분히 검증되지 않았다.
+- 주의할 점:
+  - 초기 코드의 안정성과 encrypted session 구현 품질이 확인되지 않았다.
+  - 로컬 모델 다운로드와 실행이 저장공간·메모리·전력 비용을 만든다.
+- 다음 단계: 테스트 Mac의 비민감 저장소에서 네트워크를 차단하고 로컬 모델로 읽기 전용 코드 설명 5건을 수행해 권한·로그·데이터 유출을 확인한다.
 
-### macOS 네이티브 코딩 에이전트 — `beet-code`
+### [marm-memory](https://github.com/Lyellr88/marm-memory) — `marm-memory`
 
-[Beet Code](https://github.com/Mesutcydev/beet-code)는 Apple Silicon용 Swift 앱에서 MLX 로컬 모델, BYOK 원격 엔진, hooks, MCP와 로컬 API를 함께 제공합니다.
+세션 기억, 코드 인덱스와 개념 그래프를 SQLite 기반 로컬 런타임에 묶은 MCP 메모리 계층이다.
 
-- 판단: `EXPERIMENT`, 단 비민감 저장소의 읽기 전용 범위에 한합니다.
-- 한계: 2026-08-18 생성된 초기 프로젝트로 운영 근거가 거의 없고 Apple Silicon에 묶입니다. 암호화 세션 주장도 별도 검증이 필요합니다.
-- 다음 행동: 네트워크를 차단한 테스트 Mac에서 로컬 모델의 코드 설명 5건과 파일·권한 변화를 기록합니다.
+- 왜 중요한가: 세션·코드·개념 기억을 한 질의 경로에서 찾아 에이전트 간 맥락 손실을 줄일 수 있다.
+- 추천: **작게 실험** — 로컬·통합 메모리 방향은 관련성이 높지만 기존 메모리 시스템과 중복되고 migration 비용이 있다.
+- 주의할 점:
+  - 중복 기억과 잘못된 semantic merge가 사실성을 낮출 수 있다.
+  - migration 실패가 검색 불가 또는 오래된 인덱스로 이어질 수 있다.
+- 다음 단계: 비민감 테스트 저장소 하나에서 50개 세션을 적재하고 기존 ai-memory와 동일 질의의 정확도·지연·중복률을 비교한다.
 
-### 반복 작업을 YAML로 고정하는 Nika — `nika`
+### [nika](https://github.com/supernovae-st/nika) — `nika`
 
-[Nika](https://github.com/supernovae-st/nika)는 반복 AI 작업을 YAML과 Rust 실행기로 저장하고 정적 검사·LSP·읽기 전용 MCP를 붙입니다. 현재 Grok Routine의 “프롬프트만 있는 자동화”를 실행 가능한 워크플로로 바꾸는 방향과 닮았습니다.
+반복 AI 작업을 검토 가능한 YAML workflow와 Rust 실행기로 저장해 모델·클라이언트와 분리하는 도구다.
 
-- 판단: `EXPERIMENT`. 반복 가능한 읽기 전용 작업 하나만 변환합니다.
-- 한계: 새 DSL과 실행기를 운영해야 하며 AGPL-3.0 라이선스 경계를 확인해야 합니다.
-- 다음 행동: 외부 쓰기가 없는 주간 Markdown 요약 한 건을 변환해 결과, 실패 처리와 검토 비용을 현재 Routine과 비교합니다.
+- 왜 중요한가: 반복 AI 작업의 입력·권한·비용·결과를 코드 리뷰와 CI 검증 대상으로 만들 수 있다.
+- 추천: **작게 실험** — 반복 작업을 파일로 고정하고 정적 검사하는 이점이 분명하지만 새 DSL과 AGPL 경계를 확인해야 한다.
+- 주의할 점:
+  - workflow 추상화가 실제 에이전트의 예외 처리와 상호작용을 충분히 표현하지 못할 수 있다.
+  - provider 비용·권한 설정 실수의 영향이 자동 반복될 수 있다.
+- 다음 단계: 외부 쓰기가 없는 주간 Markdown 요약 작업 하나를 Nika workflow로 변환해 현재 Routine과 결과·실패·검토 비용을 비교한다.
 
 ## 판단
 
-우선순위는 `Jikji → Nika → MARM`입니다. 세 후보 모두 현재 문제와 가깝지만, 도입이 아니라 작은 비교 실험만 허용합니다. Staddress와 PGroonga MCP는 구체적인 일본 데이터 요구가 생길 때까지 기다립니다. k-skill은 모음 전체가 아니라 필요한 스킬 하나만 검토합니다.
+각 항목의 행동과 이유는 위에 표시했습니다. 도입은 별도 승인과 가장 작은 실험을 통과한 뒤에만 검토합니다.
 
 ## 한계
 
-- GitHub 프로젝트의 기능·성능·보안 설명은 대부분 제작자 주장입니다. `VERIFIED`는 원문에 그 설명이 존재함을 확인했다는 뜻입니다.
-- 별 수와 최근 push는 관심도와 활동성을 보여줄 뿐 품질을 증명하지 않습니다.
-- 이 백필은 2026-08-23의 공개 상태에 묶여 있습니다. 설치나 도입 전에 현재 라이선스, 릴리스, 권한과 의존성을 다시 확인해야 합니다.
-- 일본은 기준을 충족한 항목이 두 건뿐입니다. 숫자를 맞추려고 약한 후보를 넣지 않았습니다.
+`VERIFIED`는 공개 원문에 해당 주장이 존재함을 확인했다는 뜻이며, 성과와 안전성을 독립 감사했다는 뜻이 아닙니다.
 
 ## 근거
 
-세부 검증 정보는 근거 레코드에 보존했고, 공개 원문은 각 항목의 제목 링크에서 바로 열 수 있습니다.
+각 항목은 검증된 근거 레코드와 독자가 직접 열 수 있는 공개 원문에 연결되어 있습니다.

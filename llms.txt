@@ -18,8 +18,8 @@
 
 - [지금 읽을 결과](/grok-bot-pages/reports/current/results.md): 현재 공개된 인텔리전스 5편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
 - [Reports](/grok-bot-pages/reports/README.md): `reports/current/results.md` is the current user-facing summary. `reports/daily/` and
-- [지금 시험해볼 AI 엔지니어링 도구 8가지](/grok-bot-pages/2026/08/23/ai-engineering-radar.md): 한국·일본·국제 공개 자료 8건을 원문, 핵심 내용, 추천 이유, 주의할 점과 다음 실험까지 연결해 정리했습니다.
-- [AI가 업무를 바꾼 세 장면과 아직 답하지 못한 질문](/grok-bot-pages/2026/08/23/ax-intelligence.md): 신한투자증권, 미쓰비시UFJ은행, Nordre Follo 사례에서 바뀐 업무 흐름과 사람이 계속 맡는 책임을 비교합니다.
+- [2026-08-23 AI Engineering Radar](/grok-bot-pages/2026/08/23/ai-engineering-radar.md): 한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
+- [2026-08-23 AX Intelligence](/grok-bot-pages/2026/08/23/ax-intelligence.md): 한국·일본·국제의 검증된 AX 사례를 업무 전후, 사람 책임과 한계로 비교합니다.
 - [2026-08-24 AI Engineering Radar](/grok-bot-pages/2026/08/24/ai-engineering-radar.md): 한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
 - [2026-08-25 AI Engineering Radar](/grok-bot-pages/2026/08/25/ai-engineering-radar.md): 한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
 - [2026-08-26 AI Engineering Radar](/grok-bot-pages/2026/08/26/ai-engineering-radar.md): 한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
