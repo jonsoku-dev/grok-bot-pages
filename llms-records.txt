@@ -5401,3 +5401,1318 @@ smallestUsefulExperiment: 패치의 source_preserved와 `/api/remove-folder?path
   403 테스트만 읽고 인덱스 삭제 경계를 대조. `jikji find` 재실험·외부 게시·SoT 쓰기 없음.
 recordStatus: approved
 ```
+
+## arxiv-feedback-backfires-2608-23651
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/27/regional-signal/international/arxiv-feedback-backfires-2608-23651.yaml
+- sha256: 3ea03c18ebf1841b2eb7fc6522a0fbf24bf02082617e9fc4240f7ff4efc4d1f3
+- primaryUrl: https://arxiv.org/abs/2608.23651
+
+```yaml
+schemaVersion: regional-signal/v1
+id: arxiv-feedback-backfires-2608-23651
+collectionDate: '2026-08-27'
+primaryCategory: international
+relatedCategories: []
+originBasis: arXiv cs.SE preprint 2608.23651 by Esmail Gumaan. Code/data claimed at
+  github.com/Esmail-ibraheem/feedback-that-backfires. No KR/JP org stated on the abs
+  or API entry.
+originalTitle: 'Feedback That Backfires: Why Small Language Model Agents Repeat the
+  Call They Just Watched Fail'
+originalLanguage: en
+koreanSummary: Esmail Gumaan이 실패한 도구 호출을 트랜스크립트에 그대로 남기는 하네스가 소형 모델에서 교정 정보가 아니라 반복을
+  유도한다고 측정했다. 6개 체크포인트(135M–1.7B)에서 실패 직후 같은 호출을 다시 낼 로그확률 이득이 모두 음수(약 −1.03 nats/토큰)다.
+  호출 표면형이 손상의 83%고, 실패를 서술로 바꾸면 76%가 사라지며 반복 금지 지시와 실패 삭제 재시도는 효과가 없거나 더 나쁘다.
+source: technical_article
+canonicalId: arxiv.org/abs/2608.23651
+primaryUrl: https://arxiv.org/abs/2608.23651
+author: Esmail Gumaan
+project: Feedback That Backfires
+publishedAt: '2026-08-24T10:19:17Z'
+observedFacts:
+- 'arXiv API published 2026-08-24T10:19:17Z for 2608.23651v1 (inside window). Subjects:
+  cs.SE (primary), cs.AI. Comments: 25 pages, 6 figures, 13 tables. Code, data, probe
+  items and rollout logs: https://github.com/Esmail-ibraheem/feedback-that-backfires.'
+- 'Abstract: defining corrective gain of a failure record as the change in log-probability
+  of re-emitting the action that just failed, the gain is negative for every instruction-tuned
+  model tested (6 checkpoints, 135M–1.7B, 4 families) in simulated tool calling and
+  MBPP program repair. Normalised by action length the effect is about −1.03 nats
+  per action token and holds on 90%–100% of individual items.'
+- 'Abstract: over a fixed candidate set the probability of repeating the failed call
+  rises from 0.06 to 0.54; greedy decoding reproduces it token for token on 19% of
+  items after the failure versus 0% before.'
+- 'Abstract: counterfactuals pairing the same call with a failure message, a success
+  message, or a neutral acknowledgement attribute 83% of the damage to the failed
+  call''s surface form; the semantic contribution of marking it failed is small and
+  inconsistent in sign.'
+- 'Abstract: replacing the verbatim call with a runtime-generated description of the
+  failure removes 76% of the inversion at no token cost. An explicit do-not-repeat
+  instruction leaves the measured quantity where it was; deleting the failed attempt
+  to retry from a clean context is the worst harness measured for repetition. The
+  study claims to run end to end on a CPU with artefacts released.'
+interpretation: 'Harness-design result for tool-error context: do not echo the failed
+  call verbatim. The paper locates the bug in the transcript format, not in the model''s
+  ability to read error text.'
+relatedRefs:
+- https://arxiv.org/abs/2608.23651v1
+- https://arxiv.org/pdf/2608.23651
+- https://github.com/Esmail-ibraheem/feedback-that-backfires
+- https://doi.org/10.48550/arXiv.2608.23651
+sourceWarnings:
+- Abstract-only this pass; GitHub artefacts were not re-run.
+- Results are on 135M–1.7B instruction-tuned checkpoints, not frontier coding CLIs.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://arxiv.org/abs/2608.23651
+- https://arxiv.org/pdf/2608.23651
+verifiedAt: '2026-08-26T22:05:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 실패한 도구 호출을 트랜스크립트에 그대로 남기면 소형 모델이 교정하지 않고 같은 호출을 반복. 손상 83%는 실패 표시가
+  아니라 호출 표면형. 서술로 바꾸면 76% 감소. 반복 금지 지시·실패 삭제는 없거나 더 나쁨. agent harness·evaluation에
+  직접 맞음. 135M–1.7B이지 프론티어 CLI 아님. 재실행 EXPERIMENT 아님.
+expectedBenefit: 툴 에러를 verbatim 호출이 아니라 런타임 생성 서술로 남기는 하네스 규칙.
+switchingCost: 초록 흡수 낮음. 실패 레코드 포맷을 바꾸면 중간. 프론티어에서 효과가 같다고 단정하면 안 됨.
+maturity: early
+risks:
+- 6개 체크포인트 135M–1.7B. Codex/Claude Code에 일반화 금지.
+- 아티팩트 미재실행. −1.03 nats는 논문 보고.
+- 실패 삭제 재시도가 최악이라는 결과는 이 측정 세트에 한정.
+smallestUsefulExperiment: verbatim 실패 호출 vs 서술 치환만 읽고 현재 툴 에러 트랜스크립트와 대조. 135M 재실행·외부
+  게시 없음.
+recordStatus: approved
+```
+
+## chrome-devtools-mcp-v1-8-0
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/27/regional-signal/international/chrome-devtools-mcp-v1-8-0.yaml
+- sha256: 598682fc2b67da297178251e811bc82bd0979eab97895331c23f48a91b0b37e7
+- primaryUrl: https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.8.0
+
+```yaml
+schemaVersion: regional-signal/v1
+id: chrome-devtools-mcp-v1-8-0
+collectionDate: '2026-08-27'
+primaryCategory: international
+relatedCategories: []
+originBasis: Official ChromeDevTools/chrome-devtools-mcp GitHub release; Google/Chrome
+  multinational MCP server.
+originalTitle: 'chrome-devtools-mcp: v1.8.0'
+originalLanguage: en
+koreanSummary: Chrome DevTools MCP 1.8.0이 query_heapsnapshot과 heap 요약/엣지 개선, pageId
+  기본 필수를 넣는다.
+source: official_release
+canonicalId: ChromeDevTools/chrome-devtools-mcp@chrome-devtools-mcp-v1.8.0
+primaryUrl: https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.8.0
+author: ChromeDevTools
+project: ChromeDevTools/chrome-devtools-mcp
+publishedAt: '2026-08-25T11:35:48Z'
+observedFacts:
+- 'releases.atom updated 2026-08-25T11:35:48Z for chrome-devtools-mcp: v1.8.0.'
+- Features include query_heapsnapshot MCP tool and heapsnapshot edges/summary enhancements.
+- Features include pageId required for page-scoped tools by default and PWA automation
+  tools.
+- 'Notes excerpt: 1.8.0 (2026-08-25) 🎉 Features Add additional params to get_heapsnapshot_edges
+  ( #2561 ) ( b58c613 ) add optional stack traces to list_console_messages ( #2505
+  ) ( 85c73a0 ) add PWA automation tools ( #2430 ) ( 0ea5c8d ), closes #2270 Add query_heapsnapshot
+  MCP tool ( #2553 ) ( fadbf41 ) allow evalua'
+interpretation: Extends official DevTools MCP so coding agents can query heap snapshots
+  and tighten page-scoped routing.
+relatedRefs:
+- https://github.com/ChromeDevTools/chrome-devtools-mcp/releases.atom
+- https://github.com/ChromeDevTools/chrome-devtools-mcp
+sourceWarnings:
+- v1.7.0 outside window already had earlier heap object tools.
+- Release-note capture only.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.8.0
+- https://github.com/ChromeDevTools/chrome-devtools-mcp/releases.atom
+verifiedAt: '2026-08-26T21:58:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 공식 Chrome DevTools MCP 1.8.0. query_heapsnapshot과 pageId 기본 필수, PWA
+  자동화. MCP·computer-use에 인접. v1.7.0 힙 툴의 증분. 코딩 에이전트 기본 스택 교체 아님.
+expectedBenefit: 에이전트가 힙 스냅샷을 질의하고 페이지 스코프 툴을 pageId로 묶는 경로.
+switchingCost: 노트 흡수 낮음. pageId 필수는 기존 호출을 깨뜨릴 수 있음.
+maturity: developing
+risks:
+- pageId 기본 필수로 구 툴 호출이 실패할 수 있음.
+- 힙 질의는 대량 객체 그래프를 컨텍스트에 넣을 수 있음.
+- 노트 캡처만. 미재실행.
+smallestUsefulExperiment: query_heapsnapshot과 pageId 필수만 읽고 현재 DevTools MCP 호출과 대조.
+  브라우저 자동화·외부 게시 없음.
+recordStatus: approved
+```
+
+## github-copilot-cli-v1-0-81-12
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/27/regional-signal/international/github-copilot-cli-v1-0-81-12.yaml
+- sha256: 05f78aabc38f2730c4cfbd9c9f210a9431501b63a47fb2f904854f85bb63c92c
+- primaryUrl: https://github.com/github/copilot-cli/releases/tag/v1.0.81-12
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-copilot-cli-v1-0-81-12
+collectionDate: '2026-08-27'
+primaryCategory: international
+relatedCategories: []
+originBasis: Official GitHub copilot-cli release (Microsoft/GitHub multinational).
+  Coding-agent CLI with MCP/skills/sandbox; not KR/JP-local.
+originalTitle: 1.0.81-12
+originalLanguage: en
+koreanSummary: GitHub Copilot CLI 1.0.81-12가 Windows에서 Entra ID로 보호된 원격 MCP를 OS 인증
+  브로커(WAM)로 로그인하게 했고, 세션 resume 텔레메트리 크래시를 고쳤다. 직전 1.0.81-11은 엔터프라이즈 정책에 막힌 MCP를 /mcp에서
+  pending 대신 blocked로 표시한다.
+source: official_release
+canonicalId: github/copilot-cli@v1.0.81-12
+primaryUrl: https://github.com/github/copilot-cli/releases/tag/v1.0.81-12
+author: copilot-cli-release-app[bot]
+project: github/copilot-cli
+publishedAt: '2026-08-26T18:21:48Z'
+observedFacts:
+- releases.atom entry for v1.0.81-12 updated 2026-08-26T18:21:48Z (inside window).
+  Title 1.0.81-12.
+- 'Added: Windows remote MCP servers protected by Microsoft Entra ID can now sign
+  in through the OS authentication broker (WAM), usually with no prompt. Other platforms,
+  --device-code, and machines without the broker library keep the existing browser
+  flow.'
+- 'Fixed: repeatedly resuming the same session no longer crashes while telemetry is
+  being replaced.'
+- 'In-window predecessor v1.0.81-11 (2026-08-26T01:32:27Z): an MCP server blocked
+  by an enterprise policy now shows as blocked in /mcp instead of spinning as pending
+  forever. Skipped v1.0.81-10 (2026-08-25T21:15:43Z) had already shipped the plugins
+  dashboard (/plugin, /mcp, /skills) to everyone.'
+interpretation: 'Small but on-interest Copilot CLI increment after the skipped 1.0.81-10
+  plugins-dashboard train: remote MCP Entra auth on Windows via WAM, plus a policy-blocked
+  MCP status fix in 81-11. Release notes only.'
+relatedRefs:
+- https://github.com/github/copilot-cli/releases.atom
+- https://github.com/github/copilot-cli/releases/tag/v1.0.81-11
+- https://github.com/github/copilot-cli/releases/tag/v1.0.81-10
+sourceWarnings:
+- v1.0.81-10 is on the skip list; this record is 1.0.81-12, with 1.0.81-11 noted as
+  the same-window predecessor.
+- WAM broker behavior was not exercised here.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/github/copilot-cli/releases/tag/v1.0.81-12
+- https://github.com/github/copilot-cli/releases.atom
+verifiedAt: '2026-08-26T22:05:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 어제 1.0.81-10 READ(플러그인 대시보드) 다음 증분. Windows 원격 MCP Entra를 WAM으로 로그인하고,
+  같은 창 81-11은 정책 차단 MCP를 /mcp에서 pending이 아니라 blocked로 표시. MCP 인증·정책 표시에 맞음. WAM 미실행.
+  기본 스택 교체 아님. 81-10 skip과 중복 IGNORE 아님. relatedCategories는 [] 유지.
+expectedBenefit: 엔터프라이즈에 막힌 MCP가 무한 pending으로 안 보이게 됨. Windows는 브라우저 플로 없이 원격 MCP
+  로그인.
+switchingCost: 노트 흡수 낮음. WAM은 Windows+브로커 라이브러리 전제. 다른 OS는 기존 브라우저/--device-code.
+maturity: developing
+risks:
+- WAM 동작 미실행. 무프롬프트 로그인이  ent라 동의 면을 숨길 수 있음.
+- 1.0.81-N 트레인. 텔레메트리 크래시 수정은 resume 경로만.
+- Copilot CLI는 Codex/Claude Code 기본값이 아님.
+smallestUsefulExperiment: 81-11 blocked 표시와 81-12 WAM/브라우저 분기만 읽고 현재 MCP 인증 경로와 대조.
+  CLI 업·외부 게시 없음.
+recordStatus: approved
+```
+
+## helter5-agentbridge-v1-0-2
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/27/regional-signal/international/helter5-agentbridge-v1-0-2.yaml
+- sha256: c90644aa3b80e8d319e85a0d2081a15854f1001a8cc4e20faff1d003d1a552b8
+- primaryUrl: https://github.com/Helter5/agentbridge/releases/tag/v1.0.2
+
+```yaml
+schemaVersion: regional-signal/v1
+id: helter5-agentbridge-v1-0-2
+collectionDate: '2026-08-27'
+primaryCategory: international
+relatedCategories: []
+originBasis: GitHub release Helter5/agentbridge by Helter5. HN 2026-08-26 story about
+  syncing skills and MCP across Claude Code, Codex, Antigravity. Not KR/JP-local.
+originalTitle: v1.0.2
+originalLanguage: en
+koreanSummary: Helter5/agentbridge v1.0.2가 첫 배포다 스킬과 MCP를 여러 에이전트에 맞추했다.
+source: official_release
+canonicalId: Helter5/agentbridge@v1.0.2
+primaryUrl: https://github.com/Helter5/agentbridge/releases/tag/v1.0.2
+author: Helter5
+project: Helter5/agentbridge
+publishedAt: '2026-08-26T19:31:10Z'
+observedFacts:
+- releases.atom entry for v1.0.2 updated 2026-08-26T19:31:10Z (inside window). Author
+  Helter5.
+- In-window predecessors v1.0.0 and v1.0.1 were GitHub tags only.
+- 'Release body: first scoped package @helter/agentbridge; CLI command name unchanged.'
+- 'Fixed: Codex MCP sync now reads and writes TOML instead of JSON.'
+- 'Also fixed: sync-rules backup on partial write; link-skills reserved-folder leak;
+  false SKILL.md collisions; watch miss on late AGENTS.md.'
+- Added MCP conflict detection for same-name servers with different command/args/env.
+  Codex is now a sync-rules target.
+- 'HN 49454480 (2026-08-26T19:26:16Z, 2 points) points at the same repo: skills/MCP
+  sync across Claude Code, Codex, Antigravity.'
+interpretation: Interop harness for Agent Skills and MCP across coding agents.
+relatedRefs:
+- https://github.com/Helter5/agentbridge/releases.atom
+- https://github.com/Helter5/agentbridge
+- https://github.com/Helter5/agentbridge/releases/tag/v1.0.1
+- https://news.ycombinator.com/item?id=49454480
+sourceWarnings:
+- A prior draft mixed this id with openai/codex rust-v0.150.0 notes; this record is
+  rebuilt from Helter5/agentbridge releases.atom and HN 49454480 only.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/Helter5/agentbridge/releases/tag/v1.0.2
+- https://github.com/Helter5/agentbridge/releases.atom
+verifiedAt: '2026-08-26T22:05:00Z'
+contradictions: []
+judgeAction: EXPERIMENT
+judgeRationale: Claude Code·Codex·Antigravity 사이 스킬과 MCP를 맞추는 동기화 CLI. Codex MCP는
+  TOML, 동명 서버 충돌 검출. Agent Skills·MCP·Codex·Claude Code 상호운용에 직접 맞음. marvelousu/agent-bridge(제어면)와
+  다른 리포. 첫 scoped 패키지라 ADOPT 아님. HN 점수 비가중.
+expectedBenefit: 한 카탈로그를 여러 코딩 에이전트 설정으로 밀어 넣는 경로. 부분 쓰기 백업과 예약 폴더 누수 수정이 v1.0.2에
+  있음.
+switchingCost: CLI 설치는 낮음. 실설정에 sync를 들이면 중간. live MCP/스킬을 덮을 수 있음.
+maturity: early
+risks:
+- v1.0.0/1.0.1은 태그뿐. v1.0.2가 첫 scoped 패키지.
+- 이름 agentbridge가 다른 하네스와 혼동됨.
+- '패킷 sourceWarning: 초안이 Codex rust-v0.150.0 노트와 섞였다가 재작성됨.'
+- 실동기화는 자격·명령·env를 여러 에이전트에 복제함.
+smallestUsefulExperiment: 폐기 가능한 스킬/MCP 픽스처에 sync dry-run만 해서 Codex TOML과 충돌 검출이 보이는지
+  확인. 라이브 설정 덮어쓰기·외부 게시·SoT 쓰기 없음.
+recordStatus: approved
+```
+
+## langchain-deepagents-code-0-1-62
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/27/regional-signal/international/langchain-deepagents-code-0-1-62.yaml
+- sha256: 8c3347fc485d36978daa9d6bcbd3d040363f6d086824734dd2153a04d6d66100
+- primaryUrl: https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.62
+
+```yaml
+schemaVersion: regional-signal/v1
+id: langchain-deepagents-code-0-1-62
+collectionDate: '2026-08-27'
+primaryCategory: international
+relatedCategories: []
+originBasis: Official langchain-ai/deepagents release for deepagents-code; US multinational
+  LangChain coding-agent CLI.
+originalTitle: deepagents-code==0.1.62
+originalLanguage: en
+koreanSummary: deepagents-code 0.1.62가 /context-doctor와 컨텍스트/compaction 수정을 추가한다.
+source: official_release
+canonicalId: langchain-ai/deepagents@deepagents-code==0.1.62
+primaryUrl: https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.62
+author: langchain-ai
+project: langchain-ai/deepagents (deepagents-code)
+publishedAt: '2026-08-26T03:09:07Z'
+observedFacts:
+- releases.atom updated 2026-08-26T03:09:07Z for deepagents-code==0.1.62.
+- Features include /context-doctor for inspecting context issues.
+- Also mid-session model-switch warning, DEEPAGENTS_HOME, secret redaction default,
+  compaction context fix.
+- 'Notes excerpt: Features Added /context-doctor for inspecting and troubleshooting
+  context issues ( #5830 ). Added warning when switching models mid-session ( #5829
+  ). Added support for DEEPAGENTS_HOME ( #5773 ). (Re-)Enabled secret redaction by
+  default ( #5816 ). Improved upd'
+interpretation: Coding-agent CLI increment centered on context inspection and compaction/cache
+  behavior.
+relatedRefs:
+- https://github.com/langchain-ai/deepagents/releases.atom
+- https://github.com/langchain-ai/deepagents
+sourceWarnings:
+- Same-window deepagents-cli deprecation not merged into this record.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.62
+- https://github.com/langchain-ai/deepagents/releases.atom
+verifiedAt: '2026-08-26T21:58:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: deepagents-code에 /context-doctor, 세션 중 모델 전환 경고, 시크릿 레드랙션 기본, compaction
+  수정. context engineering에 맞음. LangChain/deepagents는 tier2. 기본 코딩 에이전트 교체 아님. 같은 창
+  CLI 폐기는 이 레코드에 병합하지 않음.
+expectedBenefit: 컨텍스트 문제를 검사하는 의사와 컴팩션/캐시 수정, 시크릿 기본 가림.
+switchingCost: 노트 흡수 낮음. deepagents-code로 옮기면 중간.
+maturity: early
+risks:
+- 0.1.x. 같은 창 deepagents-cli 폐기를 이 태그 기능으로 읽으면 안 됨.
+- compaction 수정은 미재실행.
+- 브랜드 비가중.
+smallestUsefulExperiment: /context-doctor와 시크릿 레드랙션 기본만 읽고 현재 컨텍스트 도구와 대조. CLI 교체·외부
+  게시 없음.
+recordStatus: approved
+```
+
+## openai-codex-rust-v0-150-0
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/27/regional-signal/international/openai-codex-rust-v0-150-0.yaml
+- sha256: 1d0c284917ce82e8447947340564b9931f78cbaee0ccbd1f4fbefdbfe5c75211
+- primaryUrl: https://github.com/openai/codex/releases/tag/rust-v0.150.0
+
+```yaml
+schemaVersion: regional-signal/v1
+id: openai-codex-rust-v0-150-0
+collectionDate: '2026-08-27'
+primaryCategory: international
+relatedCategories: []
+originBasis: Official GitHub release on openai/codex (US multinational); coding-agent
+  harness, not KR/JP-local.
+originalTitle: 0.150.0
+originalLanguage: en
+koreanSummary: OpenAI Codex CLI rust-v0.150.0이 @멘션·Interrupt MCP 훅·샌드박스/원격 MCP 수정을
+  포함한다.
+source: official_release
+canonicalId: openai/codex@rust-v0.150.0
+primaryUrl: https://github.com/openai/codex/releases/tag/rust-v0.150.0
+author: openai
+project: openai/codex
+publishedAt: '2026-08-26T19:39:18Z'
+observedFacts:
+- releases.atom updated 2026-08-26T19:39:18Z for tag rust-v0.150.0 (title 0.150.0).
+- Notes mention @ mentions for other Codex tasks and Interrupt hooks that can run
+  commands or MCP handlers.
+- Notes mention remote MCP bearer-token fixes and Windows sandbox / Bedrock multi-agent
+  compatibility fixes.
+- 'Notes excerpt: New Features Reference other Codex tasks with @ mentions, and ask
+  agents to read, create, or message tasks from the terminal. ( #40308 , #40315 )
+  /copy now offers a picker for full responses, individual code blocks, and blockquotes.
+  ( #39997 ) Unnamed terminal tasks receive descr'
+interpretation: Stable Codex CLI train elevating multi-task coordination and MCP interrupt
+  handlers, with sandbox/MCP fixes. Changelog claims not re-run here.
+relatedRefs:
+- https://github.com/openai/codex/releases.atom
+- https://github.com/openai/codex
+sourceWarnings:
+- Alpha 0.151 tags same evening excluded.
+- Facts from release notes only.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/openai/codex/releases/tag/rust-v0.150.0
+- https://github.com/openai/codex/releases.atom
+verifiedAt: '2026-08-26T21:58:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 공식 Codex CLI rust-v0.150.0. @멘션으로 다른 Codex 태스크를 읽고 메시지하며 Interrupt
+  훅이 명령/MCP를 돌림. Codex·MCP·sandbox·harness에 직접 맞음. 원격 MCP bearer·Windows 샌드박스 수정.
+  노트 미재실행. 알파 0.151은 제외. 버전 ADOPT 아님. 어제 mcp-server 폐기 READ와 별 표면.
+expectedBenefit: 터미널에서 태스크 간 참조와 MCP Interrupt 훅이 멀티태스크 하네스 체크리스트에 들어옴.
+switchingCost: 노트 흡수 낮음. CLI 업은 낮~중간. 훅이 MCP를 호출하면 권한 면이 넓어짐.
+maturity: developing
+risks:
+- 릴리스 노트만. @멘션·Interrupt 동작 미재실행.
+- Interrupt 훅이 임의 명령/MCP를 켜면 샌드박스와 충돌할 수 있음.
+- 같은 저녁 알파 0.151과 섞어 읽으면 안 됨.
+smallestUsefulExperiment: 노트에서 @멘션·Interrupt MCP·샌드박스 수정만 현재 Codex와 대조. 업그레이드 강제·외부
+  게시 없음.
+recordStatus: approved
+```
+
+## openai-loveholidays-codex-2026-08-26
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/27/regional-signal/international/openai-loveholidays-codex-2026-08-26.yaml
+- sha256: 4adc615f4cdbf2a1e831af8392dd420732de80cc52c753b66b884f4abe940b20
+- primaryUrl: https://openai.com/index/loveholidays
+
+```yaml
+schemaVersion: regional-signal/v1
+id: openai-loveholidays-codex-2026-08-26
+collectionDate: '2026-08-27'
+primaryCategory: international
+relatedCategories: []
+originBasis: OpenAI official customer story on openai.com/index; Europe/UK enterprise
+  Codex case.
+originalTitle: How loveholidays is making everyone a builder with Codex
+originalLanguage: en
+koreanSummary: OpenAI loveholidays Codex 사례(2026-08-26). AI 보조 코드 변경 7%에서 79%, 배포 빈도 +73%, Data Platform 성공 58%에서 93%.
+source: public_case_study
+canonicalId: openai.com/index/loveholidays
+primaryUrl: https://openai.com/index/loveholidays
+author: OpenAI
+project: OpenAI Codex / loveholidays
+publishedAt: '2026-08-26T00:00:00Z'
+observedFacts:
+- openai.com news RSS pubDate Wed, 26 Aug 2026 00:00:00 +0000; page byline August
+  26, 2026.
+- 'Page metrics: AI-assisted code changes 7% to 79% (11x); 73% increase in AI-assisted
+  deployment frequency without growing engineering team; Data Platform change success
+  93% up from 58%; 4x more Data Platform changes per support request.'
+- Quotes Head of Engineering Dmitri Lerko and CTO Mike Jones on non-engineers deploying
+  with Codex.
+- 'Excerpt:  August 26, 2026 How loveholidays is making everyone a builder with Codex
+  The online travel company is using Codex to put software development in the hands
+  of teams across the business—while helping engineers focus on harder problems. Conta'
+interpretation: Vendor-hosted enterprise Codex adoption case study with quantified
+  process metrics; figures not independently audited here.
+relatedRefs:
+- https://openai.com/news/rss.xml
+- https://openai.com/index/introducing-admin-plugin
+sourceWarnings:
+- RSS midnight UTC; methodology for metrics not fully specified.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://openai.com/index/loveholidays
+- https://openai.com/news/rss.xml
+verifiedAt: '2026-08-26T21:58:00Z'
+contradictions: []
+judgeAction: WATCH
+judgeRationale: OpenAI 고객 스토리. AI 보조 변경 7%→79%, 배포 +73%, Data Platform 성공 58%→93%.
+  Codex 도입 사례에 인접하나 수치는 벤더·미감사. 방법론 불완전. 품질 가중·ADOPT 근거 아님. RSS 자정.
+expectedBenefit: 비엔지니어 Codex 배포를 주장하는 조직 롤아웃 내러티브. 가드레일 상세는 이 페이지에 거의 없음.
+switchingCost: 공지 추적 낮음. ‘모두 빌더’로 권한을 열면 높음.
+maturity: developing
+risks:
+- 11x·73%·93%는 독립 감사 없음.
+- 시크릿·리뷰 가드레일이 이 스토리에 거의 없음.
+- 벤더 브랜드를 품질로 읽으면 과대.
+smallestUsefulExperiment: 메트릭 네 줄만 방법론 부재로 표시하고 현재 Codex 롤아웃과 대조. 조직 권한 변경·외부 게시 없음.
+recordStatus: approved
+```
+
+## xhluca-session-migrate-v0-9-0
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/27/regional-signal/international/xhluca-session-migrate-v0-9-0.yaml
+- sha256: 66c1c319e9c35e84996567e1bbaa4e4870208b352215ee986b74cb95a5995af1
+- primaryUrl: https://github.com/xhluca/session-migrate/releases/tag/v0.9.0
+
+```yaml
+schemaVersion: regional-signal/v1
+id: xhluca-session-migrate-v0-9-0
+collectionDate: '2026-08-27'
+primaryCategory: international
+relatedCategories: []
+originBasis: GitHub release xhluca/session-migrate; global OSS coding-agent session
+  migration tool.
+originalTitle: session-migrate 0.9.0
+originalLanguage: en
+koreanSummary: session-migrate 0.9.0이 Grok·Kilo·OpenHands를 추가해 에이전트 15개·경로 225개로 늘린다고
+  적는다.
+source: official_release
+canonicalId: xhluca/session-migrate@v0.9.0
+primaryUrl: https://github.com/xhluca/session-migrate/releases/tag/v0.9.0
+author: xhluca
+project: xhluca/session-migrate
+publishedAt: '2026-08-26T18:52:44Z'
+observedFacts:
+- releases.atom updated 2026-08-26T18:52:44Z for session-migrate 0.9.0.
+- Notes claim complete source/target support for Grok, Kilo Code, and OpenHands including
+  discovery, conversion, install, resume, replay validation.
+- Notes claim 15 supported coding agents and 225 ordered migration routes.
+- 'Notes excerpt: This release adds complete source and target support for Grok, Kilo
+  Code, and OpenHands, including discovery, title search, conversion, native installation,
+  resume, and real TUI/native replay validation. Highlights: 15 supported coding agents
+  and 225 ordered migration routes native Grok paired ACP s'
+interpretation: Continues multi-harness session portability by adding Grok/Kilo/OpenHands
+  endpoints. Counts author-reported.
+relatedRefs:
+- https://github.com/xhluca/session-migrate/releases.atom
+- https://github.com/xhluca/session-migrate/releases/tag/v0.8.0
+sourceWarnings:
+- v0.8.0 in window is on skip list; this is v0.9.0 only.
+- Test totals author-reported.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/xhluca/session-migrate/releases/tag/v0.9.0
+- https://github.com/xhluca/session-migrate/releases.atom
+verifiedAt: '2026-08-26T21:58:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: v0.8.0 READ 다음 태그. Grok·Kilo·OpenHands를 양방향으로 넣는다고 적음(15 에이전트·225
+  경로). Grok이 tier1이라 중복 IGNORE 아님. 경로 수는 저자 보고. 실세션 이주 EXPERIMENT 아님. v0.8.0은 skip-ids.
+expectedBenefit: Grok 세션을 다른 하네스와 옮기는 발견·변환·resume 경로가 생김.
+switchingCost: 노트 열람 낮음. 실세션 이주는 중간~높음. 자격증명 이관은 이전 태그와 같이 기대하지 말 것.
+maturity: early
+risks:
+- 15·225는 미재현 프로젝트 수치.
+- 실세션 이주는 프롬프트가 다른 하네스 로그로 새어 나갈 수 있음.
+- v0.8.0과 창이 겹치나 이 레코드는 v0.9.0만.
+smallestUsefulExperiment: Grok source/target 문장만 읽고 v0.8.0 델타 확인. 실세션 이주·외부 게시 없음.
+recordStatus: approved
+```
+
+## acntechjp-model-armor-tool-poisoning
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/27/regional-signal/japan/acntechjp-model-armor-tool-poisoning.yaml
+- sha256: 50d2c930cea9379ad6b88c05f149104c7a0ecf54404d19162d6ee9257a16451f
+- primaryUrl: https://zenn.dev/acntechjp/articles/zenn-gcp-model-armor-mcp
+
+```yaml
+schemaVersion: regional-signal/v1
+id: acntechjp-model-armor-tool-poisoning
+collectionDate: '2026-08-27'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Accenture Japan (有志) Zenn publication acntechjp. Author Shinya Koike
+  (ccie26302) bio states 所属：アクセンチュア株式会社. Personal views disclaimer present.
+originalTitle: Model Armorでエージェントのツール汚染を止める ―間接プロンプトインジェクションを検証
+originalLanguage: ja
+koreanSummary: 액센츄어 일본 유지 발행에서 Koike가 GCP Model Armor를 에이전트 도구 반환값(간접 프롬프트 주입/툴 포이즈닝)
+  검문소로 실측했다. 오염 4종+추가 기법은 모두 탐지(일본어·인코딩 포함 9종), 양성 5건 중 공격 문구를 인용한 해설 1건만 오탐. sanitizeUserPrompt로
+  도구 출력을 외부 입력처럼 취급한다.
+source: technical_article
+canonicalId: zenn:acntechjp:zenn-gcp-model-armor-mcp
+primaryUrl: https://zenn.dev/acntechjp/articles/zenn-gcp-model-armor-mcp
+author: Shinya Koike (ccie26302)
+project: Google Cloud Model Armor for agent tool returns
+publishedAt: '2026-08-25T21:44:18Z'
+observedFacts:
+- 'Zenn acntechjp (Accenture Japan 有志) API published_at 2026-08-26T06:44:18.039+09:00
+  (2026-08-25T21:44:18Z, inside window). Author bio: 所属：アクセンチュア株式会社; disclaimer that
+  posts are personal views.'
+- 'Focus is indirect prompt injection / tool poisoning: malicious instructions embedded
+  in tool returns (web pages, tickets, mail, files) via MCP-style tool use, not in
+  the user-typed prompt.'
+- They configure Model Armor templates with prompt-injection/jailbreak detection at
+  LOW_AND_ABOVE confidence plus malicious URI detection, regional endpoint modelarmor.<region>.rep.googleapis.com.
+  Tool returns are screened with sanitizeUserPrompt (treated as untrusted external
+  input), not sanitizeModelResponse.
+- 'Detection test: benign FAQ control → NO_MATCH; classic IGNORE ALL PREVIOUS INSTRUCTIONS
+  → MATCH HIGH; exfiltration URL → MATCH; HTML-comment payload in meeting notes →
+  MATCH HIGH; fake TOOL RESULT/SYSTEM OVERRIDE → MATCH HIGH. Author states all tried
+  injection styles detected (9 including Japanese and encoding variants in the broader
+  set).'
+- 'False-positive test (5 benign texts): only a training document that quotes the
+  attack phrase verbatim was MATCH HIGH; ordinary “ignore deprecated settings” / customer
+  complaint quotes / disregard-previous-settings runbooks passed. Practical warning:
+  security write-ups that quote attack strings can be blocked when an agent ingests
+  them via tools.'
+interpretation: 'Japan-org security note for agent harnesses: put the filter on the
+  tool-return path as untrusted input, and expect quoted attack phrases in docs to
+  collide with the same detector.'
+relatedRefs:
+- https://zenn.dev/acntechjp/articles/zenn-gcp-model-armor-mcp
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/acntechjp/articles/zenn-gcp-model-armor-mcp
+- https://zenn.dev/api/articles/zenn-gcp-model-armor-mcp
+verifiedAt: '2026-08-26T21:52:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: GCP Model Armor를 도구 반환(간접 주입/툴 포이즈닝) 검문소로 쓰고 sanitizeUserPrompt로 외부
+  입력처럼 취급. MCP·sandboxing에 맞음. 오염 탐지·오탐 1건(공격 문구 인용)은 저자 실측. 유저 유저(有志) 개인 견해. Model
+  Armor 도입 EXPERIMENT 아님. 브랜드 비가중.
+expectedBenefit: 필터를 사용자 프롬프트가 아니라 도구 반환 경로에 두는 위치. 보안 문서의 공격 인용도 같은 탐지기에 걸린다는 운영
+  경고.
+switchingCost: 글 흡수 낮음. 모든 MCP 반환에 Model Armor를 넣으면 중간(지연·오탐).
+maturity: early
+risks:
+- 9종 탐지·양성 5건은 저자 세트. 미재현.
+- LOW_AND_ABOVE는 오탐을 키울 수 있음.
+- sanitizeUserPrompt를 모델 응답 필터로 오용하면 안 됨.
+smallestUsefulExperiment: 도구 반환=비신뢰와 인용 오탐 한 줄만 현재 MCP 출력 경로와 대조. GCP 템플릿 생성·외부 게시
+  없음.
+recordStatus: approved
+```
+
+## ceres-git-worktree-parallel-agents
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/27/regional-signal/japan/ceres-git-worktree-parallel-agents.yaml
+- sha256: 0e2930383272e853a0b8ce322c93ab87809af5837b5d8c29c39bc46397c77745
+- primaryUrl: https://zenn.dev/ceres_tech_blog/articles/8cb3ce7bc4c937
+
+```yaml
+schemaVersion: regional-signal/v1
+id: ceres-git-worktree-parallel-agents
+collectionDate: '2026-08-27'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official 株式会社セレス Tech Blog Zenn publication ceres_tech_blog. Ceres Inc.
+  is a Japan adtech/internet company. Author shiro_iro_dog.
+originalTitle: AI10並列で開発したら事故りかけた。貸せ、worktreeはこうやる
+originalLanguage: ja
+koreanSummary: 세레스가 Claude Code 세션 10병렬을 git worktree로 나누다 포트 충돌·브랜치 혼선·Docker 디스크·서브에이전트
+  본저장소 쓰기 등 5벽을 밟았다. .git 공유 슬롯 레지스트리로 포트에 slot×100을 더하고, compose -p/container_name
+  고정 제거, disposable worktree는 .claude/worktrees/에 둔다. Docker 풀스택은 메모리상 2–3본이 상한이었다.
+source: public_case_study
+canonicalId: zenn:ceres_tech_blog:8cb3ce7bc4c937
+primaryUrl: https://zenn.dev/ceres_tech_blog/articles/8cb3ce7bc4c937
+author: shiro_iro_dog
+project: Ceres Claude Code git worktree parallel harness
+publishedAt: '2026-08-26T02:44:11Z'
+observedFacts:
+- Zenn ceres_tech_blog (株式会社セレス Tech Blog) API published_at 2026-08-26T11:44:11.517+09:00
+  (2026-08-26T02:44:11Z, inside window).
+- Author runs ~10 concurrent AI sessions via git worktree (shared .git, separate working
+  trees). Long-lived trees sit beside the main repo; disposable ones under .claude/worktrees/
+  (Claude Code EnterWorktree).
+- 'Five failure modes when same-repo same-stage parallelism: fixed compose ports collide;
+  UI and API serve different branches; Docker disk grows to tens of GB; test invocation
+  drifts per session; subagents write into the main repository.'
+- 'Port fix: allocate a slot via a registry living in the shared .git metadata, then
+  add slot×100 to every port (e.g. slot0 proxy 18000/DB 13306; slot1 18100/13406).
+  Environment variables override compose defaults so .env files need not be rewritten
+  per tree. resolve_slot must fail the parent (return 1), not only exit inside command
+  substitution.'
+- 'Branch-mix fix: remove fixed container_name; always docker compose -p so project/volume/network
+  names isolate. Docker full-stack concurrency was ~2–3 under ~4GiB Desktop RAM (~1.6GiB
+  per stack). Article also covers disk cleanup and pinning how tests are invoked across
+  sessions.'
+interpretation: 'Japan harness ops note: parallel coding agents are limited by the
+  Docker/port shared-world layer more than by session count; worktree isolation only
+  works if compose project identity and port slots are also isolated.'
+relatedRefs:
+- https://zenn.dev/ceres_tech_blog/articles/8cb3ce7bc4c937
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/ceres_tech_blog/articles/8cb3ce7bc4c937
+- https://zenn.dev/api/articles/8cb3ce7bc4c937
+verifiedAt: '2026-08-26T21:52:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Claude Code 10병렬을 worktree로 나누다 포트·브랜치·Docker 디스크·서브에이전트 본저장소 쓰기를
+  밟음. harness 운영에 맞음. 슬롯×100 포트와 compose -p가  Isolations의 실제 한계. 풀스택은 메모리상 2–3본. 10세션
+  재현 EXPERIMENT 아님.
+expectedBenefit: 세션 수보다 Docker/포트 공유층이 병렬 상한. 공유 .git 레지스트리와 고정 container_name 제거.
+switchingCost: 글 흡수 낮음. compose 프로젝트/포트 슬롯을 넣으면 중간.
+maturity: early
+risks:
+- Docker Desktop ~4GiB에서 스택당 ~1.6GiB. 환경마다 상한이 다름.
+- resolve_slot이 부모에서 fail하지 않으면 포트가 조용히 겹침.
+- 서브에이전트가 본저장소에 쓰는 실패는 worktree만으로 안 막힘.
+smallestUsefulExperiment: 포트 슬롯·compose -p·서브에이전트 cwd 세 줄만 현재 병렬 세션과 대조. 10 worktree
+  기동·외부 게시 없음.
+recordStatus: approved
+```
+
+## estie-mastra-tomodeloutput-context
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/27/regional-signal/japan/estie-mastra-tomodeloutput-context.yaml
+- sha256: 00999d604daf13e46683fcc93b7d1077a85f3227a6e238b1f9a05536b2e61408
+- primaryUrl: https://zenn.dev/estie/articles/e58c1461aaec90
+
+```yaml
+schemaVersion: regional-signal/v1
+id: estie-mastra-tomodeloutput-context
+collectionDate: '2026-08-27'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official estie Zenn publication (estie テックブログ). estie Inc. is a Japan
+  real-estate tech company (Tokyo). Author shinichi1729.
+originalTitle: そんなツール出力までAgentに見せなくていいよ - 消費トークンを1/14にした実装事例
+originalLanguage: ja
+koreanSummary: 도쿄 estie가 Mastra 부동산 에이전트에서 도구 결과의 UI용 전체 데이터와 LLM용 요약을 toModelOutput으로
+  분리했다. 임대료 이력 도구는 o200k_base 기준 1,050→74토큰(약 1/14), 검색 도구는 6,321→757. 과도한 압축은 후속
+  도구 입력을 깨뜨려 ADR로 ‘추론 우선·그다음 토큰’ 기준을 고정했다.
+source: public_case_study
+canonicalId: zenn:estie:e58c1461aaec90
+primaryUrl: https://zenn.dev/estie/articles/e58c1461aaec90
+author: shinichi1729
+project: estie Mastra real-estate agent platform
+publishedAt: '2026-08-26T04:46:26Z'
+observedFacts:
+- 'Zenn estie publication API published_at 2026-08-26T13:46:26.304+09:00 (2026-08-26T04:46:26Z,
+  inside window). Publication display name: estie テックブログ.'
+- 'estie builds a Mastra-based AI agent platform over real-estate data. They treat
+  tool results as having two readers: UI needs full series for charts; the LLM often
+  needs only extrema, latest value, and point count for commentary.'
+- 'Mastra’s toModelOutput lets execute() return full data for UI while a separate
+  representation is what the model sees. Measured with o200k_base: rent-history tool
+  1,050 → 74 tokens (~1/14); area property-search tool 6,321 → 757 (~1/8). Results
+  persist in conversation history, so savings compound across turns.'
+- 'Failure modes they document: dropping fields needed as inputs to later tools broke
+  chaining; assuming “visible in UI ⇒ omit from LLM” failed on follow-up turns because
+  the agent has no UI vision. They reframed the job as selection for next decisions,
+  not blind compression.'
+- 'Design order written into an ADR: (1) preserve agent reasoning ability with enough
+  info for next actions; (2) cut tokens only by dropping unused fields—never by deleting
+  needed fields. They cite Anthropic’s “Writing effective tools for agents” on balancing
+  token efficiency and meaningful context, and note splitting tools by query family
+  as a prerequisite for effective toModelOutput.'
+interpretation: 'Japan product-eng case on context: the harness feature that matters
+  is dual-channel tool output (UI vs model), with measured token ratios and an ADR
+  that refuses to trade away tool-chaining fields for compression.'
+relatedRefs:
+- https://zenn.dev/estie/articles/e58c1461aaec90
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/estie/articles/e58c1461aaec90
+- https://zenn.dev/api/articles/e58c1461aaec90
+verifiedAt: '2026-08-26T21:52:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 도구 결과를 UI 전체와 LLM 요약으로 나누는 toModelOutput. 임대료 1,050→74, 검색 6,321→757(o200k_base).
+  context engineering에 직접 맞음. 어제 Cockpit(팀 컨텍스트)과 다른 아티팩트. 과도 압축이 후속 도구 입력을 깨서 ADR은
+  추론 우선·그다음 토큰. Mastra 도입 EXPERIMENT 아님.
+expectedBenefit: 이중 채널 도구 출력과 ‘UI에 보이니 LLM에서 빼도 된다’는 가정의 실패를 컨텍스트 규칙으로 고정.
+switchingCost: 글·ADR 흡수 낮음. 도구 스키마를 쿼리 패밀리로 쪼개고 toModelOutput을 넣으면 중간.
+maturity: developing
+risks:
+- 토큰 비는 저자 측정. 작업 성공률과 무관할 수 있음.
+- 필드 삭제가 체인을 깨는 실패를 이미 겪음.
+- Mastra 전제. 다른 하네스에 그대로 이식되지 않을 수 있음.
+smallestUsefulExperiment: ADR 두 줄(추론 유지 → 미사용 필드만 삭제)과 두 측정만 읽고 현재 도구 반환과 대조. Mastra
+  이관·외부 게시 없음.
+recordStatus: approved
+```
+
+## hissy-concretecms-mcp-remote-clients
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/27/regional-signal/japan/hissy-concretecms-mcp-remote-clients.yaml
+- sha256: 3d70b40052a666f8dfaa6da3b53f08784e83d2d9111c0e9b792a822e6e18217b
+- primaryUrl: https://zenn.dev/hissy/articles/concretecms-mcp-remote-clients
+
+```yaml
+schemaVersion: regional-signal/v1
+id: hissy-concretecms-mcp-remote-clients
+collectionDate: '2026-08-27'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Author 菱川 拓郎 (hissy), CEO of 株式会社マカルーデジタル (Japan). GitHub HTML profile
+  location Tokyo, Japan. Continues Concrete CMS MCP series (part 4 already in skip-ids).
+originalTitle: Concrete CMS MCP Server 入門（5）— リモート構築とデスクトップからの接続
+originalLanguage: ja
+koreanSummary: 도쿄 hissy(마카루 디지털)가 Concrete CMS MCP 원격 HTTP(Streamable HTTP) 구축과 ChatGPT/Claude
+  Desktop 연결을 정리했다. TRANSPORT_TYPE=http·PUBLIC_BASE_URL·TOKEN_ENCRYPTION_KEY·MCP_API_KEY,
+  OAuth로 CMS 사용자 인가 후 /mcp 연결. 원격에서는 클라이언트가 CMS OAuth를 대행하지 않으며 API 키는 서버에만 둔다.
+source: technical_article
+canonicalId: zenn:hissy:concretecms-mcp-remote-clients
+primaryUrl: https://zenn.dev/hissy/articles/concretecms-mcp-remote-clients
+author: 菱川 拓郎 (hissy)
+project: Concrete CMS MCP Server (remote HTTP)
+publishedAt: '2026-08-26T02:31:38Z'
+observedFacts:
+- 'Zenn API published_at 2026-08-26T11:31:38.648+09:00 (2026-08-26T02:31:38Z, inside
+  window). Author bio: 株式会社マカルーデジタル代表取締役; formerly founded コンクリートファイブジャパン. GitHub
+  profile aria-label Home location: Tokyo, Japan.'
+- 'Part 5 of the Concrete CMS MCP series (parts 1–4 linked; part 4 security token
+  article is already in skip-ids). Scope: expose MCP over HTTP and connect ChatGPT
+  / Claude Desktop; custom agents deferred to part 6.'
+- Remote needed for ChatGPT custom MCP (Streamable HTTP only), multi-client sharing,
+  and admin/chat UIs. Required env includes TRANSPORT_TYPE=http, PUBLIC_BASE_URL,
+  TOKEN_ENCRYPTION_KEY, and MCP_API_KEY(S); scopes must include account:read to resolve
+  CMS user id after OAuth.
+- 'Order matters: publish HTTP MCP and complete /oauth/start until /oauth/status authenticated:true
+  before desktop connectors; reversing the order yields connected connectors that
+  fail tool calls. Neither ChatGPT nor Claude Desktop proxies CMS OAuth on remote.'
+- 'ChatGPT uses Streamable HTTP to /mcp; Claude Desktop uses mcp-remote. Trust model
+  carries from part 4: API keys stay server-side, never in the browser. Production
+  notes: Node 22 recommended, dedicated OS user, TOKEN_DIR mode 700, env file mode
+  0400, avoid proxying entire /oauth/ to MCP when co-hosted with CMS.'
+interpretation: 'Japan MCP ops article: remote MCP is an OAuth-and-key boundary problem
+  as much as a transport problem—clients will not finish CMS auth for you.'
+relatedRefs:
+- https://zenn.dev/hissy/articles/concretecms-mcp-remote-clients
+- https://zenn.dev/hissy/articles/concretecms-mcp-security
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/hissy/articles/concretecms-mcp-remote-clients
+- https://zenn.dev/api/articles/concretecms-mcp-remote-clients
+verifiedAt: '2026-08-26T21:52:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 어제 part 4(토큰 보안 READ)의 다음 편. 원격 Streamable HTTP와 ChatGPT/Claude Desktop
+  연결. OAuth 완료 전에 커넥터를 붙이면 연결만 되고 툴이 실패. 원격에서 클라이언트가 CMS OAuth를 대행하지 않음. 중복 IGNORE
+  아님. CMS 기동 EXPERIMENT 아님.
+expectedBenefit: 원격 MCP를 전송 문제가 아니라 OAuth·키 경계로 보는 순서. API 키는 서버, TOKEN_DIR 700·env
+  0400.
+switchingCost: 글 흡수 낮음. 원격 HTTP MCP를 켜면 중간(공개 URL·키·OAuth).
+maturity: developing
+risks:
+- 커스텀 에이전트는 part 6으로 미룸.
+- CMS와 같은 호스트에서 /oauth/ 전체 프록시를 피하라고 적음. 구성 실수 여지.
+- 어제 part 4와 같은 시리즈라 토큰 보관을 이 편만으로 재판단하면 안 됨.
+smallestUsefulExperiment: OAuth 선완료 순서와 키 서버 보관만 읽고 현재 원격 MCP 연결과 대조. 데스크톱 커넥터 추가·외부
+  게시 없음.
+recordStatus: approved
+```
+
+## jinjer-claude-code-training-skills
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/27/regional-signal/japan/jinjer-claude-code-training-skills.yaml
+- sha256: ce8b7d41d4ade2dbd610889f22c4296df9a3df0f4d0382083e4598dee57814ef
+- primaryUrl: https://zenn.dev/jinjer_techblog/articles/69b182e90cfed8
+
+```yaml
+schemaVersion: regional-signal/v1
+id: jinjer-claude-code-training-skills
+collectionDate: '2026-08-27'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official jinjerテックブログ Zenn publication. jinjer Inc. is a Japan HR SaaS
+  company. Author 今道拓真 (takuma_imamichi), product engineering, Ehime origin, joined
+  jinjer 2025-01.
+originalTitle: 毎朝8時、AIから「答えの書いていない問題」が届く — 訓練を自動化した仕組み、全部公開します
+originalLanguage: ja
+koreanSummary: 진저(jinjer) 엔지니어가 Claude Code cron·스킬로 ‘답이 아래에 있는’ 매일 훈련 메일을 자동화해 공개했다.
+  UTC 23:00=JST 08:00, 도구는 WebSearch/Fetch/Read/Write와 메일 초안 2개만. 증례 훈련 스킬은 git 이력만
+  읽고 코드 write 권한 없이 진단→채점 체인(chain frontmatter)으로 잇는다.
+source: public_case_study
+canonicalId: zenn:jinjer_techblog:69b182e90cfed8
+primaryUrl: https://zenn.dev/jinjer_techblog/articles/69b182e90cfed8
+author: 今道拓真 (takuma_imamichi)
+project: jinjer Claude Code training mail + Skills
+publishedAt: '2026-08-26T03:00:07Z'
+observedFacts:
+- Zenn jinjer_techblog API published_at 2026-08-26T12:00:07.302+09:00 (2026-08-26T03:00:07Z,
+  inside window). Author is jinjer product-development engineer.
+- 'Three daily stages: (1) passive morning mail with trends/practice/terms/workout;
+  (2) actively challenge the mail’s explanations; (3) heavy case drill from past git
+  bugs. Article publishes prompts, formats, rubrics, and Skill contents for reuse;
+  outcome metrics deferred to a follow-up.'
+- 'Claude Code scheduled job cron 0 23 * * * (UTC 23:00 = JST 08:00). Allowed tools:
+  WebSearch, WebFetch, Read, Write, plus only draft-create and draft-list for mail—no
+  send. Hard constraints they learned the hard way: date handling under UTC cron,
+  forbid skipping delivery as “dedupe”, forbid send in both ACL and prompt, cap exploration
+  so unattended runs do not unbounded-search.'
+- Workout layout forces question → separator → explanation so the reader thinks before
+  seeing the answer; weekday theme rotation covers code reading, design fragments,
+  algorithms, OWASP/CWE.
+- 'Stage-3 Skills: select a resolved bug from team git history, strip to symptoms,
+  stop for human diagnosis, then score against real diff on six items. Frontmatter
+  chain on the solve skill reuses the same case. allowed-tools are git-read plus one-line
+  history append only—no code write permission.'
+interpretation: 'Japan product-eng use of Claude Code as a scheduled Skills harness
+  for human training: the noteworthy controls are tool allowlists, no-send mail drafts
+  as history store, and verifier skills that cannot rewrite the code under test.'
+relatedRefs:
+- https://zenn.dev/jinjer_techblog/articles/69b182e90cfed8
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/jinjer_techblog/articles/69b182e90cfed8
+- https://zenn.dev/api/articles/69b182e90cfed8
+verifiedAt: '2026-08-26T21:52:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Claude Code cron+스킬로 매일 훈련 메일을 만들고, 증례 스킬은 git 읽기만 하며 코드 write가 없다.
+  Agent Skills·harness 가드레일에 인접. 코딩 산출 하네스가 아니라 사람 훈련. 성과 수치는 후속편. 메일 자동화 EXPERIMENT
+  아님.
+expectedBenefit: 도구 allowlist, 발송 금지(초안만), UTC cron 날짜, 탐색 상한. 검증 스킬이 대상 코드를 못 고치게
+  하는 계약.
+switchingCost: 글 흡수 낮음. 매일 cron을 켜면 중간(메일·git 이력).
+maturity: early
+risks:
+- 성과 지표는 후속. 훈련 효과 미측정.
+- WebSearch/Fetch가 무인 실행에서 범위를 넓힐 수 있음. 저자도 탐색 상한을 배웠다고 적음.
+- 초안함이 이력 저장소. 메일 ACL이 넓으면 유출.
+smallestUsefulExperiment: allowlist·no-send·verifier no-write 세 줄만 읽고 현재 Skill ACL과
+  대조. cron 등록·외부 게시 없음.
+recordStatus: approved
+```
+
+## lycorp-agent-i-platform
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/27/regional-signal/japan/lycorp-agent-i-platform.yaml
+- sha256: f7ec61b70c1b38085cf747ed2a2f5e2921e3a9d0ec6824578ffab3e32fa6bdad
+- primaryUrl: https://techblog.lycorp.co.jp/ja/20260826a
+
+```yaml
+schemaVersion: regional-signal/v1
+id: lycorp-agent-i-platform
+collectionDate: '2026-08-27'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official LINE Yahoo (LY Corporation) Tech Blog post by 竹仲 孝盛. LY Corporation
+  is a Japan internet company (Tokyo).
+originalTitle: LINEヤフーのAgent iを支えるAIエージェント基盤：「誰でも作れる」と「安全に動かせる」をどう両立したか
+originalLanguage: ja
+koreanSummary: LINE 야후(LY Corp)가 Agent i용으로 Agent Builder(노코드 워크플로)와 Agent Runtime을
+  내제화했다. Builder는 React Flow·IR 검증 후 공개하고, Runtime은 IR을 LangGraph로 컴파일한다. K8s Namespace
+  샌드박스·ACL·MCP/내부 API 접근 검증으로 만들기와 안전 실행을 같이 잡는다.
+source: public_case_study
+canonicalId: lycorp:techblog/20260826a
+primaryUrl: https://techblog.lycorp.co.jp/ja/20260826a
+author: 竹仲 孝盛
+project: LY Corporation Agent i / Agent Builder + Agent Runtime
+publishedAt: '2026-08-26T02:00:00Z'
+observedFacts:
+- 'LY Corporation Tech Blog RSS published https://techblog.lycorp.co.jp/ja/20260826a
+  at 2026-08-26T02:00:00Z (inside window). Author Name field: 竹仲 孝盛 (on-device AI
+  / AI Agent PF tech lead).'
+- They built Agent Builder (no-code workflow editor for non-engineers) and Agent Runtime
+  (scales published workflows under service load) as the internal platform behind
+  Agent i, after deciding multi-agent orchestration was premature until agents themselves
+  were easy to create.
+- Agent Builder uses React Flow; workflows are saved as a custom Intermediate Representation
+  (IR) with graph reachability/connection checks before publish. Agent Runtime loads
+  verified IR and compiles it into a LangGraph execution graph (branching, loops,
+  node state).
+- 'Sandboxing: each Runtime environment is an isolated Kubernetes Namespace. Network
+  ACL restricts destinations; access to MCP servers, documents, and internal APIs
+  is checked at runtime. Credentials/API keys are not embedded in workflow definitions;
+  they are fetched when needed.'
+- A Gateway adapts client protocols to Runtime’s common interface (auth + conversion).
+  Future A2A/MCP client connections are planned; today they use a proprietary protocol
+  because early A2A was unstable. Agents can already reach internal data via MCP and
+  RAG.
+interpretation: 'Japan production agent platform case: the interesting split is Builder
+  IR validation versus Runtime Namespace+ACL sandbox, with MCP treated as a controlled
+  data plane rather than a free tool bag.'
+relatedRefs:
+- https://techblog.lycorp.co.jp/ja/20260826a
+- https://techblog.lycorp.co.jp/ja/20260826b
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://techblog.lycorp.co.jp/ja/20260826a
+- https://techblog.lycorp.co.jp/ja/feed/index.xml
+verifiedAt: '2026-08-26T21:52:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Agent Builder가 IR 검증 후 공개하고 Runtime이 LangGraph로 컴파일하며 K8s Namespace·ACL로
+  MCP/내부 API를 런타임 검문. harness·MCP·sandboxing에 맞음. 내부 Agent i 플랫폼이라 설치 EXPERIMENT/ADOPT
+  아님. A2A는 미래, 지금은 독자 프로토콜. 브랜드 비가중. relatedCategories는 [] 유지.
+expectedBenefit: 만들기(Builder IR)와 안전 실행(Namespace+ACL)을 한 쌍으로 두는 체크리스트. 자격증명은 워크플로에
+  박지 않고 필요할 때 가져옴.
+switchingCost: 글 흡수 낮음. 사내 에이전트 런타임을 이 구조로 바꾸면 높음.
+maturity: developing
+risks:
+- 내부 플랫폼. 이 글만으로 재현 설치 불가.
+- LangGraph는 IR 컴파일 타깃이지 기본 스택 교체 근거가 아님.
+- Gateway가 독자 프로토콜. 향후 A2A/MCP 클라이언트와 어긋날 수 있음.
+smallestUsefulExperiment: IR 검증 vs Namespace+ACL vs 자격 비임베드 세 줄만 현재 에이전트 런타임과 대조.
+  플랫폼 구축·외부 게시 없음.
+recordStatus: approved
+```
+
+## lycorp-qa-agent-platform
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/27/regional-signal/japan/lycorp-qa-agent-platform.yaml
+- sha256: 315603e18f5e5790adcee3ac788dfeea9c6a5e4a0c95da8c79799d4c59b8422e
+- primaryUrl: https://techblog.lycorp.co.jp/ja/20260826b
+
+```yaml
+schemaVersion: regional-signal/v1
+id: lycorp-qa-agent-platform
+collectionDate: '2026-08-27'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official LINE Yahoo (LY Corporation) Tech Blog post by 上田 洋平 and 福永 誠
+  (Product QA unit, Fukuoka/Tokyo). LY Corporation, Japan.
+originalTitle: AI活用率100％のQA組織をつくるまで
+originalLanguage: ja
+koreanSummary: LY Corp 프로덕트 QA(~20명)가 Codex CLI/App용 QA Agent Platform(QAAP) 템플릿 저장소를
+  Fork·Sync로 전원 배포했다. 사내 MCP로 정보를 모으고 QA 전문 스킬이 산출물을 만들며, 입구·실행·출구 다층 가드레일로 시크릿을 막는다.
+  QA 작업시간 −49.4%, AI 대체율 68.1%(사내 측정).
+source: public_case_study
+canonicalId: lycorp:techblog/20260826b
+primaryUrl: https://techblog.lycorp.co.jp/ja/20260826b
+author: 上田 洋平 / 福永 誠
+project: LY Corporation QA Agent Platform (QAAP)
+publishedAt: '2026-08-26T02:40:00Z'
+observedFacts:
+- LY Corporation Tech Blog RSS published https://techblog.lycorp.co.jp/ja/20260826b
+  at 2026-08-26T02:40:00Z (inside window). Authors 上田洋平 and 福永誠 of the Product QA
+  unit (~20 people, Fukuoka and Tokyo), based on a Tech-Verse 2026 talk.
+- QAAP is an organization-shared GitHub Enterprise template repository for OpenAI
+  Codex (CLI/App). It ships QA specialist skills and security guardrails; members
+  Fork it as their home base and Sync from Upstream so guardrail updates propagate
+  without per-person rework. Setup pain is covered by shell scripts.
+- 'Flow: user asks Codex → internal MCP servers gather context → task-specific skills
+  produce QA artifacts. Multi-layer defense runs across the workflow. Reported internal
+  metrics (QA work excluding test execution): −49.4% time, 1.54× artifact volume,
+  68.1% AI substitution rate.'
+- 'Secret guardrail example (three layers): (1) ingress — block prompts matching API-key/token
+  patterns before they reach the model; (2) runtime — Codex execution policy blocks
+  reading secrets from .env/environment variables; (3) egress — pre-PR static check
+  that generated code/skills do not depend on plaintext secret files.'
+- 'Guardrails also teach: on block they alert with why/how-to and link to guide material,
+  so safety is not only deny. Theme of the article is scaling AI from individuals
+  to organizational capability, not the 10x speed headline alone.'
+interpretation: 'Japan org case for coding-agent rollout: the durable object is the
+  Fork/Sync template that carries Skills+MCP wiring and ingress/runtime/egress secret
+  policy together, so adoption and brakes scale as one unit.'
+relatedRefs:
+- https://techblog.lycorp.co.jp/ja/20260826b
+- https://techblog.lycorp.co.jp/ja/20260826a
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://techblog.lycorp.co.jp/ja/20260826b
+- https://techblog.lycorp.co.jp/ja/feed/index.xml
+verifiedAt: '2026-08-26T21:52:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Codex CLI/App용 QA 템플릿을 Fork·Sync로 배포하고 사내 MCP+QA 스킬과 입구·실행·출구 시크릿
+  가드레일을 한 단위로 옮김. Codex·Agent Skills·MCP·sandboxing에 직접 맞음. −49.4%·68.1%는 사내 측정이라
+  품질 가중 아님. GHE 템플릿이라 클론 EXPERIMENT 아님. 자매 글 Agent i와 다른 아티팩트.
+expectedBenefit: 가드레일 갱신이 Sync로 퍼지고, 차단 시 이유·가이드를 같이 주는 조직 롤아웃 패턴.
+switchingCost: 글 흡수 낮음. QA 전원을 Codex 템플릿으로 옮기면 중간~높음.
+maturity: developing
+risks:
+- 시간·대체율은 ~20명 사내 측정. 테스트 실행 시간은 제외.
+- 입구 정규식은 인용된 키 패턴을 오탐할 수 있음.
+- 내부 MCP·GHE 템플릿. 공개 설치 경로 없음.
+smallestUsefulExperiment: 입구 차단·실행 정책·PR 전 정적 검사 세 층만 현재 Codex/시크릿 정책과 대조. 템플릿 Fork·외부
+  게시 없음.
+recordStatus: approved
+```
+
+## sun-asterisk-claude-codex-build-loop
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/27/regional-signal/japan/sun-asterisk-claude-codex-build-loop.yaml
+- sha256: 14222a99ae5aa40f3d2547c468777f2b28d040d300e02b26f25071e12ef39b29
+- primaryUrl: https://zenn.dev/sun_asterisk/articles/f8ee013f00cbc3
+
+```yaml
+schemaVersion: regional-signal/v1
+id: sun-asterisk-claude-codex-build-loop
+collectionDate: '2026-08-27'
+primaryCategory: japan
+relatedCategories: []
+originBasis: 'Official Sun* Developers Zenn publication sun_asterisk. Sun Asterisk
+  (Sun*) has major Japan engineering presence; author Alam Shafiul bio: builds career
+  as engineer in Japan.'
+originalTitle: 強いAIを2つ使えば安くなる？ Claudeを司令塔、Codexを実装担当にするトークン効率化
+originalLanguage: ja
+koreanSummary: Sun* 개발자 블로그에서 Claude Fable 5를 사령탑·GPT-5.6 Sol(백업 Opus 5)을 구현 워커로 나누는
+  /build-loop 스킬을 공개했다. 사령탑은 코드 없이 계획·리뷰만 하고, 탐색·구현·긴 로그는 워커 독립 컨텍스트에서 처리. disable-model-invocation으로
+  사용자 /build-loop 입력 때만 돈다.
+source: public_case_study
+canonicalId: zenn:sun_asterisk:f8ee013f00cbc3
+primaryUrl: https://zenn.dev/sun_asterisk/articles/f8ee013f00cbc3
+author: Alam Shafiul (alam_shafiul)
+project: Sun* /build-loop Claude+Codex skill
+publishedAt: '2026-08-26T07:49:35Z'
+observedFacts:
+- Zenn sun_asterisk (Sun* Developers) API published_at 2026-08-26T16:49:35.775+09:00
+  (2026-08-26T07:49:35Z, inside window). Author bio states career as engineer in Japan
+  (Bangladesh origin).
+- 'Pattern: Claude Fable 5 as commander (requirements, plan, review, final approval—does
+  not write code); GPT-5.6 Sol as primary implementer via Codex plugin; Claude Opus
+  5 as backup worker when Sol hits limits. Article dated against 2026-08-25 public
+  model info.'
+- 'Implements as Claude Code skill /build-loop with disable-model-invocation: true
+  so it runs only when the user invokes /build-loop, not by model auto-choice. Setup
+  steps: Codex plugin, register Opus worker under ~/.claude/agents/, install skill.'
+- 'Token policy: return to Fable 5 only plan, diff highlights, test results, open
+  issues; file exploration, implementation, and long logs stay in the worker’s separate
+  context. Warns that more agents do not automatically reduce total tokens—cap plan/review/fix
+  loops and stop on agreement.'
+- Sol→Opus failover is commander-side orchestration classifying errors, not an automatic
+  cross-vendor switch inside the Codex plugin. Team sharing should use project .claude/skills/
+  rather than personal ~/.claude/skills/.
+interpretation: 'Japan-published routing pattern: spend the expensive model on plan/review
+  bandwidth and keep implementation tokens in a worker context, with an explicit user-gated
+  skill rather than silent multi-agent sprawl.'
+relatedRefs:
+- https://zenn.dev/sun_asterisk/articles/f8ee013f00cbc3
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/sun_asterisk/articles/f8ee013f00cbc3
+- https://zenn.dev/api/articles/f8ee013f00cbc3
+verifiedAt: '2026-08-26T21:52:00Z'
+contradictions: []
+judgeAction: EXPERIMENT
+judgeRationale: Claude를 사령탑(계획·리뷰, 코드 없음), Codex(Sol)를 구현 워커로 나누는 /build-loop 스킬.
+  disable-model-invocation으로 사용자 호출만. Claude Code·Codex·Agent Skills·model routing에
+  직접 맞음. 어제 agent-bridge EXPERIMENT와 같은 축, 다른 아티팩트. 토큰 절감은 미측정. 모델명 비가중. 기본 스택 ADOPT
+  아님.
+expectedBenefit: 비싼 모델 컨텍스트에 계획·diff·테스트만 되돌리고 탐색·구현·긴 로그는 워커에 두는 라우팅. 팀 공유는 프로젝트
+  .claude/skills/.
+switchingCost: 스킬 설치는 낮음. Codex 플러그인·Opus 워커 등록이 붙으면 중간. 루프를 안 끊으면 총 토큰이 늘 수 있다고 저자가
+  경고.
+maturity: early
+risks:
+- 토큰이 진짜 줄었는지는 이 글에 수치 없음.
+- Sol→Opus 페일오버는 사령탑이 오류를 분류. 플러그인 자동 전환 아님.
+- 에이전트를 늘린다고 총 토큰이 줄지 않음.
+smallestUsefulExperiment: 폐기 가능한 과제에 /build-loop 1회만 호출해 사령탑이 코드를 안 쓰는지와 워커 컨텍스트 분리를
+  확인. 상시 루프·외부 게시·SoT 쓰기 없음.
+recordStatus: approved
+```
+
+## tamat-mcp-oauth-no-service-role
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/27/regional-signal/japan/tamat-mcp-oauth-no-service-role.yaml
+- sha256: f9056dc08e021db7e3e5c98e0348bd361761c9b335b3d1d996bd7efc75695f2c
+- primaryUrl: https://zenn.dev/tamat_llc/articles/mcp-server-without-service-role-key
+
+```yaml
+schemaVersion: regional-signal/v1
+id: tamat-mcp-oauth-no-service-role
+collectionDate: '2026-08-27'
+primaryCategory: japan
+relatedCategories: []
+originBasis: TamaT LLC Zenn publication tamat_llc. Author TakehiroT (早稲田大学) describes
+  TamaT as a Japan development company doing proposal-to-delivery work.
+originalTitle: supabaseでservice-role keyを配らないMCPサーバー設計
+originalLanguage: ja
+koreanSummary: 일본 TamaT가 사내 태스크 도구 MCP에서 Supabase service-role 키를 로컬에 두지 않고, Google
+  OAuth(PKCE)+loopback으로 본인 RLS·감사·알림 경로를 그대로 쓰게 했다. publishable key만 보유, Web UI와
+  같은 queries/mutations import, 토큰 0600·atomic write·refresh mutex. 파괴적 도구는 공개하지 않는다.
+source: technical_article
+canonicalId: zenn:tamat_llc:mcp-server-without-service-role-key
+primaryUrl: https://zenn.dev/tamat_llc/articles/mcp-server-without-service-role-key
+author: TakehiroT (takehirot)
+project: TamaT task-tool MCP (Supabase RLS-preserving)
+publishedAt: '2026-08-26T08:19:23Z'
+observedFacts:
+- Zenn tamat_llc API published_at 2026-08-26T17:19:23.120+09:00 (2026-08-26T08:19:23Z,
+  inside window). Author frames TamaT as a small end-to-end Japan web-dev company;
+  Waseda PE background in bio.
+- 'Design rule: MCP must not become a second permission boundary. Rejected dedicated
+  MCP APIs (duplicate auth) and service-role key on disk (bypasses RLS, audit actor
+  becomes “service”).'
+- 'Auth: Google OAuth with PKCE and fixed loopback callback (127.0.0.1) so the CLI
+  receives the browser redirect; only publishable/anon key is held. Data path imports
+  the same src/lib/queries and mutations as the Web UI so RLS, audit logs, notifications,
+  and optimistic concurrency apply unchanged.'
+- 'Token handling: mode 0600, atomic write, schema validation; refresh serialized
+  with an in-profile mutex. Unauthenticated MCP still starts and prompts login. Destructive
+  ops (delete task/project, member admin) are not exposed as tools.'
+- First of a four-part series (auth only here). Notes RFC 8252 prefers arbitrary loopback
+  ports; they fixed the port for exact allowlist hygiene and accepted collision risk
+  instead of wildcard redirect URLs.
+interpretation: 'Japan MCP security pattern: keep the agent on the user’s RLS identity
+  via loopback OAuth instead of minting a superuser tool server—MCP as a window, not
+  a new IAM plane.'
+relatedRefs:
+- https://zenn.dev/tamat_llc/articles/mcp-server-without-service-role-key
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/tamat_llc/articles/mcp-server-without-service-role-key
+- https://zenn.dev/api/articles/mcp-server-without-service-role-key
+verifiedAt: '2026-08-26T21:52:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: MCP에 service-role 키를 안 두고 Google OAuth PKCE+loopback으로 본인 RLS·감사 경로를
+  재사용. MCP 보안 운영에 직접 맞음. MCP를 새 IAM 면이 아니라 창으로 둠. 시리즈 1/4. 파괴적 도구 비공개. 기동 EXPERIMENT
+  아님. hissy 토큰 글과 같은 축, 다른 스택.
+expectedBenefit: publishable key만 보유, Web UI와 같은 queries/mutations, 토큰 0600·atomic
+  write·refresh mutex.
+switchingCost: 글 흡수 낮음. 기존 service-role MCP를 사용자 OAuth로 바꾸면 중간.
+maturity: early
+risks:
+- 고정 loopback 포트는 RFC 8252 임의 포트와 다름. 충돌을 감수.
+- 시리즈 첫 편(인증만). 나머지 3편 미공개.
+- 미인증 MCP도 떠서 로그인을 유도. 프로세스 노출면이 남음.
+smallestUsefulExperiment: service-role 거부·RLS 재사용·파괴 도구 비공개만 읽고 현재 MCP 권한과 대조. OAuth
+  연동·외부 게시 없음.
+recordStatus: approved
+```
+
+## teamlab-ai-review-skill-eval
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/27/regional-signal/japan/teamlab-ai-review-skill-eval.yaml
+- sha256: 14581c66725efa4e26dd944d4bd07e4b9a3e8653cfd01a679fb112a24d3893c6
+- primaryUrl: https://zenn.dev/team_lab/articles/5091dfeeb9deef
+
+```yaml
+schemaVersion: regional-signal/v1
+id: teamlab-ai-review-skill-eval
+collectionDate: '2026-08-27'
+primaryCategory: japan
+relatedCategories: []
+originBasis: 'Official チームラボ Zenn publication team_lab. Author 萩沢 writing as teamlab;
+  bio: engineers in teamLab solutions business. teamLab is a Japan art/tech collective
+  (Tokyo).'
+originalTitle: AIレビューに渡すskillについての検証
+originalLanguage: ja
+koreanSummary: '팀랩이 Kotlin 백엔드 AI 코드리뷰에서 SKILL.md 유무를 GPT-5.5 high로 비교했다. 일반 안티패턴은
+  skill 없이도 잡히지만 토큰이 크게 줄고, 사내 도메인·표준 시각 함수 같은 프로젝트 고유 규칙은 skill 있을 때만 검출(예: 51만→13만
+  토큰). skill에 없는 규칙은 오히려 skill 있을 때 놓치는 터널링도 관측.'
+source: public_case_study
+canonicalId: zenn:team_lab:5091dfeeb9deef
+primaryUrl: https://zenn.dev/team_lab/articles/5091dfeeb9deef
+author: 萩沢 / teamlab
+project: teamLab AI code-review Skill evaluation
+publishedAt: '2026-08-26T02:05:12Z'
+observedFacts:
+- 'Zenn team_lab publication API published_at 2026-08-26T11:05:12.512+09:00 (2026-08-26T02:05:12Z,
+  inside window). Author presents as チームラボ engineer 萩沢; publication bio: engineers
+  running teamLab solutions development.'
+- They built multiple PRs with intentional issues and ran AI review with vs without
+  SKILL.md using GPT-5.5 high on Kotlin (common teamLab backend language). Token counts
+  include autonomous repo exploration.
+- General issues (!! null assertion, PII in logs) were found with or without skill;
+  with skill, tokens dropped sharply (e.g. !! case 464,353 → 134,651; PII logs 616,737
+  → 337,440).
+- 'Project-specific rules listed in SKILL.md: some architecture smells were found
+  either way; rules like non-internal email domains in tests and non-standard time
+  helpers were only found with skill (e.g. email-domain case: without skill missed
+  after 514,832 tokens; with skill detected at 128,623).'
+- Rules deliberately omitted from SKILL.md (missing KDoc common-process ID; missing
+  publish-condition checks) were found without skill but missed with skill—interpreted
+  as the model tunneling onto listed skill checks. Article concludes skill content
+  should prioritize project-specific rules that exploration will not discover, and
+  warns that a narrow skill can hide unlisted issues.
+interpretation: 'Japan evaluation of Agent Skills for review: Skills buy precision
+  and token focus on local norms, but can create tunnel vision—measure both detection
+  and exploration cost, not presence of a SKILL.md alone.'
+relatedRefs:
+- https://zenn.dev/team_lab/articles/5091dfeeb9deef
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/team_lab/articles/5091dfeeb9deef
+- https://zenn.dev/api/articles/5091dfeeb9deef
+verifiedAt: '2026-08-26T21:52:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Kotlin AI 리뷰에서 SKILL.md 유무를 비교. 일반 안티패턴은 없어도 잡히고 토큰만 줄며, 사내 규칙은 skill
+  있을 때만 검출. 목록에 없는 규칙은 skill 있을 때 놓치는 터널링. Agent Skills·evaluation에 직접 맞음. 같은 창 WebDev-Skills-Bench(평균
+  손해)와 보완. 리뷰 스킬 기본 주입 EXPERIMENT/ADOPT 아님.
+expectedBenefit: 스킬에는 탐색으로 안 나오는 프로젝트 고유 규칙만 넣고, 검출과 탐색 토큰을 같이 재는 평가 습관.
+switchingCost: 글 흡수 낮음. 리뷰 스킬을 좁게 쓰면 터널링 위험이 올라감.
+maturity: early
+risks:
+- GPT-5.5 high·의도적 이슈 PR. 모델·과제 바뀌면 갭이 달라짐.
+- 토큰 수는 자율 탐색 포함. 비교 조건을 고정하지 않으면 오해.
+- 모델명 비가중.
+smallestUsefulExperiment: 고유 규칙 vs 미기재 규칙 터널링만 읽고 현재 리뷰 SKILL.md 범위를 대조. GPT 일괄 재실행·외부
+  게시 없음.
+recordStatus: approved
+```

@@ -5,12 +5,31 @@ action: "EXPERIMENT"
 artifactRole: "reader_facing_derivative"
 publicationChannel: "document"
 evidence:
+  - "reports/archive/2026/08/27/ai-engineering-radar.md"
   - "reports/archive/2026/08/26/ai-engineering-radar.md"
   - "reports/archive/2026/08/25/ai-engineering-radar.md"
   - "reports/archive/2026/08/24/ai-engineering-radar.md"
   - "reports/archive/2026/08/23/ai-engineering-radar.md"
   - "reports/archive/2026/08/23/ax-intelligence.md"
 sourceLinks:
+  - "https://arxiv.org/abs/2608.23651"
+  - "https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.8.0"
+  - "https://github.com/github/copilot-cli/releases/tag/v1.0.81-12"
+  - "https://github.com/Helter5/agentbridge/releases/tag/v1.0.2"
+  - "https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.62"
+  - "https://github.com/openai/codex/releases/tag/rust-v0.150.0"
+  - "https://openai.com/index/loveholidays"
+  - "https://github.com/xhluca/session-migrate/releases/tag/v0.9.0"
+  - "https://zenn.dev/acntechjp/articles/zenn-gcp-model-armor-mcp"
+  - "https://zenn.dev/ceres_tech_blog/articles/8cb3ce7bc4c937"
+  - "https://zenn.dev/estie/articles/e58c1461aaec90"
+  - "https://zenn.dev/hissy/articles/concretecms-mcp-remote-clients"
+  - "https://zenn.dev/jinjer_techblog/articles/69b182e90cfed8"
+  - "https://techblog.lycorp.co.jp/ja/20260826a"
+  - "https://techblog.lycorp.co.jp/ja/20260826b"
+  - "https://zenn.dev/sun_asterisk/articles/f8ee013f00cbc3"
+  - "https://zenn.dev/tamat_llc/articles/mcp-server-without-service-role-key"
+  - "https://zenn.dev/team_lab/articles/5091dfeeb9deef"
   - "https://arxiv.org/abs/2608.22533"
   - "https://arxiv.org/abs/2608.22167"
   - "https://arxiv.org/abs/2608.23552"
@@ -92,6 +111,24 @@ sourceLinks:
   - "https://www.itmedia.co.jp/enterprise/articles/2608/21/news019.html"
   - "https://www.yna.co.kr/view/AKR20260818061300017"
 records:
+  - "intelligence/signals/2026/08/27/regional-signal/international/arxiv-feedback-backfires-2608-23651.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/international/chrome-devtools-mcp-v1-8-0.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/international/github-copilot-cli-v1-0-81-12.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/international/helter5-agentbridge-v1-0-2.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/international/langchain-deepagents-code-0-1-62.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/international/openai-codex-rust-v0-150-0.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/international/openai-loveholidays-codex-2026-08-26.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/international/xhluca-session-migrate-v0-9-0.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/japan/acntechjp-model-armor-tool-poisoning.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/japan/ceres-git-worktree-parallel-agents.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/japan/estie-mastra-tomodeloutput-context.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/japan/hissy-concretecms-mcp-remote-clients.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/japan/jinjer-claude-code-training-skills.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/japan/lycorp-agent-i-platform.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/japan/lycorp-qa-agent-platform.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/japan/sun-asterisk-claude-codex-build-loop.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/japan/tamat-mcp-oauth-no-service-role.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/japan/teamlab-ai-review-skill-eval.yaml"
   - "intelligence/signals/2026/08/26/regional-signal/international/arxiv-contramem-2608-22533.yaml"
   - "intelligence/signals/2026/08/26/regional-signal/international/arxiv-mcp-universe-rl-2608-22167.yaml"
   - "intelligence/signals/2026/08/26/regional-signal/international/arxiv-prime-agent-2608-23552.yaml"
@@ -176,13 +213,23 @@ records:
 
 # 지금 읽을 결과
 
-> 현재 공개된 인텔리전스 5편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
+> 현재 공개된 인텔리전스 6편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
 
 # 지금 읽을 결과
 
-현재 공개된 인텔리전스 5편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
+현재 공개된 인텔리전스 6편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
 
 ## 최신 인텔리전스
+
+### [2026-08-27 AI Engineering Radar](/blog/2026/08/27/ai-engineering-radar)
+
+한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
+
+- 기준일: 2026-08-27
+- 분류: AI 엔지니어링
+- 추천: **작게 실험**
+- 근거 레코드: 18건 — `arxiv-feedback-backfires-2608-23651`, `chrome-devtools-mcp-v1-8-0`, `github-copilot-cli-v1-0-81-12`, `helter5-agentbridge-v1-0-2`, `langchain-deepagents-code-0-1-62`, `openai-codex-rust-v0-150-0`, `openai-loveholidays-codex-2026-08-26`, `xhluca-session-migrate-v0-9-0`, `acntechjp-model-armor-tool-poisoning`, `ceres-git-worktree-parallel-agents`, `estie-mastra-tomodeloutput-context`, `hissy-concretecms-mcp-remote-clients`, `jinjer-claude-code-training-skills`, `lycorp-agent-i-platform`, `lycorp-qa-agent-platform`, `sun-asterisk-claude-codex-build-loop`, `tamat-mcp-oauth-no-service-role`, `teamlab-ai-review-skill-eval`
+- 공개 원문: [원문 1](https://arxiv.org/abs/2608.23651) · [원문 2](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.8.0) · [원문 3](https://github.com/github/copilot-cli/releases/tag/v1.0.81-12) · [원문 4](https://github.com/Helter5/agentbridge/releases/tag/v1.0.2) · [원문 5](https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.62)
 
 ### [2026-08-26 AI Engineering Radar](/blog/2026/08/26/ai-engineering-radar)
 
