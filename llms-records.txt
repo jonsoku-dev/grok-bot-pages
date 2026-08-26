@@ -789,6 +789,80 @@ smallestUsefulExperiment: 역할 표만 자사 오케스트레이터/워커 모�
 recordStatus: approved
 ```
 
+## intl-cellcog-ai-agent-handoff-protocols-packet
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/24/regional-signal/international/intl-cellcog-ai-agent-handoff-protocols-packet.yaml
+- sha256: 81f24036036e946e342681cbea63fd42f88b21734b79b8036811dec90d9b1db3
+- primaryUrl: https://cellcog.ai/blog/ai-agent-handoff-protocols/
+
+```yaml
+schemaVersion: regional-signal/v1
+id: intl-cellcog-ai-agent-handoff-protocols-packet
+collectionDate: '2026-08-24'
+primaryCategory: international
+relatedCategories: []
+originBasis: English CellCog multi-agent protocol essay (cellcog.ai); international
+  practitioner guide defining a machine-readable handoff packet / typed task contract
+  for ownership transfer between agents—not region-specific product docs alone.
+originalTitle: 'AI Agent Handoff Protocols: What Must Travel With the Task'
+originalLanguage: en
+koreanSummary: CellCog가 에이전트 핸드오프를 대화 요약이 아니라 typed task contract(구조화 패킷)로 정의. identity·relationship·goal·scope·state·inputs·decisions·artifacts·evidence·authority·sensitivity·uncertainty·output·time/cost·failure
+  policy·acceptance 등 16개 필드 그룹을 필수로 제시. 소유권은 수신자 명시적 accept 후에만 이전되며, 자격증명은 패킷에 넣지
+  않고 권한은 재계산한다고 규정. YAML 예시 handoff 레코드와 위협·오류 타입·평가 지표를 포함. datePublished 2026-07-31T09:00:00-04:00.
+source: technical_article
+canonicalId: cellcog:blog:ai-agent-handoff-protocols
+primaryUrl: https://cellcog.ai/blog/ai-agent-handoff-protocols/
+author: CellCog
+project: CellCog / Multi-agent & AI organizations
+publishedAt: '2026-07-31T09:00:00-04:00'
+observedFacts:
+- Page JSON-LD datePublished/dateModified 2026-07-31T09:00:00-04:00; footer states
+  Published 31 July 2026 (collected 2026-08-24).
+- Defines an AI agent handoff as explicit transfer of defined task ownership subject
+  to acceptance; contrasts consult/notify/delegate/review/approval/escalation vs true
+  handoff.
+- 'Requires 16 field groups in one complete envelope: identity, relationship, goal,
+  scope, state, inputs, decisions, artifacts, evidence, authority, sensitivity, uncertainty,
+  output, time/cost, failure policy, acceptance.'
+- Provides a YAML machine-readable handoff example with protocol_version, ownership
+  before/after acceptance, goal/non_goals, context.manifest_id, source versions, authority
+  data/tools limits, failure escalate_to, and acceptance.accept_by.
+- 'Security/ops rules: treat payloads as untrusted; pass grants not credentials; recompute
+  receiver authority as intersection of task grant ∩ sender ∩ receiver role ∩ policy
+  ∩ approval; no silent acceptance (read/tool-call ≠ accept); cap handoff depth/retries/time/cost.'
+interpretation: Clearest international free-public specification-style write-up of
+  structured inter-agent packet contents and lifecycle for ownership-changing handoffs—directly
+  on-topic for 구조화 패킷 전달.
+relatedRefs:
+- https://a2a-protocol.org/
+- https://cellcog.ai/blog/what-is-agent-to-agent-communication/
+- https://cellcog.ai/blog/agent-handoffs-vs-agents-as-tools/
+sourceWarnings:
+- Vendor essay that also positions CellCog AI Organization/A2A product features; protocol
+  field list is normative guidance, not a ratified open standard.
+- YAML example dates (e.g. 2026-07-19) are illustrative fixtures inside the packet,
+  distinct from article publish date.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://cellcog.ai/blog/ai-agent-handoff-protocols/
+verifiedAt: '2026-08-24T15:15:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 핸드오프를 typed task contract(16필드 그룹)로 정의하고 YAML 예시·수락 전 ownership·자격증명
+  대신 grant를 요구. 구조화 패킷 전달의 국제 명세형 글.
+expectedBenefit: identity→acceptance까지의 완전 엔벨로프와 수락 생명주기.
+switchingCost: 문서 낮음. 16필드 전면 도입은 중간~높음.
+maturity: developing
+risks:
+- 벤더(CellCog) 블로그.
+- 필드 세트는 규범적 제안이지 표준 아님.
+smallestUsefulExperiment: 16필드 그룹만 자사 핸드오프 스키마 coverage 매트릭스에 체크.
+recordStatus: approved
+```
+
 ## intl-deepinspect-mcp-server-authentication-identity-binding-audit
 
 - artifactRole: factual_sot
@@ -1627,6 +1701,82 @@ risks:
 smallestUsefulExperiment: compose의 internal:true·볼륨 RO/RW·filesystem MCP 경로만 dry-run으로 검토. 실에이전트 실행 보류 가능.
 ```
 
+## japan-qiita-i0ry-magi-council-independent-vote
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-i0ry-magi-council-independent-vote.yaml
+- sha256: 1309139f585ecf212d4610d843a577cbf53f91c19b5fa477c215174730552e42
+- primaryUrl: https://qiita.com/i0ry_y/items/41932ec657bada5adabd
+
+```yaml
+schemaVersion: regional-signal/v1
+id: japan-qiita-i0ry-magi-council-independent-vote
+collectionDate: '2026-08-24'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Japanese Qiita technical article by i0ry_y; Japan-hosted practitioner
+  build log for MAGI Council Skill—sealed independent multi-agent voting instead of
+  single-context role-play consensus—not language-only classification.
+originalTitle: AIに『3人で相談して』では足りなかったので、独立して投票する仕組みを作った
+originalLanguage: ja
+koreanSummary: Qiita i0ry_y가 동일 대화 속 3인격 연기는 후속 에이전트가 선행 답을 보고 독립 다수결이 아니라고 비판. MAGI
+  Council은 MELCHIOR/BALTHASAR/CASPER를 별도 Subagent Context에서 병렬 투표하고 표는 Hook에만 밀봉(부모엔
+  VOTE_SEALED), 집계·Veto는 LLM 밖 Rust CLI가 수행. THOMAS는 표 공개 없이 반증만 돌려 재고하게 하며, Critical
+  Risk 소수 거부권으로 2:1 approve도 막을 수 있음. Qiita created_at 2026-08-24T17:19:05+09:00.
+source: technical_article
+canonicalId: qiita:i0ry_y:41932ec657bada5adabd
+primaryUrl: https://qiita.com/i0ry_y/items/41932ec657bada5adabd
+author: i0ry_y
+project: Qiita / magi-council-skill (github.com/isikawatatsuki/magi-council-skill)
+publishedAt: '2026-08-24T17:19:05+09:00'
+observedFacts:
+- Qiita API v2 reports created_at/updated_at 2026-08-24T17:19:05+09:00 for item 41932ec657bada5adabd
+  (collected 2026-08-24).
+- Rejects single-thread “three personas debating” prompts because later personas see
+  earlier answers and the same model still writes the final synthesis—so it is not
+  a true majority.
+- Runs three agents (MELCHIOR/BALTHASAR/CASPER) in separate subagent contexts; vote
+  payloads are stored by a hook and the parent only receives VOTE_SEALED until all
+  ballots exist.
+- Moves tallying out of the LLM into a Rust CLI with deterministic rules (2 approve→approved,
+  2 reject→rejected, else undecided).
+- Adds THOMAS as a rebuttal-only agent that returns counter-arguments without revealing
+  other personas’ votes, then allows a second independent rethink; optional Critical
+  Risk veto can overturn a 2-approve / 1-reject split when the reject cites a critical
+  risk.
+- States same-model agents can still share correlated mistakes; scopes the tool to
+  high-stakes PR/design/release decisions rather than routine naming chores; links
+  https://github.com/isikawatatsuki/magi-council-skill.
+interpretation: 'Direct Japan-locale implementation recipe for preserving independent
+  judgment over fake consensus: isolate contexts, seal votes, count outside the LLM,
+  and keep minority critical-risk veto.'
+relatedRefs:
+- https://github.com/isikawatatsuki/magi-council-skill
+sourceWarnings:
+- Personal Qiita build log / poem-tagged OSS; host-dependent subagent/hook isolation—adapt
+  to your runtime.
+- Author explicitly notes same-model correlated error is not solved by this design;
+  confidence scores are self-reported.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://qiita.com/i0ry_y/items/41932ec657bada5adabd
+verifiedAt: '2026-08-24T15:12:00Z'
+contradictions: []
+judgeAction: EXPERIMENT
+judgeRationale: 동일 스레드 다인격은 독립 다수결이 아님. 별도 서브에이전트·Hook 밀봉 투표·Rust CLI 집계로 독립 판단 보존.
+  VERIFIED 구현 레시피.
+expectedBenefit: 컨텍스트 격리+투표 밀봉+LLM 밖 집계 패턴.
+switchingCost: 문서 낮음. Hook/CLI 도입은 중간.
+maturity: developing
+risks:
+- 개인 Qiita 프로토타입.
+- 하네스 종속.
+smallestUsefulExperiment: 밀봉 투표·외부 집계 규칙만 설계에 반영. 전체 MAGI 재구현 보류.
+recordStatus: approved
+```
+
 ## japan-qiita-made-in-jp2525-rag-multiagent-decompose
 
 - artifactRole: factual_sot
@@ -1699,6 +1849,78 @@ risks:
 - Managed Agents/beta API 시변.
 - 벤치 수치 없음.
 smallestUsefulExperiment: 4축+Critic 역할만 자사 오케스트레이션 표에 옮김.
+recordStatus: approved
+```
+
+## japan-qiita-morimatsu-graph-engineering-schema-handoff
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-morimatsu-graph-engineering-schema-handoff.yaml
+- sha256: 84743b6a412f2c439d0a3ec7c3eefcda4a2d1916a6cb2c7b4a2ba8c863402dbd
+- primaryUrl: https://qiita.com/y-morimatsu/items/4110cab5f2bf88e70e97
+
+```yaml
+schemaVersion: regional-signal/v1
+id: japan-qiita-morimatsu-graph-engineering-schema-handoff
+collectionDate: '2026-08-24'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Japanese Qiita technical article by y-morimatsu (Yuki Morimatsu); Japan-hosted
+  practitioner essay on Graph Engineering—typed schema handoffs and shared-state objects
+  flowing on edges between agent loops—not language-only classification.
+originalTitle: Graph Engineering とは — Loop Engineering の次に来た「エージェントの配線図」
+originalLanguage: ja
+koreanSummary: Qiita y-morimatsu가 Graph Engineering을 여러 에이전트 루프를 병렬 분기·검증기·핸드오프·정지
+  조건으로 배선하는 설계로 소개. 부품은 노드·엣지·공유 상태이며, 공유 상태는 태스크·생성물·체크 결과가 담긴 객체로 엣지 위를 흐른다고 설명.
+  실무 팁으로 노드 입력 화이트리스트, 핸드오프를 스키마로 타입화, 상류 대용량 출력은 요약 전달을 제시. OpenAI Agents SDK를 명시적
+  에이전트 간 핸드오프(가벼운 엣지 모델)로 비교. Qiita API created_at 2026-08-02T23:22:59+09:00.
+source: technical_article
+canonicalId: qiita:y-morimatsu:4110cab5f2bf88e70e97
+primaryUrl: https://qiita.com/y-morimatsu/items/4110cab5f2bf88e70e97
+author: y-morimatsu (Yuki Morimatsu)
+project: Qiita / Graph Engineering
+publishedAt: '2026-08-02T23:22:59+09:00'
+observedFacts:
+- Qiita API v2 reports created_at 2026-08-02T23:22:59+09:00 and updated_at 2026-08-05T23:12:10+09:00
+  for item 4110cab5f2bf88e70e97 (collected 2026-08-24).
+- Defines Graph Engineering as wiring multiple agent loops into one orchestrated system
+  with parallel branches, verifiers, handoffs, and stop conditions (citing Louis Bouchard
+  framing).
+- 'Names three building blocks: nodes (not only LLMs—tests, schema validators, DB
+  queries, human approval), edges (fixed or conditional), and shared state objects
+  (tasks, artifacts, check results, attempt counts) that flow on edges.'
+- 'States practical tip: whitelist what each node receives, type handoffs with schemas,
+  and summarize large upstream outputs before passing them.'
+- 'Compares frameworks: LangGraph StateGraph; Google ADK hierarchical trees plus A2A
+  discovery; CrewAI role crews; OpenAI Agents SDK explicit inter-agent handoffs as
+  a lighter edge model than a full graph.'
+interpretation: Japan-locale signal that inter-agent transfer should be a schema-typed
+  handoff object on an explicit edge—not ambient full-context sharing—aligning with
+  structured packet handoff practice.
+relatedRefs:
+- https://openai.github.io/openai-agents-python/ja/handoffs/
+- https://a2a-protocol.org/
+sourceWarnings:
+- Survey/explainer synthesizing third-party Graph Engineering commentary; code snippets
+  are illustrative LangGraph-style wiring.
+- Does not ship a single concrete HandoffPacket JSON schema—emphasizes design principles
+  over a fixed envelope.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://qiita.com/y-morimatsu/items/4110cab5f2bf88e70e97
+verifiedAt: '2026-08-24T15:15:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Graph Engineering에서 핸드오프를 스키마로 타입화하고 대용량은 요약 전달. 공유 상태가 엣지를 흐른다고 명시.
+expectedBenefit: 노드 입력 화이트리스트·스키마 typed handoff·상류 요약 규칙.
+switchingCost: 문서 낮음.
+maturity: developing
+risks:
+- 개인 Qiita.
+- 프레임워크 비교는 개괄.
+smallestUsefulExperiment: 화이트리스트+스키마 핸드오프 팁만 체크리스트화.
 recordStatus: approved
 ```
 
@@ -1825,6 +2047,163 @@ risks:
 - 개인 Zenn; 제품 특화 아님.
 - 게시 7/31.
 smallestUsefulExperiment: 위임 단위='보고서로 받을 수 있는 일' 규칙만 체크리스트화.
+recordStatus: approved
+```
+
+## korea-aiarchitect-context-package-result-envelope
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/24/regional-signal/korea/korea-aiarchitect-context-package-result-envelope.yaml
+- sha256: 7841f7e1bc7d7c743eb6c451b259b8d50607309efe23fe3472aa546cf3816af1
+- primaryUrl: https://aiarchitect.tistory.com/77
+
+```yaml
+schemaVersion: regional-signal/v1
+id: korea-aiarchitect-context-package-result-envelope
+collectionDate: '2026-08-24'
+primaryCategory: korea
+relatedCategories: []
+originBasis: Korean-language Tistory technical blog (aiarchitect.tistory.com / AI아키텍트);
+  Korea-hosted practitioner series on enterprise agent execution contracts—Context
+  Package handoff and Result Envelope normalization across MCP/A2A—not language-only
+  classification.
+originalTitle: 'AI Agent 실행 계약 설계: Execution Plan·Result Envelope·부분 성공·취소·보상'
+originalLanguage: ko
+koreanSummary: AI아키텍트가 Orchestrator Root Run에서 다른 Agent에 전체 대화·Token을 넘기지 말고 goal·constraints·evidence_refs·expected_artifact·correlation만
+  담은 최소 Context Package로 위임하라고 정리. 전달 시 A2A Message의 구조화 Part/Extension을 쓸 수 있으나 Secret·원본
+  Credential 금지, 대용량은 만료 Reference, Evidence Digest·Schema Version 동봉을 원칙으로 제시. MCP
+  Result와 A2A Artifact를 run_id·source·status·output(digest/data_ref)·quality·timing을
+  갖춘 공통 Result Envelope로 정규화해 검증·조립한다고 설명. article:published_time 2026-08-11T13:28:52+09:00.
+source: technical_article
+canonicalId: tistory:aiarchitect:77
+primaryUrl: https://aiarchitect.tistory.com/77
+author: AI아키텍트
+project: aiarchitect.tistory.com / AI Agent · MCP
+publishedAt: '2026-08-11T13:28:52+09:00'
+observedFacts:
+- Page meta/JSON-LD datePublished 2026-08-11T13:28:52+09:00; dateModified 2026-08-23T17:11:16+09:00
+  (collected 2026-08-24).
+- Section 8 states other agents must receive a minimal Context Package, not full chat/docs/user
+  tokens; example JSON includes delegation_id, goal, constraints (mode DRAFT_ONLY,
+  forbidden_actions, deadline_at), evidence_refs with uri/digest/expires_at, expected_artifact
+  schema/media_type, and correlation run_id/parent_step_id.
+- States the package is an org delegation contract (not an A2A standard object) but
+  may ride on an A2A Message structured Part or agreed Extension; forbids putting
+  secrets/credentials in Message/Artifact/metadata; prefers short-lived references
+  for large data; requires Evidence Digest and Schema Version.
+- Section 12 defines a Result Envelope that normalizes MCP Tool Results and A2A Artifacts
+  into one shape with run_id, step_id, source (kind/id/version/protocol), status,
+  output (schema/media_type/digest/data_ref), evidence digests, quality gates, and
+  timing.
+- Notes Result Envelope is internal governance and must keep digests/storage links
+  back to original protocol payloads for re-verification; cites A2A 1.0 and MCP 2026-07-28
+  as current references as of 2026-08-11.
+interpretation: 'Strong Korea-origin how-to for structured inter-agent packet transfer:
+  outbound Context Package as the handoff envelope and inbound Result Envelope as
+  the normalized return packet across MCP tool calls and A2A agent delegation.'
+relatedRefs:
+- https://aiarchitect.tistory.com/75
+- https://a2a-protocol.org/
+- https://modelcontextprotocol.io/
+sourceWarnings:
+- Educational synthetic fixtures (users, tenants, digests, URLs); not production telemetry.
+- Author distinguishes org contracts from A2A/MCP wire objects—verify against live
+  protocol versions before implementation.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://aiarchitect.tistory.com/77
+verifiedAt: '2026-08-24T15:15:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 전체 대화 대신 goal·constraints·evidence_refs·expected_artifact·correlation만
+  담은 Context Package와 Result Envelope로 에이전트 간 구조화 전달을 정의. 패킷 핸드오프 토픽·본 레이더 파이프라인과
+  직접 정합.
+expectedBenefit: 최소 위임 계약과 MCP/A2A 결과를 정규화하는 엔벨로프 필드 세트.
+switchingCost: 문서 낮음. 기존 핸드오프 JSON 스키마 정합은 중간.
+maturity: developing
+risks:
+- 개인 블로그; org 계약이지 A2A 표준 객체 아님.
+- Secret 금지 규칙은 구현 강제 필요.
+smallestUsefulExperiment: Context Package 예시 필드만 현재 regional-signal/judge 핸드오프와 1:1
+  대조.
+recordStatus: approved
+```
+
+## korea-aisparkup-switchyard-escalation-routing
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/24/regional-signal/korea/korea-aisparkup-switchyard-escalation-routing.yaml
+- sha256: f33917202e8103b16e8afb56850f3b6ebd5e30d93be99d35fca9d06f307cacd7
+- primaryUrl: https://aisparkup.com/posts/15178
+
+```yaml
+schemaVersion: regional-signal/v1
+id: korea-aisparkup-switchyard-escalation-routing
+collectionDate: '2026-08-24'
+primaryCategory: korea
+relatedCategories: []
+originBasis: Korean-language AI Sparkup technical blog (aisparkup.com / author Spark);
+  Korea-hosted practitioner guide synthesizing LangChain Switchyard agent-routing
+  measurements for Korean readers—not language-only classification.
+originalTitle: 에이전트 호출의 7%가 비용의 68%, 모델 라우팅으로 74% 아끼기
+originalLanguage: ko
+koreanSummary: AI Sparkup이 LangChain의 NeMo Switchyard 에이전트 라우팅 실측을 한국어로 정리. LLM 분류기
+  에스컬레이션 모드로 저렴한 모델에서 시작해 판정용 모델이 연속 두 번 부정하면 프론티어로 고정하는 일방향 흐름을 설명하고, 프론티어로 보낸 턴
+  7%(청구액의 68%)·나머지 93%는 30B급 처리·Opus 대비 비용 74% 절감·정확도 약 6점 하락 수치와, 판정 비용/가격 차로 이득
+  분기점을 계산하라는 운영 가이드를 제시. article:published_time 2026-08-13T23:07:38+00:00 (표시 2026-08-14
+  KST).
+source: technical_article
+canonicalId: aisparkup:posts:15178
+primaryUrl: https://aisparkup.com/posts/15178
+author: Spark (AI Sparkup)
+project: AI Sparkup
+publishedAt: '2026-08-13T23:07:38+00:00'
+observedFacts:
+- Page meta/JSON-LD datePublished 2026-08-13T23:07:38+00:00; on-page time datetime
+  2026-08-14T08:07:38+09:00 (collected 2026-08-24).
+- States LangChain measured that only 7% of agent LLM calls needed a frontier model,
+  and that 7% accounted for 68% of the bill when every call used the same expensive
+  model.
+- Describes NeMo Switchyard as routing each call into a preconfigured model pool,
+  deployable as a front proxy or in-agent middleware.
+- 'Documents LangChain''s measured escalation flow: start every task on a cheap model;
+  a small judge model scores each completed turn; after two consecutive negative judgments,
+  pin the remainder of that task to the expensive model (one-way door so the judge
+  is not run every later turn).'
+- 'Reports measurement pairing Nemotron 3.5 Lightning with Claude Opus 4.8 on LangChain
+  Deep Agents suite (145 tasks, avg 6.3 calls): frontier received 7% of turns / 30B-class
+  handled 93%; ~74% lower total cost vs Opus-only with ~6-point accuracy drop; advises
+  computing break-even as judge_cost / (frontier_price - cheap_price).'
+interpretation: 'Strong Korea-locale how-to for per-task/per-call model routing in
+  agents: escalate only failing work to frontier models and decide ROI from call-mix
+  and price gap before adopting a router.'
+relatedRefs:
+- https://www.langchain.com/blog/switchyard-agent-routing-benchmark
+- https://developer.nvidia.com/blog/route-ai-agent-workloads-across-models-with-nvidia-nemo-switchyard/
+sourceWarnings:
+- Korean secondary synthesis of LangChain/NVIDIA measurements; verify numbers against
+  the cited LangChain and NVIDIA primary posts before operational use.
+- Author byline is site persona "Spark"; no independent Korean workload benchmark
+  is included.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://aisparkup.com/posts/15178
+verifiedAt: '2026-08-24T15:25:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: NeMo Switchyard 에스컬레이션(저렴→판정 2회 부정→프론티어)과 7%/68% 비용 믹스 실측을 한국어로 정리.
+  작업·콜 단위 라우팅 토픽·model-routing interest에 직접. VERIFIED.
+expectedBenefit: 일방향 에스컬레이션 규칙과 콜 믹스 ROI로 라우팅 판단.
+switchingCost: 문서 낮음. Switchyard 도입은 중간.
+maturity: developing
+risks:
+- LangChain/NVIDIA 수치 2차 전재.
+- 정확도 약 6점 하락 트레이드오프.
+smallestUsefulExperiment: 에스컬레이션 규칙·7/93 믹스만 자사 라우팅 정책에 대조. SDK 설치 없음.
 recordStatus: approved
 ```
 
@@ -2179,6 +2558,85 @@ risks:
 - 게시 2026-07-15는 선호 창보다 이름, 수정 8/17만 창 안.
 - 클라이언트별 SKILL.md 확장 키 호환은 문서마다 다름.
 smallestUsefulExperiment: 글의 .agents/skills ↔ .claude/skills 링크 절만 읽고 현재 스킬 경로와 대조. 링크 생성·게시 없음.
+recordStatus: approved
+```
+
+## korea-jkf87-sigma-mem-reliability-vs-majority
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/24/regional-signal/korea/korea-jkf87-sigma-mem-reliability-vs-majority.yaml
+- sha256: 28374ed6350d5ecb8e74852fdfdc4c17fe9f47556acc8a2a6f9825a256062336
+- primaryUrl: https://jkf87.github.io/posts/2026-08-02-sigma-mem-multi-agent-reliability-memory
+
+```yaml
+schemaVersion: regional-signal/v1
+id: korea-jkf87-sigma-mem-reliability-vs-majority
+collectionDate: '2026-08-24'
+primaryCategory: korea
+relatedCategories: []
+originBasis: Korean-language practitioner blog on jkf87.github.io (코난쌤 블로그); Korea-hosted
+  technical review of Σ-Mem reliability memory as an alternative to naive majority
+  aggregation in multi-agent systems—not language-only classification.
+originalTitle: 'Σ-Mem: 다중 에이전트 시스템에서 ''누구를 믿을 것인가''를 기억하는 방법'
+originalLanguage: ko
+koreanSummary: 코난쌤 블로그가 NTU DeCLaRe Lab Σ-Mem 논문을 해설. 다수결은 Berlin 2표 vs Zurich 1표처럼
+  상관된 오류를 증폭할 수 있어, 동료별 역사적 역량·동료 간 동시 오답 관계를 행렬로 기억하고 M-Weighted Vote/M-Route로 소수지만
+  더 신뢰할 동료를 살리는 집계를 제시. M-Route는 중앙 모델 없이 OOD에서 다수결·고정 최고 동료를 능가한다고 정리. 포스트 <time
+  datetime> 2026-08-02T00:00:00.000Z.
+source: technical_article
+canonicalId: jkf87:posts:2026-08-02-sigma-mem-multi-agent-reliability-memory
+primaryUrl: https://jkf87.github.io/posts/2026-08-02-sigma-mem-multi-agent-reliability-memory
+author: 코난쌤 (jkf87)
+project: jkf87.github.io / Σ-Mem review
+publishedAt: '2026-08-02T00:00:00.000Z'
+observedFacts:
+- Page <time datetime="2026-08-02T00:00:00.000Z"> (display 2026년 8월 02일); collected
+  2026-08-24.
+- Motivates with a three-peer RAG example where majority picks “Berlin” twice over
+  “Zurich”, noting the two Berlin peers may share correlated error and the minority
+  peer can be more trustworthy if past co-error history says so.
+- States Σ-Mem stores historical competence evidence per peer and peer-relationship
+  evidence (co-correct vs co-error tendency) in spectrally updated matrices, citing
+  Weyl inequality bounds so a single noisy event cannot flip the memory spectrum.
+- 'Describes three read interfaces: residual steered peer selection (central model
+  Yes/No trust prompt), M-Route (route from memory scores without seeing current peer
+  answers or using the central model), and M-Weighted Voting (sum reliability weights
+  for identical answers instead of headcount).'
+- Reports that M-Route, without any central model, outperformed majority voting and
+  best-fixed-peer on the overall OOD suite in the reviewed paper; also notes CF@90
+  recovery (e.g. Qwen3-0.6B 46.22%→71.10%) when the historically best peer suddenly
+  fails.
+- Links source paper as arXiv abs/2607.27958 (Feng, Yang, Poria; DeCLaRe Lab, NTU;
+  labeled July 2026 in the post).
+interpretation: 'Korea-locale how-to framing for preserving independent/minority judgment:
+  replace bare majority with reliability-weighted aggregation that remembers who is
+  independently correct and who fails together.'
+relatedRefs:
+- https://arxiv.org/abs/2607.27958
+sourceWarnings:
+- Secondary Korean blog review of an academic paper; verify quantitative claims against
+  the primary arXiv PDF before operational use.
+- Post notes Σ-Mem memory updates need accuracy labels—limited where ground truth
+  feedback is unavailable.
+- Footer promotes the author's books/courses; treat as practitioner commentary with
+  affiliate/learning-product context.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://jkf87.github.io/posts/2026-08-02-sigma-mem-multi-agent-reliability-memory
+verifiedAt: '2026-08-24T15:12:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 다수결이 상관 오류를 증폭할 수 있어 Σ-Mem 역량·동시오답 행렬과 M-Weighted Vote/M-Route로 소수
+  신뢰 판단을 보존. VERIFIED.
+expectedBenefit: 다수결 대체 집계와 동료 신뢰 메모리 개념.
+switchingCost: 문서 낮음. 논문 재현은 높음.
+maturity: early
+risks:
+- NTU 논문 2차 해설.
+- 구현 복잡도.
+smallestUsefulExperiment: Berlin/Zurich 실패 모드+가중 투표 아이디어만 체크리스트화.
 recordStatus: approved
 ```
 
@@ -3529,5 +3987,1417 @@ risks:
 - 이전 a824fb2 EXPERIMENT가 skip된 같은 프로젝트 후속이라 중복 실험 가능.
 smallestUsefulExperiment: 한 로컬 레포에서 `jikji find ROOT "query" --json` 1회와 skills/jikji/SKILL.md만
   대조. GUI는 로컬 루트 관리 화면만 확인. 외부 게시·SoT 쓰기·채택 권고 없음.
+recordStatus: approved
+```
+
+## arxiv-contramem-2608-22533
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/26/regional-signal/international/arxiv-contramem-2608-22533.yaml
+- sha256: 62704f5afb3ecedc96a02d6a3f0f9f8a600c13ce17e5ef808f3f39c960e0c393
+- primaryUrl: https://arxiv.org/abs/2608.22533
+
+```yaml
+schemaVersion: regional-signal/v1
+id: arxiv-contramem-2608-22533
+collectionDate: '2026-08-26'
+primaryCategory: international
+relatedCategories: []
+originBasis: English arXiv preprint 2608.22533; authors include Barnabas Poczos (Carnegie
+  Mellon University public record) and collaborators; US/academic, not KR/JP.
+originalTitle: 'CONTRAMEM: Learning Self-Evolving Procedural Memory from Contrasting
+  Multi-Model Trajectories'
+originalLanguage: en
+koreanSummary: CONTRAMEM은 학습 없이 같은 작업의 성공·실패 궤적을 대조해 Function Card·Skill Card 절차 기억을
+  만드는 프레임워크. GAIA2/ARE 컴퓨터 사용 과제에서 세 소스 모델 성공률을 26.2%에서 55.3%로 올렸고, 같은 뱅크가 Qwen3.7
+  Plus로 이전된다고 적는다.
+source: technical_article
+canonicalId: arxiv.org/abs/2608.22533
+primaryUrl: https://arxiv.org/abs/2608.22533
+author: Zheyuan Deng, Binghang Lu, Hanqi Feng, Shirley Huang, Dianzhuo Wang, Yuanda
+  Xu, Zhiwei Zhang, Yige Sun, Changhong Mou, Runyu Zhang, Yuexing Hao, Barnabas Poczos,
+  Xiaomin Li
+project: CONTRAMEM
+publishedAt: '2026-08-23T18:11:26Z'
+observedFacts:
+- arXiv Atom published 2026-08-23T18:11:26Z for abs/2608.22533v1.
+- 'Abstract: training-free framework that treats same-task outcome variation as supervision
+  and distills a compact bank of app-level Function Cards and task-level Skill Cards
+  via localized curation rather than append-only accumulation.'
+- 'Reported on held-out GAIA2/ARE computer-use tasks: success rate across three source-model
+  targets from 26.2% to 55.3% (GPT-5.5 27.5→61.0; Claude Sonnet 4.6 28.0→52.5; DeepSeek
+  V4 Pro 23.0→52.5).'
+- Same bank transferred unchanged to unseen Qwen3.7 Plus (18.5→35.5). Construction
+  also reported on AppWorld, beating no-memory and a single-source self-memory variant
+  for three mid-tier agents.
+- Under a matched trajectory budget, heterogeneous multi-model trajectories are reported
+  to yield stronger memory than self- or same-model multi-rollout memory.
+interpretation: 'Computer-use / Agent-Skills-adjacent memory paper: contrastive multi-model
+  traces as the source of procedural cards. Success-rate doublings are author-reported
+  on GAIA2/ARE and AppWorld.'
+relatedRefs:
+- https://export.arxiv.org/api/query?id_list=2608.22533
+sourceWarnings:
+- Abs metadata did not list institutions; Poczos/CMU is the public author record.
+- GAIA2/ARE and AppWorld deltas were not reproduced. Model marketing names in the
+  abstract are not quality weights.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://arxiv.org/abs/2608.22533
+- https://arxiv.org/pdf/2608.22533
+verifiedAt: '2026-08-25T21:48:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 학습 없이 같은 작업의 성공·실패 궤적을 대조해 Function Card·Skill Card를 만드는 프레임워크. Agent
+  Skills·computer use·context에 인접. 26.2%→55.3%와 Qwen 전이는 논문 보고. 모델명 비가중. 공개 설치 경로가
+  이 패킷에 없어 EXPERIMENT 아님.
+expectedBenefit: append-only 기억 대신 대조로 절차 카드를 압축. 이질 멀티모델 궤적이 자기 롤아웃보다 낫다는 가설.
+switchingCost: 초록 흡수 낮음. GAIA2/ARE 컴퓨터 사용 평가를 재현하면 높음.
+maturity: early
+risks:
+- 성공률 배증은 GAIA2/ARE·AppWorld 저자 보고. 미재현.
+- 잘못된 실패 궤적을 카드로 증류하면 절차 기억이 오염됨.
+- 모델 마케팅명을 품질 가중으로 쓰면 안 됨.
+smallestUsefulExperiment: Function Card vs Skill Card와 대조 증류 문장만 읽고 현재 스킬/메모리 축적 방식과
+  대조. 궤적 수집·외부 게시 없음.
+recordStatus: approved
+```
+
+## arxiv-mcp-universe-rl-2608-22167
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/26/regional-signal/international/arxiv-mcp-universe-rl-2608-22167.yaml
+- sha256: 5955347527a17f94d3da2ad466dff5519726fb941bd35ff22d7a5695b36dbb3b
+- primaryUrl: https://arxiv.org/abs/2608.22167
+
+```yaml
+schemaVersion: regional-signal/v1
+id: arxiv-mcp-universe-rl-2608-22167
+collectionDate: '2026-08-26'
+primaryCategory: international
+relatedCategories: []
+originBasis: English arXiv preprint 2608.22167; authors include Silvio Savarese and
+  Junnan Li (Salesforce / Salesforce AI Research affiliation in the public author
+  record); US multinational research, not KR/JP.
+originalTitle: 'MCP-Universe RL: A Framework for Training MCP Tool-Use Agents via
+  Reinforcement Learning'
+originalLanguage: en
+koreanSummary: MCP-Universe RL이 MCP 서버를 환경 인터페이스로 쓰는 오픈소스 RL 프레임워크를 제시. 컨테이너로 MCP
+  환경을 격리·재사용하고, 툴 대기 중 GPU를 겹쳐 굴리며 veRL·slime 백엔드로 gpt-oss-20b를 소프트웨어 엔지니어링·딥리서치·일반
+  툴사용에서 학습했다고 적는다.
+source: technical_article
+canonicalId: arxiv.org/abs/2608.22167
+primaryUrl: https://arxiv.org/abs/2608.22167
+author: Ziyang Luo, Yan Yang, Xiangru Jian, Ziji Shi, Xiaoqiang Lin, Jun Hao Liew,
+  Silvio Savarese, Junnan Li
+project: MCP-Universe RL
+publishedAt: '2026-08-23T01:49:04Z'
+observedFacts:
+- arXiv Atom published 2026-08-23T01:49:04Z for abs/2608.22167v1.
+- 'Abstract: uses MCP as the environment interface so any tool already exposed as
+  an MCP server plugs into training with no RL-specific integration code.'
+- 'Two reusable layers: environment-orchestration that provisions, isolates, and recycles
+  MCP environments over a pluggable container backend; rollout-orchestration whose
+  staged pipeline overlaps trajectories so the GPU stays busy while episodes wait
+  on tools.'
+- Training layer is backend-agnostic with veRL and slime integrations.
+- With one configuration, changing only the task specification, the authors train
+  software-engineering, deep-research, and general tool-use agents on gpt-oss-20b
+  and report improved task reward in all three.
+interpretation: Systems paper for MCP-as-RL-environment plus container isolation and
+  stalled-tool rollout overlap. Reward improvements are author-reported on gpt-oss-20b,
+  not a new MCP spec.
+relatedRefs:
+- https://export.arxiv.org/api/query?id_list=2608.22167
+sourceWarnings:
+- Abs metadata did not list institutions; Savarese/Li affiliation is the public author
+  record, not a page-scraped byline.
+- Task-reward gains and concurrency claims were not reproduced.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://arxiv.org/abs/2608.22167
+- https://arxiv.org/pdf/2608.22167
+verifiedAt: '2026-08-25T21:48:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: MCP 서버를 RL 환경 인터페이스로 쓰고 컨테이너로 격리·재사용, 툴 대기 중 GPU 롤아웃을 겹침. MCP·sandboxing·evaluation에
+  인접. 보상 이득은 gpt-oss-20b 저자 보고. 새 MCP 스펙 아님. 학습 프레임이라 코딩 에이전트 운영 기본값 교체 아님. relatedCategories는
+  [] 유지.
+expectedBenefit: 이미 MCP인 툴을 RL 전용 어댑터 없이 학습에 붙이는 패턴. 환경 프로비저닝과 stalled-tool overlap을
+  분리.
+switchingCost: 초록 흡수 낮음. veRL/slime로 학습을 돌리면 높음.
+maturity: early
+risks:
+- task reward 향상은 미재현.
+- 소속은 공개 저자 기록(Salesforce)이지 페이지 스크레이프가 아님.
+- 컨테이너 MCP 환경이 툴 권한·비밀을 학습 롤아웃에 노출할 수 있음.
+smallestUsefulExperiment: 환경 오케스트레이션 vs 롤아웃 overlap 두 층만 읽고 현재 MCP 샌드박스와 대조. gpt-oss
+  학습·외부 게시 없음.
+recordStatus: approved
+```
+
+## arxiv-prime-agent-2608-23552
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/26/regional-signal/international/arxiv-prime-agent-2608-23552.yaml
+- sha256: 11cce042935a3c59b92c271adb480e5f708c8cd4a13e52ae5c6e043727be7601
+- primaryUrl: https://arxiv.org/abs/2608.23552
+
+```yaml
+schemaVersion: regional-signal/v1
+id: arxiv-prime-agent-2608-23552
+collectionDate: '2026-08-26'
+primaryCategory: international
+relatedCategories: []
+originBasis: English arXiv preprint 2608.23552 with code at PrimeIntellect-ai/prime-agent
+  (Prime Intellect; EU/US open-source lab, not KR/JP).
+originalTitle: 'Prime Agent: A Self-Improving RLM Harness'
+originalLanguage: en
+koreanSummary: Prime Intellect가 장기 호라이즌 평가·코딩 에이전트용 오픈소스 하네스 Prime Agent를 논문으로 공개.
+  지속 IPython REPL(RLM), 히스토리·메모리·스킬을 보존하는 Continual Harness, 재귀 서브에이전트를 두고 ARC-AGI-3
+  RHAE Best@1을 30%에서 95.5%로 올렸다고 적는다.
+source: technical_article
+canonicalId: arxiv.org/abs/2608.23552
+primaryUrl: https://arxiv.org/abs/2608.23552
+author: Seth Karten, Alex L. Zhang, Kevin Thomas, Sebastian Müller, Elie Bakouch,
+  Daniel Auras, Mika Senghaas, Fares Obeid, Konstantin Dunas, Johannes Hagemann, Sami
+  Jaghouar
+project: PrimeIntellect-ai/prime-agent
+publishedAt: '2026-08-24T17:54:19Z'
+observedFacts:
+- arXiv Atom published 2026-08-24T17:54:19Z for abs/2608.23552v1.
+- Abstract describes Prime Agent as an open-source harness for long-horizon evaluation
+  and coding-agent workflows, with a persistent IPython REPL following the Recursive
+  Language Model abstraction and a Continual Harness that preserves histories, memories,
+  skills, prompts, and subagent specifications.
+- 'Abstract: recursive subagents coordinate through direct agent-to-agent communication;
+  an Agents View lets humans inspect daemon-backed sessions; the harness standardizes
+  execution, recovery, verification, and resource accounting while leaving strategy
+  to the model.'
+- 'Reported: ARC-AGI-3 RHAE Best@1 from 30% to 95.5%; claims match or exceed native
+  and popular harnesses on long-context coding, GPU-kernel generation, emulator construction,
+  and autonomous nanoGPT speedruns.'
+- Abstract points to code at https://github.com/PrimeIntellect-ai/prime-agent. That
+  repo's releases.atom latest stable tag v0.8.0 is 2026-08-21T21:18:10Z (before this
+  window); in-window tags are betas only. The paper, not the beta tag, is the in-window
+  primary artifact.
+interpretation: 'Harness paper: keep context/skills/subagents outside the model weights
+  so long-horizon coding evals measure the model instead of harness collapse. Benchmark
+  deltas are author-reported.'
+relatedRefs:
+- https://github.com/PrimeIntellect-ai/prime-agent
+- https://export.arxiv.org/api/query?id_list=2608.23552
+sourceWarnings:
+- ARC-AGI-3 and coding-task comparisons are paper-reported and were not reproduced.
+- Public GitHub tag v0.8.0 is outside this window; do not treat the beta train as
+  the paper's ship date.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://arxiv.org/abs/2608.23552
+- https://arxiv.org/pdf/2608.23552
+verifiedAt: '2026-08-25T21:48:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 장기 호라이즌 평가·코딩용 오픈소스 하네스. 지속 IPython REPL, 히스토리·메모리·스킬을 보존하는 Continual
+  Harness, 재귀 서브에이전트. agent harness·Skills·evaluation에 맞음. ARC-AGI-3 30%→95.5%는 논문
+  보고. 공개 태그 v0.8.0은 창 밖이라 이 신호의 선박으로 쓰지 않음. 클론 EXPERIMENT/ADOPT 아님.
+expectedBenefit: 전략은 모델에 두고 실행·복구·검증·자원 회계를 하네스가 표준화하는 설계. Agents View로 데몬 세션을 사람이
+  봄.
+switchingCost: 논문 흡수 낮음. 기본 하네스를 Prime Agent로 바꾸면 높음. 창 안 안정 태그 없음.
+maturity: early
+risks:
+- 벤치 이득은 미재현 논문 수치.
+- stable v0.8.0은 창 전(2026-08-21). 창 안은 beta뿐.
+- 자기개선(self-improving) 서술을 RSI로 읽으면 안전 제한이 글에 없음.
+smallestUsefulExperiment: 초록의 Continual Harness·Agents View 문장만 현재 하네스와 대조. 리포 클론·벤치
+  재실행·외부 게시 없음.
+recordStatus: approved
+```
+
+## github-copilot-app-customize-tab-2026-08-25
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/26/regional-signal/international/github-copilot-app-customize-tab-2026-08-25.yaml
+- sha256: 93911359b8b32e8c59742bb0bfaec8b16885a939e61549424e8803c8a7bb384d
+- primaryUrl: https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-copilot-app-customize-tab-2026-08-25
+collectionDate: '2026-08-26'
+primaryCategory: international
+relatedCategories: []
+originBasis: GitHub official changelog (github.blog/changelog) for the GitHub Copilot
+  app; US multinational, not KR/JP.
+originalTitle: GitHub Copilot app Customize tab is generally available
+originalLanguage: en
+koreanSummary: GitHub이 2026-08-25에 Copilot 앱 Customize 탭 일반 제공을 공지. MCP 서버·플러그인·스킬·캔버스를
+  한 곳에서 탐색·설치하고, Featured와 유형별 섹션으로 맞춤을 고른다고 적는다.
+source: official_release
+canonicalId: github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available
+primaryUrl: https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available
+author: GitHub
+project: GitHub Copilot app
+publishedAt: '2026-08-25T20:09:41Z'
+observedFacts:
+- github.blog/changelog/all.atom updated 2026-08-25T20:09:41Z for this title; RSS
+  pubDate is Tue, 25 Aug 2026 20:05:26 +0000; HTML datetime is 2026-08-25.
+- Page states the Customize tab in the GitHub Copilot app brings MCP servers, plugins,
+  skills, and canvases together in one place.
+- 'Listed actions: discover customizations across those four types; start from featured
+  selections; find MCP servers via trending options and category browse.'
+- Featured canvases are described as keeping relevant context visible while moving
+  from understanding work to acting on it; one named example is delegating Azure DevOps
+  backlog work to Copilot.
+- 'Get-started line: open the GitHub Copilot app and select Customize to explore featured
+  customizations or browse by type.'
+interpretation: Official GA of a Copilot-app hub that treats MCP servers and Agent
+  Skills as first-class installable customizations alongside plugins and canvases.
+  Availability announcement, not a measured quality or adoption result.
+relatedRefs:
+- https://github.blog/changelog/feed
+- https://github.blog/changelog/all.atom
+sourceWarnings:
+- Atom updated time and RSS pubDate differ by a few minutes; calendar date on the
+  page is 2026-08-25.
+- Featured/trending copy and Azure DevOps canvas example are vendor product text and
+  were not exercised in this pass.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available
+- https://github.blog/changelog/all.atom
+verifiedAt: '2026-08-25T21:48:00Z'
+contradictions: []
+judgeAction: WATCH
+judgeRationale: Copilot 앱 Customize 탭 GA. MCP·플러그인·스킬·캔버스를 한 설치 허브로 묶는 가용 공지. MCP·Agent
+  Skills 표면에 인접하나 품질·도입 측정 없음. Codex/Claude Code/Grok 교체 근거 아님. 같은 날 CLI 대시보드와는 별
+  표면. 브랜드·트렌딩 복제 비가중. relatedCategories는 [] 유지.
+expectedBenefit: Copilot 앱에서 MCP/Skills를 Featured·유형별로 고르는 UI가 공개 카탈로그 관측점이 됨.
+switchingCost: 공지 추적 낮음. 기본 코딩 에이전트를 Copilot 앱으로 바꾸면 높음.
+maturity: developing
+risks:
+- Featured/trending·Azure DevOps 캔버스 예시는 벤더 카피이며 이 패스에서 미실행.
+- Atom updated와 RSS pubDate가 수분 차이.
+- 가용 공지를 스킬/MCP 품질 신호로 읽으면 과대평가.
+smallestUsefulExperiment: Changelog 문장만 읽고 MCP/Skills가 앱 맞춤 유형으로 올라왔는지 확인. 앱 설치·외부
+  게시 없음.
+recordStatus: approved
+```
+
+## github-copilot-cli-v1-0-81-10
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/26/regional-signal/international/github-copilot-cli-v1-0-81-10.yaml
+- sha256: 201cbfb4cac995d7ee14e1836e5e965eaa2f1a2037199051fa2b60b49667d27f
+- primaryUrl: https://github.com/github/copilot-cli/releases/tag/v1.0.81-10
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-copilot-cli-v1-0-81-10
+collectionDate: '2026-08-26'
+primaryCategory: international
+relatedCategories: []
+originBasis: Official GitHub release on github/copilot-cli; US multinational org,
+  not KR/JP.
+originalTitle: 1.0.81-10
+originalLanguage: en
+koreanSummary: Copilot CLI 1.0.81-10이 /plugin·/mcp·/skills 플러그인 대시보드를 전원에게 열고 /plugins를
+  제거. Auto mode가 대화 중 모델 선택을 바꾸고, --no-sandbox가 엔터프라이즈 정책 미확인으로 무시될 때 안내 문구를 고친다고
+  적는다.
+source: official_release
+canonicalId: github/copilot-cli@v1.0.81-10
+primaryUrl: https://github.com/github/copilot-cli/releases/tag/v1.0.81-10
+author: github
+project: github/copilot-cli
+publishedAt: '2026-08-25T21:15:43Z'
+observedFacts:
+- releases.atom updated 2026-08-25T21:15:43Z for tag v1.0.81-10.
+- 'Notes: the plugins dashboard is available to everyone via /plugin, /mcp, or /skills;
+  PLUGINS_DASHBOARD=false opts out of it and the copilot plugins command.'
+- 'Notes: Auto mode now adapts model selection as the task evolves during a conversation.'
+- 'Notes: /plugin flags installed plugins and marketplaces with a newer upstream version
+  and offers an Update action.'
+- 'Notes: when --no-sandbox is ignored because enterprise policy could not be determined,
+  the notice says so instead of claiming a policy requires the sandbox.'
+- Removed /plugins; resources moved to /plugin, /mcp, and /skills, with /subagents
+  and /instructions for agents and instructions. Enabling and disabling hooks and
+  LSP servers is temporarily unavailable because those toggles lived only on the removed
+  /plugins dashboard.
+- Prior in-window tag v1.0.81-9 (2026-08-24T17:42:32Z) only added model data-retention
+  warnings; v1.0.81-8 is on the skip list.
+interpretation: CLI-side GA of the MCP/Skills/plugin dashboard plus in-session model
+  routing and a sandbox-policy notice fix. Distinct surface from the Copilot app Customize
+  tab shipped the same day. Not a claim that the dashboard improves task quality.
+relatedRefs:
+- https://github.com/github/copilot-cli/releases.atom
+- https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available
+sourceWarnings:
+- Prerelease-style 1.0.81-N train; hooks/LSP toggles are temporarily gone.
+- Auto-mode routing behavior was not re-run in this pass.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/github/copilot-cli/releases/tag/v1.0.81-10
+- https://github.com/github/copilot-cli/releases.atom
+verifiedAt: '2026-08-25T21:48:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Copilot CLI가 /plugin·/mcp·/skills 대시보드를 열고 Auto mode가 대화 중 모델 선택을
+  바꾼다고 명시. 모델 라우팅·MCP·Skills 표면에 맞음. --no-sandbox 안내가 정책 미확인을 정정. 1.0.81-N 트레인이고 hooks/LSP
+  토글은 일시 제거. 앱 Customize 탭과 별개. 기본 스택 교체 아님.
+expectedBenefit: 세션 안에서 모델이 바뀌는 Auto mode와 /plugin 업데이트 배지를 CLI 라우팅·스킬 운영 체크리스트에 넣음.
+switchingCost: 릴리스 노트 흡수 낮음. Copilot CLI를 기본 하네스로 쓰면 중간. /plugins 제거로 훅·LSP 토글이 잠시
+  없음.
+maturity: developing
+risks:
+- prerelease 스타일 1.0.81-N. Auto mode 라우팅은 미재실행.
+- 훅·LSP enable/disable이 제거된 /plugins에만 있어 일시 불가.
+- 엔터프라이즈 정책 미확인 시 --no-sandbox가 무시됨. 문구만 고친 것.
+smallestUsefulExperiment: 노트에서 /plugin /mcp /skills 이동과 Auto mode·sandbox 안내만 읽기.
+  CLI 업그레이드·외부 게시 없음.
+recordStatus: approved
+```
+
+## github-next-knowledge-compressor-2026-08-24
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/26/regional-signal/international/github-next-knowledge-compressor-2026-08-24.yaml
+- sha256: 258734f5b6ea576d12330f487fd251414b0ec0039c78bbf1e1b62f5681e41778
+- primaryUrl: https://githubnext.com/posts/knowledge-compressor/
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-next-knowledge-compressor-2026-08-24
+collectionDate: '2026-08-26'
+primaryCategory: international
+relatedCategories: []
+originBasis: GitHub Next official research post (githubnext.com) by Alex Gorischek;
+  GitHub/Microsoft US multinational, not KR/JP.
+originalTitle: Knowledge Compressor
+originalLanguage: en
+koreanSummary: GitHub Next가 2026-08-24에 Knowledge Compressor 프로토타입을 공개. 기술 문서 토큰을
+  반복 압축해도 모델이 지식을 쓸 수 있는지 시험하며, 전형적 기술 문서는 토큰을 절반으로 줄여도 유용성이 크게 떨어지지 않았다고 적는다.
+source: technical_article
+canonicalId: githubnext.com/posts/knowledge-compressor
+primaryUrl: https://githubnext.com/posts/knowledge-compressor/
+author: Alex Gorischek
+project: GitHub Next / Knowledge Compressor
+publishedAt: '2026-08-24T12:00:00Z'
+observedFacts:
+- Page datetime attribute is 2026-08-24T12:00:00.000Z; byline is Alex Gorischek /
+  Aug 24, 2026 on githubnext.com.
+- Post states that redundancy in documentation costs tokens in agent sessions and
+  asks whether documentation can be compressed without losing meaning.
+- Describes a prototype that accepts articles and iteratively reduces token counts
+  while aiming to keep source knowledge usable.
+- 'Author takeaway on the page: typical technical documentation can have its token
+  count cut in half without substantially reducing usefulness to language models;
+  one evaluation article is shown going from 996 tokens to 480.'
+- HN story 49436882 created_at 2026-08-25T16:41:04Z links to this URL (primary artifact
+  is the GitHub Next post).
+interpretation: Official GitHub research lab write-up of a documentation-compression
+  loop aimed at agent context budgets. Author-reported token/usefulness numbers, not
+  an independent eval of coding-agent task success.
+relatedRefs:
+- https://news.ycombinator.com/item?id=49436882
+sourceWarnings:
+- Datetime includes a noon-looking 12:00:00Z; calendar date is 2026-08-24.
+- '"Cut in half" and the 996→480 example are author-reported on a prototype; no coding-agent
+  benchmark is claimed.'
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://githubnext.com/posts/knowledge-compressor/
+verifiedAt: '2026-08-25T21:48:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: GitHub Next가 기술 문서를 반복 압축해 에이전트 컨텍스트 예산을 줄이는 프로토타입을 공개. context engineering에
+  맞음. 절반 토큰·996→480은 저자 보고이고 코딩 에이전트 벤치는 없음. HN 점수 비가중. 설치 대상 아님.
+expectedBenefit: 전형적 기술 문서가 절반 토큰에서도 모델에 쓰일 수 있다는 가설을 컨텍스트 예산 논의에 넣음.
+switchingCost: 글 흡수 낮음. 문서 파이프를 이 압축기에 넣으면 중간이고 유용성 정의가 저자 측.
+maturity: experimental
+risks:
+- 유용성 유지·996→480은 프로토타입 저자 보고. 코딩 작업 성공률과 무관.
+- datetime 12:00:00Z는 noon 기본값일 수 있음.
+- 과압축이 절차·경고를 지울 수 있음.
+smallestUsefulExperiment: 본문 가설과 996→480 예시만 읽기. 문서 압축 파이프·외부 게시 없음.
+recordStatus: approved
+```
+
+## openai-codex-mcp-server-deprecated-2026-08-24
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/26/regional-signal/international/openai-codex-mcp-server-deprecated-2026-08-24.yaml
+- sha256: c88fadfa053e78192bdeb84020f5511e376dace0e8628b10a31bc07338731194
+- primaryUrl: https://openai.com/products/release-notes#CL-20260824-CODE-430
+
+```yaml
+schemaVersion: regional-signal/v1
+id: openai-codex-mcp-server-deprecated-2026-08-24
+collectionDate: '2026-08-26'
+primaryCategory: international
+relatedCategories: []
+originBasis: OpenAI official product release notes (openai.com/products/release-notes)
+  for Codex; US multinational, not KR/JP.
+originalTitle: Codex MCP server command deprecated
+originalLanguage: en
+koreanSummary: OpenAI가 2026-08-24 릴리스 노트에서 Codex의 `codex mcp-server` 명령을 폐기한다고 공지.
+  대체는 Codex app server이며, Claude Code에서 Codex를 쓰려면 Codex plugin for Claude Code를 쓰라고
+  적는다.
+source: official_release
+canonicalId: openai.com/products/release-notes#CL-20260824-CODE-430
+primaryUrl: https://openai.com/products/release-notes#CL-20260824-CODE-430
+author: OpenAI
+project: OpenAI Codex
+publishedAt: '2026-08-24T00:00:00Z'
+observedFacts:
+- openai.com/products/release-notes/rss.xml item titled "Codex MCP server command
+  deprecated" has pubDate Mon, 24 Aug 2026 00:00:00 GMT and guid CL-20260824-CODE-430;
+  category is codex.
+- 'Item description: "The codex mcp-server command is now deprecated. Use the Codex
+  app server instead. To use Codex from Claude Code, use the Codex plugin for Claude
+  Code."'
+- The same wording appears on the HTML release-notes page under Codex / Aug 24, 2026
+  / Sunset, and on learn.chatgpt.com/docs/changelog under heading dated 2026-08-24.
+- Release-notes HTML lists platform facets platform-codex-cli and platform-chatgpt-desktop
+  for this item.
+interpretation: 'Official Codex transport sunset: the dedicated MCP-server CLI command
+  is replaced by the Codex app server, with a named Claude Code plugin path. Directional
+  interoperability change, not a measured migration guide or compatibility matrix.'
+relatedRefs:
+- https://openai.com/products/release-notes/rss.xml
+- https://learn.chatgpt.com/docs/changelog#codex-2026-08-24
+sourceWarnings:
+- RSS pubDate is midnight UTC on the calendar date; exact clock time is not published.
+- Replacement app-server and Claude Code plugin behavior were not exercised in this
+  pass.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://openai.com/products/release-notes#CL-20260824-CODE-430
+- https://openai.com/products/release-notes/rss.xml
+verifiedAt: '2026-08-25T21:48:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 공식 Codex가 `codex mcp-server`를 폐기하고 Codex app server로 대체. Claude Code에서는
+  Codex plugin을 쓰라고 적음. Codex·MCP·Claude Code 상호운용에 직접 맞음. 마이그레이션 매트릭스·호환 측정은 없음.
+  대체 경로 미실행이라 EXPERIMENT/ADOPT 아님. 이 핸드오프에 korea/japan 대응 없음.
+expectedBenefit: Codex를 MCP 서버 CLI가 아니라 app server/Claude Code 플러그인으로 붙이는 방향이 고정됨.
+  기존 mcp-server 설정을 폐기 대상으로 표시.
+switchingCost: 노트 흡수 낮음. 이미 `codex mcp-server`를 쓰면 app server·플러그인 이전은 중간. 호환표가 없어
+  회귀 가능.
+maturity: developing
+risks:
+- RSS 시각이 자정이라 당일 시각 미확인.
+- app server와 Claude Code 플러그인 동작은 이 패스에서 미실행.
+- 폐기만 있고 호환 매트릭스가 없음.
+smallestUsefulExperiment: 릴리스 노트와 learn.chatgpt changelog 문장만 현재 Codex MCP 설정과 대조.
+  이전 실행·외부 게시 없음.
+recordStatus: approved
+```
+
+## xhluca-session-migrate-v0-8-0
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/26/regional-signal/international/xhluca-session-migrate-v0-8-0.yaml
+- sha256: d42067bdfe31c7939df725e9cf8a91f4ca0e0f7041987dfa53b76b741d9bede1
+- primaryUrl: https://github.com/xhluca/session-migrate/releases/tag/v0.8.0
+
+```yaml
+schemaVersion: regional-signal/v1
+id: xhluca-session-migrate-v0-8-0
+collectionDate: '2026-08-26'
+primaryCategory: international
+relatedCategories: []
+originBasis: GitHub profile for Xing Han Lu (xhluca) lists home location Canada and
+  organization McGill-NLP; not KR/JP. Yesterday approved v0.7.1; this is a new tag.
+originalTitle: session-migrate 0.8.0
+originalLanguage: en
+koreanSummary: session-migrate 0.8.0이 Muse Code 0.2.1·Qwen Code 0.22.1·Kimi Code 0.38.0를
+  양방향 1급 포맷으로 추가. 11개 네이티브 포맷, 121개 경로, 세 하네스의 OpenRouter continuation gate, 자격증명
+  비이관을 명시한다. Cursor는 experimental·text-only로 남긴다.
+source: official_release
+canonicalId: xhluca/session-migrate@v0.8.0
+primaryUrl: https://github.com/xhluca/session-migrate/releases/tag/v0.8.0
+author: xhluca
+project: xhluca/session-migrate
+publishedAt: '2026-08-25T21:00:01Z'
+observedFacts:
+- releases.atom updated 2026-08-25T21:00:01Z for tag v0.8.0, inside the window end
+  2026-08-25T21:33:23Z. Prior approved tag v0.7.1 is 2026-08-21T21:41:05Z (now outside
+  this window).
+- 'Notes: first-class bidirectional support for Muse Code 0.2.1, Qwen Code 0.22.1,
+  and Kimi Code 0.38.0.'
+- 'Notes: 11 readable and writable native formats; 121 ordered routes; native discovery,
+  inspection, title search, transfer, and same-format rewrites.'
+- 'Notes: real OpenRouter continuation gates for all three new harnesses; 558 Claude/Codex
+  corpus conversions plus 33 inverse real-trajectory routes.'
+- 'Notes: Cursor remains pinned, experimental, and text-only. Default test suite is
+  credential-free and network-free. Provider credentials and runtime configuration
+  are never migrated.'
+interpretation: 'New-tag harness expansion beyond yesterday''s title-transfer increment:
+  three additional coding-agent formats and a stated 121-route matrix. Portability
+  signal, not a compatibility proof for every route.'
+relatedRefs:
+- https://github.com/xhluca/session-migrate
+- https://github.com/xhluca/session-migrate/releases/tag/v0.7.1
+sourceWarnings:
+- Route counts and corpus sizes are project-reported and were not re-run here.
+- Cursor remains experimental; credentials/runtime config are intentionally not migrated.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/xhluca/session-migrate/releases/tag/v0.8.0
+- https://github.com/xhluca/session-migrate/releases.atom
+verifiedAt: '2026-08-25T21:48:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 어제 v0.7.1 READ(제목 전송) 다음 태그. Muse·Qwen·Kimi를 양방향 1급으로 넣고 11 포맷·121
+  경로를 주장. 하네스 상호운용은 맞으나 경로 수·코퍼스는 프로젝트 보고. 자격증명 비이관·Cursor experimental 유지. 중복 IGNORE
+  아님. 실세션 이주는 올리지 않음. 스타 비가중.
+expectedBenefit: Claude/Codex 말고 Muse/Qwen/Kimi 세션을 같은 CLI로 옮기는 경로가 생김. OpenRouter
+  continuation gate를 세 하네스에 명시.
+switchingCost: 노트 열람 낮음. 실세션 이주는 중간~높음. 자격증명·런타임 설정은 안 넘어감.
+maturity: early
+risks:
+- 121 경로·558+33 코퍼스는 미재실행 프로젝트 수치.
+- Cursor는 experimental·text-only. 자격증명은 의도적으로 미이관.
+- 실세션 이주는 프롬프트가 다른 하네스 로그로 새어 나갈 수 있음.
+smallestUsefulExperiment: v0.8.0 노트의 신규 3포맷·자격증명 비이관만 읽고 v0.7.1과 델타 확인. 실세션 이주·외부
+  게시 없음.
+recordStatus: approved
+```
+
+## demia-agent-ui-component-library
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/26/regional-signal/japan/demia-agent-ui-component-library.yaml
+- sha256: 376d8775ef74a94d8834f44378bcf3a7862b4d0f8342b832f627ba1d50a7b867
+- primaryUrl: https://zenn.dev/demia/articles/6c1291f0dae964
+
+```yaml
+schemaVersion: regional-signal/v1
+id: demia-agent-ui-component-library
+collectionDate: '2026-08-26'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official 株式会社DeMiA Zenn publication (demia). Author Daichi (daichi_kido)
+  writing as DeMiA. 株式会社 is a Japan corporate form; publication name is 株式会社DeMiA.
+originalTitle: エージェントのためのUIコンポーネントライブラリを作った
+originalLanguage: ja
+koreanSummary: 주식회사 DeMiA가 코딩 에이전트용 UI 라이브러리 DeMiA UI를 공개했다. className/style를 받지 않는
+  시맨틱 props, npx @demia/react add-skill로 node_modules 문서 경로만 Skill에 심고, 27컴포넌트에 VRT·oxlint
+  규칙으로 에이전트가 디자인을 깨지 못하게 한다.
+source: public_case_study
+canonicalId: zenn:demia:6c1291f0dae964
+primaryUrl: https://zenn.dev/demia/articles/6c1291f0dae964
+author: daichi_kido
+project: DeMiA UI (@demia/react)
+publishedAt: '2026-08-24T12:44:40Z'
+observedFacts:
+- 'Zenn API published_at 2026-08-24T21:44:40.689+09:00 (2026-08-24T12:44:40Z, inside
+  window). Publication: 株式会社DeMiA. Article frames Figma MCP, Playwright screenshots,
+  and long design prompts as insufficient to keep generated UI from drifting.'
+- 'DeMiA UI components accept only semantic props (example: Button variant/size/shape/color).
+  They do not take className or style, so an agent cannot locally override the design
+  system. Illegal color x variant combinations are expressed in TypeScript types.'
+- 'Skill install command: npx @demia/react add-skill gh (custom; they rejected npx
+  skill because sales users without GitHub also make mockups). The Skill tells the
+  agent to read node_modules/@demia/react/dist/docs/introduction.mdx and .../docs/components/*.mdx
+  so docs stay version-locked to the installed package. Bundled docs include Do/Don''t,
+  API reference, label wording, and per-use-case examples.'
+- 'Library hygiene: visual regression tests on every component (finite appearance
+  space because props are semantic); JSDoc-generated API reference so docs cannot
+  drift from code; oxlint JS plugins with rules such as no-inline-style-object, no-direct-theme-token-import,
+  no-external-icon-import, require-screenshot-assertion, require-calc-reason.'
+- 'Current size: 27 components, already used on internal systems and mockups. Author
+  states accessibility can be implemented but is not yet mechanically guaranteed.'
+interpretation: 'Japan product-team case: the agent-facing contract is a closed prop
+  surface plus a Skill that only points at versioned in-package docs. The linter/VRT
+  layer is how they keep the agent from reopening that surface.'
+relatedRefs:
+- https://zenn.dev/demia/articles/6c1291f0dae964
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/demia/articles/6c1291f0dae964
+- https://zenn.dev/api/articles/6c1291f0dae964
+verifiedAt: '2026-08-25T21:57:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 에이전트용 UI 라이브러리. semantic props만 받고 className/style 거절, Skill은 node_modules
+  문서 경로만 심어 버전 고정. Agent Skills 소비 계약에 인접. 디자인 시스템 교체 근거 아님. a11y는 기계 보장 전. 코어 하네스/MCP보다
+  주변. 설치 EXPERIMENT 안 올림.
+expectedBenefit: 닫힌 prop 표면 + 패키지 동봉 Do/Don't 문서 + oxlint/VRT로 에이전트가 디자인 시스템을 다시 열지
+  못하게 하는 계약.
+switchingCost: 글 흡수 낮음. UI 킷을 @demia/react로 바꾸면 중간. add-skill은 GitHub 없는 사용자용 커스텀.
+maturity: early
+risks:
+- 27컴포넌트. 접근성은 구현 가능하나 기계 보장 전이라고 적음.
+- 내부 시스템·목업 사용. 외부 품질 측정 없음.
+- 시맨틱 props가 표현력을 닫아 에이전트가 우회 인라인 스타일을 찾을 수 있음. lint가 그 구멍을 막는지 미재현.
+smallestUsefulExperiment: className 거절과 Skill→dist/docs 경로 고정만 읽고 에이전트용 라이브러리 문서 전략과
+  대조. npx add-skill·외부 게시 없음.
+recordStatus: approved
+```
+
+## gmo-conoha-vps-mcp-harness-safety
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/26/regional-signal/japan/gmo-conoha-vps-mcp-harness-safety.yaml
+- sha256: 2fe03ee91377a38aaea8c389bbc5bea0301e1472ac0c9eb61e2481367557b70e
+- primaryUrl: https://developers.gmo.jp/technology/85730/
+
+```yaml
+schemaVersion: regional-signal/v1
+id: gmo-conoha-vps-mcp-harness-safety
+collectionDate: '2026-08-26'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official GMO Developers blog (developers.gmo.jp) of GMOインターネット株式会社, Japan.
+  Interviewees are GMO Internet ドメインクラウド事業本部 / ConoHa開発部 engineers.
+originalTitle: AIがAIを開発し、AIが利用する。「最速」と「安全」を両立したConoHa VPS MCP開発の裏側
+originalLanguage: ja
+koreanSummary: GMO인터넷이 7월 7일 낸 ConoHa VPS MCP 원격판을 Claude Code 하네스로 만든 과정을 공개했다. 규칙으로
+  AI가 못 벗어나게 하고, Codex·Takumi·SOC 펜테스트로 리뷰하며, 삭제는 확인·자격증명은 AI에 안 남긴다.
+source: public_case_study
+canonicalId: gmo:developers/85730
+primaryUrl: https://developers.gmo.jp/technology/85730/
+author: GMO Developers (松本佑樹 / 平野空暉 / 馬場純一郎)
+project: ConoHa VPS MCP
+publishedAt: '2026-08-25T01:00:00Z'
+observedFacts:
+- GMO Developers RSS pubDate Tue, 25 Aug 2026 01:00:00 GMT for this URL (inside window).
+  Page is an interview on developers.gmo.jp.
+- 'Product: remote MCP so AI agents operate ConoHa VPS in natural language. OSS local
+  MCP shipped 2025-07; remote MCP released 2026-07-07. Claim: first MCP from a domestic
+  Japanese cloud vendor. Remote setup is click-oriented after OSS setup friction.'
+- '平野: company security rules were defined first, then a harness so the agent cannot
+  leave those rails, then free development. OSS feature adds often reached near-complete
+  from one prompt under the same rules. 馬場: project quality rules in the harness shortened
+  onboarding.'
+- 'Review stack stated: (1) Claude Code + Codex source review (Codex added so Claude
+  does not self-review), (2) Takumi security review, (3) human SOC team pentest/review.
+  Code-review cycle 2–3 days; behavior verification about 1 month until critical findings
+  stopped appearing.'
+- 'Safety: recreate/read operations lightly gated; delete asks confirmation first.
+  API credentials are not stored on the AI side. Common mistakes written as MCP-side
+  prompts; Skills (procedure docs for using the MCP) shipped as a pair. IaC (Terraform)
+  is called the better fit for large defined infra; MCP for short vibe-coding / try-and-share
+  loops. MCP interface itself is free; created VPS is billed.'
+interpretation: 'Japan hosting vendor case: the MCP is the product, but the signal
+  is the coding-agent harness — rails first, then multi-model review, then SOC — used
+  to ship an agent-facing control plane that treats delete and credential custody
+  as different classes of action.'
+relatedRefs:
+- https://developers.gmo.jp/technology/85730/
+- https://developers.gmo.jp/technology/84294/
+- https://developers.gmo.jp/feed
+sourceWarnings:
+- Interview / product narrative; request-volume and 'first domestic MCP' claims are
+  vendor statements and were not independently counted this pass.
+- Remote MCP itself shipped 2026-07-07 (before window); this item is the 2026-08-25
+  development write-up.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://developers.gmo.jp/technology/85730/
+- https://developers.gmo.jp/feed/
+verifiedAt: '2026-08-25T21:55:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 원격 ConoHa VPS MCP를 Claude Code 하네스로 만든 인터뷰. 규칙→레일→자유 개발, Claude+Codex
+  교차 리뷰(자기검토 금지), Takumi, SOC 펜테스트. MCP·harness·Codex·sandboxing에 맞음. 삭제는 확인, 자격증명은
+  AI 쪽에 안 남김. 제품은 2026-07-07 출시(창 밖). 이 신호는 8/25 회고. VPS 기동 EXPERIMENT 아님. 벤더 '국내
+  최초' 비가중.
+expectedBenefit: 에이전트 대면 컨트롤 플레인에서 삭제와 자격 보관을 다른 등급으로 두는 체크리스트. Skills를 MCP 절차서로 짝지어
+  냄.
+switchingCost: 글 흡수 낮음. ConoHa 원격 MCP를 인프라 컨트롤로 쓰면 중간~높음(생성 VPS 과금).
+maturity: developing
+risks:
+- 요청량·국내 최초는 벤더 서술. 미검증.
+- 리뷰 주기 2–3일·치명 이슈 소멸 1개월은 인터뷰 수치.
+- IaC vs MCP 구분은 저자 의견. 대형 인프라에 MCP를 쓰면 안 된다고 단정할 근거는 이 글뿐.
+smallestUsefulExperiment: 레일 우선·교차 리뷰·삭제 확인·자격 AI 비보관 네 줄만 현재 MCP 권한과 대조. ConoHa 연동·외부
+  게시 없음.
+recordStatus: approved
+```
+
+## gmo-conoha-vps-mcp-hermes-openclaw-nanoclaw
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/26/regional-signal/japan/gmo-conoha-vps-mcp-hermes-openclaw-nanoclaw.yaml
+- sha256: 1bd55f6d94bfc79733bd4ae2b11845e3c24222181e07113c1d9fd39df62d4a28
+- primaryUrl: https://developers.gmo.jp/technology/84294/
+
+```yaml
+schemaVersion: regional-signal/v1
+id: gmo-conoha-vps-mcp-hermes-openclaw-nanoclaw
+collectionDate: '2026-08-26'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official GMO Developers technical post by 馬場純一郎, ConoHa backend engineer
+  at GMOインターネット株式会社 (Japan), 2026 new-graduate.
+originalTitle: ConoHa VPS MCPで色々なAIエージェントを構築してみた＜Hermes Agent / OpenClaw / NanoClaw＞
+originalLanguage: ja
+koreanSummary: GMO인터넷 바바가 ConoHa VPS 원격 MCP(api.conoha.jp/vps/mcp, OAuth 2.1)로 Claude
+  Code Opus 4.8에서 Hermes·OpenClaw·NanoClaw VPS를 만들었다. 같은 프롬프트인데 Hermes는 용어 확인, NanoClaw는
+  웹검색부터 했다.
+source: technical_article
+canonicalId: gmo:developers/84294
+primaryUrl: https://developers.gmo.jp/technology/84294/
+author: 馬場純一郎
+project: ConoHa VPS MCP
+publishedAt: '2026-08-25T01:02:00Z'
+observedFacts:
+- 'GMO Developers RSS pubDate Tue, 25 Aug 2026 01:02:00 GMT for this URL (inside window).
+  Author box: 馬場純一郎, GMOインターネット株式会社 システム本部, ConoHa development, joined 2026.'
+- Remote MCP endpoint stated as https://api.conoha.jp/vps/mcp; auth OAuth 2.1 with
+  token expiry on the ConoHa side (API keys not written into the client config). OSS/local
+  variant is Node.js or Docker with API-key auth.
+- 'Build path: ConoHa quickstart, remote MCP attached. Measurement env: Ubuntu 24.04
+  on WSL2, model Opus 4.8, client Claude Code.'
+- 'Prompt ''Hermes Agentが入っているサーバーを作成してください'': Claude started with term disambiguation,
+  treated it as a SaaS/OSS agent product, found ConoHa''s Hermes startup script, proposed
+  specs, then built the VPS after OS/SSH/storage answers. Author notes higher-capability
+  models tend to do this confirmation first.'
+- 'Prompt ''OpenClawがセットアップされたサーバーを作成してください'': skipped term check and went to the
+  OpenClaw startup script, then the same spec dialogue. Prompt ''NanoClawがセットアップされたサーバーを作成してください'':
+  started with Web search, then found the NanoClaw startup script. Author states same
+  model can take a different path when the user does not specify procedure.'
+- Positions OpenClaw as nearly unlimited host access (credential-leak risk); NanoClaw
+  as mandatory container isolation (OS-level, not app allowlists); Hermes as three-layer
+  memory (durable facts / session search / procedural skills).
+interpretation: 'Same Japanese vendor as the harness interview, but this is a measured
+  client-side walk: one Claude Code session, three startup-script agents, three different
+  first moves. The MCP is the control plane; the interesting variance is how the coding
+  agent grounds a product name before it mutates infra.'
+relatedRefs:
+- https://developers.gmo.jp/technology/84294/
+- https://developers.gmo.jp/technology/85730/
+- https://developers.gmo.jp/feed
+sourceWarnings:
+- Vendor walkthrough of a product released 2026-07-07; spec numbers shown in screenshots
+  were not re-read as text this pass.
+- Typo 'Hermes Agentt' appears in the page body.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://developers.gmo.jp/technology/84294/
+- https://developers.gmo.jp/feed/
+verifiedAt: '2026-08-25T21:55:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 같은 벤더의 클라이언트 실측. Claude Code Opus 4.8이 원격 MCP로 Hermes/OpenClaw/NanoClaw
+  VPS를 만들 때 첫 수가 다름(용어 확인 / 스타트업 스크립트 / 웹검색). Claude Code·MCP에 맞음. 자매 글 85730(하네스
+  안전)과 다른 아티팩트. 생성 VPS는 과금. 기동 실험 아님. 모델명 비가중.
+expectedBenefit: 제품명만 주고 절차를 안 주면 같은 모델도 그라운딩 경로가 갈림. OpenClaw=호스트 광역/유출, NanoClaw=컨테이너
+  격리, Hermes=3층 메모리라는 저자 구분.
+switchingCost: 글 흡수 낮음. 같은 프롬프트로 VPS를 만들면 과금·자격 노출.
+maturity: early
+risks:
+- 벤더 워크스루. 스펙 숫자는 스크린샷 미재독.
+- OpenClaw를 켜면 호스트 자격 유출 위험을 저자가 명시.
+- 본문 오타 'Hermes Agentt'.
+- 원격 MCP 출시는 창 전(2026-07-07).
+smallestUsefulExperiment: 세 프롬프트의 첫 수와 OAuth 2.1(클라이언트에 API 키 안 씀)만 읽기. VPS 생성·외부
+  게시 없음.
+recordStatus: approved
+```
+
+## hissy-concretecms-mcp-token-security
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/26/regional-signal/japan/hissy-concretecms-mcp-token-security.yaml
+- sha256: 2c011d123380ea42423db556d994dd03afc65df8c56f14b3a4db6ae7c9a44152
+- primaryUrl: https://zenn.dev/hissy/articles/concretecms-mcp-security
+
+```yaml
+schemaVersion: regional-signal/v1
+id: hissy-concretecms-mcp-token-security
+collectionDate: '2026-08-26'
+primaryCategory: japan
+relatedCategories: []
+originBasis: 'Author 菱川 拓郎 (hissy): Zenn bio 株式会社マカルーデジタル代表取締役, founded コンクリートファイブジャパン株式会社
+  (2012). GitHub HTML Home location: Tokyo, Japan.'
+originalTitle: Concrete CMS MCP Server 入門（4）— トークン管理とセキュリティ
+originalLanguage: ja
+koreanSummary: 도쿄 마카루디지털 히시카와가 Concrete CMS MCP 토큰을 사이트 해시 디렉터리와 0600 파일로 나눈다. stdio는
+  암호화 키 권고, HTTP는 AES-256-GCM과 MCP_API_KEY 필수. 키체인 저장은 아직 없다. 같은 사용자 OAuth 중복 시작은
+  409.
+source: technical_article
+canonicalId: zenn:hissy:concretecms-mcp-security
+primaryUrl: https://zenn.dev/hissy/articles/concretecms-mcp-security
+author: hissy
+project: Concrete CMS MCP Server
+publishedAt: '2026-08-24T10:53:40Z'
+observedFacts:
+- 'Zenn API published_at 2026-08-24T19:53:40.613+09:00 (2026-08-24T10:53:40Z, inside
+  window). Author 菱川 拓郎, 株式会社マカルーデジタル CEO; GitHub HTML aria-label Home location: Tokyo,
+  Japan. This is part 4 of his Concrete CMS MCP series.'
+- After OAuth the MCP server writes CMS access and refresh tokens to disk with the
+  same privilege as the authorizing CMS user. Default directory is under ~/.concretecms-mcp/tokens/<siteKey>/
+  where siteKey is a 16-char hash of CONCRETE_CANONICAL_URL. Files are per CMS user
+  id; stdio uses the local user key. File mode 0600. Access tokens refresh 60s before
+  expiry.
+- 'stdio (Claude Desktop / Cursor default): OAuth starts on the first tool call, not
+  process start; per-user lockfile; TOKEN_ENCRYPTION_KEY is optional but warned if
+  missing. OS keychain (macOS Keychain / libsecret) is not implemented at time of
+  writing. Shared machines are told to set TOKEN_ENCRYPTION_KEY.'
+- 'HTTP transport: TOKEN_ENCRYPTION_KEY required (AES-256-GCM at rest); MCP_API_KEY
+  required; MCP and OAuth admin routes Bearer-protected; oauth callback and health
+  are public (callback uses PKCE). Default rate limit 10 requests per minute per IP.
+  Concurrent oauth start for the same user returns 409.'
+- 'The server trusts X-Concrete-User-Id only from a holder of MCP_API_KEY; the article
+  says keys stay on the server or desktop environment, not in browser JavaScript.
+  Author: do not commit tokens or paste them into chat logs or screenshots.'
+interpretation: Japan MCP implementer treating privilege as the CMS user you authorized
+  as, and HTTP mode fails closed without encryption plus an API key. The 409 lock
+  is the concurrent-auth incident they chose to make visible.
+relatedRefs:
+- https://zenn.dev/hissy/articles/concretecms-mcp-security
+- https://zenn.dev/hissy/articles/concretecms-mcp-intro
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/hissy/articles/concretecms-mcp-security
+- https://zenn.dev/api/articles/concretecms-mcp-security
+verifiedAt: '2026-08-25T21:57:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Concrete CMS MCP가 토큰을 사이트 해시 디렉터리·0600으로 나누고, HTTP는 AES-256-GCM+MCP_API_KEY
+  없으면 실패 닫힘. 같은 사용자 OAuth 중복은 409. MCP 로컬 보안 운영에 맞음. 권한은 승인한 CMS 사용자와 동일. 키체인 미구현.
+  CMS 기동 EXPERIMENT 아님. 시리즈 4편.
+expectedBenefit: stdio는 첫 툴 호출 때 OAuth, HTTP는 암호화 키·API 키 필수. 토큰을 채팅/스크린샷에 붙이지 말라는
+  운영 규칙.
+switchingCost: 글 흡수 낮음. Concrete CMS MCP를 쓰려면 CMS·OAuth 구성이 중간.
+maturity: developing
+risks:
+- OS 키체인 미구현. 공유 머신에서 TOKEN_ENCRYPTION_KEY 누락 시 stdio는 경고만.
+- 권한=CMS 사용자. 넓게 승인한 토큰이 디스크에 남음.
+- 콜백·health는 공개(PKCE). 기본 레이트리밋 10/min/IP.
+smallestUsefulExperiment: stdio vs HTTP 실패 닫힘과 409 락만 읽고 현재 MCP 토큰 보관과 대조. CMS 연동·외부
+  게시 없음.
+recordStatus: approved
+```
+
+## zenn-acntechjp-knowledge-gap-radar-routing
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/26/regional-signal/japan/zenn-acntechjp-knowledge-gap-radar-routing.yaml
+- sha256: 581e087330e0b197c458a060af584bf5f43740973d1bab6741184491660de15b
+- primaryUrl: https://zenn.dev/acntechjp/articles/2ed34149089122
+
+```yaml
+schemaVersion: regional-signal/v1
+id: zenn-acntechjp-knowledge-gap-radar-routing
+collectionDate: '2026-08-26'
+primaryCategory: japan
+relatedCategories: []
+originBasis: 'Accenture Japan (有志) official Zenn publication (acntechjp). Author yasuyuki.sano
+  / y_sano bio: アクセンチュア株式会社. Publication is Accenture Japan employee volunteer, not
+  a language-only Zenn post.'
+originalTitle: Knowledge Graphの不足検出とGemini/Claudeの使い分け
+originalLanguage: ja
+koreanSummary: 액센추어 재팬 사노가 Graph RAG 구멍을 파이썬으로 찾고 Gemini 3.5 Flash-Lite와 Claude Sonnet
+  5에 같은 목록을 돌렸다. 우선순위가 이미 갈리면 Gemini, 다른 gap_type 동점은 사람이 resolve_ties를 켠 때만 Claude.
+source: technical_article
+canonicalId: zenn:acntechjp:2ed34149089122
+primaryUrl: https://zenn.dev/acntechjp/articles/2ed34149089122
+author: yasuyuki.sano
+project: Knowledge Gap Radar / Graph RAG
+publishedAt: '2026-08-24T21:30:05Z'
+observedFacts:
+- Zenn acntechjp publication Atom publishedAt 2026-08-24T21:30:05Z; API published_at
+  2026-08-25T06:30:05.286+09:00. Publication display_name Accenture Japan (有志); author
+  bio 所属企業（アクセンチュア株式会社）.
+- 'Gap detector is deterministic Python over the graph (no LLM): project_missing_outcome,
+  outcome_missing_quantity, skill_missing_link, artifact_missing_source_project, insufficient_query_grounding.
+  Local mode checks the query neighborhood; global mode walks the whole graph. Priority
+  is hop-distance from the search seed (HIGH / MEDIUM / LOW). Gaps are candidates
+  only; YAML is not auto-written.'
+- 'Same gap list and prompt given to Gemini 3.5 Flash-Lite and Claude Sonnet 5 across
+  four case types (structural miss, missing quantity, mixed, easy). Guardrail: do
+  not invent nodes/facts not in the list.'
+- 'Structural and quantity cases: both models kept HIGH→MEDIUM→LOW. Mixed LOW: Claude
+  reordered outcome_missing_quantity (edit existing node) before project_missing_outcome
+  (add structure); Gemini left them tied. Easy case: Gemini left three LOWs tied;
+  Claude spent more time ranking them. One timed run: Gemini ~3.7s vs Claude ~41.2s.
+  Author says Gemini cost is character-based estimate and Claude is Claude Code CLI
+  self-report, so money ratio is not a tariff comparison.'
+- 'Eight answers (4×2) were human-checked against the gap list; no invented node IDs
+  or numbers. Final router: no tie → Gemini; tie with one gap_type → Gemini; mixed-type
+  tie → Claude only if human sets resolve_ties=true. Mixed-case timed run: Gemini
+  ~5.9s vs --resolve-ties Claude ~21.8s.'
+interpretation: 'Japan consulting PoC that refuses to auto-route to the expensive
+  model: Python owns gap detection and hop priority, Gemini is the default reviewer,
+  and Claude is an explicit tie-break the human opts into. Routing here is a measured
+  escalate-on-demand switch, not a learned classifier.'
+relatedRefs:
+- https://zenn.dev/acntechjp/articles/2ed34149089122
+- https://zenn.dev/api/articles/2ed34149089122
+sourceWarnings:
+- Graph-RAG PoC, not a coding-agent harness. Timing/cost figures are single-run author
+  measurements with incomparable cost bases.
+- Publication is employee volunteer (有志) and states posts are personal views, not
+  Accenture official product docs.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/acntechjp/articles/2ed34149089122
+- https://zenn.dev/api/articles/2ed34149089122
+verifiedAt: '2026-08-25T21:55:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 그래프 구멍은 파이썬이 찾고, 기본 리뷰는 Gemini, 이종 gap_type 동점만 사람이 resolve_ties를
+  켤 때 Claude. model routing에 맞음. 학습 분류기가 아니라 측정된 에스컬레이션. Graph RAG PoC이지 코딩 에이전트 하네스
+  아님. 비용 기준이 서로 달라 요금 비교 금지. 유명 컨설팅 브랜드 비가중.
+expectedBenefit: '비싼 모델을 기본 라우트로 두지 않는 규칙: 동점 없음/동종 동점→Gemini, 이종 동점→사람 게이트 후 Claude.'
+switchingCost: 글 흡수 낮음. Graph RAG 파이프에 이 라우터를 넣으면 중간.
+maturity: early
+risks:
+- 시간·비용은 1회 측정이고 Gemini 문자 추정 vs Claude Code CLI 자가보고라 비교 불가.
+- 액센추어 재팬 유저 유저(有志) 개인 견해. 공식 제품 문서 아님.
+- YAML 자동 기입 없음. 구멍을 후보로만 둠.
+smallestUsefulExperiment: 최종 라우터 세 갈래와 '목록에 없는 노드 금지'만 현재 모델 라우팅과 대조. Gemini/Claude
+  일괄 재실행·외부 게시 없음.
+recordStatus: approved
+```
+
+## zenn-fairydevices-claude-memory-gc-skills
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/26/regional-signal/japan/zenn-fairydevices-claude-memory-gc-skills.yaml
+- sha256: d38ebae8b7ce2a9a5e7ffc98da70a46cf2272364f33f1c41c40b9bc68584e306
+- primaryUrl: https://zenn.dev/fairydevices/articles/0723b8b06c1957
+
+```yaml
+schemaVersion: regional-signal/v1
+id: zenn-fairydevices-claude-memory-gc-skills
+collectionDate: '2026-08-26'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official フェアリーデバイセズ公式 Zenn publication (Fairy Devices Inc., Tokyo). Author
+  河野 / tatsuya6502 is Fairy Devices プロダクト開発部; GitHub HTML profile location Japan;
+  org fairydevicesrd location Tokyo, Japan.
+originalTitle: Claude CodeのMEMORY棚卸しスキルを自作して1ヶ月間使ってみた
+originalLanguage: ja
+koreanSummary: 도쿄 Fairy Devices 고노가 Claude Code MEMORY가 썩는 문제에 대해 memory-gc·promote-knowledge
+  스킬을 1개월 운용했다. SessionStart lint와 주 1회 사람 승인 트리아지로 색인을 줄였고, SkillSpector 6/100 뒤
+  샌드박스 안내를 hardened 했다.
+source: public_case_study
+canonicalId: zenn:fairydevices:0723b8b06c1957
+primaryUrl: https://zenn.dev/fairydevices/articles/0723b8b06c1957
+author: tatsuya6502
+project: tatsuya6502/cc-skills (memory-gc)
+publishedAt: '2026-08-25T04:28:55Z'
+observedFacts:
+- Zenn fairydevices publication Atom publishedAt 2026-08-25T04:28:55Z; API published_at
+  2026-08-25T13:28:55.277+09:00 (same instant). Publication display_name is フェアリーデバイセズ公式.
+- 'Body: author 河野 is Fairy Devices プロダクト開発部 (Rust backend / Kubernetes). GitHub HTML
+  https://github.com/tatsuya6502 returns aria-label Home location: Japan. Org https://github.com/fairydevicesrd
+  itemprop=location Tokyo, Japan.'
+- States Claude Code MEMORY is Markdown under ~/.claude/projects/<encoded-path>/memory/
+  plus MEMORY.md; v2.1.241 has no built-in GC. Work project reached 110 memory files
+  / 18.7KB index (~4–5k tokens every session).
+- 'memory-gc: SessionStart lint.sh injects MEMORY-LINT: lines only on problems (orphans,
+  dead links, section budgets Active 22 / Backlog 10 / Durable 45, overdue weekly
+  gc, past-due reminders). /memory-gc classifies ARCHIVE/MOVE/MERGE/UPDATE/PROMOTE/DELETE?/KEEP
+  and stops at a proposal table; no mutation until per-row human approval. Archive
+  is mv to archive/, not delete.'
+- 'Sister skill promote-knowledge nominates team-sharable facts into CLAUDE.md / .claude/rules/;
+  working-tree edits only, no commit. Main-project ops 2026-07-12..08-17: 10 gc runs;
+  33 memories → 8 bundles, index 125→98 lines, live files 110→83 then 70 live / 94
+  archived. Completed-marker items: fewer than half were actually archivable.'
+- 'Published MIT on personal repo tatsuya6502/cc-skills (not the company repo). Install:
+  /plugin marketplace add tatsuya6502/cc-skills then /plugin install memory-gc@cc-skills.
+  SkillSpector 6/100 LOW/SAFE. Changelog: v1.0.0 2026-08-23 (sandbox allowlist + narrowed
+  triggers); v1.0.1 2026-08-23 hardens settings.json as a user-made change after SkillSpector
+  AS1. No GitHub release tag (releases.atom empty).'
+interpretation: 'Japan wearable/speech-AI vendor treating Claude Code MEMORY as a
+  budgeted index that must be gardened: lint is mechanical, mutation is human-gated,
+  and durable lessons are promoted out of private memory. The interesting split is
+  SessionStart lint vs weekly adjudicated GC, not another auto-memory product.'
+relatedRefs:
+- https://zenn.dev/fairydevices/articles/0723b8b06c1957
+- https://zenn.dev/api/articles/0723b8b06c1957
+- https://github.com/tatsuya6502/cc-skills
+- https://github.com/tatsuya6502/cc-skills/commits/main.atom
+sourceWarnings:
+- Plugin is published on the author's personal GitHub, not Fairy Devices' org repo;
+  article says so explicitly.
+- v1.0.0 / v1.0.1 exist as commits/changelog dated 2026-08-23, not as GitHub release
+  tags.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/fairydevices/articles/0723b8b06c1957
+- https://zenn.dev/api/articles/0723b8b06c1957
+verifiedAt: '2026-08-25T21:55:00Z'
+contradictions: []
+judgeAction: EXPERIMENT
+judgeRationale: Claude Code MEMORY를 예산 인덱스로 보고 SessionStart lint와 주 1회 사람 승인 GC로 나눈
+  1개월 운용. Claude Code·Agent Skills·context engineering에 직접 맞음. 변이는 사람 게이트, 아카이브는 mv.
+  공개 MIT 플러그인(tatsuya6502/cc-skills). 회사 리포·GH 태그 아니라 ADOPT 아님. SkillSpector 6/100.
+  지리 비가중. relatedCategories는 [] 유지.
+expectedBenefit: 세션마다 4–5k 토큰이던 인덱스(110파일/18.7KB)를 lint 문제만 주입하고, 팀 공유 사실은 CLAUDE.md로
+  promote. 완료 마커의 절반 미만만 아카이브 가능했다는 운용 수치.
+switchingCost: '`/plugin marketplace add tatsuya6502/cc-skills`는 낮음. 주 1회 사람 트리아지를
+  운영에 넣으면 중간. 자동 삭제 GC로 바꾸면 높음.'
+maturity: developing
+risks:
+- 플러그인은 개인 리포. Fairy Devices 공식 패키지가 아님.
+- GH 릴리스 태그 없음. v1.0.0/1.0.1은 changelog·커밋.
+- 오분류 ARCHIVE/DELETE 제안이 사람 승인 전에도 목록에 올라옴.
+- 운용 수치(110→70 live)는 1프로젝트 1개월.
+smallestUsefulExperiment: 폐기 가능한 Claude Code 프로젝트에 memory-gc만 설치해 SessionStart lint
+  한 줄과 제안 테이블이 변이 없이 끝나는지 확인. 일괄 승인·외부 게시·SoT 쓰기 없음.
+recordStatus: approved
+```
+
+## zozo-claude-code-plugin-marketplace
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/26/regional-signal/japan/zozo-claude-code-plugin-marketplace.yaml
+- sha256: 5805f435bc2d36f31425b160ebccd959cd7998cdb2af02f0d5afed3d0d31de20
+- primaryUrl: https://techblog.zozo.com/entry/cc-plugin-marketplace
+
+```yaml
+schemaVersion: regional-signal/v1
+id: zozo-claude-code-plugin-marketplace
+collectionDate: '2026-08-26'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official ZOZO techblog.zozo.com post by データシステム部 MLOps 木村 and 推薦基盤 上國料.
+  ZOZO is a Japan fashion e-commerce company (Chiba).
+originalTitle: 複数チームで1つのClaude Codeプラグインマーケットプレイスを育てる ── 共同運用で直面した5つの課題と対策
+originalLanguage: ja
+koreanSummary: ZOZO가 2025-07부터 수백 명 Claude Code 제도를 열고, 팀마다 쌓인 Skill·Agent를 하나의 플러그인
+  마켓플레이스로 모았다. marketplace.json을 plugin.json에서 자동 생성하고, 정적 검증·의도 역검색·@claude 영향 체크로
+  공동 운영 5문제를 막는다.
+source: public_case_study
+canonicalId: zozo:techblog/cc-plugin-marketplace
+primaryUrl: https://techblog.zozo.com/entry/cc-plugin-marketplace
+author: 木村 / 上國料
+project: ZOZO Claude Code plugin marketplace
+publishedAt: '2026-08-25T02:00:00Z'
+observedFacts:
+- 'ZOZO techblog RSS published the post at Tue, 25 Aug 2026 11:00:00 +0900 (2026-08-25T02:00:00Z,
+  inside window). Authors: データシステム部 MLOpsブロック 木村 and 推薦基盤ブロック 上國料.'
+- ZOZO states a company-wide Claude Code (and other AI-dev tools) program started
+  2025-07; hundreds of employees now use Claude Code. The shared marketplace has been
+  jointly operated since 2025 H2. Article dated as of 2026-08.
+- 'A Claude Code plugin here packages Skills, Agents, Hooks, and MCP server settings.
+  Install is two-step: /plugin marketplace add /cc-plugin-marketplace then /plugin
+  install my-plugin@cc-plugin-marketplace. Catalog file is root .claude-plugin/marketplace.json;
+  each plugin has .claude-plugin/plugin.json.'
+- 'They omit plugin.json version so Claude Code treats the git commit SHA as the version;
+  a merge is a release. Five in-production problems: unclear grouping/ownership, marketplace.json
+  merge conflicts and missed registrations, structure errors leaking to every team,
+  skills not findable so reinvented, and fear of blast radius delaying edits.'
+- 'Countermeasures named: team-scoped directories for ownership; generate marketplace.json
+  from each plugin metadata; static validation of structure; reverse-lookup of skills
+  from intent; @claude automatic impact check. Claimed effects: other teams work became
+  visible, assets were reused across teams, and onboarding depended less on individuals.'
+interpretation: 'Japan production case: the interesting object is not a Skill pack
+  but the catalog contract (auto-generated marketplace.json, SHA-as-version, ownership
+  directories) that keeps a multi-team Claude Code marketplace from rotting.'
+relatedRefs:
+- https://techblog.zozo.com/entry/cc-plugin-marketplace
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://techblog.zozo.com/entry/cc-plugin-marketplace
+- https://techblog.zozo.com/rss
+verifiedAt: '2026-08-25T21:57:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: '다팀 Claude Code 플러그인 마켓의 카탈로그 계약: marketplace.json 자동 생성, 버전=git SHA,
+  팀 디렉터리 소유권, 정적 검증·의도 역검색·@claude 영향 체크. Claude Code·Agent Skills 조직 레지스트리에 직접 맞음.
+  내부 카탈로그라 설치 EXPERIMENT/ADOPT 아님. 수백 명 제도는 규모 서술이지 품질 가중 아님. relatedCategories는 []
+  유지.'
+expectedBenefit: Skill/Agent/Hook/MCP를 한 플러그인으로 묶고, 머지를 릴리스로 쓰는 공동 운영 체크리스트. 누락 등록·구조
+  오류 전팀 전파를 생성+검증으로 막음.
+switchingCost: 글 흡수 낮음. 사내 마켓을 이 계약으로 바꾸면 중간~높음.
+maturity: developing
+risks:
+- 효과(가시성·재사용·온보딩)는 저자 주장. 재사용률 미측정.
+- 내부 /cc-plugin-marketplace. 이 글만으로 재현 설치 불가.
+- SHA=버전은 머지마다 전 플러그인 소비자가 갱신 대상이 될 수 있음.
+smallestUsefulExperiment: marketplace.json 생성·SHA 버전·소유 디렉터리 세 줄만 현재 스킬 배치와 대조. 마켓
+  구축·외부 게시 없음.
+recordStatus: approved
+```
+
+## zozo-loop-engineering-prompt-tuning
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/26/regional-signal/japan/zozo-loop-engineering-prompt-tuning.yaml
+- sha256: c2352ccc85a2fcb050fa9db83acf8886c290481c706d9f26462c0d8c3f834534
+- primaryUrl: https://techblog.zozo.com/entry/loop-engineering-prompt-tuning
+
+```yaml
+schemaVersion: regional-signal/v1
+id: zozo-loop-engineering-prompt-tuning
+collectionDate: '2026-08-26'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official ZOZO techblog.zozo.com post by データサイエンス部 大川 (@o_tomo03). ZOZO
+  WEAR R&D, Japan.
+originalTitle: ループエンジニアリング実践：プロンプトチューニングをClaude Codeに任せてみた
+originalLanguage: ja
+koreanSummary: ZOZO WEAR 데이터사이언스부가 사람 손의 VLM 프롬프트 튜닝 루프를 Claude Code /tune 스킬의 analyzer·planner·improver·retrospector
+  서브에이전트로 옮겼다. T1에서 F1이 인력과 동등 이상(train +0.024, test +0.017, N=1), 공수는 약 3.5주에서 약
+  1주.
+source: public_case_study
+canonicalId: zozo:techblog/loop-engineering-prompt-tuning
+primaryUrl: https://techblog.zozo.com/entry/loop-engineering-prompt-tuning
+author: 大川
+project: ZOZO WEAR /tune prompt-tuning skill
+publishedAt: '2026-08-25T08:00:00Z'
+observedFacts:
+- ZOZO techblog RSS published the post at Tue, 25 Aug 2026 17:00:00 +0900 (2026-08-25T08:00:00Z,
+  inside window). Author 大川 is in ZOZO データサイエンス部, working on WEAR outfit feature VLM
+  prompts.
+- 'Human loop they automated: fail analysis, rewrite prompt, re-evaluate. Mapped 1:1
+  onto /tune sub-agents: analyzer, planner, improver, run_eval.py, retrospector. SKILL.md
+  is the orchestrator (115 lines) and does not do the specialist work.'
+- 'Layout: .claude/skills/tune/SKILL.md, agents analyzer/planner/improver/retrospector.md,
+  references/optimization-policy.md as single source of adopt/reject/stop, prompt-design-strategies.md,
+  and lessons.md which retrospector appends as DO/DON''T after each iteration.'
+- 'Three tasks T1-T3 with different schema structures, starting from definition-only
+  prompts. T1: auto-tuned F1 at or above the human-tuned baseline on N=1 (train +0.024,
+  test +0.017). Wall-clock of the evaluation cycle: about 3.5 weeks human to about
+  1 week automated. They report transfer across T1-T3.'
+- 'They treat structured reasoning text as the gradient and F1 as the loss, and ran
+  a with/without-reasoning ablation on T1. Warnings in the article: prompt bloat/overfit,
+  cost, and that agent design starts by transplanting how the human already solved
+  it.'
+interpretation: 'Japan R&D case of loop engineering: the Skill is a scheduler over
+  named sub-agents plus a policy file, not a better prompt. The measurement that matters
+  is whether the human loop is reproduced, not a new optimizer.'
+relatedRefs:
+- https://techblog.zozo.com/entry/loop-engineering-prompt-tuning
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://techblog.zozo.com/entry/loop-engineering-prompt-tuning
+- https://techblog.zozo.com/rss
+verifiedAt: '2026-08-25T21:57:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 사람 실패분석→개서→재평가 루프를 /tune 스킬이 analyzer·planner·improver·retrospector에
+  1:1로 옮김. SKILL.md는 스케줄러(115줄). Agent Skills·evaluation·Claude Code 서브에이전트에 맞음. T1
+  F1은 N=1. 공수 3.5주→1주는 저자 보고. VLM 튜닝 재실행 EXPERIMENT 아님. 수치 과대평가 금지.
+expectedBenefit: 스킬을 더 좋은 프롬프트가 아니라 정책 파일(optimization-policy.md)과 lessons.md를 가진
+  루프 오케스트레이터로 쓰는 패턴.
+switchingCost: 글 흡수 낮음. 기존 평가 루프를 서브에이전트로 옮기면 중간. 프롬프트 비대·과적합을 저자가 경고.
+maturity: early
+risks:
+- T1 F1 +0.024/+0.017은 N=1.
+- T1–T3 전이는 같은 팀 스키마. 일반 최적화기 아님.
+- 에이전트 설계는 사람이 이미 푼 루프를 이식하는 데서 시작한다고 저자가 적음. 루프가 없으면 스킬만으로 안 됨.
+smallestUsefulExperiment: SKILL.md 오케스트레이터 vs 정책 파일 vs lessons.md 역할만 읽고 현재 스킬 구조를
+  대조. VLM 재튜닝·외부 게시 없음.
+recordStatus: approved
+```
+
+## github-nomadamas-github-issue-solver-jikji-markr-ef9b854
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/26/regional-signal/korea/github-nomadamas-github-issue-solver-jikji-markr-ef9b854.yaml
+- sha256: a3b7dddfd57a83215d81cb3ed8ee0d71f67d162b89890a75b936d4a2d340b904
+- primaryUrl: https://github.com/NomaDamas/github-issue-solver/commit/ef9b85499ed4c68e111439d91c1651dd95ab9f32
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-nomadamas-github-issue-solver-jikji-markr-ef9b854
+collectionDate: '2026-08-26'
+primaryCategory: korea
+relatedCategories: []
+originBasis: GitHub org NomaDamas profile (https://github.com/NomaDamas) sets itemprop=location
+  to 'Korea, South' and describes the org as an AI open-source hacker house in Seoul,
+  Korea; commit author Cheol-H-Jeong profile lists Home location Seoul.
+originalTitle: 'feat: add Jikji to Markr internal console'
+originalLanguage: en
+koreanSummary: NomaDamas/github-issue-solver 커밋 ef9b854(2026-08-24T22:50:29Z)가 셀프호스트
+  GitHub 이슈 자동화 콘솔(Markr)에 Jikji를 붙였다(+87/−0). 이어서 문서 기록과 Jikji 프록시 강화 커밋이 같은 창 안에
+  있다.
+source: github_repository
+canonicalId: github:NomaDamas/github-issue-solver@ef9b854
+primaryUrl: https://github.com/NomaDamas/github-issue-solver/commit/ef9b85499ed4c68e111439d91c1651dd95ab9f32
+author: Cheol-H-Jeong
+project: NomaDamas/github-issue-solver
+publishedAt: '2026-08-24T22:50:29Z'
+observedFacts:
+- NomaDamas org HTML contains itemprop=location Korea, South and 'An AI open-source
+  hacker house in Seoul, Korea.'
+- Cheol-H-Jeong profile HTML has Home location Seoul.
+- 'commits/main.atom entry title ''feat: add Jikji to Markr internal console'', author
+  Cheol-H-Jeong, updated 2026-08-24T22:50:29Z, link commit ef9b85499ed4c68e111439d91c1651dd95ab9f32.'
+- Commit HTML title matches; authoredDate/committedDate 2026-08-25T07:50:29.000+09:00
+  (equals 2026-08-24T22:50:29Z); reported 87 additions and 0 deletions.
+- README states GitHub Issue Solver is a self-hosted service that polls GitHub issues,
+  assigns coding agents (gjc/omx/claude), opens PRs, verifies, and auto-merges.
+- 'Later same-window commits: docs: record Jikji Markr console integration (2026-08-24T22:51:24Z);
+  fix: harden Jikji proxy forwarding (2026-08-25T11:13:57Z); fix: restore Markr portal
+  auth/rendering and harden Jikji proxy (2026-08-25T16:27:36Z).'
+interpretation: Korea-origin coding-agent harness adding Jikji (local file discovery)
+  into the Markr internal console and proxy path. New integration commit, not a tagged
+  release.
+relatedRefs:
+- https://github.com/NomaDamas/github-issue-solver
+- https://github.com/NomaDamas/github-issue-solver/commits/main.atom
+- https://github.com/NomaDamas/jikji
+sourceWarnings:
+- Reconstructed from saved Atom/HTML under evidence-korea after korea-discovered.json
+  was overwritten to 1 candidate.
+- No release tag used as publishedAt.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/NomaDamas
+- https://github.com/Cheol-H-Jeong
+- https://github.com/NomaDamas/github-issue-solver/commits/main.atom
+- https://github.com/NomaDamas/github-issue-solver/commit/ef9b85499ed4c68e111439d91c1651dd95ab9f32
+verifiedAt: '2026-08-25T21:53:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 셀프호스트 이슈 솔버(Markr)가 gjc/omx/claude를 배정·PR·검증·오토머지하는 하네스에 Jikji를 콘솔·프록시로
+  붙인 신규 커밋. 코딩 에이전트 하네스·로컬 파일 발견 연동에 맞음. 어제 jikji GUI EXPERIMENT·오늘 folder-index READ와
+  다른 리포. 태그 없고 같은 창에 프록시·포털 인증 수정이 이어짐. 오토머지 서비스 기동은 EXPERIMENT/ADOPT 아님. 지리 비가중.
+  relatedCategories는 [] 유지.
+expectedBenefit: 이슈 폴링 하네스가 에이전트 배정 전에 Jikji 발견을 콘솔에서 쓰는 경로. 로컬 검색을 이슈→PR 루프에 넣는 배치
+  예.
+switchingCost: 커밋·README 대조만이면 낮음. 셀프호스트 솔버를 켜면 높음(폴링·에이전트 자격·오토머지).
+maturity: early
+risks:
+- README가 검증 후 오토머지를 명시. 실험 기동 시 머지 사고 가능.
+- 창 안 후속 커밋이 Jikji 프록시와 Markr 포털 인증을 고치고 있어 연동이 아직 굳지 않음.
+- 릴리스 태그 없음. +87 콘솔 연동만으로는 일반 설치 경로가 없음.
+- evidence가 덮어쓴 discovered 파일 뒤 재구성됨(패킷 sourceWarning).
+smallestUsefulExperiment: README의 에이전트 배정·Jikji 콘솔 문장과 ef9b854 패치만 읽기. 솔버 기동·오토머지·외부
+  게시·SoT 쓰기 없음. folder-index 재판정 없음.
+recordStatus: approved
+```
+
+## github-nomadamas-jikji-folder-index-1222708
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/26/regional-signal/korea/github-nomadamas-jikji-folder-index-1222708.yaml
+- sha256: 8a5cef3067fd4638c0b5c69bb4afd6ca13769527f9fc0f2cff6ef791ebef86c4
+- primaryUrl: https://github.com/NomaDamas/jikji/commit/12227080b7d736200aa28fd42ed4d3ab51d2b511
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-nomadamas-jikji-folder-index-1222708
+collectionDate: '2026-08-26'
+primaryCategory: korea
+relatedCategories: []
+originBasis: GitHub org NomaDamas profile (https://github.com/NomaDamas) sets itemprop=location
+  to 'Korea, South' and describes the org as an AI open-source hacker house in Seoul,
+  Korea; commit author Cheol-H-Jeong profile lists Home location Seoul.
+originalTitle: 'feat: add folder-scoped GUI index controls'
+originalLanguage: en
+koreanSummary: NomaDamas/jikji 커밋 1222708(2026-08-25T11:13:51Z)이 폴더 단위 GUI 인덱스 제어를
+  추가했다(+218/−27). /api/reindex-folder·/api/remove-folder·/api/deep-index-target와 source_preserved
+  `source_preserved=true`인 인덱스 제거, 경로 이탈 403 테스트를 넣었다.
+source: github_repository
+canonicalId: github:NomaDamas/jikji@1222708
+primaryUrl: https://github.com/NomaDamas/jikji/commit/12227080b7d736200aa28fd42ed4d3ab51d2b511
+author: Cheol-H-Jeong
+project: NomaDamas/jikji
+publishedAt: '2026-08-25T11:13:51Z'
+observedFacts:
+- Saved NomaDamas org HTML contains <span itemprop="location">Korea, South</span>
+  and the phrase 'An AI open-source hacker house in Seoul, Korea.'
+- 'Saved Cheol-H-Jeong profile HTML has aria-label ''Home location: Seoul'' and p-label
+  ''Seoul''.'
+- 'jikji commits/main.atom entry title is ''feat: add folder-scoped GUI index controls'',
+  author Cheol-H-Jeong, updated 2026-08-25T11:13:51Z, link commit 12227080b7d736200aa28fd42ed4d3ab51d2b511.'
+- Commit HTML title matches that subject; authoredDate/committedDate 2026-08-25T20:13:51.000+09:00
+  (equals 2026-08-25T11:13:51Z); reported 218 additions and 27 deletions.
+- 'Patch paths: crates/jikji-cli/src/gui_commands.rs, crates/jikji-cli/src/gui_commands/routing.rs,
+  crates/jikji-cli/tests/gui_root_management.rs, crates/jikji-core/src/storage.rs.'
+- 'New management routes: POST /api/reindex-folder, POST|DELETE /api/remove-folder,
+  POST|DELETE /api/deep-index-target. remove_folder_response returns source_preserved=true;
+  remove_artifacts_under deletes only central-index rows under a root-relative prefix
+  in one transaction. Test posts /api/remove-folder?path=../root1 and expects 403.'
+- 'Same atom later same day: ccc2dcb0 ''fix: complete Jikji search states and limit
+  results'' (2026-08-25T08:09:02Z) and aad7d195 ''fix: wire Jikji GUI search form
+  submission'' (2026-08-25T07:57:32Z). Yesterday-approved 5cfabea (native GUI, 2026-08-24T20:34:44Z)
+  is not re-emitted.'
+- README (saved) states Jikji is local file discovery for AI agents; public command
+  is `jikji find ROOT "clue" --json`; skills/jikji/SKILL.md requires Jikji-first discovery
+  and forbids raw crawl after handoff_action=direct_use. releases.atom has no tag
+  entries.
+interpretation: 'New-commit increment after yesterday''s native Rust GUI: folder-granularity
+  index mutation (reindex / deep-index target / remove artifacts, source files untouched)
+  rather than root-only controls. Still a commit, not a tagged release. Not a claim
+  that folder scoping improves Hit@1.'
+relatedRefs:
+- https://github.com/NomaDamas/jikji
+- https://github.com/NomaDamas/jikji/commits/main.atom
+- https://github.com/NomaDamas/jikji/blob/main/skills/jikji/SKILL.md
+- https://github.com/NomaDamas/jikji/commit/5cfabeafaee2bbb32e10eb571bcc21e132a2cbdc
+sourceWarnings:
+- Parsed from already-fetched Atom/HTML/patch under evidence-korea and raw/; GitHub
+  REST was not used this pass.
+- GitHub HTML search saved as 429; candidate found via known-org Atom, not global
+  search.
+- No GitHub release tag in window for jikji (releases.atom is an empty feed shell).
+- reindex-folder currently calls prepare() on the whole root with default options;
+  folder scoping is strongest on remove/deep-target, not on a true subtree reindex.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/NomaDamas
+- https://github.com/Cheol-H-Jeong
+- https://github.com/NomaDamas/jikji/commits/main.atom
+- https://github.com/NomaDamas/jikji/commit/12227080b7d736200aa28fd42ed4d3ab51d2b511
+verifiedAt: '2026-08-25T21:51:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 어제 native GUI EXPERIMENT(5cfabea) 다음 커밋. 폴더 단위 reindex/remove/deep-index
+  API와 source_preserved·경로 이탈 403 테스트가 로컬 인덱스 위생·sandbox 경계에 맞음. sourceWarning대로 reindex-folder는
+  아직 루트 전체 prepare라 하위트리 재인덱스로 읽으면 안 됨. 태그 없는 커밋. 재EXPERIMENT/ADOPT 아님. 지리 비가중. relatedCategories는
+  [] 유지.
+expectedBenefit: 원본 파일은 두고 중앙 인덱스 행만 접두사로 지우는 계약과, `path=../` 403을 에이전트 인덱스 GUI의 최소
+  경계로 고정.
+switchingCost: 커밋·테스트 대조만이면 낮음. 어제 EXPERIMENT를 다시 열거나 GUI mutation API를 상시 켜면 중간.
+maturity: developing
+risks:
+- reindex-folder가 폴더가 아니라 루트 전체 prepare를 호출함.
+- 창 안 릴리스 태그 없음.
+- mutation API 3종이 GUI/HTTP 공격면을 넓힘.
+- 어제 5cfabea EXPERIMENT와 같은 프로젝트 후속이라 중복 실험 가능.
+smallestUsefulExperiment: 패치의 source_preserved와 `/api/remove-folder?path=../root1`
+  403 테스트만 읽고 인덱스 삭제 경계를 대조. `jikji find` 재실험·외부 게시·SoT 쓰기 없음.
 recordStatus: approved
 ```

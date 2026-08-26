@@ -5,11 +5,30 @@ action: "EXPERIMENT"
 artifactRole: "reader_facing_derivative"
 publicationChannel: "document"
 evidence:
+  - "reports/archive/2026/08/26/ai-engineering-radar.md"
   - "reports/archive/2026/08/25/ai-engineering-radar.md"
   - "reports/archive/2026/08/24/ai-engineering-radar.md"
   - "reports/archive/2026/08/23/ai-engineering-radar.md"
   - "reports/archive/2026/08/23/ax-intelligence.md"
 sourceLinks:
+  - "https://arxiv.org/abs/2608.22533"
+  - "https://arxiv.org/abs/2608.22167"
+  - "https://arxiv.org/abs/2608.23552"
+  - "https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available"
+  - "https://github.com/github/copilot-cli/releases/tag/v1.0.81-10"
+  - "https://githubnext.com/posts/knowledge-compressor/"
+  - "https://openai.com/products/release-notes#CL-20260824-CODE-430"
+  - "https://github.com/xhluca/session-migrate/releases/tag/v0.8.0"
+  - "https://zenn.dev/demia/articles/6c1291f0dae964"
+  - "https://developers.gmo.jp/technology/85730/"
+  - "https://developers.gmo.jp/technology/84294/"
+  - "https://zenn.dev/hissy/articles/concretecms-mcp-security"
+  - "https://zenn.dev/acntechjp/articles/2ed34149089122"
+  - "https://zenn.dev/fairydevices/articles/0723b8b06c1957"
+  - "https://techblog.zozo.com/entry/cc-plugin-marketplace"
+  - "https://techblog.zozo.com/entry/loop-engineering-prompt-tuning"
+  - "https://github.com/NomaDamas/github-issue-solver/commit/ef9b85499ed4c68e111439d91c1651dd95ab9f32"
+  - "https://github.com/NomaDamas/jikji/commit/12227080b7d736200aa28fd42ed4d3ab51d2b511"
   - "https://github.com/Lyellr88/marm-memory/releases/tag/v2.44.0"
   - "https://github.com/microsoft/agent-lightning/releases/tag/v1.0.1"
   - "https://openai.com/index/gpt-5-6-in-kiro"
@@ -28,6 +47,7 @@ sourceLinks:
   - "https://github.com/agentskills/agentskills"
   - "https://docs.x.ai/grok-bot/overview"
   - "https://arize.com/blog/how-cheap-models-changed-multi-agent-economics/"
+  - "https://cellcog.ai/blog/ai-agent-handoff-protocols/"
   - "https://www.deepinspect.ai/blog/mcp-server-authentication"
   - "https://dev.to/techtrails/the-orchestrator-in-agentic-systems-4oap"
   - "https://folarin.dev/blog/what-are-agent-skills-progressive-disclosure"
@@ -42,15 +62,20 @@ sourceLinks:
   - "https://tech-ai.hateblo.jp/entry/2026/08/13/050000"
   - "https://note.com/aitrendlab/n/na871bc5ce039"
   - "https://qiita.com/hikariclaude01/items/4a7ba5103bf02eb9f7e7"
+  - "https://qiita.com/i0ry_y/items/41932ec657bada5adabd"
   - "https://qiita.com/made_in_jp2525/items/6e895d589d606f3d264a"
+  - "https://qiita.com/y-morimatsu/items/4110cab5f2bf88e70e97"
   - "https://smartscope.blog/generative-ai/github-copilot/github-copilot-skills-guide/"
   - "https://zenn.dev/idealive_kmon/articles/ai-dev-07-subagents"
+  - "https://aiarchitect.tistory.com/77"
+  - "https://aisparkup.com/posts/15178"
   - "https://aitrends.jp/articles/99381"
   - "https://data-newbie.tistory.com/1163"
   - "https://digitalbourgeois.tistory.com/3473"
   - "https://duckssi.tistory.com/423"
   - "https://heyoonow.tistory.com/265"
   - "https://inma.tistory.com/210"
+  - "https://jkf87.github.io/posts/2026-08-02-sigma-mem-multi-agent-reliability-memory"
   - "https://storycompiler.tistory.com/684"
   - "https://aiarchitect.tistory.com/22"
   - "https://nobase-appdev.tistory.com/57"
@@ -69,6 +94,24 @@ sourceLinks:
   - "https://www.technologyrecord.com/article/nordre-follo-municipality-modernises-public-hearing-workflows-with-microsoft-copilot-studio"
   - "https://www.atea.no/kundereferanser/norde-follo-kommune-1/?pid=3b1733d9-adef-4b74-8b69-2cedb52ea3ec"
 records:
+  - "intelligence/signals/2026/08/26/regional-signal/international/arxiv-contramem-2608-22533.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/international/arxiv-mcp-universe-rl-2608-22167.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/international/arxiv-prime-agent-2608-23552.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/international/github-copilot-app-customize-tab-2026-08-25.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/international/github-copilot-cli-v1-0-81-10.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/international/github-next-knowledge-compressor-2026-08-24.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/international/openai-codex-mcp-server-deprecated-2026-08-24.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/international/xhluca-session-migrate-v0-8-0.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/japan/demia-agent-ui-component-library.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/japan/gmo-conoha-vps-mcp-harness-safety.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/japan/gmo-conoha-vps-mcp-hermes-openclaw-nanoclaw.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/japan/hissy-concretecms-mcp-token-security.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/japan/zenn-acntechjp-knowledge-gap-radar-routing.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/japan/zenn-fairydevices-claude-memory-gc-skills.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/japan/zozo-claude-code-plugin-marketplace.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/japan/zozo-loop-engineering-prompt-tuning.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/korea/github-nomadamas-github-issue-solver-jikji-markr-ef9b854.yaml"
+  - "intelligence/signals/2026/08/26/regional-signal/korea/github-nomadamas-jikji-folder-index-1222708.yaml"
   - "intelligence/signals/2026/08/25/regional-signal/international/lyellr88-marm-memory-v2-44-0.yaml"
   - "intelligence/signals/2026/08/25/regional-signal/international/microsoft-agent-lightning-v1-0-1.yaml"
   - "intelligence/signals/2026/08/25/regional-signal/international/openai-gpt-5-6-in-kiro-2026-08-24.yaml"
@@ -87,6 +130,7 @@ records:
   - "intelligence/signals/2026/08/24/regional-signal/international/agentskills-open-standard-skill-md.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/grok-bot-official-workflow-docs.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-arize-orchestrator-executor-cheap-models.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/international/intl-cellcog-ai-agent-handoff-protocols-packet.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-deepinspect-mcp-server-authentication-identity-binding-audit.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-devto-techtrails-orchestrator-decompose-synthesize.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-folarin-agent-skills-progressive-disclosure-explained.yaml"
@@ -101,15 +145,20 @@ records:
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-hateblo-tech-ai-mcp-disconnect-oauth-revoke-audit-log.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-note-aitrendlab-ms-agent-framework-harness.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-hikari-claude-docker-sandbox-mcp.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-i0ry-magi-council-independent-vote.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-made-in-jp2525-rag-multiagent-decompose.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-morimatsu-graph-engineering-schema-handoff.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-smartscope-copilot-skills-progressive-disclosure.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-aiarchitect-context-package-result-envelope.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-aisparkup-switchyard-escalation-routing.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-aitrends-langchain-mda-skills-progressive-disclosure.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-data-newbie-radar-skillevaluator-20260822.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-digitalbourgeois-orchestrator-workers-credit-analysis.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-duckssi-claude-plugin-marketplace-command-source.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-heyoonow-skill-md-supply-chain-env-20260805.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-inma-claude-codex-agents-skills-config.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-jkf87-sigma-mem-reliability-vs-majority.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-storycompiler-local-mcp-no-auth.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-tistory-aiarchitect-mcp-server-security-checklist-oauth-audit.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-tistory-nobase-skills-mcp-plugin-separation.yaml"
@@ -129,13 +178,23 @@ records:
 
 # 지금 읽을 결과
 
-> 현재 공개된 인텔리전스 4편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
+> 현재 공개된 인텔리전스 5편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
 
 # 지금 읽을 결과
 
-현재 공개된 인텔리전스 4편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
+현재 공개된 인텔리전스 5편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
 
 ## 최신 인텔리전스
+
+### [2026-08-26 AI Engineering Radar](/blog/2026/08/26/ai-engineering-radar)
+
+한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
+
+- 기준일: 2026-08-26
+- 분류: AI 엔지니어링
+- 추천: **작게 실험**
+- 근거 레코드: 18건 — `arxiv-contramem-2608-22533`, `arxiv-mcp-universe-rl-2608-22167`, `arxiv-prime-agent-2608-23552`, `github-copilot-app-customize-tab-2026-08-25`, `github-copilot-cli-v1-0-81-10`, `github-next-knowledge-compressor-2026-08-24`, `openai-codex-mcp-server-deprecated-2026-08-24`, `xhluca-session-migrate-v0-8-0`, `demia-agent-ui-component-library`, `gmo-conoha-vps-mcp-harness-safety`, `gmo-conoha-vps-mcp-hermes-openclaw-nanoclaw`, `hissy-concretecms-mcp-token-security`, `zenn-acntechjp-knowledge-gap-radar-routing`, `zenn-fairydevices-claude-memory-gc-skills`, `zozo-claude-code-plugin-marketplace`, `zozo-loop-engineering-prompt-tuning`, `github-nomadamas-github-issue-solver-jikji-markr-ef9b854`, `github-nomadamas-jikji-folder-index-1222708`
+- 공개 원문: [원문 1](https://arxiv.org/abs/2608.22533) · [원문 2](https://arxiv.org/abs/2608.22167) · [원문 3](https://arxiv.org/abs/2608.23552) · [원문 4](https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available) · [원문 5](https://github.com/github/copilot-cli/releases/tag/v1.0.81-10)
 
 ### [2026-08-25 AI Engineering Radar](/blog/2026/08/25/ai-engineering-radar)
 
@@ -154,8 +213,8 @@ records:
 - 기준일: 2026-08-24
 - 분류: AI 엔지니어링
 - 추천: **작게 실험**
-- 근거 레코드: 30건 — `agentskills-open-standard-skill-md`, `grok-bot-official-workflow-docs`, `intl-arize-orchestrator-executor-cheap-models`, `intl-deepinspect-mcp-server-authentication-identity-binding-audit`, `intl-devto-techtrails-orchestrator-decompose-synthesize`, `intl-folarin-agent-skills-progressive-disclosure-explained`, `intl-pickuma-local-mcp-security-audit`, `nvidia-skillevaluator-agent-skill-performance`, `rohann-shetty-gitbook-downloader-docusaurus-llms-txt`, `snapsynapse-skill-provenance-v6-1-0`, `supersuitup-curated-wiki-integrations-llms-txt`, `vercel-labs-skills-cli-find-add-update`, `wbaxterh-pokedocs-docusaurus-llms-txt`, `japan-claude-discover-plugins-marketplace-autoupdate`, `japan-hateblo-tech-ai-mcp-disconnect-oauth-revoke-audit-log`, `japan-note-aitrendlab-ms-agent-framework-harness`, `japan-qiita-hikari-claude-docker-sandbox-mcp`, `japan-qiita-made-in-jp2525-rag-multiagent-decompose`, `japan-smartscope-copilot-skills-progressive-disclosure`, `japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate`, `korea-aitrends-langchain-mda-skills-progressive-disclosure`, `korea-data-newbie-radar-skillevaluator-20260822`, `korea-digitalbourgeois-orchestrator-workers-credit-analysis`, `korea-duckssi-claude-plugin-marketplace-command-source`, `korea-heyoonow-skill-md-supply-chain-env-20260805`, `korea-inma-claude-codex-agents-skills-config`, `korea-storycompiler-local-mcp-no-auth`, `korea-tistory-aiarchitect-mcp-server-security-checklist-oauth-audit`, `korea-tistory-nobase-skills-mcp-plugin-separation`, `korea-tistory-skill-plugin-marketplace-internal-standard`
-- 공개 원문: [원문 1](https://github.com/agentskills/agentskills) · [원문 2](https://docs.x.ai/grok-bot/overview) · [원문 3](https://arize.com/blog/how-cheap-models-changed-multi-agent-economics/) · [원문 4](https://www.deepinspect.ai/blog/mcp-server-authentication) · [원문 5](https://dev.to/techtrails/the-orchestrator-in-agentic-systems-4oap)
+- 근거 레코드: 36건 — `agentskills-open-standard-skill-md`, `grok-bot-official-workflow-docs`, `intl-arize-orchestrator-executor-cheap-models`, `intl-cellcog-ai-agent-handoff-protocols-packet`, `intl-deepinspect-mcp-server-authentication-identity-binding-audit`, `intl-devto-techtrails-orchestrator-decompose-synthesize`, `intl-folarin-agent-skills-progressive-disclosure-explained`, `intl-pickuma-local-mcp-security-audit`, `nvidia-skillevaluator-agent-skill-performance`, `rohann-shetty-gitbook-downloader-docusaurus-llms-txt`, `snapsynapse-skill-provenance-v6-1-0`, `supersuitup-curated-wiki-integrations-llms-txt`, `vercel-labs-skills-cli-find-add-update`, `wbaxterh-pokedocs-docusaurus-llms-txt`, `japan-claude-discover-plugins-marketplace-autoupdate`, `japan-hateblo-tech-ai-mcp-disconnect-oauth-revoke-audit-log`, `japan-note-aitrendlab-ms-agent-framework-harness`, `japan-qiita-hikari-claude-docker-sandbox-mcp`, `japan-qiita-i0ry-magi-council-independent-vote`, `japan-qiita-made-in-jp2525-rag-multiagent-decompose`, `japan-qiita-morimatsu-graph-engineering-schema-handoff`, `japan-smartscope-copilot-skills-progressive-disclosure`, `japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate`, `korea-aiarchitect-context-package-result-envelope`, `korea-aisparkup-switchyard-escalation-routing`, `korea-aitrends-langchain-mda-skills-progressive-disclosure`, `korea-data-newbie-radar-skillevaluator-20260822`, `korea-digitalbourgeois-orchestrator-workers-credit-analysis`, `korea-duckssi-claude-plugin-marketplace-command-source`, `korea-heyoonow-skill-md-supply-chain-env-20260805`, `korea-inma-claude-codex-agents-skills-config`, `korea-jkf87-sigma-mem-reliability-vs-majority`, `korea-storycompiler-local-mcp-no-auth`, `korea-tistory-aiarchitect-mcp-server-security-checklist-oauth-audit`, `korea-tistory-nobase-skills-mcp-plugin-separation`, `korea-tistory-skill-plugin-marketplace-internal-standard`
+- 공개 원문: [원문 1](https://github.com/agentskills/agentskills) · [원문 2](https://docs.x.ai/grok-bot/overview) · [원문 3](https://arize.com/blog/how-cheap-models-changed-multi-agent-economics/) · [원문 4](https://cellcog.ai/blog/ai-agent-handoff-protocols/) · [원문 5](https://www.deepinspect.ai/blog/mcp-server-authentication)
 
 ### [지금 시험해볼 AI 엔지니어링 도구 8가지](/blog/2026/08/23/ai-engineering-radar)
 

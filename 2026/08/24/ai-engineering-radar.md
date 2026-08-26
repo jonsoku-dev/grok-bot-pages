@@ -10,6 +10,7 @@ sourceLinks:
   - "https://github.com/agentskills/agentskills"
   - "https://docs.x.ai/grok-bot/overview"
   - "https://arize.com/blog/how-cheap-models-changed-multi-agent-economics/"
+  - "https://cellcog.ai/blog/ai-agent-handoff-protocols/"
   - "https://www.deepinspect.ai/blog/mcp-server-authentication"
   - "https://dev.to/techtrails/the-orchestrator-in-agentic-systems-4oap"
   - "https://folarin.dev/blog/what-are-agent-skills-progressive-disclosure"
@@ -24,15 +25,20 @@ sourceLinks:
   - "https://tech-ai.hateblo.jp/entry/2026/08/13/050000"
   - "https://note.com/aitrendlab/n/na871bc5ce039"
   - "https://qiita.com/hikariclaude01/items/4a7ba5103bf02eb9f7e7"
+  - "https://qiita.com/i0ry_y/items/41932ec657bada5adabd"
   - "https://qiita.com/made_in_jp2525/items/6e895d589d606f3d264a"
+  - "https://qiita.com/y-morimatsu/items/4110cab5f2bf88e70e97"
   - "https://smartscope.blog/generative-ai/github-copilot/github-copilot-skills-guide/"
   - "https://zenn.dev/idealive_kmon/articles/ai-dev-07-subagents"
+  - "https://aiarchitect.tistory.com/77"
+  - "https://aisparkup.com/posts/15178"
   - "https://aitrends.jp/articles/99381"
   - "https://data-newbie.tistory.com/1163"
   - "https://digitalbourgeois.tistory.com/3473"
   - "https://duckssi.tistory.com/423"
   - "https://heyoonow.tistory.com/265"
   - "https://inma.tistory.com/210"
+  - "https://jkf87.github.io/posts/2026-08-02-sigma-mem-multi-agent-reliability-memory"
   - "https://storycompiler.tistory.com/684"
   - "https://aiarchitect.tistory.com/22"
   - "https://nobase-appdev.tistory.com/57"
@@ -41,6 +47,7 @@ records:
   - "intelligence/signals/2026/08/24/regional-signal/international/agentskills-open-standard-skill-md.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/grok-bot-official-workflow-docs.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-arize-orchestrator-executor-cheap-models.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/international/intl-cellcog-ai-agent-handoff-protocols-packet.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-deepinspect-mcp-server-authentication-identity-binding-audit.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-devto-techtrails-orchestrator-decompose-synthesize.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/international/intl-folarin-agent-skills-progressive-disclosure-explained.yaml"
@@ -55,15 +62,20 @@ records:
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-hateblo-tech-ai-mcp-disconnect-oauth-revoke-audit-log.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-note-aitrendlab-ms-agent-framework-harness.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-hikari-claude-docker-sandbox-mcp.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-i0ry-magi-council-independent-vote.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-made-in-jp2525-rag-multiagent-decompose.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/japan/japan-qiita-morimatsu-graph-engineering-schema-handoff.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-smartscope-copilot-skills-progressive-disclosure.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/japan/japan-zenn-idealive-kmon-main-orchestrate-subagent-delegate.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-aiarchitect-context-package-result-envelope.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-aisparkup-switchyard-escalation-routing.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-aitrends-langchain-mda-skills-progressive-disclosure.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-data-newbie-radar-skillevaluator-20260822.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-digitalbourgeois-orchestrator-workers-credit-analysis.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-duckssi-claude-plugin-marketplace-command-source.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-heyoonow-skill-md-supply-chain-env-20260805.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-inma-claude-codex-agents-skills-config.yaml"
+  - "intelligence/signals/2026/08/24/regional-signal/korea/korea-jkf87-sigma-mem-reliability-vs-majority.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-storycompiler-local-mcp-no-auth.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-tistory-aiarchitect-mcp-server-security-checklist-oauth-audit.yaml"
   - "intelligence/signals/2026/08/24/regional-signal/korea/korea-tistory-nobase-skills-mcp-plugin-separation.yaml"
@@ -85,6 +97,28 @@ records:
 이 글은 확인된 핵심 내용과 추천 이유, 주의할 점, 다음 단계를 함께 보여줍니다.
 
 ## 한국
+
+### [aiarchitect.tistory.com / AI Agent · MCP](https://aiarchitect.tistory.com/77) — `korea-aiarchitect-context-package-result-envelope`
+
+AI아키텍트가 Orchestrator Root Run에서 다른 Agent에 전체 대화·Token을 넘기지 말고 goal·constraints·evidence\_refs·expected\_artifact·correlation만 담은 최소 Context Package로 위임하라고 정리. 전달 시 A2A Message의 구조화 Part/Extension을 쓸 수 있으나 Secret·원본 Credential 금지, 대용량은 만료 Reference, Evidence Digest·Schema Version 동봉을 원칙으로 제시. MCP Result와 A2A Artifact를 run\_id·source·status·output(digest/data\_ref)·quality·timing을 갖춘 공통 Result Envelope로 정규화해 검증·조립한다고 설명. article:published\_time 2026-08-11T13:28:52+09:00.
+
+- 왜 중요한가: 최소 위임 계약과 MCP/A2A 결과를 정규화하는 엔벨로프 필드 세트.
+- 추천: **읽기** — 전체 대화 대신 goal·constraints·evidence\_refs·expected\_artifact·correlation만 담은 Context Package와 Result Envelope로 에이전트 간 구조화 전달을 정의. 패킷 핸드오프 토픽·본 레이더 파이프라인과 직접 정합.
+- 주의할 점:
+  - 개인 블로그; org 계약이지 A2A 표준 객체 아님.
+  - Secret 금지 규칙은 구현 강제 필요.
+- 다음 단계: Context Package 예시 필드만 현재 regional-signal/judge 핸드오프와 1:1 대조.
+
+### [AI Sparkup](https://aisparkup.com/posts/15178) — `korea-aisparkup-switchyard-escalation-routing`
+
+AI Sparkup이 LangChain의 NeMo Switchyard 에이전트 라우팅 실측을 한국어로 정리. LLM 분류기 에스컬레이션 모드로 저렴한 모델에서 시작해 판정용 모델이 연속 두 번 부정하면 프론티어로 고정하는 일방향 흐름을 설명하고, 프론티어로 보낸 턴 7%(청구액의 68%)·나머지 93%는 30B급 처리·Opus 대비 비용 74% 절감·정확도 약 6점 하락 수치와, 판정 비용/가격 차로 이득 분기점을 계산하라는 운영 가이드를 제시. article:published\_time 2026-08-13T23:07:38+00:00 (표시 2026-08-14 KST).
+
+- 왜 중요한가: 일방향 에스컬레이션 규칙과 콜 믹스 ROI로 라우팅 판단.
+- 추천: **읽기** — NeMo Switchyard 에스컬레이션(저렴→판정 2회 부정→프론티어)과 7%/68% 비용 믹스 실측을 한국어로 정리. 작업·콜 단위 라우팅 토픽·model-routing interest에 직접. VERIFIED.
+- 주의할 점:
+  - LangChain/NVIDIA 수치 2차 전재.
+  - 정확도 약 6점 하락 트레이드오프.
+- 다음 단계: 에스컬레이션 규칙·7/93 믹스만 자사 라우팅 정책에 대조. SDK 설치 없음.
 
 ### [AI Trends / LangChain Managed Deep Agents](https://aitrends.jp/articles/99381) — `korea-aitrends-langchain-mda-skills-progressive-disclosure`
 
@@ -153,6 +187,17 @@ Junhong Kim이 Claude Code와 Codex의 AGENTS.md/CLAUDE.md, Rules, SKILL.md, Sub
   - 게시 2026-07-15는 선호 창보다 이름, 수정 8/17만 창 안.
   - 클라이언트별 SKILL.md 확장 키 호환은 문서마다 다름.
 - 다음 단계: 글의 .agents/skills ↔ .claude/skills 링크 절만 읽고 현재 스킬 경로와 대조. 링크 생성·게시 없음.
+
+### [jkf87.github.io / Σ-Mem review](https://jkf87.github.io/posts/2026-08-02-sigma-mem-multi-agent-reliability-memory) — `korea-jkf87-sigma-mem-reliability-vs-majority`
+
+코난쌤 블로그가 NTU DeCLaRe Lab Σ-Mem 논문을 해설. 다수결은 Berlin 2표 vs Zurich 1표처럼 상관된 오류를 증폭할 수 있어, 동료별 역사적 역량·동료 간 동시 오답 관계를 행렬로 기억하고 M-Weighted Vote/M-Route로 소수지만 더 신뢰할 동료를 살리는 집계를 제시. M-Route는 중앙 모델 없이 OOD에서 다수결·고정 최고 동료를 능가한다고 정리. 포스트 \<time datetime\> 2026-08-02T00:00:00.000Z.
+
+- 왜 중요한가: 다수결 대체 집계와 동료 신뢰 메모리 개념.
+- 추천: **읽기** — 다수결이 상관 오류를 증폭할 수 있어 Σ-Mem 역량·동시오답 행렬과 M-Weighted Vote/M-Route로 소수 신뢰 판단을 보존. VERIFIED.
+- 주의할 점:
+  - NTU 논문 2차 해설.
+  - 구현 복잡도.
+- 다음 단계: Berlin/Zurich 실패 모드+가중 투표 아이디어만 체크리스트화.
 
 ### [storycompiler.tistory.com](https://storycompiler.tistory.com/684) — `korea-storycompiler-local-mcp-no-auth`
 
@@ -246,6 +291,17 @@ Qiita hikariclaude01이 Claude Code를 Docker 샌드박스에 가두고, 호스�
   - 게시 7/25; 환경별 Docker 권한 차이.
 - 다음 단계: compose의 internal:true·볼륨 RO/RW·filesystem MCP 경로만 dry-run으로 검토. 실에이전트 실행 보류 가능.
 
+### [Qiita / magi-council-skill (github.com/isikawatatsuki/magi-council-skill)](https://qiita.com/i0ry_y/items/41932ec657bada5adabd) — `japan-qiita-i0ry-magi-council-independent-vote`
+
+Qiita i0ry\_y가 동일 대화 속 3인격 연기는 후속 에이전트가 선행 답을 보고 독립 다수결이 아니라고 비판. MAGI Council은 MELCHIOR/BALTHASAR/CASPER를 별도 Subagent Context에서 병렬 투표하고 표는 Hook에만 밀봉(부모엔 VOTE\_SEALED), 집계·Veto는 LLM 밖 Rust CLI가 수행. THOMAS는 표 공개 없이 반증만 돌려 재고하게 하며, Critical Risk 소수 거부권으로 2:1 approve도 막을 수 있음. Qiita created\_at 2026-08-24T17:19:05+09:00.
+
+- 왜 중요한가: 컨텍스트 격리+투표 밀봉+LLM 밖 집계 패턴.
+- 추천: **작게 실험** — 동일 스레드 다인격은 독립 다수결이 아님. 별도 서브에이전트·Hook 밀봉 투표·Rust CLI 집계로 독립 판단 보존. VERIFIED 구현 레시피.
+- 주의할 점:
+  - 개인 Qiita 프로토타입.
+  - 하네스 종속.
+- 다음 단계: 밀봉 투표·외부 집계 규칙만 설계에 반영. 전체 MAGI 재구현 보류.
+
 ### [Qiita / multi-agent RAG (Claude API Tool Use / MCP / Managed Agents)](https://qiita.com/made_in_jp2525/items/6e895d589d606f3d264a) — `japan-qiita-made-in-jp2525-rag-multiagent-decompose`
 
 Qiita made\_in\_jp2525가 RAG를 멀티에이전트로 나눌 때 기능·데이터소스·도메인·롤(Orchestrator-Worker+Critic) 네 축을 제시. Orchestrator는 의도 해석·작업 분해·복수 Worker 결과 통합만 하고 검색 상세는 갖지 않으며, Worker는 독립 컨텍스트로 병렬 실행·상호 이력 비공유, Critic이 출처·모순을 검증. 구현은 Tool Use→MCP 검색 에이전트 분리→Managed Agents 병렬 Worker로 단계 성숙시키고, 처음부터 전축 분할하지 말라고 권고. Qiita API created\_at 2026-08-14T11:41:56+09:00.
@@ -257,6 +313,17 @@ Qiita made\_in\_jp2525가 RAG를 멀티에이전트로 나눌 때 기능·데이
   - Managed Agents/beta API 시변.
   - 벤치 수치 없음.
 - 다음 단계: 4축+Critic 역할만 자사 오케스트레이션 표에 옮김.
+
+### [Qiita / Graph Engineering](https://qiita.com/y-morimatsu/items/4110cab5f2bf88e70e97) — `japan-qiita-morimatsu-graph-engineering-schema-handoff`
+
+Qiita y-morimatsu가 Graph Engineering을 여러 에이전트 루프를 병렬 분기·검증기·핸드오프·정지 조건으로 배선하는 설계로 소개. 부품은 노드·엣지·공유 상태이며, 공유 상태는 태스크·생성물·체크 결과가 담긴 객체로 엣지 위를 흐른다고 설명. 실무 팁으로 노드 입력 화이트리스트, 핸드오프를 스키마로 타입화, 상류 대용량 출력은 요약 전달을 제시. OpenAI Agents SDK를 명시적 에이전트 간 핸드오프(가벼운 엣지 모델)로 비교. Qiita API created\_at 2026-08-02T23:22:59+09:00.
+
+- 왜 중요한가: 노드 입력 화이트리스트·스키마 typed handoff·상류 요약 규칙.
+- 추천: **읽기** — Graph Engineering에서 핸드오프를 스키마로 타입화하고 대용량은 요약 전달. 공유 상태가 엣지를 흐른다고 명시.
+- 주의할 점:
+  - 개인 Qiita.
+  - 프레임워크 비교는 개괄.
+- 다음 단계: 화이트리스트+스키마 핸드오프 팁만 체크리스트화.
 
 ### [SmartScope / GitHub Copilot Agent Skills](https://smartscope.blog/generative-ai/github-copilot/github-copilot-skills-guide/) — `japan-smartscope-copilot-skills-progressive-disclosure`
 
@@ -317,6 +384,17 @@ Arize Laurie Voss가 orchestrator-executor(별칭 orchestrator-worker·planner-e
   - 벤더(Arize) 블로그.
   - Anthropic 등 인용은 2차.
 - 다음 단계: 역할 표만 자사 오케스트레이터/워커 모델 할당과 대조.
+
+### [CellCog / Multi-agent & AI organizations](https://cellcog.ai/blog/ai-agent-handoff-protocols/) — `intl-cellcog-ai-agent-handoff-protocols-packet`
+
+CellCog가 에이전트 핸드오프를 대화 요약이 아니라 typed task contract(구조화 패킷)로 정의. identity·relationship·goal·scope·state·inputs·decisions·artifacts·evidence·authority·sensitivity·uncertainty·output·time/cost·failure policy·acceptance 등 16개 필드 그룹을 필수로 제시. 소유권은 수신자 명시적 accept 후에만 이전되며, 자격증명은 패킷에 넣지 않고 권한은 재계산한다고 규정. YAML 예시 handoff 레코드와 위협·오류 타입·평가 지표를 포함. datePublished 2026-07-31T09:00:00-04:00.
+
+- 왜 중요한가: identity→acceptance까지의 완전 엔벨로프와 수락 생명주기.
+- 추천: **읽기** — 핸드오프를 typed task contract(16필드 그룹)로 정의하고 YAML 예시·수락 전 ownership·자격증명 대신 grant를 요구. 구조화 패킷 전달의 국제 명세형 글.
+- 주의할 점:
+  - 벤더(CellCog) 블로그.
+  - 필드 세트는 규범적 제안이지 표준 아님.
+- 다음 단계: 16필드 그룹만 자사 핸드오프 스키마 coverage 매트릭스에 체크.
 
 ### [DeepInspect](https://www.deepinspect.ai/blog/mcp-server-authentication) — `intl-deepinspect-mcp-server-authentication-identity-binding-audit`
 
