@@ -23,6 +23,8 @@ evidence:
   - "intelligence/signals/2026/08/27/regional-signal/japan/sun-asterisk-claude-codex-build-loop.yaml"
   - "intelligence/signals/2026/08/27/regional-signal/japan/tamat-mcp-oauth-no-service-role.yaml"
   - "intelligence/signals/2026/08/27/regional-signal/japan/teamlab-ai-review-skill-eval.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/korea/github-nomadamas-minsync-bm25-hybrid-b998ffd.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/korea/github-nomadamas-slides-grab-chatgpt-plugin-2f5e61ee.yaml"
 sourceLinks:
   - "https://arxiv.org/abs/2608.23651"
   - "https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.8.0"
@@ -42,6 +44,8 @@ sourceLinks:
   - "https://zenn.dev/sun_asterisk/articles/f8ee013f00cbc3"
   - "https://zenn.dev/tamat_llc/articles/mcp-server-without-service-role-key"
   - "https://zenn.dev/team_lab/articles/5091dfeeb9deef"
+  - "https://github.com/NomaDamas/MinSync/commit/b998ffd2c504da7f4598a55761cf52b834b66ef9"
+  - "https://github.com/NomaDamas/slides-grab/commit/2f5e61ee3d08a12865e01d40ec40727cad865dca"
 records:
   - "intelligence/signals/2026/08/27/regional-signal/international/arxiv-feedback-backfires-2608-23651.yaml"
   - "intelligence/signals/2026/08/27/regional-signal/international/chrome-devtools-mcp-v1-8-0.yaml"
@@ -61,6 +65,8 @@ records:
   - "intelligence/signals/2026/08/27/regional-signal/japan/sun-asterisk-claude-codex-build-loop.yaml"
   - "intelligence/signals/2026/08/27/regional-signal/japan/tamat-mcp-oauth-no-service-role.yaml"
   - "intelligence/signals/2026/08/27/regional-signal/japan/teamlab-ai-review-skill-eval.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/korea/github-nomadamas-minsync-bm25-hybrid-b998ffd.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/korea/github-nomadamas-slides-grab-chatgpt-plugin-2f5e61ee.yaml"
 ---
 
 # 2026-08-27 AI Engineering Radar
@@ -79,7 +85,29 @@ records:
 
 ## 한국
 
-EMPTY — 이 권역에서 기준을 충족한 검증 레코드가 없습니다.
+### [NomaDamas/MinSync](https://github.com/NomaDamas/MinSync/commit/b998ffd2c504da7f4598a55761cf52b834b66ef9) — `github-nomadamas-minsync-bm25-hybrid-b998ffd`
+
+NomaDamas/MinSync 커밋 b998ffd(2026-08-24T08:43:46Z)가 로컬 LanceDB 인덱스에 BM25·hybrid(RRF k=60) 검색을 추가했다(+540/−39). 같은 창에서 Kiwi 한국어 토크나이저와 watch 강화가 이어졌다. 0.4.0 태그는 아직 없다.
+
+- 왜 중요한가: 임베딩 없이 FTS BM25, 벡터와 안정 chunk ID를 공유하는 hybrid. 생성 워크스페이스 검색을 어휘+벡터로 나눔.
+- 추천: **읽기** — 에이전트 샌드박스용 로컬 인덱스 CLI에 BM25·hybrid(RRF k=60)와 같은 창 Kiwi 한국어 토큰을 붙임. context engineering·Agent Skills(SKILL.md)에 맞음. 0.4.0 태그 없고 Hit@k 주장 없음. jikji EXPERIMENT와 다른 리포이나 같은 로컬 검색 축이라 재EXPERIMENT/ADOPT 아님. 지리 비가중. relatedCategories는 \[\] 유지.
+- 주의할 점:
+  - releases.atom에 v0.4.0 없음. prepare 커밋만.
+  - b998ffd README는 기본 FTS 토크나이저. Kiwi는 이후 커밋.
+  - hybrid 품질 미측정.
+- 다음 단계: \`minsync query --mode vector|bm25|hybrid\` 플래그와 SKILL.md만 읽기. 인덱스 구축·외부 게시·SoT 쓰기 없음.
+
+### [NomaDamas/slides-grab](https://github.com/NomaDamas/slides-grab/commit/2f5e61ee3d08a12865e01d40ec40727cad865dca) — `github-nomadamas-slides-grab-chatgpt-plugin-2f5e61ee`
+
+NomaDamas/slides-grab 커밋 2f5e61ee(2026-08-24T08:12:28Z)가 ChatGPT Work/Web용 플러그인 ZIP을 추가했다(+282/−2). 같은 날 HTML·image 스킬 설치와 v1.5.1 태그가 이어졌다.
+
+- 왜 중요한가: 스킬을 ChatGPT 플러그인 매니페스트로 내보내는 패키징 예. HTML/image 스킬은 로컬 Node/Playwright.
+- 추천: **읽기** — 슬라이드 컨텍스트 스킬을 ChatGPT 플러그인 ZIP으로 묶고 Codex/Claude Code install-skills 경로를 유지. Agent Skills 패키징에 인접. 호스티드 ChatGPT는 plan/design만. MCP 서버 아님을 명시. v1.5.1 compare는 7월 v1.5.0부터라 창 밖 변경을 창 안 사실로 쓰면 안 됨. 슬라이드 툴체인 설치 EXPERIMENT 아님.
+- 주의할 점:
+  - 플러그인에 MCP 서버 없음. 내보내기·시각 검증은 로컬 런타임.
+  - v1.5.1 전체 compare를 창 안 증분으로 읽으면 과대.
+  - 코딩 에이전트 코어보다 슬라이드/디자인 주변.
+- 다음 단계: CHATGPT.md의 plan/design 범위와 MCP 없음 문장만 읽기. 플러그인 설치·외부 게시 없음.
 
 ## 일본
 

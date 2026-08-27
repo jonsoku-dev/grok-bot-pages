@@ -157,7 +157,7 @@ Commit the observed contract separately before implementing mutation logic.
 Create a disposable manifest first, for example:
 
 ```text
-bots/codex-sync-test/bot.yaml
+an untracked temporary test manifest
 ```
 
 Use a clearly disposable name such as `Codex Sync Test`. Its purpose is only to validate automation.
@@ -169,9 +169,9 @@ manifest
   ↓
 botctl validate
   ↓
-botctl export codex-sync-test
+botctl export <temporary-test-bot>
   ↓
-botctl plan codex-sync-test
+botctl plan <temporary-test-bot>
   ↓
 MISSING
   ↓

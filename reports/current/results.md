@@ -30,6 +30,8 @@ sourceLinks:
   - "https://zenn.dev/sun_asterisk/articles/f8ee013f00cbc3"
   - "https://zenn.dev/tamat_llc/articles/mcp-server-without-service-role-key"
   - "https://zenn.dev/team_lab/articles/5091dfeeb9deef"
+  - "https://github.com/NomaDamas/MinSync/commit/b998ffd2c504da7f4598a55761cf52b834b66ef9"
+  - "https://github.com/NomaDamas/slides-grab/commit/2f5e61ee3d08a12865e01d40ec40727cad865dca"
   - "https://arxiv.org/abs/2608.22533"
   - "https://arxiv.org/abs/2608.22167"
   - "https://arxiv.org/abs/2608.23552"
@@ -129,6 +131,8 @@ records:
   - "intelligence/signals/2026/08/27/regional-signal/japan/sun-asterisk-claude-codex-build-loop.yaml"
   - "intelligence/signals/2026/08/27/regional-signal/japan/tamat-mcp-oauth-no-service-role.yaml"
   - "intelligence/signals/2026/08/27/regional-signal/japan/teamlab-ai-review-skill-eval.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/korea/github-nomadamas-minsync-bm25-hybrid-b998ffd.yaml"
+  - "intelligence/signals/2026/08/27/regional-signal/korea/github-nomadamas-slides-grab-chatgpt-plugin-2f5e61ee.yaml"
   - "intelligence/signals/2026/08/26/regional-signal/international/arxiv-contramem-2608-22533.yaml"
   - "intelligence/signals/2026/08/26/regional-signal/international/arxiv-mcp-universe-rl-2608-22167.yaml"
   - "intelligence/signals/2026/08/26/regional-signal/international/arxiv-prime-agent-2608-23552.yaml"
@@ -228,7 +232,7 @@ records:
 - 기준일: 2026-08-27
 - 분류: AI 엔지니어링
 - 추천: **작게 실험**
-- 근거 레코드: 18건 — `arxiv-feedback-backfires-2608-23651`, `chrome-devtools-mcp-v1-8-0`, `github-copilot-cli-v1-0-81-12`, `helter5-agentbridge-v1-0-2`, `langchain-deepagents-code-0-1-62`, `openai-codex-rust-v0-150-0`, `openai-loveholidays-codex-2026-08-26`, `xhluca-session-migrate-v0-9-0`, `acntechjp-model-armor-tool-poisoning`, `ceres-git-worktree-parallel-agents`, `estie-mastra-tomodeloutput-context`, `hissy-concretecms-mcp-remote-clients`, `jinjer-claude-code-training-skills`, `lycorp-agent-i-platform`, `lycorp-qa-agent-platform`, `sun-asterisk-claude-codex-build-loop`, `tamat-mcp-oauth-no-service-role`, `teamlab-ai-review-skill-eval`
+- 근거 레코드: 20건 — `arxiv-feedback-backfires-2608-23651`, `chrome-devtools-mcp-v1-8-0`, `github-copilot-cli-v1-0-81-12`, `helter5-agentbridge-v1-0-2`, `langchain-deepagents-code-0-1-62`, `openai-codex-rust-v0-150-0`, `openai-loveholidays-codex-2026-08-26`, `xhluca-session-migrate-v0-9-0`, `acntechjp-model-armor-tool-poisoning`, `ceres-git-worktree-parallel-agents`, `estie-mastra-tomodeloutput-context`, `hissy-concretecms-mcp-remote-clients`, `jinjer-claude-code-training-skills`, `lycorp-agent-i-platform`, `lycorp-qa-agent-platform`, `sun-asterisk-claude-codex-build-loop`, `tamat-mcp-oauth-no-service-role`, `teamlab-ai-review-skill-eval`, `github-nomadamas-minsync-bm25-hybrid-b998ffd`, `github-nomadamas-slides-grab-chatgpt-plugin-2f5e61ee`
 - 공개 원문: [원문 1](https://arxiv.org/abs/2608.23651) · [원문 2](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.8.0) · [원문 3](https://github.com/github/copilot-cli/releases/tag/v1.0.81-12) · [원문 4](https://github.com/Helter5/agentbridge/releases/tag/v1.0.2) · [원문 5](https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.62)
 
 ### [2026-08-26 AI Engineering Radar](/blog/2026/08/26/ai-engineering-radar)

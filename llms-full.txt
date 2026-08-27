@@ -37,7 +37,7 @@ canonical path, source commit, content hash, freshness, evidence와 action을 �
 - 기준일: 2026-08-27
 - 분류: AI 엔지니어링
 - 추천: **작게 실험**
-- 근거 레코드: 18건 — `arxiv-feedback-backfires-2608-23651`, `chrome-devtools-mcp-v1-8-0`, `github-copilot-cli-v1-0-81-12`, `helter5-agentbridge-v1-0-2`, `langchain-deepagents-code-0-1-62`, `openai-codex-rust-v0-150-0`, `openai-loveholidays-codex-2026-08-26`, `xhluca-session-migrate-v0-9-0`, `acntechjp-model-armor-tool-poisoning`, `ceres-git-worktree-parallel-agents`, `estie-mastra-tomodeloutput-context`, `hissy-concretecms-mcp-remote-clients`, `jinjer-claude-code-training-skills`, `lycorp-agent-i-platform`, `lycorp-qa-agent-platform`, `sun-asterisk-claude-codex-build-loop`, `tamat-mcp-oauth-no-service-role`, `teamlab-ai-review-skill-eval`
+- 근거 레코드: 20건 — `arxiv-feedback-backfires-2608-23651`, `chrome-devtools-mcp-v1-8-0`, `github-copilot-cli-v1-0-81-12`, `helter5-agentbridge-v1-0-2`, `langchain-deepagents-code-0-1-62`, `openai-codex-rust-v0-150-0`, `openai-loveholidays-codex-2026-08-26`, `xhluca-session-migrate-v0-9-0`, `acntechjp-model-armor-tool-poisoning`, `ceres-git-worktree-parallel-agents`, `estie-mastra-tomodeloutput-context`, `hissy-concretecms-mcp-remote-clients`, `jinjer-claude-code-training-skills`, `lycorp-agent-i-platform`, `lycorp-qa-agent-platform`, `sun-asterisk-claude-codex-build-loop`, `tamat-mcp-oauth-no-service-role`, `teamlab-ai-review-skill-eval`, `github-nomadamas-minsync-bm25-hybrid-b998ffd`, `github-nomadamas-slides-grab-chatgpt-plugin-2f5e61ee`
 - 공개 원문: [원문 1](https://arxiv.org/abs/2608.23651) · [원문 2](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.8.0) · [원문 3](https://github.com/github/copilot-cli/releases/tag/v1.0.81-12) · [원문 4](https://github.com/Helter5/agentbridge/releases/tag/v1.0.2) · [원문 5](https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.62)
 
 ### [2026-08-26 AI Engineering Radar](/blog/2026/08/26/ai-engineering-radar)
@@ -172,9 +172,9 @@ audit/**                 execution_evidence
 Execution evidence can prove that a Bot ran or a delivery occurred. It cannot substitute for a
 source-bound factual record. A report references record paths; it does not become the record.
 
-## Delivery architecture
+## AI Engineering Radar architecture
 
-Research and delivery are separate responsibilities.
+One bounded group owns the complete pipeline while each Bot keeps one responsibility.
 
 ```text
 External sources -> scouts -> verifier -> evaluator
@@ -193,22 +193,20 @@ External sources -> scouts -> verifier -> evaluator
                           reports/** -> Docusaurus
                                       |
                                       v
-                               GitHub Reader
-                              /             \
-                     Slack Publisher   Gmail Publisher
+                         Blog Publication Verifier
 ```
 
 GitHub SoT Writer changes records only. Document Publisher changes reader-facing documents only.
-Slack and Gmail operate on an approved current document through `canonical-content/v1`. Simple
-GitHub-to-channel copying should be deterministic. Semantic digesting, selection, or audience
-adaptation can be agentic.
+Blog Publication Verifier is read-only and independently checks the live article, source links,
+record IDs, and LLM outputs.
 
 The daily public path is policy-authorized automation: one complete public-only `VERIFIED` record
 is enough for GitHub SoT Writer to persist through the connected GitHub plugin. The SoT push wakes
 the deterministic `publish-intelligence` Action, which creates a missing report with `EMPTY`
 sections for absent regions, validates it, commits it, and deploys the public Docusaurus build.
-The Action also runs daily at 07:30 Asia/Tokyo as a fallback. Existing approved records and reports
-are preserved rather than overwritten.
+The Action runs at 07:45 Asia/Tokyo. A free macOS launchd fallback runs the same deterministic
+publisher from an isolated temporary clone when private GitHub Actions cannot start a runner.
+Existing approved records and reports are preserved rather than overwritten.
 
 ## Security boundaries
 
@@ -221,19 +219,6 @@ are preserved rather than overwritten.
   deterministic public-blog creation is authorized by the policy gate and remains append-only.
 - Operational evidence is never admitted as a factual source record.
 - Destructive lifecycle actions default to `retain`.
-
----
-
-## Architecture Council runbook
-
-
-Use the Council only for an explicit on-demand decision. This is a manual Group kickoff runbook, not an automatic or scheduled runner. Create one current `architecture-review/v1` kickoff packet containing the configured input fields, then provide the same packet independently to all four reviewers. Conversation memory is not input authority.
-
-Collect reviewer outputs without editing them into consensus. The synthesizer must retain dissent, uncertainty, conditions, unresolved risks, and the smallest reversible next step while returning one allowed outcome: `KEEP`, `MODIFY`, `EXPERIMENT`, or `ABANDON`.
-
-The Council does not schedule work, write externally, change runtime, or persist decisions automatically. Any requested runtime or SoT change stops for explicit human approval.
-
-The Registry Manager is read-only control-plane support: validate, diff, plan, and verify Git desired state against observed runtime evidence. It cannot operate local UI, auto-apply/delete, or derive desired state from runtime observations.
 
 ---
 
@@ -1618,7 +1603,29 @@ session-migrate 0.8.0이 Muse Code 0.2.1·Qwen Code 0.22.1·Kimi Code 0.38.0를 
 
 ## 한국
 
-EMPTY — 이 권역에서 기준을 충족한 검증 레코드가 없습니다.
+### [NomaDamas/MinSync](https://github.com/NomaDamas/MinSync/commit/b998ffd2c504da7f4598a55761cf52b834b66ef9) — `github-nomadamas-minsync-bm25-hybrid-b998ffd`
+
+NomaDamas/MinSync 커밋 b998ffd(2026-08-24T08:43:46Z)가 로컬 LanceDB 인덱스에 BM25·hybrid(RRF k=60) 검색을 추가했다(+540/−39). 같은 창에서 Kiwi 한국어 토크나이저와 watch 강화가 이어졌다. 0.4.0 태그는 아직 없다.
+
+- 왜 중요한가: 임베딩 없이 FTS BM25, 벡터와 안정 chunk ID를 공유하는 hybrid. 생성 워크스페이스 검색을 어휘+벡터로 나눔.
+- 추천: **읽기** — 에이전트 샌드박스용 로컬 인덱스 CLI에 BM25·hybrid(RRF k=60)와 같은 창 Kiwi 한국어 토큰을 붙임. context engineering·Agent Skills(SKILL.md)에 맞음. 0.4.0 태그 없고 Hit@k 주장 없음. jikji EXPERIMENT와 다른 리포이나 같은 로컬 검색 축이라 재EXPERIMENT/ADOPT 아님. 지리 비가중. relatedCategories는 \[\] 유지.
+- 주의할 점:
+  - releases.atom에 v0.4.0 없음. prepare 커밋만.
+  - b998ffd README는 기본 FTS 토크나이저. Kiwi는 이후 커밋.
+  - hybrid 품질 미측정.
+- 다음 단계: \`minsync query --mode vector|bm25|hybrid\` 플래그와 SKILL.md만 읽기. 인덱스 구축·외부 게시·SoT 쓰기 없음.
+
+### [NomaDamas/slides-grab](https://github.com/NomaDamas/slides-grab/commit/2f5e61ee3d08a12865e01d40ec40727cad865dca) — `github-nomadamas-slides-grab-chatgpt-plugin-2f5e61ee`
+
+NomaDamas/slides-grab 커밋 2f5e61ee(2026-08-24T08:12:28Z)가 ChatGPT Work/Web용 플러그인 ZIP을 추가했다(+282/−2). 같은 날 HTML·image 스킬 설치와 v1.5.1 태그가 이어졌다.
+
+- 왜 중요한가: 스킬을 ChatGPT 플러그인 매니페스트로 내보내는 패키징 예. HTML/image 스킬은 로컬 Node/Playwright.
+- 추천: **읽기** — 슬라이드 컨텍스트 스킬을 ChatGPT 플러그인 ZIP으로 묶고 Codex/Claude Code install-skills 경로를 유지. Agent Skills 패키징에 인접. 호스티드 ChatGPT는 plan/design만. MCP 서버 아님을 명시. v1.5.1 compare는 7월 v1.5.0부터라 창 밖 변경을 창 안 사실로 쓰면 안 됨. 슬라이드 툴체인 설치 EXPERIMENT 아님.
+- 주의할 점:
+  - 플러그인에 MCP 서버 없음. 내보내기·시각 검증은 로컬 런타임.
+  - v1.5.1 전체 compare를 창 안 증분으로 읽으면 과대.
+  - 코딩 에이전트 코어보다 슬라이드/디자인 주변.
+- 다음 단계: CHATGPT.md의 plan/design 범위와 MCP 없음 문장만 읽기. 플러그인 설치·외부 게시 없음.
 
 ## 일본
 
@@ -2039,7 +2046,7 @@ Commit the observed contract separately before implementing mutation logic.
 Create a disposable manifest first, for example:
 
 ```text
-bots/codex-sync-test/bot.yaml
+an untracked temporary test manifest
 ```
 
 Use a clearly disposable name such as `Codex Sync Test`. Its purpose is only to validate automation.
@@ -2051,9 +2058,9 @@ manifest
   ↓
 botctl validate
   ↓
-botctl export codex-sync-test
+botctl export <temporary-test-bot>
   ↓
-botctl plan codex-sync-test
+botctl plan <temporary-test-bot>
   ↓
 MISSING
   ↓
@@ -2522,164 +2529,50 @@ Do not touch the full Bot roster until the disposable test Bot has successfully 
 
 ## Mission
 
-Turn this repository into a usable Git-backed Grok Bot control plane. Work through the repository using the `gh` CLI for GitHub operations. Keep GitHub as canonical desired state; do not make Grok UI state authoritative.
+Maintain one Git-backed Grok Bot pipeline: AI Engineering Radar. GitHub is desired state and factual SoT; Grok is runtime state.
 
-## First commands
+## Active roster
 
-```bash
-gh repo clone jonsoku-dev/grok-bot
-cd grok-bot
-gh repo view --json nameWithOwner,visibility,defaultBranchRef
+- Discovery: Open Signal Scout, GitHub Scout, Release Scout
+- Verification and judgment: Evidence Verifier, Relevance Judge
+- Persistence and recovery: GitHub SoT Writer, SoT PR Reconciler
+- Output and proof: Document Publisher, Blog Publication Verifier
+- On-demand intake: Keyword Radar
+
+The only active Group is `ai-engineering-radar`. The active Routines are daily research, daily PR reconciliation, daily publication verification, and weekly review.
+
+## Required workflow
+
+```text
+manifest change
+  -> npm test
+  -> npm run validate
+  -> botctl plan
+  -> approved Computer Use apply
+  -> exact UI re-read
+  -> verified runtime snapshot
 ```
 
-Before making changes, inspect all existing files and `git log`.
+Use only Codex App built-in Computer Use for Grok Desktop. Never use Orca. Desired Bots that access the private repository use only the connected GitHub plugin.
 
-## Required implementation order
+## Publication path
 
-### Phase 1 — Foundation
-
-1. Formalize `agentops/v1alpha1` schemas for Bot, Group, Skill, Routine, Channel and RuntimeSnapshot.
-2. Add all initial bot manifests listed below.
-3. Add group definitions and routine manifests.
-4. Add policy/config files for interests, publishing, personal/company boundaries and approvals.
-5. Add deterministic validation.
-
-Initial bots:
-
-**AI Engineering Radar**
-- x-signal-scout
-- github-scout
-- release-scout
-- evidence-verifier
-- relevance-judge
-- github-sot-writer
-
-**Architecture Council**
-- assumption-challenger
-- tradeoff-analyst
-- operations-reviewer
-- security-reviewer
-- decision-synthesizer
-
-**Knowledge Delivery**
-- github-reader
-- document-publisher
-- slack-publisher
-- gmail-publisher
-
-**Control plane**
-- bot-registry-manager
-
-Keep bot responsibilities minimal. A reusable procedure belongs in a Skill, not a new Bot.
-
-### Phase 2 — botctl
-
-Build a TypeScript CLI under `tooling/botctl` with at least:
-
-```bash
-npm run botctl -- validate
-npm run botctl -- list
-npm run botctl -- show <bot>
-npm run botctl -- export <bot>
-npm run botctl -- plan [bot]
-npm run botctl -- guided <bot>
-npm run botctl -- snapshot <bot> --input <runtime-snapshot.yaml> --correlation-id <id>
-npm run botctl -- verify <bot> [--input <runtime-snapshot.yaml>]
-npm run botctl -- ui-observe --input <ui-observation.yaml>
-npm run botctl -- ui-observe-summary
+```text
+06:30 research
+07:30 signal PR reconciliation
+07:45 deterministic publish and Docusaurus deploy
+08:15 live publication verification
 ```
 
-`export` should produce a human/computer-use friendly package containing the exact Grok UI values to enter plus group/routine actions.
+Private GitHub Actions remain the first publisher. The free macOS launchd fallback runs the same deterministic scripts from an isolated temporary clone.
 
-`plan` must compare desired manifests with `runtime/grok/**` snapshots and classify each object as:
+## Completion gates
 
-- SYNCED
-- DRIFTED
-- MISSING
-- UNMANAGED
-
-Never auto-delete. `deletionPolicy: retain` is the default.
-
-### Phase 3 — CI
-
-Add GitHub Actions to run with deterministic checks only:
-
-- YAML/schema validation
-- duplicate IDs
-- dangling references
-- group membership validity
-- missing skills/routines
-- invalid trigger configuration
-- permission escalation policy
-- personal/company boundary violations
-- schedule collisions where detectable
-
-Use `gh` to inspect workflow status and PR checks.
-
-### Phase 4 — Computer-use adapter
-
-Design provider abstraction first:
-
-```ts
-interface AgentRuntimeProvider {
-  inspect(id: string): Promise<RuntimeBot | null>;
-  create(desired: BotManifest): Promise<void>;
-  update(desired: BotManifest): Promise<void>;
-  verify(id: string): Promise<RuntimeBot>;
-}
-```
-
-Implement a `GrokComputerUseProvider` only after manual `export` is stable.
-
-Computer-use application rules:
-
-1. `plan` before every mutation.
-2. Require explicit approval for apply during initial rollout.
-3. Create/update only; never delete automatically.
-4. Re-read UI after save and verify exact values.
-5. Persist observed state to `runtime/grok/` with source commit SHA and timestamp.
-6. UI selectors and navigation knowledge must remain adapter-specific.
-7. If the UI is ambiguous, stop instead of guessing.
-
-If an official Grok configuration API becomes available, implement another provider rather than changing manifests.
-
-## GitHub workflow
-
-Use branches and PRs for meaningful control-plane changes:
-
-```bash
-git switch -c feat/control-plane-foundation
-# edit/test
-git add .
-git commit -m "feat: build Grok control plane foundation"
-git push -u origin HEAD
-gh pr create --fill
-
-gh pr checks --watch
-```
-
-Do not store tokens or secrets in the repository. Use GitHub Actions secrets or the approved runtime secret mechanism.
-
-## SoT rules
-
-- `bots/`, `groups/`, `skills/`, `routines/`, `config/`, `knowledge/`, and approved `reports/` are desired/canonical data.
-- `runtime/` is observed state and never overrides desired state.
-- Grok conversation memory is never canonical.
-- Company data must be isolated from this personal repository unless explicitly public/sanitized.
-
-## Definition of done for the next Codex session
-
-Do not attempt full Grok UI automation immediately. The first milestone is complete when:
-
-1. all initial manifests exist and validate;
-2. `pnpm botctl validate` passes;
-3. `pnpm botctl export x-signal-scout` emits an exact setup package;
-4. `pnpm botctl plan` works against fixture/runtime snapshots;
-5. CI passes on a PR;
-6. README documents manual setup from exported configuration;
-7. a follow-up issue exists for computer-use synchronization with explicit acceptance criteria.
-
-After that, test computer-use synchronization on **one disposable/test bot first**, then expand to the roster.
+- Every active manifest and reference validates.
+- No deleted Bot, Group, Routine, or Skill appears in the active registry.
+- Factual records remain separate from reader output and audit evidence.
+- Live pages expose every expected record ID and source link.
+- `llms-results.txt` and `llms-sot.txt` contain the published record set.
 
 ---
 

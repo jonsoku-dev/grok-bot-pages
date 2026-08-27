@@ -90,9 +90,9 @@ audit/**                 execution_evidence
 Execution evidence can prove that a Bot ran or a delivery occurred. It cannot substitute for a
 source-bound factual record. A report references record paths; it does not become the record.
 
-## Delivery architecture
+## AI Engineering Radar architecture
 
-Research and delivery are separate responsibilities.
+One bounded group owns the complete pipeline while each Bot keeps one responsibility.
 
 ```text
 External sources -> scouts -> verifier -> evaluator
@@ -111,22 +111,20 @@ External sources -> scouts -> verifier -> evaluator
                           reports/** -> Docusaurus
                                       |
                                       v
-                               GitHub Reader
-                              /             \
-                     Slack Publisher   Gmail Publisher
+                         Blog Publication Verifier
 ```
 
 GitHub SoT Writer changes records only. Document Publisher changes reader-facing documents only.
-Slack and Gmail operate on an approved current document through `canonical-content/v1`. Simple
-GitHub-to-channel copying should be deterministic. Semantic digesting, selection, or audience
-adaptation can be agentic.
+Blog Publication Verifier is read-only and independently checks the live article, source links,
+record IDs, and LLM outputs.
 
 The daily public path is policy-authorized automation: one complete public-only `VERIFIED` record
 is enough for GitHub SoT Writer to persist through the connected GitHub plugin. The SoT push wakes
 the deterministic `publish-intelligence` Action, which creates a missing report with `EMPTY`
 sections for absent regions, validates it, commits it, and deploys the public Docusaurus build.
-The Action also runs daily at 07:30 Asia/Tokyo as a fallback. Existing approved records and reports
-are preserved rather than overwritten.
+The Action runs at 07:45 Asia/Tokyo. A free macOS launchd fallback runs the same deterministic
+publisher from an isolated temporary clone when private GitHub Actions cannot start a runner.
+Existing approved records and reports are preserved rather than overwritten.
 
 ## Security boundaries
 
