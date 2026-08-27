@@ -2576,6 +2576,1496 @@ Private GitHub Actions remain the first publisher. The free macOS launchd fallba
 
 ---
 
+## Grok Bot bootstrap prompt — Miyamae Local Media
+
+
+Use this prompt in a fresh Grok Bot conversation after the repository is connected. It is intentionally execution-oriented. Do not claim success for UI/runtime capabilities that were not directly observed.
+
+---
+
+You are bootstrapping the Miyamae Local Media operating system from the private repository `jonsoku-dev/grok-bot`.
+
+Your first responsibility is to read the repository Source of Truth before acting. Read, at minimum:
+
+- `AGENTS.md`
+- `config/miyamae-sources.yaml`
+- `config/grok-capabilities.yaml`
+- `docs/MIYAMAE_COMMUNITY_MEDIA.md`
+- `docs/MIYAMAE_EDITORIAL_PLAYBOOK.md`
+- `docs/MIYAMAE_COLLECTION_ARCHITECTURE.md`
+- `docs/GROK_BOT_RUNTIME_ONBOARDING.md`
+- `plugins/miyamae-local-media/skills/miyamae-operator/SKILL.md`
+- schemas for local story, reserve, trend, community lead, and Grok capability experiments
+
+Then perform only the safe bootstrap phase below.
+
+## Phase A — inspect actual Grok capabilities
+
+1. Record the visible Grok Bot app/version information if available.
+2. Check whether `/workspace` exists and whether files persist across two separate turns.
+3. Create the documented `/workspace/miyamae` directory structure without storing credentials.
+4. Check whether this Bot can message another Bot/group and whether a file-based handoff can be observed by the receiving Bot.
+5. Check whether the installed app exposes `Teach a task`. Do not start recording yet.
+6. Check whether private plugins/skills can be added from the connected private repository or marketplace. Do not weaken any existing plugin policy.
+7. Check whether any native Grok/X search capability is visibly available. Do not assume API `x_search` is present merely because xAI developer APIs support it.
+
+For each observation, create a `grok-capability-experiment/v1` evidence record under `/workspace/miyamae/evidence`. Mark unsupported or unavailable capabilities BLOCKED/PARTIAL rather than inventing success.
+
+## Phase B — browser/session bootstrap
+
+1. Open X using the shared computer.
+2. If authentication is required, stop and request human Take Over. Never request credentials in chat.
+3. After the human signs in, verify only that the session persists across navigation.
+4. Open Threads and use the same secure handoff rule.
+5. Ask a second Miyamae Bot to open X and verify whether the authorized browser session is actually shared. Record the result.
+6. Never publish during bootstrap.
+
+## Phase C — dry-run local radar
+
+1. Run a free-first Miyamae information sweep using official API/RSS/open data before browser research.
+2. Write candidates to `/workspace/miyamae/inbox`.
+3. Hand candidates to the Miyamae Evidence Verifier.
+4. Preserve LEAD/VERIFYING/CONFIRMED/OFFICIAL states and R0-R3 risk.
+5. Run Trend Scout separately. Trends and social posts are not evidence.
+6. Select at most three low-risk draft candidates; do not publish them.
+7. If no fresh candidate is useful, query the reserve inventory. Do not fabricate filler.
+
+## Phase D — report
+
+Return one concise bootstrap report containing:
+
+- capabilities directly observed
+- capabilities unavailable or rollout-blocked
+- browser session status without credential details
+- workspace handoff status
+- private marketplace/skill status
+- native X search status
+- candidate counts by evidence state and risk
+- reserve inventory health
+- exact next experiment that requires human action
+
+Do not change external accounts, publish posts, install unreviewed third-party plugins, create paid API usage, or bypass access controls during this bootstrap.
+
+---
+
+## Grok Bot Capability Playbook for Miyamae Community Media
+
+
+Last researched: 2026-08-27
+
+This document records capabilities that are unusually valuable because the runtime is Grok Bot, not merely a stateless LLM. It separates confirmed Grok Bot product capabilities from broader Grok/xAI platform capabilities that must not be assumed to exist inside a Bot until verified in the app.
+
+## Capability confidence
+
+- `BOT-CONFIRMED`: documented specifically for Grok Bot.
+- `GROK-PLATFORM`: documented for Grok/xAI generally; useful as a possible integration, but not automatically assumed available inside Grok Bot.
+- `EXPERIMENTAL`: observed/community technique that requires an explicit safe test before becoming a routine.
+
+## 1. Persistent user-scoped cloud computer — BOT-CONFIRMED
+
+Official Grok Bot documentation states that each user gets a persistent cloud computer. Bots run with a browser, filesystem and terminal. All Bots for the user share that computer, its files, browser sessions and sign-ins; individual Bots get separate screens but are not security boundaries.
+
+Miyamae use:
+
+- keep signed-in X and Threads sessions available to the Bot roster;
+- keep hot operational files under `/workspace/miyamae/` for fast handoffs;
+- let deterministic collection jobs write candidate packets to the shared workspace;
+- let source/trend/community Bots consume the same browser sessions without repeated authentication;
+- use browser login persistence for pages whose useful public surface is only available after ordinary account login;
+- keep GitHub as authoritative configuration/history, not as a substitute for fast runtime state.
+
+Operational filesystem proposal:
+
+```text
+/workspace/miyamae/
+  inbox/              # newly collected candidate packets
+  verified/           # verified local-story packets pending editorial choice
+  reserve/            # hot cache/index of READY evergreen items
+  trends/             # short-lived trend observations
+  community-leads/    # replies/mentions awaiting verification
+  drafts/             # X/Threads drafts pending approval/publication
+  evidence/           # bounded screenshots/exports when useful
+  locks/              # cooperative ownership/lease files between Bots
+  health/             # last-run/source-health summaries
+```
+
+Security consequence: never place secrets in this workspace merely because one Bot appears private. Every Bot can potentially access the same computer state.
+
+## 2. Persistent browser sessions — BOT-CONFIRMED
+
+The user can take over the Bot computer to enter a password, passkey, 2FA or CAPTCHA, then return control. The authenticated browser session persists and can be reused by other Bots when appropriate.
+
+Miyamae use:
+
+- one intentional human sign-in to X;
+- one intentional human sign-in to Threads;
+- optionally sign in to other public/local services only when their terms and value justify it;
+- never store cookies, passwords, tokens, profile directories or authorization headers in GitHub;
+- if the session expires, request takeover rather than attempting authentication bypass.
+
+This is materially better than building brittle credential automation.
+
+## 3. Multiple Bots can coordinate independently — BOT-CONFIRMED
+
+Bots can message each other, share context in threads/group chats and pass ownership. They may run in parallel on separate screens while sharing the same user computer.
+
+Miyamae use:
+
+- `miyamae-source-scout` owns broad discovery;
+- `miyamae-evidence-verifier` independently verifies and risk-classifies;
+- `miyamae-trend-scout` watches X/Threads/Google interest separately;
+- `miyamae-reserve-curator` maintains the evergreen inventory;
+- `miyamae-community-host` handles drafts/questions/follow-ups;
+- later add a `miyamae-correction-watcher` only if correction workload becomes stable enough to justify another long-lived Bot.
+
+Do not create many Bots simply because the product supports them. Grok Bot currently documents an account limit of up to 50 Bots and group chats combined. Prefer stable ownership boundaries.
+
+## 4. Group chat as an operations room — BOT-CONFIRMED
+
+A group chat can preserve visible handoffs between specialist Bots rather than forcing the human to relay every result.
+
+Miyamae use:
+
+Create/maintain one `Miyamae Community Media` group. Handoffs should be structured:
+
+```text
+Scout -> Verifier: candidate packet + source URLs + observedAt
+Verifier -> Host: OFFICIAL/CONFIRMED local-story + risk + source-visible facts
+Trend Scout -> Host: trend packet only; never factual corroboration
+Reserve Curator -> Host: READY reserve candidates + freshness metadata
+Host -> Human: external publish approval when required
+Host -> Verifier: resident reply/mention as LEAD
+```
+
+The group is an operational conversation, not the authoritative database. Durable rules stay in GitHub.
+
+## 5. Skills are reusable across Bots — BOT-CONFIRMED
+
+Grok Bot skills capture repeatable steps, decision rules, expected output, validation and approval boundaries. Private installed skills can be enabled per Bot.
+
+Miyamae use:
+
+Repository-managed skills should be mirrored/tested in Grok Bot for:
+
+- resilient public web research;
+- authorized browser observation;
+- trend-to-local natural-join logic;
+- local evidence verification;
+- privacy/risk classification;
+- X post drafting;
+- Threads discussion drafting;
+- visible correction publishing;
+- reserve revalidation;
+- source-health diagnosis.
+
+A skill should be tested as a one-time task before becoming a routine.
+
+## 6. Teach a task by live browser demonstration — BOT-CONFIRMED, rollout-dependent
+
+When `Teach a task` is available, Grok Bot can record up to ten minutes of visible browser interaction and turn the demonstration into a draft skill. The feature may roll out gradually.
+
+This is one of the highest-value Grok-specific capabilities for this project.
+
+Teach these tasks manually once:
+
+### A. Publish an X post
+
+Demonstrate:
+
+1. open the already-signed-in X account;
+2. start a post;
+3. paste a prepared Japanese draft;
+4. inspect link preview/media if present;
+5. stop before final publish if approval must remain human;
+6. after approval, publish;
+7. reopen the post and copy the canonical post URL;
+8. write publication evidence to the conversation/workspace.
+
+Then edit the generated skill so risk rules, source requirements and idempotency are explicit.
+
+### B. Publish a Threads post
+
+Teach the equivalent Threads workflow separately. Do not assume DOM/layout or posting constraints match X.
+
+### C. Inspect X Explore/Trending
+
+Teach navigation to the exact current trend surface and how to collect only topic/scope/context without treating it as truth.
+
+### D. Inspect replies/mentions
+
+Teach the Bot how to open notifications/replies, extract bounded lead information and avoid private/irrelevant personal data.
+
+Never expose passwords or one-time codes in a teaching recording. Use secure takeover for credentials.
+
+## 7. Background routines while the laptop is closed — BOT-CONFIRMED
+
+Scheduled Grok Bot routines run in the cloud and can continue while the user's laptop is closed. Each Bot may own up to 50 routines; the app keeps the 20 most recent run records for each routine. Long inactivity may cause Grok Bot to ask whether routines should continue and may pause them if there is no response.
+
+Miyamae use:
+
+- frequent local radar;
+- trend radar;
+- daily reserve refresh;
+- morning/evening/weekend digests;
+- periodic follow-up checks for unresolved stories;
+- source-health audits;
+- correction checks on previously published volatile stories.
+
+Every routine needs explicit `no data`, stale-data, retry and partial-failure behavior. Never post solely because a routine ran.
+
+## 8. Event-triggered routines — BOT-CONFIRMED where integration supports events
+
+Cursor account integrations can start routines after supported events such as a Slack message or GitHub notification. This is separate from ordinary plugins and may require connection setup.
+
+Miyamae use today:
+
+- GitHub change events can trigger validation/reconciliation work when supported;
+- do not invent an X/Threads event trigger unless Grok Bot exposes one;
+- browser-polled replies/mentions remain scheduled observation until a supported event source exists.
+
+Future possibility: an MCP/webhook ingestion service could normalize external civic alerts into an integration that triggers Grok work, but this is optional and should not replace cheap deterministic feeds.
+
+## 9. Connectors and custom MCP — BOT/GROK-CONFIRMED ecosystem capability
+
+Grok supports connectors and custom MCP servers. A custom MCP can expose APIs/databases/tools under controlled schemas. Grok Bot itself can use connectors/MCP where available.
+
+Miyamae use later:
+
+Expose a small `miyamae-local-intel` MCP only when the deterministic local collector becomes mature. Candidate tools:
+
+- `list_recent_candidates`
+- `get_source_health`
+- `list_ready_reserve`
+- `mark_story_verified`
+- `list_unresolved_leads`
+- `search_local_archive`
+- `record_publication`
+
+Do not build MCP merely to move YAML around. Start with files/CLI and add MCP when cross-Bot querying or typed mutation provides real value.
+
+## 10. Local-computer execution — BOT-CONFIRMED, normally unnecessary
+
+Grok Bot cloud-computer access and execution on the user's physical Mac/Windows machine are different permissions. Local execution can be Always ask, Always allow or Never allow; default is Ask every time.
+
+Miyamae policy:
+
+- prefer the cloud computer;
+- keep local execution disabled unless a task genuinely needs a local-only resource;
+- do not make the Miyamae routine depend on the operator's Mac being online.
+
+## 11. Durable memory/preferences — BOT-CONFIRMED
+
+A named Bot can retain stable preferences, facts and summaries over time. Official docs explicitly warn that memory is not a substitute for an authoritative source.
+
+Miyamae use:
+
+Good memory:
+- preferred Japanese voice;
+- editorial conventions;
+- common neighborhood aliases;
+- recurring workflow preferences;
+- which kinds of drafts the operator usually rejects.
+
+Bad memory-as-authority:
+- store hours;
+- event date;
+- transport state;
+- current office holder;
+- whether a business is still open;
+- any breaking incident.
+
+Changing facts must be reopened from source evidence.
+
+## 12. Evidence-rich files/results — BOT-CONFIRMED
+
+Grok Bot can work with many file types and shared `/workspace` files. Official guidance recommends source links, screenshots, timestamps, filenames, concise action logs and explicit unverified items.
+
+Miyamae use:
+
+Every sensitive or consequential handoff should remain independently reviewable. Screenshots are supplemental evidence, not the sole source for rapidly changing information.
+
+## 13. Grok/xAI real-time Web Search — GROK-PLATFORM
+
+xAI documents a real-time `web_search` tool for Grok models in its developer APIs. This confirms that real-time web research is a native xAI capability, but this repository must not assume a Grok Bot conversation automatically exposes the developer API tool under that exact interface.
+
+Miyamae use:
+
+- if the Bot UI exposes equivalent Grok web research, benchmark it as a discovery lane;
+- preserve actual source URLs, not just model summaries;
+- deterministic official feeds remain preferred for repeated collection.
+
+## 14. Grok/xAI X Search — GROK-PLATFORM, especially interesting
+
+xAI developer docs expose `x_search` supporting keyword search, semantic search, user search and thread fetch against real-time X content.
+
+This is potentially the most strategically relevant xAI-native capability for Miyamae, because X is also the account/community surface.
+
+Do not silently assume Grok Bot has this developer tool. Run a product test. If available natively in Grok Bot or through an approved connector, use it for:
+
+- `宮前区`, `宮前平`, `宮崎台`, `鷺沼`, neighborhood names;
+- opening/closure reports;
+- local event chatter;
+- transport/road observations;
+- replies around this account;
+- semantic discovery of posts that omit exact keywords;
+- fetching an entire X thread rather than isolated posts.
+
+All non-official social results remain `LEAD`. Official public authority/operator accounts may establish what that authority claims, subject to risk policy.
+
+If the only available path is paid xAI API, keep it disabled by default until the free/browser approach is measured and a deliberate budget decision is made.
+
+## 15. Best Grok-native architecture
+
+```text
+                        GitHub SoT
+        policies / schemas / skills / routines / source registry
+                              |
+                              v
+                   Grok shared cloud computer
+                /workspace/miyamae operational bus
+                              |
+       +----------------------+----------------------+
+       |              |              |              |
+ Source Scout      Verifier      Trend Scout    Reserve Curator
+       |              |              |              |
+ public web/API   web/browser    X + Threads     archive + sources
+       +--------------+--------------+--------------+
+                              |
+                        Community Host
+                              |
+                X / Threads signed-in browser
+                              |
+                    replies / mentions / trends
+                              |
+                         new LEAD packets
+```
+
+The distinguishing feature is not a single giant autonomous Bot. It is a small persistent team sharing one operational computer, browser sessions and files while GitHub keeps the explicit control plane.
+
+## 16. High-value experiments before autonomous posting
+
+Run and record these tests in order:
+
+1. Shared browser session test: sign in once, verify two Miyamae Bots can reuse the authorized X session without sharing credentials in chat/Git.
+2. Parallel-screen test: Source Scout and Trend Scout research simultaneously without corrupting shared state.
+3. `/workspace` handoff test: Scout writes one packet; Verifier reads and adds verification result; Host consumes it.
+4. Teach-X test: teach draft/publish verification path, keeping final publish human-approved.
+5. Teach-Threads test.
+6. Trend test: compare browser X Explore observation vs any native Grok X-search capability actually exposed in Bot.
+7. Mention/reply intake test: turn one safe reply into a community-lead/v1 record with privacy review.
+8. Routine-while-offline test: close the laptop and verify a non-writing radar routine completes in the cloud.
+9. Failure test: expire X session and verify the Bot asks for takeover instead of bypassing authentication.
+10. Idempotency test: rerun the same publication workflow and verify it detects an existing canonical post rather than double-posting.
+
+## Official references
+
+- https://docs.x.ai/grok-bot/overview
+- https://docs.x.ai/grok-bot/get-started
+- https://docs.x.ai/grok-bot/bots
+- https://docs.x.ai/grok-bot/chat-and-collaboration
+- https://docs.x.ai/grok-bot/skills-routines-and-automations
+- https://docs.x.ai/grok-bot/files-and-results
+- https://docs.x.ai/grok-bot/approvals-security-and-privacy
+- https://docs.x.ai/grok-bot/settings-and-notifications
+- https://docs.x.ai/grok-bot/troubleshooting
+- https://docs.x.ai/developers/tools/web-search
+- https://docs.x.ai/developers/tools/x-search
+- https://docs.x.ai/grok/connectors
+
+Re-check these references before relying on product limits or rollout-dependent features because Grok Bot is changing rapidly.
+
+---
+
+## Grok Bot Ecosystem Watchlist
+
+
+Last reviewed: 2026-08-27
+
+Purpose: continuously discover useful Grok Bot capabilities without letting hype or unverified community claims leak into production behavior.
+
+## Tier A — primary/official
+
+### xAI / SpaceXAI Grok Bot docs
+
+- https://docs.x.ai/grok-bot/overview
+- https://docs.x.ai/grok-bot/get-started
+- https://docs.x.ai/grok-bot/bots
+- https://docs.x.ai/grok-bot/chat-and-collaboration
+- https://docs.x.ai/grok-bot/skills-routines-and-automations
+- https://docs.x.ai/grok-bot/files-and-results
+- https://docs.x.ai/grok-bot/approvals-security-and-privacy
+- https://docs.x.ai/grok-bot/settings-and-notifications
+- https://docs.x.ai/grok-bot/troubleshooting
+- https://docs.x.ai/grok-bot/teams-and-enterprises
+
+Use for product limits, security boundaries, routine behavior and supported capabilities.
+
+### xAI Grok developer tools
+
+- https://docs.x.ai/developers/tools/web-search
+- https://docs.x.ai/developers/tools/x-search
+- https://docs.x.ai/grok/connectors
+
+These document broader Grok/xAI capabilities. Never assume exact developer-tool availability inside Grok Bot until tested in the Bot product.
+
+### Official xAI plugin marketplace
+
+- https://github.com/xai-org/plugin-marketplace
+
+High-value categories to watch for this project:
+
+- browser / Chrome / observability
+- search and research
+- social/media intelligence
+- storage/databases
+- automation/integration
+- mapping/local/geospatial
+- civic/open-data connectors
+
+Treat marketplace inclusion as stronger provenance than a random community list, but still inspect plugin permissions and behavior before installation.
+
+## Tier B — high-value upstream engineering references
+
+### insane-search
+
+- https://github.com/fivetaku/insane-search
+- pinned research commit in config/grok-capabilities.yaml
+
+Why watch: adaptive public-content access, public endpoint/feed-first escalation, rendered browser fallback, source blocking classification. Adopt procedure concepts conservatively; never interpret resilience as authorization to bypass access controls.
+
+### browser-use
+
+- https://github.com/browser-use/browser-use
+- pinned research commit in config/grok-capabilities.yaml
+
+Why watch: controlled persistent Chrome operation, live-browser reliability, browser-harness patterns. Our repository uses procedure inspiration; it does not automatically install or execute browser-use.
+
+## Tier C — community discovery, verify before use
+
+### ZeroPointRepo/awesome-grok-bot
+
+- https://github.com/ZeroPointRepo/awesome-grok-bot
+
+Useful because it tracks the very young Grok Bot plugin/skill/MCP ecosystem and distinguishes several extension mechanisms. It is unofficial. Every interesting entry must be checked against its own repository and, where relevant, xAI documentation.
+
+### RongleCat/awesome-grok-bot
+
+- https://github.com/RongleCat/awesome-grok-bot
+
+Useful as a second independent discovery list and for community/failure-mode links. Never treat popularity/list inclusion as compatibility or security evidence.
+
+### Cursor Community Forum
+
+- https://forum.cursor.com/tag/grok-bot
+
+Useful for real rollout bugs, auth/plugin failures, user workarounds, regressions and newly released controls. Forum statements require product-doc or reproducible confirmation before becoming policy.
+
+## Research method
+
+For every candidate capability or plugin:
+
+1. Record discovery source.
+2. Find primary product docs or repository.
+3. Determine whether it is specifically Grok Bot, broader Grok/xAI, Cursor, or a third-party integration.
+4. Record current version/commit/date where feasible.
+5. Inspect license and installation/permission scope.
+6. Classify security surface: browser, shared filesystem, terminal, external write, secret access, local-computer execution.
+7. Ask whether it improves Miyamae information coverage, verification, community, trend understanding, publication reliability or operational cost.
+8. Define a smallest safe experiment.
+9. Keep it `watch` until the experiment succeeds twice on non-consequential inputs.
+10. Only then promote it to a Bot skill/routine dependency.
+
+## Current adoption decisions
+
+| Capability/reference | State | Use |
+|---|---|---|
+| Grok persistent shared computer | ADOPT | hot operational workspace and shared authenticated browser |
+| Multi-Bot parallel screens/handoff | ADOPT | specialist roster and group workflow |
+| Background routines | ADOPT | radar, reserve, trend and later follow-up checks |
+| Teach a task | TEST | X/Threads posting, trends, replies when rollout exposes control |
+| Grok native X Search | TEST | potentially highest-value X discovery path; Bot availability not assumed |
+| Grok native Web Search | TEST | discovery benchmark; official feeds remain deterministic lane |
+| Custom MCP | DEFER | build only after typed cross-Bot local archive access has demonstrated need |
+| insane-search concepts | ADOPT | free/public fetch escalation and browser fallback procedure |
+| browser-use concepts | ADOPT | controlled authorized browser observation procedure |
+| random community Grok skills | WATCH | inspect case-by-case; no blind installs |
+
+## Anti-patterns
+
+- installing every new plugin because it is popular;
+- giving a plugin shared browser/terminal access without examining permissions;
+- treating one community README as official Grok behavior;
+- using a separate Bot as a security sandbox on the shared user computer;
+- converting a fresh trick into a recurring routine before one-time testing;
+- depending on paid API access while a reliable free official feed exists;
+- silently replacing a primary source with AI search summaries.
+
+---
+
+## Grok Bot Runtime Onboarding for Miyamae
+
+
+Last updated: 2026-08-27
+
+This runbook is the bridge from GitHub desired state to the real Grok Bot product. Do not mark a capability or routine operational merely because its manifest exists in Git.
+
+## 0. Preconditions
+
+- Grok Bot desktop app is current.
+- Agent Computer is current separately from the desktop app.
+- Timezone is `Asia/Tokyo`.
+- Local-computer execution is unnecessary for Miyamae and should remain disabled or Ask Every Time.
+- GitHub access is authenticated through the intended Grok/Cursor plugin path.
+- No secrets are stored in GitHub, ordinary Bot messages, `/workspace/miyamae`, screenshots or audit logs.
+
+Official product notes: Grok Bot app updates and Agent Computer updates are separate. Routines use the configured timezone. Cloud-computer work does not require local-computer execution.
+
+## 1. Create/sync the Bot roster
+
+Desired Bots:
+
+1. `Miyamae Source Scout`
+2. `Miyamae Evidence Verifier`
+3. `Miyamae Trend Scout`
+4. `Miyamae Reserve Curator`
+5. `Miyamae Community Host`
+6. `Grok Capability Scout`
+
+Desired groups:
+
+- `Miyamae Community Media`
+- `Grok Platform Research`
+
+Use the repository's existing `botctl export`, `guided`, routine export and UI-observation workflow to compare desired fields with the real Grok Bot UI. Do not use Bot identity as a security boundary; all Bots share the same user computer.
+
+## 2. Prepare the shared workspace
+
+Ask one safe Bot to create:
+
+```text
+/workspace/miyamae/
+  inbox/
+  verified/
+  reserve/
+  trends/
+  community-leads/
+  drafts/
+  evidence/
+  locks/
+  health/
+```
+
+Create a README inside `/workspace/miyamae` stating that the directory contains ephemeral operational state only and may never contain passwords, session cookies, auth headers, private DMs, secret tokens or unrelated personal data.
+
+Test: Source Scout writes a harmless sample packet; Evidence Verifier reads it; Community Host reads the verified output. Record paths and timestamps.
+
+## 3. Authenticate X safely
+
+Use the Bot computer browser.
+
+1. Navigate to X.
+2. If authentication is needed, use Take Over.
+3. Enter password/passkey/2FA/CAPTCHA personally.
+4. Confirm the signed-in account is the intended Miyamae community account.
+5. Return control to the Bot.
+6. Ask Source Scout to open a read-only X page and report only the visible account handle and URL.
+7. Ask Trend Scout, a different Bot, to open X Explore. This verifies cross-Bot reuse of the same persistent browser session.
+
+Failure rule: if the session expires later, request takeover again. Never ask the Bot to extract or persist browser credentials.
+
+## 4. Authenticate Threads safely
+
+Repeat the same Take Over pattern for Threads. Verify read-only navigation from both Trend Scout and Community Host.
+
+Do not assume X and Threads workflows are interchangeable. They receive separate taught skills and verification tests.
+
+## 5. Test parallel screens
+
+Because Grok Bot documents separate screens for Bots sharing one computer:
+
+- Source Scout: open Miyamae/Kawasaki official information in its screen.
+- Trend Scout: open X Explore or Threads search in its screen.
+- Run both during the same period.
+- Confirm neither Bot destroys the other's browser task or shared workspace packet.
+
+If shared filesystem races occur, use `/workspace/miyamae/locks` cooperative leases. Browser tabs on different Bot screens should not be treated as globally locked unless field testing proves a shared conflict.
+
+## 6. Teach X draft/publish workflow
+
+Only when `Teach a task` is visible in the current Grok Bot rollout.
+
+Use a harmless test post or a draft-only demonstration first.
+
+Demonstrate within the documented ten-minute window:
+
+1. open X compose;
+2. paste a prepared Japanese draft from `/workspace/miyamae/drafts`;
+3. inspect the exact text and link/media preview;
+4. identify the human approval boundary;
+5. for a safe test, publish only after explicit approval;
+6. reopen the resulting post;
+7. copy the canonical X post URL;
+8. record completion evidence.
+
+After Grok creates the draft skill, edit it to add:
+
+- input story id;
+- allowed risk classes;
+- source-visible requirement;
+- duplicate/canonical-URL pre-check;
+- exact approval boundary;
+- post-publish URL verification;
+- partial/failure reporting;
+- rule that a retry must not create a duplicate post.
+
+Do not schedule the learned workflow until it succeeds safely on at least two distinct low-risk inputs.
+
+## 7. Teach Threads workflow
+
+Repeat the same process independently. Preserve platform-specific limits, preview behavior and canonical result URL handling discovered during the live demonstration.
+
+## 8. Teach trend observation
+
+Teach Trend Scout how to reach the current X Explore/Trending UI using the already-authorized session.
+
+The learned output must be `miyamae-trend/v1`, never `local-story/v1`.
+
+Required output:
+
+- topic/query;
+- observedAt;
+- scope: Miyamae/Kawasaki/Kanagawa/Japan/personalized/unknown;
+- source URL/surface when available;
+- signals/context;
+- `evidenceEligible: false`;
+- matched verified/reserve ids, if any;
+- recommended action or SKIP.
+
+Do not infer that a personalized trend represents all X users or all Miyamae residents.
+
+## 9. Teach reply/mention intake
+
+Use a harmless reply or a test interaction.
+
+The Bot should extract only what is needed for `miyamae-community-lead/v1`:
+
+- canonical source URL;
+- bounded lead text;
+- observed time;
+- optional public handle only when useful;
+- area hints;
+- risk hints;
+- privacy-review flag;
+- disposition `PENDING` or `VERIFY`.
+
+Do not ingest private DMs, unrelated follower information, home addresses or excessive profile data.
+
+## 10. Test native Grok X Search availability
+
+xAI developer documentation exposes an X Search capability with keyword, semantic, user search and thread fetch. This does not prove Grok Bot exposes the same tool automatically.
+
+Ask `Grok Capability Scout` in the Bot product to perform a harmless X discovery task such as:
+
+- recent public posts mentioning `宮前区`;
+- semantic equivalents that discuss Miyamae without the exact ward keyword;
+- fetch a public thread from a known URL.
+
+Record:
+
+- exact product/tool surface used;
+- whether it required paid API configuration;
+- whether result links are canonical X URLs;
+- whether search supports semantic vs exact keyword behavior;
+- whether user/thread retrieval works;
+- latency/coverage compared with browser X search.
+
+If the Bot cannot do this natively, keep `grok_x_search` as `GROK_PLATFORM / benchmark_first` and use the free authorized-browser route.
+
+## 11. Test background routine while operator device is offline
+
+Create/test only a non-writing routine first, e.g. Source Scout radar.
+
+- confirm next run time in Asia/Tokyo;
+- close the local laptop or disconnect it after the routine is scheduled;
+- later inspect recent routine history;
+- verify current source timestamps and `/workspace` result;
+- confirm no stale data was substituted silently.
+
+Only after this succeeds should unattended Miyamae collection be treated as operational.
+
+## 12. Auto-review / approval policy
+
+Use Grok Bot's Auto Review controls conservatively.
+
+Initial recommendation:
+
+- read public web/browser: allow where appropriate;
+- write temporary `/workspace/miyamae` state: allow;
+- mutate GitHub SoT: review unless an existing tested GitHub policy grants a narrow path;
+- publish X/Threads: require approval;
+- send DMs/messages: require approval / normally deny;
+- delete content: require approval;
+- install plugins/MCP/authenticate new services: require approval;
+- local-computer execution: deny or ask every time.
+
+Require-approval rules should be tested because the product documents that Require rules take precedence over allow rules.
+
+## 13. Plugin evaluation
+
+Start with no extra community plugin merely for novelty.
+
+The official xAI plugin marketplace is the preferred discovery registry. For each plugin considered:
+
+1. inspect the actual plugin repository/manifest;
+2. identify MCP endpoints, commands, hooks, skills and required variables;
+3. determine shared-computer impact;
+4. determine whether it can externally write;
+5. test with non-sensitive data;
+6. document exact permissions and removal procedure.
+
+High-value future candidate: Chrome DevTools tooling if it materially improves browser reliability/inspection. It is not required for v1 local-information collection.
+
+## 14. Completion gates before auto-publishing R0/R1
+
+Do not enable autonomous publication until all are true:
+
+- shared X session verified across at least two Bots;
+- shared Threads session verified where Threads posting is intended;
+- X publish learned workflow succeeds twice without duplicate posting;
+- Threads workflow succeeds twice if enabled;
+- canonical post URL captured after each test;
+- session-expiry test correctly stops for takeover;
+- social reply intake remains LEAD;
+- trend observation remains evidence-ineligible;
+- at least 100 representative content/risk evaluation cases pass policy gates;
+- correction workflow has been tested;
+- external-write approval behavior is verified in the actual app version;
+- source-health/no-data behavior is explicit;
+- operator understands that all Bots share the same cloud-computer security boundary.
+
+Until then, automation may discover, verify, store, rank and draft, but publishing stays review-gated.
+
+---
+
+## Grok VM Miyamae Newsroom — Execution Prompt
+
+
+Paste this into the Grok Bot that will bootstrap and operate the Miyamae newsroom VM.
+
+---
+
+You are the execution operator for the Miyamae Community Media control plane in `jonsoku-dev/grok-bot`.
+
+Your job is not to redesign policy from memory. GitHub is the durable source of truth. The shared Grok Linux VM under `/workspace/miyamae` is the operational runtime. Follow repository configuration and scripts exactly unless a runtime blocker requires escalation.
+
+## Non-negotiable boundaries
+
+1. Never publish to X, Threads or any external surface during bootstrap/probe/recovery unless the Publication Arbiter flow explicitly reaches an approved external-write step.
+2. Never export, print, copy or persist passwords, cookies, bearer/session tokens, OTP/2FA values, private keys or browser profile material.
+3. Never bypass CAPTCHA, authentication, paywalls or access controls.
+4. Never silently install system packages. If a required prerequisite such as `sqlite3` is missing, classify it as `MANUAL_ENV_FIX` and stop.
+5. Never delete or recreate `/workspace/miyamae/state/miyamae.db` as a recovery shortcut.
+6. Never delete failed capability evidence or change a FAIL into PASS without a new successful observation.
+7. Treat all Miyamae Bots as sharing one computer; Bot identity is not a security boundary.
+8. Trends, Local Pulse and repeated social claims are discovery signals, never factual evidence.
+
+## Phase 1 — synchronize and validate SoT
+
+From the repository checkout on the Grok VM:
+
+```bash
+git status --short
+git fetch origin
+git checkout main
+git pull --ff-only origin main
+npm ci
+npm run validate:miyamae-runtime
+```
+
+If the repository has uncommitted changes that are not known runtime artifacts, do not discard them automatically. Report them and preserve the working tree.
+
+## Phase 2 — one-shot runtime probe
+
+Run:
+
+```bash
+npm run miyamae:vm:probe
+```
+
+The probe is authoritative for deterministic VM readiness. It may bootstrap the workspace, seed scheduling, execute a deterministic collection tick, run self-tests and validate evidence.
+
+Read:
+
+```text
+/workspace/miyamae/state/last-probe.json
+```
+
+If result is `PASS`, continue.
+
+If result is not `PASS`, do not improvise repairs. Run:
+
+```bash
+npm run miyamae:vm:recovery -- plan
+```
+
+Follow the recovery class:
+
+- `SAFE_AUTO_RECOVERY`: run `npm run miyamae:vm:recovery -- apply-safe`, then rerun `npm run miyamae:vm:probe`.
+- `RETRY_WITH_BACKOFF`: retry only within the bounded policy in `config/miyamae-recovery-policy.yaml`.
+- `HUMAN_TAKEOVER`: stop autonomous work and request the exact interactive browser action. Do not request secrets in chat.
+- `MANUAL_ENV_FIX`: report the exact missing prerequisite/permission and stop.
+- `INVESTIGATE`: preserve diagnostics, do not make destructive changes, and report the blocker.
+
+After any recovery attempt:
+
+```bash
+npm run miyamae:vm:evidence -- validate
+npm run miyamae:vm:evidence -- status
+```
+
+## Phase 3 — browser readiness
+
+The deterministic probe intentionally does not inspect secret browser state.
+
+Use Grok's browser normally and determine whether X and Threads are already authorized.
+
+If authorization is missing or an interactive challenge appears, request Take Over. The human should enter credentials directly into the browser UI. Never ask for passwords or OTPs in chat.
+
+After authorization, verify that another Miyamae Bot can reuse the same authorized session without exporting any session data. Record only PASS/FAIL observations and public canonical URLs where applicable.
+
+## Phase 4 — browser task worker
+
+List pending work:
+
+```bash
+npm run miyamae:vm:browser-tasks -- pending 10
+```
+
+Claim one before doing browser work:
+
+```bash
+npm run miyamae:vm:browser-tasks -- claim <taskId> miyamae-browser-worker
+```
+
+When observing a public JS-rendered source, use the visible page normally. If a repeatable public JSON/XHR endpoint is visible in normal browser/network tooling, record structural metadata only with:
+
+```bash
+npm run miyamae:vm:browser -- observe <sourceId> <pageUrl> <endpointUrl> GET <status> <contentType> true '<shape-signature>'
+```
+
+Do not save raw authenticated bodies.
+
+Finish each claimed task explicitly:
+
+```bash
+npm run miyamae:vm:browser-tasks -- complete <taskId> DONE <canonicalResultUrl>
+```
+
+Allowed alternate states: `NO_CHANGE`, `AUTH_REQUIRED`, `BLOCKED`, `FAILED`.
+
+## Phase 5 — newsroom runtime
+
+Inspect scheduler and health:
+
+```bash
+npm run miyamae:vm:scheduler -- due 50
+npm run miyamae:vm -- health
+```
+
+Run an on-demand tick if needed:
+
+```bash
+npm run miyamae:vm:tick -- run 25
+```
+
+Inspect Local Pulse only as a research trigger:
+
+```bash
+npm run miyamae:vm:pulse -- anomalies 60
+```
+
+Inspect publication queue without publishing:
+
+```bash
+npm run miyamae:vm:publication -- queue
+```
+
+Compute metrics:
+
+```bash
+npm run miyamae:vm:metrics -- calculate
+npm run miyamae:vm:metrics -- report 7
+```
+
+## Phase 6 — capability evidence
+
+Validate accumulated evidence:
+
+```bash
+npm run miyamae:vm:evidence -- validate
+npm run miyamae:vm:evidence -- status
+npm run miyamae:vm:evidence -- promotion-candidates
+```
+
+Never edit `config/grok-capabilities.yaml` merely because a single run succeeded. Promotion requires repeated recent PASS evidence with no newer unresolved FAIL/PARTIAL/BLOCKED result, then human review.
+
+## Phase 7 — routines
+
+Confirm the following routines exist in Grok Bot and are enabled only after their prerequisites are satisfied:
+
+- `miyamae-vm-wakeup`
+- `miyamae-vm-health`
+- `miyamae-vm-selftest`
+- `miyamae-vm-recovery`
+- `miyamae-browser-worker`
+- source/trend/local-pulse/follow-up/coverage/newsroom routines defined in the repository
+
+The five-minute VM wake-up routine is the correctness layer. The one-minute daemon is experimental optimization only; never make production correctness depend on daemon survival.
+
+## Required final report
+
+Return a concise runtime report with:
+
+1. repository commit SHA actually executed;
+2. probe result and failed stages, if any;
+3. recovery class/actions, if any;
+4. X session state: ready / takeover-required / untested;
+5. Threads session state: ready / takeover-required / untested;
+6. scheduler seeded source count;
+7. browser task backlog by tier;
+8. OPEN source circuits;
+9. evidence validation result;
+10. capability promotion candidates, if any;
+11. blockers that require human action;
+12. confirmation that no external publication occurred during bootstrap.
+
+Do not claim a capability was tested unless there is corresponding evidence from the actual Grok VM or browser session.
+
+---
+
+## Grok VM First-Run Probe
+
+
+Use this procedure on the actual Grok Bot cloud computer before treating the Miyamae newsroom runtime as operational.
+
+## Deterministic probe
+
+From the repository checkout on the Grok VM:
+
+```bash
+npm ci
+npm run validate:miyamae-runtime
+npm run miyamae:vm:bootstrap
+npm run miyamae:vm:scheduler -- seed
+npm run miyamae:vm:tick -- run 25
+npm run miyamae:vm:selftest
+npm run miyamae:vm:evidence -- validate
+npm run miyamae:vm:evidence -- status
+```
+
+The self-test must not inspect browser cookies, passwords, tokens, OTP values or raw authenticated session material. It must not publish externally.
+
+Expected evidence is written under:
+
+```text
+/workspace/miyamae/evidence
+```
+
+A single PASS is not enough to change capability policy. Re-run after a later Bot turn or VM lifecycle event and require repeated recent PASS evidence. Promotion remains human-reviewed.
+
+## Computer-use probe
+
+After deterministic checks pass, test the actual Grok browser separately.
+
+1. Confirm X is reachable in the existing authorized profile.
+2. If login is required, use human takeover; do not automate credential recovery.
+3. From a second Miyamae Bot, confirm the same authorized session can be reused without exporting session material.
+4. Claim one browser task with `miyamae-browser-worker` and verify that another worker cannot claim the same task.
+5. Open one public JavaScript-rendered local source and record only structural network observations with `miyamae:vm:browser`.
+6. Complete the task with a canonical public URL or `AUTH_REQUIRED`/`BLOCKED` as appropriate.
+7. Repeat independently before changing any capability confidence.
+
+These observations require a `grok-capability-evidence/v1` record with provenance `grok_bot_manual_experiment` or `operator_verified`.
+
+## Background-runtime probe
+
+Do not assume an arbitrary daemon is durable.
+
+1. Verify the five-minute `miyamae-vm-wakeup` Routine runs while the operator computer is offline.
+2. Verify `/workspace/miyamae` state remains available in a later Bot turn.
+3. Run the one-minute daemon only as an experiment.
+4. Observe its heartbeat across multiple turns and, when possible, a normal Grok VM/app lifecycle event.
+5. If the daemon disappears, classify that as expected experimental behavior unless xAI documentation explicitly guarantees process survival. The Routine remains the correctness layer.
+
+## Promotion gate
+
+A capability is only a promotion candidate when all applicable conditions hold:
+
+- evidence schema validation passes;
+- at least two PASS observations exist within 30 days;
+- no later unresolved FAIL exists for the same experiment;
+- safety fields confirm no credential material was recorded and no access control was bypassed;
+- behavior is consistent with current xAI documentation;
+- a human reviews the evidence before changing `config/grok-capabilities.yaml`.
+
+Run:
+
+```bash
+npm run miyamae:vm:evidence -- promotion-candidates
+```
+
+The command only recommends human review. It never edits capability confidence automatically.
+
+---
+
+## Grok VM Newsroom Runbook
+
+
+This is the execution runbook for the Miyamae local newsroom on Grok Bot's shared user-scoped Linux cloud computer.
+
+The durable desired state lives in GitHub. Runtime state lives under `/workspace/miyamae`. The Grok browser session is an authorized execution surface, not a place to export credentials.
+
+## 1. First boot
+
+From the checked-out `jonsoku-dev/grok-bot` repository on the Grok VM:
+
+```bash
+npm ci
+npm run validate:miyamae-runtime
+npm run miyamae:vm:bootstrap
+npm run miyamae:vm:scheduler -- seed
+npm run miyamae:vm:tick -- run 25
+```
+
+Expected runtime marker:
+
+```text
+/workspace/miyamae/state/runtime-ready.json
+```
+
+Expected database:
+
+```text
+/workspace/miyamae/state/miyamae.db
+```
+
+If `sqlite3` is unavailable, stop and report the prerequisite. Do not silently install system packages.
+
+## 2. Authoritative wake-up
+
+The `miyamae-vm-wakeup` Grok Routine is the correctness layer. It runs every five minutes and invokes the deterministic tick.
+
+Manual equivalent:
+
+```bash
+npm run miyamae:vm:tick -- run 25
+```
+
+The tick will:
+
+1. seed the scheduler automatically if the health table is empty;
+2. select only sources whose `next_due_at` is due;
+3. run RSS/Atom/JSON API collectors directly;
+4. append newly discovered candidates to `/workspace/miyamae/inbox`;
+5. record source health and adaptive next-run time;
+6. create prioritized browser tasks for browser-only sources.
+
+## 3. Inspect source scheduling
+
+```bash
+npm run miyamae:vm:scheduler -- due 50
+npm run miyamae:vm -- health
+```
+
+Record a manual source result only when needed:
+
+```bash
+npm run miyamae:vm:scheduler -- record <sourceId> success true 250 rss <contentHash>
+```
+
+Source tiers:
+
+```text
+S emergency
+A transport / essential service
+B official local updates
+C business / web / trend discovery
+D evergreen / open data
+```
+
+Circuit breakers and adaptive polling are runtime state. Do not hard-code temporary failure observations back into GitHub policy.
+
+## 4. Browser work on Grok's computer
+
+Browser work is a separate claimed queue because all Bots share one computer and can work in parallel.
+
+List work:
+
+```bash
+npm run miyamae:vm:browser-tasks -- pending 10
+```
+
+Claim before using the browser:
+
+```bash
+npm run miyamae:vm:browser-tasks -- claim <taskId> miyamae-browser-worker
+```
+
+Then use Grok's shared authorized browser. Preserve the canonical URL and observed time. Never export cookies, tokens, credentials, OTP values or raw browser session material.
+
+When a repeatable public JSON/XHR endpoint is visible, record structural evidence only:
+
+```bash
+npm run miyamae:vm:browser -- observe \
+  <sourceId> \
+  <pageUrl> \
+  <endpointUrl> \
+  GET \
+  200 \
+  application/json \
+  true \
+  'keys:id,title,updated_at'
+```
+
+Do not pass raw response bodies as the shape signature.
+
+Complete the task:
+
+```bash
+npm run miyamae:vm:browser-tasks -- complete <taskId> DONE <canonicalResultUrl>
+```
+
+Other completion states:
+
+```text
+NO_CHANGE
+AUTH_REQUIRED
+BLOCKED
+FAILED
+```
+
+If authentication, 2FA or CAPTCHA is required, use `AUTH_REQUIRED` and request human takeover.
+
+## 5. Adapter promotion
+
+Review accumulated endpoint evidence:
+
+```bash
+npm run miyamae:vm:browser -- candidates
+```
+
+Promotion requires all of the following:
+
+- repeated observation;
+- no authentication dependency;
+- stable response shape;
+- explicit terms/access review;
+- no access-control bypass;
+- deterministic implementation in GitHub with tests.
+
+Terms review:
+
+```bash
+npm run miyamae:vm:browser -- review <candidateId> terms-ok
+```
+
+After a deterministic adapter is merged and verified:
+
+```bash
+npm run miyamae:vm:browser -- review <candidateId> adopted
+```
+
+## 6. Local Pulse
+
+The Browser Worker or Trend Scout records only public observation metadata required for Local Pulse.
+
+```bash
+npm run miyamae:vm:pulse -- observe 宮前平 x <publicHandle> 3 1 <publicPostUrl> 開店 パン屋
+```
+
+Daily aggregation:
+
+```bash
+npm run miyamae:vm:pulse -- aggregate
+```
+
+Anomaly detection:
+
+```bash
+npm run miyamae:vm:pulse -- anomalies 60
+```
+
+Every result has `evidenceEligible: false`. A pulse anomaly is a research trigger, never confirmation.
+
+## 7. Publication queue
+
+External publishing remains approval-gated until evaluation gates explicitly change.
+
+Inspect:
+
+```bash
+npm run miyamae:vm:publication -- queue
+```
+
+Claim next eligible item:
+
+```bash
+npm run miyamae:vm:publication -- claim miyamae-publication-arbiter
+```
+
+A result may be:
+
+```text
+EMPTY
+COOLDOWN
+REVIEW_REQUIRED
+DEFERRED_COLLISION
+CLAIMED
+LOST_RACE
+```
+
+After human review:
+
+```bash
+npm run miyamae:vm:publication -- mark <queueId> reviewed
+```
+
+After actual platform publication and canonical URL verification:
+
+```bash
+npm run miyamae:vm:publication -- mark <queueId> published <canonicalPostUrl>
+```
+
+Never mark a post published before the canonical platform URL is verified.
+
+## 8. Metrics
+
+```bash
+npm run miyamae:vm:metrics -- calculate
+npm run miyamae:vm:metrics -- report 7
+npm run miyamae:vm:metrics -- report 30
+```
+
+Metrics that are not instrumented must stay `UNAVAILABLE`. Never fabricate values to make the scorecard complete.
+
+## 9. Experimental one-minute daemon
+
+The Grok docs guarantee the cloud computer and background routines, but do not guarantee arbitrary long-running process survival across VM maintenance. Therefore the daemon is experimental.
+
+Do not make production correctness depend on it.
+
+Before the `vm-daemon-survival` experiment passes, only run it manually for evidence collection:
+
+```bash
+npm run miyamae:vm:daemon
+```
+
+Heartbeat:
+
+```text
+/workspace/miyamae/state/daemon-heartbeat.json
+```
+
+Lock:
+
+```text
+/workspace/miyamae/state/daemon.lock
+```
+
+The daemon performs deterministic collection/pulse/recovery/metrics work only. It never publishes externally.
+
+If it dies, the five-minute `miyamae-vm-wakeup` Routine remains authoritative and the newsroom continues operating.
+
+## 10. Recovery rules
+
+Do not delete a lock just because it exists. Prove it is stale first.
+
+Recover stale browser task locks:
+
+```bash
+npm run miyamae:vm:browser-tasks -- recover 30
+```
+
+Recover stale publication claims:
+
+```bash
+npm run miyamae:vm:publication -- recover
+```
+
+For an expired X/Threads login, request human takeover. Never attempt credential recovery or CAPTCHA bypass.
+
+## 11. Security boundary
+
+All Miyamae Bots share the same user VM. Bot identity is not a security boundary.
+
+Never persist the following in GitHub, SQLite, logs, browser observation records or Bot handoffs:
+
+- passwords;
+- cookies;
+- bearer/session tokens;
+- private keys;
+- OTP/2FA codes;
+- exported browser profiles;
+- raw authenticated response bodies containing account data.
+
+Use stable record IDs, hashes and canonical public URLs for handoff instead.
+
+## 12. Definition of healthy
+
+The runtime is healthy when:
+
+- `runtime-ready.json` exists and matches the current runtime schema;
+- SQLite is queryable in WAL mode;
+- source scheduler is seeded;
+- no unexplained stale locks exist;
+- Tier S/A sources are not silently stale;
+- browser task backlog is bounded;
+- AUTH_REQUIRED tasks are surfaced to the operator;
+- publication claims are not stale;
+- metrics calculate without invented values;
+- the Routine wake-up works with the founder laptop closed;
+- the daemon, when enabled experimentally, is treated only as an optimization.
+
+---
+
+## Grok VM Operating Model for Miyamae Newsroom
+
+
+## Why the VM is first-class
+
+Grok Bot runs on a persistent user-scoped Linux cloud computer with browser, filesystem and terminal. All Bots on the account share that computer, including browser sessions and logins. Background turns and routines continue when the founder laptop is closed.
+
+For Miyamae this means the cloud computer is not a scratchpad. It is the continuously running newsroom execution host.
+
+## Authority split
+
+GitHub is the durable source of truth for:
+
+- policies
+- schemas
+- Bot/Group/Routine manifests
+- source registry
+- deterministic runtime source code
+- skills and reference research
+
+The Grok VM is authoritative for ephemeral operational state:
+
+- source health and cursors
+- current queues
+- browser observations
+- cached source bodies
+- Local Pulse raw windows
+- computed metrics
+- active locks
+- transient evidence packets
+
+Never copy credentials, cookies, session tokens, OTP values, passkeys or browser-profile secrets into GitHub or the operational database.
+
+## VM bootstrap
+
+From the repository checkout on the Grok VM:
+
+```bash
+npm ci
+npm run validate:miyamae-runtime
+npm run miyamae:vm:bootstrap
+```
+
+The bootstrap creates `/workspace/miyamae`, initializes SQLite with WAL mode, creates state/cache/log/queue directories and writes a readiness marker.
+
+## Deterministic-first runtime
+
+Use terminal code for stable machine-readable sources:
+
+- RSS / Atom / XML
+- official JSON APIs
+- conditional HTTP with ETag / Last-Modified
+- hashing and dedupe
+- source cursors and health
+- publication arbitration
+- retention and pruning
+- metrics and coverage calculations
+
+Use the agent/browser for work that actually benefits from a computer-using model:
+
+- X and Threads observation in an authorized signed-in session
+- JavaScript-only pages
+- ambiguous local discovery
+- interactive site navigation
+- publication and canonical URL verification
+- visual changes that are not exposed in structured data
+- investigating repeated browser workflows for a safer deterministic adapter
+
+## Browser -> deterministic adapter promotion
+
+Browser work should become cheaper and more reliable over time.
+
+When a Bot repeatedly reads the same public page through Chrome:
+
+1. Inspect the rendered page and DevTools/network activity.
+2. Look for stable public JSON, XHR, GraphQL, RSS or document endpoints.
+3. Record only endpoint metadata, never auth headers/cookies/tokens.
+4. Confirm the endpoint is public without authentication and automation is not disallowed.
+5. Observe the same endpoint successfully more than once.
+6. Create an `adapter_candidate` record with status `OBSERVE`.
+7. After review, implement a deterministic adapter in GitHub with fixtures/tests.
+8. Only then reduce browser usage for that source.
+
+Never use this process to bypass CAPTCHA, authentication, paywalls, access controls or rate limits.
+
+## Shared-VM concurrency
+
+Bots are not isolated processes or security boundaries. Use:
+
+- SQLite WAL for shared operational indexes
+- atomic file replacement for record files
+- advisory lock files for browser publication and migrations
+- single global publication queue
+- stable record IDs in Bot-to-Bot messages instead of copying full payloads
+
+The publication browser is a serialized critical section even if research Bots run in parallel.
+
+## Browser session policy
+
+Authentication is completed through human takeover when needed. Once authorized, other Bots may reuse the same session because the VM is shared.
+
+Bots must:
+
+- never export cookies or session storage
+- never place credentials in prompts or logs
+- request takeover on expired sessions or CAPTCHA
+- sign out/remove access when the service should no longer be available
+
+## Offline operation
+
+The steady-state design must keep useful operation running with the founder laptop offline:
+
+- urgent source radar
+- normal source collection
+- reserve refresh
+- trend/local-pulse observation where session remains valid
+- follow-up checks
+- coverage audit
+- newsroom metrics
+
+Local-computer execution is exceptional and not part of production availability.
+
+## Recovery
+
+On Bot VM startup/update/reset:
+
+1. update the repository checkout
+2. validate SoT
+3. run VM bootstrap/migrations
+4. recover stale locks
+5. inspect source health
+6. verify required browser sessions without exporting secret material
+7. resume due routines
+
+A VM rebuild must not be treated as permission to silently weaken publication or authentication gates.
+
+---
+
 ## Local Grok Desktop Automation Checklist
 
 
@@ -2626,6 +4116,725 @@ Use this checklist during the Codex App rollout.
 - [x] No deletion automation exists.
 - [x] Ambiguity causes safe stop.
 - [x] Auth/2FA/CAPTCHA always uses human takeover.
+
+---
+
+## Miyamae Collection Architecture
+
+
+## Objective
+
+Build a low-cost, high-coverage local-information system for 神奈川県川崎市宮前区 that can keep publishing useful information without requiring the human operator to search for or write posts manually.
+
+The account is both a media surface and the community surface. Discovery and discussion happen in X/Threads; GitHub remains the configuration/SoT for policies, schemas and operational knowledge.
+
+## Collection layers
+
+### Layer A — deterministic/public feeds
+
+Preferred because they are cheap, stable and high-trust:
+
+- 川崎市 / 宮前区 RSS
+- 川崎市 event open API
+- 川崎市 open data/catalog files
+- 神奈川県 RSS/emergency feeds
+- JMA public disaster/weather pages/XML
+- transport/operator status pages and feeds
+
+### Layer B — public web discovery
+
+Use local keyword searches for openings, closures, construction, events, facilities and first-party business announcements. Fetch the first-party source whenever possible instead of repeating search-result snippets.
+
+### Layer C — resilient browser research
+
+When a public page is JavaScript-rendered or ordinary fetch fails, use the authorized Chrome/browser runtime following `skills/resilient-public-web-research/SKILL.md`. Browser access is a fallback, not the default crawler.
+
+### Layer D — social/trend discovery
+
+X/Threads posts and trends produce leads, questions and format signals. They are not factual evidence. Google Trends provides an additional free Japan-wide signal.
+
+### Layer E — resident sensor network
+
+Replies, mentions and quoted posts become structured `LEAD` records. The verifier searches independent evidence before promotion. This lets the account gradually become a community without a separate forum.
+
+## Fresh lane vs reserve lane
+
+Two inventories run in parallel.
+
+### Fresh lane
+
+Designed for immediate utility:
+
+- disaster/weather
+- rail/bus disruption
+- road/utility changes
+- ward/city notices
+- confirmed openings/closures
+- events/deadlines
+- construction and facility changes
+
+Breaking verified utility always outranks scheduled content.
+
+### Reserve lane
+
+A continuously maintained inventory of low-risk, useful, still-valid information:
+
+- parks and walks
+- libraries and facilities
+- local history
+- disaster-preparedness knowledge
+- recycling/waste tips
+- parenting resources
+- markets/farms/direct-sale stands
+- seasonal nature
+- transit tips
+- evergreen local services
+
+Reserve target: 80 READY items; warn below 30; roughly 21 days of coverage. Each item has `verifiedAt`, `recheckAt`, `expiresAt`, seasonality and a source fingerprint. The reserve curator expires or refreshes stale records before they can be drafted.
+
+Reserve is not filler at any cost. Emergency, accident, crime, death and controversy are forbidden reserve categories.
+
+## Trend lane
+
+Trend collection runs independently from story verification.
+
+Sources:
+
+- X Explore/Trending through an authorized account/browser
+- X local keyword search
+- Threads public/search surfaces available to the authorized browser
+- Google Trends Japan
+- this account's own recent interaction patterns
+
+A trend may influence publication timing, headline framing, question/poll format, which READY reserve item is useful now, and follow-up timing. A trend may never corroborate a factual claim, turn a LEAD into CONFIRMED, justify unrelated trend-jacking, or weaken privacy/risk rules.
+
+## Scheduling model
+
+- every 5 min class: emergency/operator sources where practical
+- every 10–20 min: ward/city RSS, transport, fresh local sweep
+- every 20 min: consolidated Miyamae radar routine
+- minute 10/40 each hour: trend radar
+- 05:15 daily: reserve replenish/revalidation
+- morning/evening/weekend digests are later publication-layer routines using already verified inventory
+
+Do not force a post on every run.
+
+## Free-first research findings
+
+As researched on 2026-08-27:
+
+- Kawasaki publishes an official RSS directory including ward, city bus, waterworks and education feeds.
+- Kawasaki's official event app exposes a documented Web API with pagination and reusable event data under CC BY 2.1 Japan.
+- Kawasaki maintains open-data initiatives including shelters and other civic datasets.
+- Kawasaki offers a registered disaster/weather mail service covering emergency information, earthquakes, warnings, forecasts and disaster-radio content; use only when the runtime has an intentionally authorized mailbox, otherwise consume equivalent public sources.
+- Kanagawa publishes a general RSS feed and emergency information surface.
+- JMA provides machine-readable disaster/weather information and public warning pages.
+- X officially exposes location-aware Trending/Explore surfaces in signed-in x.com; use the account's authorized browser rather than a paid API in v1.
+- Google Trends publicly exposes Japan 'Trending now' and is useful as a non-social cross-check for current interest.
+- `fivetaku/insane-search` demonstrates a useful public-content escalation architecture: machine-readable/public endpoints first, cheap variants next, then rendered browser, and stop at authentication/paywall boundaries. This repository adopts the architecture concept, not a promise that every site can or should be bypassed.
+
+## Community flywheel
+
+```text
+public sources ─┐
+operator pages ─┼─> discover -> verify -> post -> replies/mentions
+web/browser ────┤                              │
+trends ─────────┘                              v
+                                           new LEAD
+                                              │
+                                              └-> verify -> follow-up
+```
+
+Community strength should be measured by useful submissions, repeated contributors, corrections, answered questions and resident-to-resident help—not follower count alone.
+
+## Operational boundaries
+
+- public information does not automatically mean appropriate publication
+- cache and rate-limit instead of repeatedly hammering sites
+- respect access restrictions and terms
+- never store credentials/session cookies in Git
+- no CAPTCHA/login/paywall circumvention
+- private-person allegations remain R3/human-only
+- trend and resident content are discovery signals until independently verified
+- corrections and source changes must propagate to reserve/follow-up records
+
+## Next implementation gates
+
+1. Validate the new bot/group/routine manifests in CI.
+2. Add deterministic adapters for Kawasaki RSS + event API before browser automation.
+3. Add a raw candidate cache and content-hash deduplication.
+4. Add local-story validation and fixture corpus.
+5. Execute dry runs without external publication and measure source coverage/precision.
+6. Configure Grok browser routines for X/Threads trend observation.
+7. Only after evaluation, permit selected R0 publication; R2/R3 remain human-gated.
+
+---
+
+## Miyamae Community Media
+
+
+## Mission
+
+宮前区で起きている、住民の生活に関係する共有可能な情報を、良いこと・悪いこと・楽しいこと・悲しいことを恣意的に選別せず、検証可能な形で届ける。
+
+**Residents should not need to know where to look. The account should know where to look.**
+
+This is not an official Kawasaki City or Miyamae Ward account. It is an independent resident-operated local information account assisted by automation/AI.
+
+## Product thesis
+
+Do not create a separate community product at first. The X/Threads account itself is the town square:
+
+- publishing creates discovery;
+- replies and mentions create submissions;
+- polls/questions create conversation;
+- corrections create accountability;
+- recurring local contributors create community;
+- useful archives create trust.
+
+The system should minimize the founder's posting burden. Humans own policy, high-risk judgment, corrections, and exceptional cases. Automation owns discovery, deduplication, extraction, scheduling, drafting, and low-risk publishing when explicitly enabled.
+
+## Coverage: "everything" means broad relevance, not surveillance
+
+Track any publicly shareable information materially relevant to Miyamae residents:
+
+- emergency/disaster/weather/earthquake/fire/public safety
+- transport, roads, closures, construction, parking, buses and railway disruption
+- ward/city administration, benefits, deadlines, elections and public meetings
+- schools, childcare, parenting, libraries and youth activities
+- health/public-health notices and facility changes
+- elderly/disability/community support information
+- events, festivals, concerts, sports, workshops and volunteer activity
+- parks, nature, seasonal changes and local environment
+- restaurant/shop openings, closures, relocations, sales and notable changes
+- supermarkets, farmers, direct-sale stands, markets and food trucks
+- housing/development/redevelopment and material neighborhood construction
+- waste collection, utilities, outages and everyday-life notices
+- lost/found or community requests only when safe and privacy-preserving
+- local achievements, people, clubs and positive stories
+- accidents/incidents and sad news when verified and genuinely locally relevant
+- resident observations, questions, rumors requiring verification, and corrections
+- useful nearby information outside the ward when it materially affects ward residents
+
+Never interpret "everything" as permission to publish private addresses, doxxing, medical details, minors' identifying information, unverified accusations, graphic material, stalking-enabling location data, or rumor presented as fact.
+
+## Editorial constitution
+
+1. **Public interest over engagement.** Never suppress bad/sad news merely because it hurts the feed's mood.
+2. **Evidence before assertion.** Separate confirmed fact, official claim, eyewitness report, inference, and rumor.
+3. **No rumor laundering.** A resident post is a lead, not evidence by itself.
+4. **Source visible.** Material factual posts should link or name the primary source whenever feasible.
+5. **Time visible.** Breaking information must say when it was observed/updated.
+6. **Corrections are first-class content.** Correct visibly; never silently rewrite history where a correction matters.
+7. **Proportionality.** A minor local incident must not be sensationalized into fear.
+8. **Privacy by default.** Protect victims, minors, private residents and vulnerable people.
+9. **No automated blame.** Crime, misconduct, controversy, politics, death/injury, allegations and identifiable private persons require human review.
+10. **No pay-to-hide.** Commercial relationships must never determine whether negative factual information is covered.
+11. **Label ads/sponsorships.** Editorial and commercial content stay distinguishable.
+12. **Independent identity.** Never imply affiliation with 宮前区役所, 川崎市, police, fire department or another authority.
+
+## Geographic model
+
+Primary scope: 神奈川県川崎市宮前区.
+
+Maintain neighborhood/station tags including at minimum: 宮前平, 宮崎台, 鷺沼, 犬蔵, 土橋, 有馬, 東有馬, 野川, 西野川, 南野川, 梶ケ谷, 馬絹, 神木, 神木本町, 平, 初山, 菅生, 菅生ケ丘, 水沢, 潮見台, 五所塚, けやき平, 白幡台.
+
+Adjacent-area stories may be published with an `OUTSIDE_WARD_RELEVANT` label when they affect Miyamae residents.
+
+## Information states
+
+Every candidate is one of:
+
+- `LEAD` — discovered but not verified
+- `VERIFYING` — evidence collection in progress
+- `CONFIRMED` — sufficient evidence
+- `OFFICIAL` — primary authority is the source
+- `DISPUTED` — credible sources conflict
+- `CORRECTED` — a published fact required correction
+- `RETRACTED` — publication should no longer be relied upon
+- `EXPIRED` — event/notice no longer current
+
+Do not collapse these states into a single confidence number.
+
+## Risk classes and publishing
+
+### R0 — automatic candidate / eventually auto-publish
+Official event announcements, facility hours/closures, public administrative notices, weather reminders, verified store openings, scheduled transport works, recurring summaries.
+
+### R1 — automatic after corroboration
+Commercial changes, construction, road conditions, non-sensitive resident tips, local observations. Prefer primary source or two independent credible sources.
+
+### R2 — human review required
+Accidents, fires with uncertain impact, public safety incidents, politically contentious local matters, disputes, complaints about businesses, potentially reputation-affecting claims.
+
+### R3 — human-only / often do not publish
+Deaths/injuries before authoritative confirmation, alleged crimes naming people, private-person accusations, minors, victim identities, precise vulnerable-person locations, graphic content, personal medical information.
+
+Emergency information from an authoritative primary source may bypass normal batching, but must preserve attribution and timestamp.
+
+## Source hierarchy
+
+Prefer in this order when applicable:
+
+1. primary public authority / operator / business / organizer
+2. official public datasets and alerts
+3. direct first-party statements
+4. established local/news reporting
+5. multiple independent resident observations
+6. single resident/social post (lead only)
+
+Initial source families to inventory:
+
+- 川崎市 / 宮前区 official pages and press releases
+- ward disaster/emergency information
+- police/fire/public safety official information where publicly available
+- Japan Meteorological Agency and disaster feeds
+- railway/bus/operator service information
+- road/traffic/public works notices
+- schools, libraries, civic halls, sports/community facilities
+- event organizers, neighborhood associations and civic groups
+- businesses and shopping facilities
+- public social accounts/RSS/feeds/search discovery
+- resident mentions/replies/submissions
+
+## Account behavior
+
+The account should sound like a useful Miyamae resident, not a press-release bot.
+
+- Japanese is the primary public language.
+- concise, factual, neighborly, non-bureaucratic
+- avoid AI filler and excessive hashtags
+- distinguish urgency visually: `【速報】`, `【続報】`, `【注意】`, `【イベント】`, `【開店】`, `【閉店】`, `【行政】`, `【交通】`, `【募集】`, `【訂正】`
+- ask questions naturally when local knowledge is useful
+- thank useful contributors without exposing identities unnecessarily
+- never manufacture personal experiences ("行ってきた", "見た") unless the human operator actually supplied them
+- never fake consensus ("宮前区民みんなが...")
+
+## Community loop
+
+The community exists in the account rather than a separate forum initially.
+
+1. Publish useful information consistently.
+2. Invite replies: `この件、現地の状況をご存じの方いますか？`
+3. Convert replies/mentions into leads.
+4. Verify before amplifying.
+5. Credit contributors when they consent / attribution is already intentionally public.
+6. Ask low-friction local questions and polls.
+7. Summarize community answers without pretending the sample represents all residents.
+8. Follow up old stories: opening dates, construction completion, event results, corrections.
+9. Recognize recurring helpful contributors organically; do not create an elite gatekeeping layer.
+
+## Fresh + reserve + trend model
+
+The account should never depend on one stream of breaking news.
+
+### Fresh lane
+
+Breaking/current local utility always wins: disaster/weather, transport, city/ward notices, events, openings/closures, construction and facility changes.
+
+### Reserve lane
+
+Maintain a verified, expiring reserve inventory so quiet days do not force low-value posting. Target roughly 80 READY items, warn below 30, and keep about three weeks of useful coverage. Every reserve item must retain source provenance, `verifiedAt`, `recheckAt`/`expiresAt`, seasonality and a revalidation rule.
+
+Good reserve categories include parks, walks, libraries, public facilities, local history, disaster preparedness, recycling/waste, parenting resources, markets/farms, seasonal nature and transit tips.
+
+Never reserve accidents, crime, death, emergency or controversy as filler.
+
+### Trend lane
+
+Observe current X/Threads/Google trend signals separately from factual verification. Trends can change timing, framing, questions or which verified reserve item is useful now; trends never count as evidence and never convert a LEAD into CONFIRMED.
+
+Examples of natural joins:
+
+- heat trend + verified local cooling/park/shade information
+- school-holiday conversation + verified family events
+- cherry-blossom trend + verified Miyamae park/seasonal information
+- food trend + already verified local shops serving that item
+- commute trend + useful local rail/bus information
+
+Do not trend-jack tragedy, crime, personal controversy or unrelated celebrity news.
+
+## Cadence
+
+Event-driven:
+- emergencies and high-utility changes: publish as soon as verification/risk policy allows
+- meaningful openings/closures/transport/admin changes: publish when confirmed
+
+Collection/drafting:
+- every ~20 minutes: fresh Miyamae sweep
+- minute 10/40 each hour: trend sweep
+- 05:15 daily: reserve replenish/revalidation
+
+Batch publication candidates:
+- 07:00 `おはよう宮前区`: weather + transport + today's important notices/events
+- 12:00 optional lunch/local-life slot when enough signal exists
+- 18:00 `今日の宮前区`: notable developments + tomorrow reminders
+- Friday evening: `今週末の宮前区`
+- Sunday evening: week recap + upcoming deadlines
+
+Do not post to satisfy a quota. Silence is better than low-value filler; reserve exists to increase useful optionality, not to mandate posting.
+
+## Initial success metrics
+
+Avoid optimizing only impressions. Track:
+
+- verified useful items published
+- median detection-to-publication latency by risk class
+- correction/retraction rate
+- primary-source coverage rate
+- duplicate rate
+- reserve READY inventory, stale rate and revalidation success
+- trend joins that led to useful replies/saves vs forced joins skipped
+- resident submissions received
+- submissions that become verified posts
+- meaningful reply conversations
+- repeat contributors
+- saves/bookmarks and link clicks where available
+- unanswered resident questions
+
+## Current public signal
+
+As of 2026-08-27, Miyamae Ward itself is recruiting `みやまえPRサポーター` to encourage residents to publish local attractions through SNS, and the ward continuously publishes disaster, parenting, event and community information. This validates that there is substantial source material, but this project is deliberately broader than PR: it covers useful negative, neutral, positive, serious and playful information under the same evidence policy.
+
+## Non-goals for v1
+
+- standalone community app/forum
+- anonymous accusation board
+- citizen surveillance
+- automated crime blotter without editorial review
+- engagement bait
+- scraping sources in violation of terms/access controls
+- pretending AI output is eyewitness reporting
+- monetization before trust
+
+## Rollout
+
+### Phase 0 — SoT and dry run
+Build source registry, taxonomy, prompts, safety policy, candidate schema, sample posts and dry-run reports. No autonomous external write.
+
+### Phase 1 — assisted account
+System discovers/drafts; operator approves sensitive/new classes. Start conversations manually/assisted.
+
+### Phase 2 — trusted automation
+Allow R0 and selected R1 classes to auto-publish after measured precision is high. R2/R3 remain gated.
+
+### Phase 3 — community flywheel
+Mentions/replies become structured leads, follow-up threads become routine, recurring local contributors emerge naturally.
+
+### Phase 4 — optional archive/map
+Only after the social account demonstrates demand, consider a searchable website/map/archive. The social account remains the primary community surface.
+
+See also [`MIYAMAE_COLLECTION_ARCHITECTURE.md`](MIYAMAE_COLLECTION_ARCHITECTURE.md) for the free-first collection, reserve inventory and trend-bridge implementation architecture.
+
+---
+
+## Miyamae Editorial & Community Playbook
+
+
+## Core test
+
+Before publishing, answer:
+
+1. Is this materially relevant to a Miyamae resident?
+2. What exactly do we know, and what do we not know?
+3. What is the strongest available source?
+4. Could publication harm a private person or distort an unresolved event?
+5. Does urgency justify publishing now rather than verifying further?
+6. What would we need to correct if the source changes?
+
+## Candidate record
+
+Each story candidate should preserve:
+
+```yaml
+id: stable-id
+detected_at: ISO-8601
+observed_at: ISO-8601
+geography: [宮前区, neighborhood]
+topics: []
+state: LEAD|VERIFYING|CONFIRMED|OFFICIAL|DISPUTED|CORRECTED|RETRACTED|EXPIRED
+risk: R0|R1|R2|R3
+headline_fact: ""
+known: []
+unknown: []
+sources:
+  - url: ""
+    source_type: primary|first_party|media|resident|social
+    observed_at: ISO-8601
+publish_mode: immediate|batch|hold
+follow_up_at: null
+correction_of: null
+```
+
+## Writing templates
+
+### Breaking / official
+
+`【速報】宮前区：{fact}`
+
+State what happened, where, effective time, resident action if any, and source. Do not add drama.
+
+### Follow-up
+
+`【続報】{previous story}`
+
+Explicitly say what changed since the previous post.
+
+### Correction
+
+`【訂正】{incorrect point}`
+
+Say what was wrong, what is correct, why the correction is being made, and link back when possible. Do not hide the original mistake.
+
+### Event
+
+`【イベント】{name}`
+
+Prioritize date/time, place, cost/registration, who it is useful for, cancellation conditions and official source.
+
+### Opening / closure
+
+`【開店】` / `【閉店】`
+
+Use first-party confirmation when possible. Do not treat construction appearance or a resident rumor as confirmation.
+
+### Unverified community lead
+
+Normally do not create a standalone assertion. Ask carefully:
+
+`鷺沼周辺の○○について情報提供をいただいています。公式情報を確認中です。一次情報をご存じの方がいれば、リンク等を教えてください。`
+
+Use this only when asking itself has public value and does not unfairly damage someone.
+
+## Tone
+
+Good:
+- `今日、宮前区で知っておきたいことをまとめます。`
+- `現時点で公式発表は確認できていません。分かり次第更新します。`
+- `現地をご存じの方、公開可能な一次情報があれば教えてください。`
+
+Bad:
+- `ヤバすぎる！`
+- `宮前区民ブチギレ`
+- `絶対○○らしい`
+- `AIによると...`
+- fake eyewitness language
+
+## Community prompts
+
+Community formation should emerge from useful prompts, not forced engagement bait.
+
+Recurring formats:
+
+- `宮前区民に聞きたい` — one concrete local question
+- `教えて宮前区` — request first-hand local knowledge
+- `今週末なにする？` — events + resident additions
+- `この店どう？` — only neutral experience solicitation, never pile-ons
+- `昔の宮前区` — history/memory/photo prompts with rights/privacy caution
+- `宮前区の好きな場所` — parks, views, shops, walks
+- `困ってます / 知ってる人いますか` — practical non-sensitive questions
+
+Do not ask followers to identify suspected people, vehicles, homes, children, victims or alleged offenders.
+
+## Moderation
+
+Delete/ignore/do not amplify:
+- doxxing and personal data
+- threats/harassment
+- discriminatory attacks
+- unverified accusations against identifiable people
+- victim/minor identification
+- spam/scams
+- graphic content
+
+Criticism of public policy, local services and businesses is not removed merely because it is negative. Preserve factual criticism while preventing harassment and unverified allegations.
+
+## Politics and elections
+
+Local politics is within scope because residents have a right to know. Coverage must be informational rather than campaign advocacy:
+
+- deadlines, polling, candidate/public-meeting information and official results are valid;
+- summarize competing positions accurately when covering disputes;
+- distinguish official records from campaign claims;
+- no automated endorsement;
+- high-impact allegations require human review and strong sourcing.
+
+## Crime, accidents, death and grief
+
+These stories may matter locally, but they are where an automated account can do the most damage.
+
+- prioritize safety instructions and verified public facts;
+- do not identify victims/private persons unless clearly justified and already authoritatively public;
+- avoid speculation about cause, blame or motive;
+- avoid graphic details not necessary for resident safety;
+- R2/R3 human review remains mandatory;
+- grief is not engagement content.
+
+## Commercial fairness
+
+Businesses can be praised, criticized, reported opened or closed, and discussed. Apply the same verification rules regardless of whether the owner follows the account, advertises, complains, or offers benefits.
+
+## Publishing matrix
+
+| Story | Default | Requirement |
+|---|---|---|
+| Official ward event | R0 batch | official source |
+| Official emergency warning | R0 immediate | primary authority + timestamp |
+| Railway/operator disruption | R0/R1 immediate | operator source |
+| Store opening | R1 | first-party or strong corroboration |
+| Store closure | R1/R2 | first-party/credible evidence; reputational care |
+| Resident road observation | R1 | corroborate if presented as fact |
+| Accident/fire | R2 | human review unless pure authoritative safety relay |
+| Complaint about business | R2 | evidence, right-sized wording, human review |
+| Political controversy | R2 | human review + multi-source context |
+| Named alleged offender | R3 | human-only, normally avoid |
+| Minor/victim/private medical detail | R3 | do not publish absent exceptional public-interest justification |
+
+## Founder workload target
+
+The founder should not become a full-time editor. Target steady state:
+
+- R0: no review after trust threshold is met
+- R1: exception queue only
+- R2: concise review card with evidence and recommended wording
+- R3: rare escalation, default hold
+- one weekly editorial review of errors, blind spots and source gaps
+
+The system should learn operationally from corrections and source failures, but never learn that high engagement is evidence of truth.
+
+---
+
+## Miyamae Implementation Backlog
+
+
+## Goal
+
+Turn the existing Git-backed Grok control plane into a second domain: an independent AI-assisted Miyamae local information/community account.
+
+Do not delete the existing AI Engineering Radar. Introduce domain isolation so both can coexist.
+
+## P0 — repository/domain model
+
+- [ ] Generalize hard-coded `ai_engineering` assumptions in schemas/tooling.
+- [ ] Add `miyamae_local` interest/profile taxonomy.
+- [ ] Add bot group `miyamae-community-media`.
+- [ ] Add source registry validation for `config/miyamae-sources.yaml`.
+- [ ] Add story candidate schema with state/risk/provenance/follow-up fields.
+- [ ] Add correction/retraction linkage.
+- [ ] Ensure audit log records discovery, verification, editorial decision, publish attempt and correction.
+
+## P0 — agents
+
+Create narrowly scoped agents rather than one omnipotent bot:
+
+1. `miyamae-source-scout` — detect changes across approved sources.
+2. `miyamae-resident-lead-intake` — normalize mentions/replies into leads; never assert truth.
+3. `miyamae-evidence-verifier` — gather primary/corroborating evidence and contradictions.
+4. `miyamae-relevance-judge` — Miyamae materiality + geography + duplicate/story clustering.
+5. `miyamae-risk-editor` — R0-R3 classification and privacy/reputation checks.
+6. `miyamae-post-writer` — Japanese X/Threads-native drafts with source/time/state.
+7. `miyamae-community-host` — questions, polls, follow-ups, contributor acknowledgements.
+8. `miyamae-correction-watcher` — watch published stories for changed/corrected source facts.
+9. `miyamae-digest-editor` — morning/evening/weekend/week summaries.
+
+No agent may convert a single resident/social claim directly into `CONFIRMED`.
+
+## P0 — dry-run routines
+
+- [ ] frequent source-change discovery
+- [ ] event-driven urgent candidate pipeline
+- [ ] 07:00 morning digest
+- [ ] 18:00 daily digest
+- [ ] Friday weekend guide
+- [ ] Sunday weekly recap/upcoming deadlines
+- [ ] published-story follow-up/correction watch
+- [ ] resident lead review queue
+
+All start with `externalWrite: deny` / dry-run artifacts.
+
+## P1 — source research
+
+For every discovery backlog family, document:
+
+- canonical operator/authority
+- exact endpoint/feed/page
+- robots/terms/access constraints
+- polling/event mechanism
+- geographic filtering method
+- timestamp semantics
+- outage/failure behavior
+- evidence strength
+- expected duplicate relationships
+
+Never fill a missing endpoint by guessing.
+
+## P1 — community operations
+
+- [ ] mention/reply ingestion
+- [ ] consent-aware contributor credit
+- [ ] neutral local-question generator
+- [ ] anti-pile-on guard for businesses/private people
+- [ ] moderation policy enforcement
+- [ ] unanswered-question queue
+- [ ] recurring contributor metrics without public ranking
+
+## P1 — publishing adapters
+
+Separate content truth from platform rendering:
+
+```text
+Story -> EditorialDecision -> CanonicalPost
+                         -> XRenderer
+                         -> ThreadsRenderer
+```
+
+X: urgency, brevity, source-first, threads for updates when needed.
+Threads: conversational context and community questions, without inventing personal experience.
+
+## P1 — evaluation before automation
+
+Create a labeled dry-run corpus covering at least:
+
+- 50 official benign notices/events
+- 20 commercial opening/closure/change cases
+- 20 transport/infrastructure cases
+- 20 resident-submitted leads including false/ambiguous ones
+- 10 accident/fire/public-safety cases
+- 10 political/controversial cases
+- 10 privacy/adversarial cases
+- 10 correction/update chains
+
+Measure false confirmation, missed primary sources, wrong geography, duplicate publication, unsafe privacy leakage, sensational wording and stale-event publication.
+
+R0 auto-publishing must not be enabled merely because implementation is complete.
+
+## P2 — account launch
+
+- [ ] create/rename X/Threads identity
+- [ ] bio explicitly says independent/non-official + AI-assisted
+- [ ] pinned editorial policy / correction policy
+- [ ] publish initial explainer
+- [ ] register approved publishing credentials outside Git
+- [ ] enable assisted publishing
+- [ ] collect resident source suggestions
+
+## P2 — automation gate
+
+Only enable autonomous R0 after an observed dry-run/assisted period demonstrates acceptable precision and correction behavior. Keep R2/R3 gated.
+
+## P3 — optional product layer
+
+Only if social usage proves demand:
+
+- searchable story archive
+- neighborhood pages
+- event calendar
+- map
+- source transparency page
+- correction log
+- resident submission form
+
+A standalone forum is deliberately deferred. Community should first form in X/Threads replies, mentions, reposts and recurring conversations.
 
 ---
 
