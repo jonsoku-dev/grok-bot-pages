@@ -6898,3 +6898,1530 @@ smallestUsefulExperiment: CHATGPT.md의 plan/design 범위와 MCP 없음 문장�
   없음.
 recordStatus: approved
 ```
+
+## anthropic-claude-code-v2-1-247
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/28/regional-signal/international/anthropic-claude-code-v2-1-247.yaml
+- sha256: c3569d6589c37c358a7254a508441e0f9ec2bbb88b649b6e331d9875a655e6bd
+- primaryUrl: https://github.com/anthropics/claude-code/releases/tag/v2.1.247
+
+```yaml
+schemaVersion: regional-signal/v1
+id: anthropic-claude-code-v2-1-247
+collectionDate: '2026-08-28'
+primaryCategory: international
+relatedCategories: []
+originBasis: Official anthropics/claude-code GitHub release (Anthropic multinational).
+  Coding agent / harness CLI; not KR/JP-local.
+originalTitle: claude-code v2.1.247
+originalLanguage: en
+koreanSummary: Claude Code v2.1.247이 SendFeedback 도구와 조직용 spinnerTipsOverride, Bash
+  권한 프롬프트의 auto mode 원키 전환, /claude-api cost-optimize·Admin API 스킬 확장을 넣고, 서브에이전트
+  모델 404 폴백·훅/백그라운드 에이전트 대용량 출력으로 세션이 Prompt is too long에 끼는 문제를 고쳤다.
+source: official_release
+canonicalId: anthropics/claude-code@v2.1.247
+primaryUrl: https://github.com/anthropics/claude-code/releases/tag/v2.1.247
+author: anthropics
+project: anthropics/claude-code
+publishedAt: '2026-08-26T23:06:39Z'
+observedFacts:
+- releases.atom entry for v2.1.247 updated 2026-08-26T23:06:39Z (inside window).
+- 'Added SendFeedback tool: Claude can draft a feedback report for review/send from
+  /feedback (disable via feedbackDrafts setting).'
+- Added {id, text, cooldownSessions, priority} entries, tipsFile, and label to spinnerTipsOverride
+  for org-rotated tips; tip on Bash permission prompts pointing to auto mode with
+  one-keystroke Yes-and-switch-to-auto-mode.
+- Added /claude-api cost-optimize to profile Claude API spend and work through caching,
+  token hygiene, batch, effort, model choice; updated /claude-api skill with Admin
+  API coverage (members, invites, workspaces, API keys, rate limits, WIF, CMEK).
+- 'Fixes: sub-agents use session fallback model chain on first-call model 404; hook/background
+  agent megabyte error output no longer wedges session on Prompt is too long; Bash
+  sandbox after-command cleanup no longer deletes a dotfile-managed ~/.claude/settings.json
+  symlink when repointed outside writable area.'
+- Prior in-window v2.1.246 (2026-08-25T22:31:52Z) added Auto mode tab in /permissions,
+  Bash wildcard-before-subcommand startup warning, and MCP fixes (interrupted tools
+  reported explicitly; empty-schema args not sent as JSON strings)—cited as relatedRefs
+  only.
+interpretation: 'Harness UX and ops release: in-session feedback drafting, org tip
+  injection, API cost-optimize skill, and robustness around subagent model fallback
+  and sandbox settings symlinks. Features taken from release notes only.'
+relatedRefs:
+- https://github.com/anthropics/claude-code/releases.atom
+- https://github.com/anthropics/claude-code/releases/tag/v2.1.246
+- https://github.com/anthropics/claude-code
+sourceWarnings:
+- SendFeedback and cost-optimize were not exercised in this discovery pass.
+- v2.1.243/245 also in window but changelog-chore / glibc crash fix only—not separate
+  candidates.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/anthropics/claude-code/releases/tag/v2.1.247
+- https://github.com/anthropics/claude-code/releases.atom
+verifiedAt: '2026-08-27T21:52:14Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 공식 Claude Code v2.1.247. SendFeedback, spinnerTipsOverride, Bash auto-mode
+  원키, /claude-api cost-optimize·Admin API 스킬, 서브에이전트 모델 404 폴백·훅 대용량 출력 수정. Claude
+  Code·agent-harness·model-routing에 직접 맞음. UX/ops 증분. ADOPT 아님.
+expectedBenefit: 세션 피드백·API 비용 프로파일 스킬과 서브에이전트 폴백 안정성이 하네스 체크리스트에 들어옴.
+switchingCost: 노트 흡수 낮음. cost-optimize 스킬 사용은 낮음. 조직 tip 주입은 중간.
+maturity: developing
+risks:
+- SendFeedback·cost-optimize 미실행.
+- sandbox가 ~/.claude/settings.json 심링크를 건드릴 수 있음(수정됨—회귀 확인 필요).
+- v2.1.246 MCP 수정은 relatedRefs만.
+smallestUsefulExperiment: cost-optimize·서브에이전트 404 폴백·Prompt is too long 수정 문장만 현재
+  Claude Code와 대조. 업그레이드·외부 게시 없음.
+recordStatus: approved
+```
+
+## arxiv-auto-policy-skills-2608-25091
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/28/regional-signal/international/arxiv-auto-policy-skills-2608-25091.yaml
+- sha256: 2af7b94610bc1bc1aac219ac648601c9f5f5cdac1f82450d00edd6f7be01fc42
+- primaryUrl: https://arxiv.org/abs/2608.25091
+
+```yaml
+schemaVersion: regional-signal/v1
+id: arxiv-auto-policy-skills-2608-25091
+collectionDate: '2026-08-28'
+primaryCategory: international
+relatedCategories: []
+originBasis: arXiv cs.AI paper; authors Zhonghao Zhan, Hamed Haddadi; no KR/JP affiliation
+  stated on abs/API—treated as international/multinational research.
+originalTitle: 'Auto-Policy, not Auto-Skill: Compiled Agent Skills for the Physical
+  World'
+originalLanguage: en
+koreanSummary: arXiv 2608.25091이 AutoSkills·Hermes류 자기진화 Skill 하네스가 효율은 올려도 안전은 못
+  채운다고 보고, Skill(행동 서술)과 Policy(허용 행동)를 구분한 뒤 물리 세계를 위한 컴파일된 에이전트 스킬/정책을 주장한다.
+source: technical_article
+canonicalId: arxiv.org/abs/2608.25091
+primaryUrl: https://arxiv.org/abs/2608.25091
+author: Zhonghao Zhan, Hamed Haddadi
+project: arXiv:2608.25091
+publishedAt: '2026-08-25T19:40:50Z'
+observedFacts:
+- export.arxiv.org API published 2026-08-25T19:40:50Z for http://arxiv.org/abs/2608.25091v1
+  (inside window); abs dateline Submitted on 25 Aug 2026.
+- 'Title: Auto-Policy, not Auto-Skill: Compiled Agent Skills for the Physical World.
+  Authors: Zhonghao Zhan, Hamed Haddadi.'
+- 'Abstract opening: Self-evolving Skill harnesses (AutoSkills, Hermes Agent) generate
+  more advisory orchestration automatically; their reported gains are efficiency,
+  not safety. This misses the actual gap: a Skill describes how an agent should behave;
+  a Policy decides which behavior is allowed to become an action.'
+- Abstract continues that today's format covers the first with markdown and scripts
+  (API summary truncated at that point in the fetched query).
+interpretation: Positions agent Skills as insufficient without compiled Policies for
+  physical/action safety—directly on-interest for skills, harnesses, and sandboxing
+  debates.
+relatedRefs:
+- https://arxiv.org/abs/2608.25091
+- https://export.arxiv.org/api/query?id_list=2608.25091
+sourceWarnings:
+- Affiliations not present in citation_author_institution meta; geo classified by
+  abs absence of KR/JP markers only.
+- Paper PDF/methods not reviewed beyond abs+API abstract.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://arxiv.org/abs/2608.25091
+- https://export.arxiv.org/api/query?id_list=2608.25091
+verifiedAt: '2026-08-27T21:52:14Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: arXiv 2608.25091. Skill(행동 서술) vs Policy(허용 행동) 구분; AutoSkills류 효율≠안전.
+  Agent Skills·agent-harness·sandboxing에 직접. abs만. 물리 세계 초점—소프트웨어 샌드박스에 바로 ADOPT 아님.
+expectedBenefit: 스킬 자기진화와 허용 정책 컴파일을 분리하는 안전 프레임이 스킬 설계 체크리스트에 들어옴.
+switchingCost: abs 읽기 낮음. 정책 컴파일러를 하네스에 넣으면 높음.
+maturity: experimental
+risks:
+- PDF/방법 미검토. abs+API만.
+- 물리 세계 가정—코딩 에이전트 샌드박스와 1:1 아님.
+- 소속 메타 부재.
+smallestUsefulExperiment: Skill vs Policy 정의 두 문장만 읽고 현재 AGENTS.md/스킬 허용 목록과 대조. 구현·외부
+  게시 없음.
+recordStatus: approved
+```
+
+## arxiv-caskg-skills-2608-25500
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/28/regional-signal/international/arxiv-caskg-skills-2608-25500.yaml
+- sha256: 84ab45f18ca0fa15e238e3603821f951021f82ad2c1a191d6571c9838725cab5
+- primaryUrl: https://arxiv.org/abs/2608.25500
+
+```yaml
+schemaVersion: regional-signal/v1
+id: arxiv-caskg-skills-2608-25500
+collectionDate: '2026-08-28'
+primaryCategory: international
+relatedCategories: []
+originBasis: arXiv paper on agent skill retrieval graphs; multinational author list;
+  no KR/JP affiliation on abs—international.
+originalTitle: 'CaSKG: Counterfactual-Causal Skill Graphs for Scalable Agent Skill
+  Retrieval'
+originalLanguage: en
+koreanSummary: arXiv 2608.25500 CaSKG가 LLM 에이전트 재사용 스킬 라이브러리의 검색 문제를 다루며, 전체 라이브러리
+  프롬프트·벡터 검색·그래프 검색의 한계를 지적하고 반사실-인과 스킬 그래프로 확장 가능한 스킬 retrieval을 제안한다.
+source: technical_article
+canonicalId: arxiv.org/abs/2608.25500
+primaryUrl: https://arxiv.org/abs/2608.25500
+author: Zhiyuan Li, Linyuan Gao, Xuechun Ding, Hongwei Chen, Yuan Wu, Yi Chang
+project: arXiv:2608.25500
+publishedAt: '2026-08-26T08:12:41Z'
+observedFacts:
+- export.arxiv.org API published 2026-08-26T08:12:41Z for 2608.25500v1 (inside window);
+  abs Submitted on 26 Aug 2026.
+- 'Title CaSKG: Counterfactual-Causal Skill Graphs for Scalable Agent Skill Retrieval.
+  Authors include Zhiyuan Li, Linyuan Gao, Xuechun Ding, Hongwei Chen, Yuan Wu, Yi
+  Chang.'
+- 'Abstract: Reusable skill libraries allow LLM agents to reuse procedural knowledge
+  across tasks, but turn memory access into a retrieval problem. Full-library prompting
+  preserves coverage at high context cost; vector retrieval returns compact neighborhoods
+  but treats skills as independent text; graph-based retrieval is contrasted (API
+  summary truncated mid-sentence).'
+interpretation: 'On-interest skill-library retrieval paper: context cost vs coverage
+  for agent Skills—pairs with industry MCP/CLI context-cost discussion.'
+relatedRefs:
+- https://arxiv.org/abs/2608.25500
+- https://export.arxiv.org/api/query?id_list=2608.25500
+sourceWarnings:
+- No institution meta on abs; not classified as KR/JP.
+- Claims beyond abstract not verified.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://arxiv.org/abs/2608.25500
+- https://export.arxiv.org/api/query?id_list=2608.25500
+verifiedAt: '2026-08-27T21:52:14Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: arXiv 2608.25500 CaSKG. 스킬 라이브러리 검색—전체 프롬프트 vs 벡터 vs 그래프; 반사실-인과 스킬
+  그래프 제안. Agent Skills·context-engineering에 맞음. abs 절단. EXPERIMENT/ADOPT 아님.
+expectedBenefit: 스킬 라이브러리 규모가 클 때 retrieval 구조(커버리지 vs 컨텍스트 비용) 선택 프레임.
+switchingCost: abs 읽기 낮음. 그래프 인덱스를 실스킬 카탈로그에 들이면 중간~높음.
+maturity: experimental
+risks:
+- abs 중간 절단. 벤치마크 미확인.
+- 청구는 초록 너머 미검증.
+- 소속 메타 부재.
+smallestUsefulExperiment: full-library vs vector vs graph 대비 문장만 읽고 현재 스킬 로딩 방식과 대조.
+  그래프 구축·외부 게시 없음.
+recordStatus: approved
+```
+
+## arxiv-ramp-ai-config-2608-25241
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/28/regional-signal/international/arxiv-ramp-ai-config-2608-25241.yaml
+- sha256: ae545d9eccb4596fa28bda71fce4f50447eaed82c06077b8376a64a6f231c088
+- primaryUrl: https://arxiv.org/abs/2608.25241
+
+```yaml
+schemaVersion: regional-signal/v1
+id: arxiv-ramp-ai-config-2608-25241
+collectionDate: '2026-08-28'
+primaryCategory: international
+relatedCategories: []
+originBasis: arXiv empirical SE paper on coding-agent adoption maturity (RAMP); authors
+  include Denisov-Blanch, Vasilescu, Koyejo et al.; multinational academic—not KR/JP-local.
+originalTitle: 'A Few Pages of Markdown: Committed AI Configuration and Lower Quality
+  Cost after Coding-Agent Adoption'
+originalLanguage: en
+koreanSummary: arXiv 2608.25241이 코딩 에이전트 도입 후 품질 비용을 설명하기 위해 버전관리되는 AI 설정 아티팩트 기반
+  4단계 RAMP(Repository AI Maturity Profile)를 제안하고, 평균 효과만 보면 팀 간 차이가 가려진다고 주장한다.
+source: technical_article
+canonicalId: arxiv.org/abs/2608.25241
+primaryUrl: https://arxiv.org/abs/2608.25241
+author: Yegor Denisov-Blanch, Shyam Agarwal, Pavel Azaletskiy, Hao He, Rylan Schaeffer,
+  Brando Miranda, Bogdan Vasilescu, Sanmi Koyejo
+project: arXiv:2608.25241
+publishedAt: '2026-08-26T00:00:48Z'
+observedFacts:
+- export.arxiv.org API published 2026-08-26T00:00:48Z for 2608.25241v1 (inside window);
+  abs Submitted on 26 Aug 2026.
+- 'Title: A Few Pages of Markdown: Committed AI Configuration and Lower Quality Cost
+  after Coding-Agent Adoption.'
+- 'Authors (API): Yegor Denisov-Blanch, Shyam Agarwal, Pavel Azaletskiy, Hao He, Rylan
+  Schaeffer, Brando Miranda (plus Bogdan Vasilescu, Sanmi Koyejo on abs citation_author
+  list).'
+- 'Abstract: Coding agents increase velocity but also technical debt; prior work reports
+  only average effects. Introduces RAMP (Repository AI Maturity Profile), a four-level
+  cumulative maturity model grounded in version-controlled artifacts that teams commit
+  to configure AI tools.'
+interpretation: Connects coding-agent outcomes to committed config/markdown maturity
+  (AGENTS.md-class artifacts)—relevant to skills, harness setup, and eval of real-world
+  adoption quality cost.
+relatedRefs:
+- https://arxiv.org/abs/2608.25241
+- https://export.arxiv.org/api/query?id_list=2608.25241
+sourceWarnings:
+- Empirical claims beyond abstract not verified.
+- RAMP level definitions only summarized from abstract.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://arxiv.org/abs/2608.25241
+- https://export.arxiv.org/api/query?id_list=2608.25241
+verifiedAt: '2026-08-27T21:52:14Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: arXiv 2608.25241 RAMP. 버전관리 AI 설정(마크다운) 4단계 성숙도로 코딩 에이전트 도입 후 품질 비용
+  차이를 설명. Agent Skills·agent-harness·agent-evaluation에 직접. 평균 효과만 보면 팀 분산이 가려진다는 주장.
+  abs만. ADOPT 아님.
+expectedBenefit: AGENTS.md류 커밋 설정을 성숙도 축으로 보고 품질 비용과 연결하는 평가 프레임.
+switchingCost: abs 읽기 낮음. RAMP 레벨을 레포 감사에 적용하면 중간.
+maturity: early
+risks:
+- 실증 청구·레벨 정의는 abs 요약만.
+- 인과가 아니라 프로파일 상관일 수 있음.
+- 품질 비용 측정 정의 미확인.
+smallestUsefulExperiment: RAMP 4단계·committed AI config 문장만 읽고 현재 레포 AGENTS.md/스킬 커밋
+  상태와 대조. 레포 변경·외부 게시 없음.
+recordStatus: approved
+```
+
+## arxiv-token-spend-agentic-coding-2608-25399
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/28/regional-signal/international/arxiv-token-spend-agentic-coding-2608-25399.yaml
+- sha256: 5135b2a6f4e4ab5d7730c122beb8b04387380ca275cc19465474f92d22258a62
+- primaryUrl: https://arxiv.org/abs/2608.25399
+
+```yaml
+schemaVersion: regional-signal/v1
+id: arxiv-token-spend-agentic-coding-2608-25399
+collectionDate: '2026-08-28'
+primaryCategory: international
+relatedCategories: []
+originBasis: arXiv paper on token spend in agentic coding; author Jakub Smékal; no
+  KR/JP affiliation on abs—international.
+originalTitle: Can your AI agent be cheaper? Investigating the effects of task specifications
+  on token spend in agentic coding
+originalLanguage: en
+koreanSummary: arXiv 2608.25399이 에이전틱 코딩에서 태스크 명세 방식이 토큰 지출에 미치는 영향을 조사한다. 같은 문제라도
+  명세에 따라 장기 추론·도구 사용 토큰 비용이 달라지는지를 비용·효율 관점에서 다룬다.
+source: technical_article
+canonicalId: arxiv.org/abs/2608.25399
+primaryUrl: https://arxiv.org/abs/2608.25399
+author: Jakub Smékal
+project: arXiv:2608.25399
+publishedAt: '2026-08-26T05:58:12Z'
+observedFacts:
+- export.arxiv.org API published 2026-08-26T05:58:12Z for 2608.25399v1 (inside window);
+  abs Submitted on 26 Aug 2026.
+- 'Title: Can your AI agent be cheaper? Investigating the effects of task specifications
+  on token spend in agentic coding. Author: Jakub Smékal.'
+- 'Abstract: Agentic coding workflows are now widely deployed. With long-horizon reasoning
+  and tool use, token usage is important for cost and efficiency. Two engineers using
+  AI will solve the same problem differently. How the specification of a task shapes
+  an agent''s token spend, and whether that spend can be controlled, is the investigation
+  framing.'
+interpretation: Empirical framing of how prompts/specs drive coding-agent token cost—complements
+  MCP-vs-CLI context-tax articles with task-spec levers.
+relatedRefs:
+- https://arxiv.org/abs/2608.25399
+- https://export.arxiv.org/api/query?id_list=2608.25399
+sourceWarnings:
+- Single-author abs; affiliation not in meta.
+- Results tables not read from PDF.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://arxiv.org/abs/2608.25399
+- https://export.arxiv.org/api/query?id_list=2608.25399
+verifiedAt: '2026-08-27T21:52:14Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: arXiv 2608.25399. 태스크 명세가 에이전틱 코딩 토큰 지출에 미치는 영향. context-engineering·agent-evaluation·코딩
+  에이전트 비용에 맞음. MCP-vs-CLI 컨텍스트 세금 논의와 보완. 결과 표 미독. ADOPT 아님.
+expectedBenefit: 동일 과제라도 명세 형식이 장기 추론·툴 토큰을 바꾼다는 통제 레버 가설.
+switchingCost: abs 읽기 낮음. 명세 템플릿 A/B는 낮~중간.
+maturity: experimental
+risks:
+- 단저자 abs. 결과 표 PDF 미독.
+- 소속 메타 부재.
+- 명세 효과가 모델/하네스에 따라 달라질 수 있음.
+smallestUsefulExperiment: 조사 질문(명세→토큰) 한 단락만 읽고 현재 태스크 템플릿과 대조. A/B 런·외부 게시 없음.
+recordStatus: approved
+```
+
+## factory-coding-agents-long-horizon-2026-08-27
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/28/regional-signal/international/factory-coding-agents-long-horizon-2026-08-27.yaml
+- sha256: 0274bd4a06e37124a432d61c7d77a79b977d3c09254e6b39ab0dab5a0317d4e9
+- primaryUrl: https://factory.com/news/what-it-takes-for-coding-agents-to-complete-large-software-tasks
+
+```yaml
+schemaVersion: regional-signal/v1
+id: factory-coding-agents-long-horizon-2026-08-27
+collectionDate: '2026-08-28'
+primaryCategory: international
+relatedCategories: []
+originBasis: Factory.com public technical article on coding-agent systems vs single
+  agents (global vendor/community). Not KR/JP-org.
+originalTitle: Why coding agents stop early on long-horizon software tasks
+originalLanguage: en
+koreanSummary: Factory 글이 단일 코딩 에이전트가 긴 재구현 과제에서 스스로 끝났다고 판단해 조기 중단하는 현상을 보고, 완료 기준·증거를
+  먼저 세우는 역할 분리 시스템으로 GDAL 재구현을 115k LoC·행동 패리티 90%까지 올렸으며 24개 과제에서 시스템 프론티어가 단일 에이전트를
+  앞선다고 표로 보여준다.
+source: technical_article
+canonicalId: factory.com/news/what-it-takes-for-coding-agents-to-complete-large-software-tasks
+primaryUrl: https://factory.com/news/what-it-takes-for-coding-agents-to-complete-large-software-tasks
+author: Factory
+project: Factory / Droid
+publishedAt: '2026-08-27T07:00:00Z'
+observedFacts:
+- Page embedded JSON includes Published:2026-08-27T07:00:00.000Z (inside window).
+  HN story 49471485 created_at 2026-08-27T21:25:53Z links the same URL.
+- 'Narrative: single-agent run stopped because by its own assessment it was done,
+  not out of time/budget; then Droid arranged into roles where one role built an executable
+  standard of completion before implementation.'
+- System run claimed 115,000 lines and 90 percent behavioral parity on a reimplementation;
+  across 24 tasks, 7-Zip recreation from 54% to 95% parity and DuckDB from 34% to
+  80%; several recreations reached upper 90s.
+- Table excerpt compares single-agent vs system frontier per task (e.g. gdal 58.5%→90.3%,
+  duckdb 34.2%→80.0%, pandoc 39.5%→84.2%, tree-sitter 61.9%→90.9%).
+interpretation: Vendor evaluation write-up arguing long-horizon coding needs multi-role
+  harnesses with explicit completion standards, not just a longer single agent. Metrics
+  are Factory-reported on their Droid system.
+relatedRefs:
+- https://hn.algolia.com/api/v1/search?query=coding%20agent&tags=story
+- https://factory.com/news/what-it-takes-for-coding-agents-to-complete-large-software-tasks
+sourceWarnings:
+- Author is the product vendor; parity percentages and LoC not independently reproduced.
+- Task set and judging methodology details need the full page beyond the extracted
+  chart snippet.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://factory.com/news/what-it-takes-for-coding-agents-to-complete-large-software-tasks
+- https://hn.algolia.com/api/v1/items/49471485
+verifiedAt: '2026-08-27T21:52:14Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Factory가 단일 코딩 에이전트 조기 종료 vs 완료 기준·증거 역할 분리 시스템을 주장. GDAL 등 패리티 표.
+  agent-harness·agent-evaluation에 맞음. 벤더 자가보고. ADOPT/EXPERIMENT 근거 아님.
+expectedBenefit: 장기 과제용 multi-role harness와 executable completion standard 체크리스트.
+switchingCost: 글 흡수 낮음. Droid/역할 분리 도입은 중간~높음.
+maturity: early
+risks:
+- 패리티·LoC는 벤더 보고·미재현.
+- 과제 세트·채점 방법 세부는 추출 표 너머 필요.
+- 단일 vs 시스템 비교가 제품 마케팅과 겹침.
+smallestUsefulExperiment: 완료 기준을 구현 전에 세우는 역할 분리 문장과 표 4행만 읽고 현재 장기 에이전트 런북과 대조. Droid
+  도입·외부 게시 없음.
+recordStatus: approved
+```
+
+## github-copilot-cli-v1-0-81
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/28/regional-signal/international/github-copilot-cli-v1-0-81.yaml
+- sha256: 37d8e8d76ed33cf18e53d906ae54a74e00a8db0adb80cf7d45b8559fc6badc93
+- primaryUrl: https://github.com/github/copilot-cli/releases/tag/v1.0.81
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-copilot-cli-v1-0-81
+collectionDate: '2026-08-28'
+primaryCategory: international
+relatedCategories: []
+originBasis: Official github/copilot-cli GitHub release (GitHub/Microsoft multinational).
+  Coding-agent CLI with plugins, MCP, skills, sandbox; not KR/JP-local.
+originalTitle: copilot-cli 1.0.81
+originalLanguage: en
+koreanSummary: GitHub Copilot CLI 1.0.81이 /plugin·/mcp·/skills 플러그인 대시보드를 전면 개방하고
+  MCP 2026-07-28 지원을 CLI/SDK/IDE에 실었으며, 훅에 OpenTelemetry traceparent를 넣고 Windows Entra
+  MCP는 WAM 브로커 로그인, /sandbox에서 settings 편집·엔터프라이즈 샌드박스 정책을 다듬었다.
+source: official_release
+canonicalId: github/copilot-cli@v1.0.81
+primaryUrl: https://github.com/github/copilot-cli/releases/tag/v1.0.81
+author: github
+project: github/copilot-cli
+publishedAt: '2026-08-27T17:10:08Z'
+observedFacts:
+- releases.atom entry for tag v1.0.81 updated 2026-08-27T17:10:08Z (inside window).
+  Notes header date 2026-08-27.
+- 'Release body: plugins dashboard available to everyone via /plugin, /mcp, or /skills;
+  Ship MCP 2026-07-28 support to CLI, SDK, IDE, and in-memory clients.'
+- Hooks can receive OpenTelemetry trace context (traceparent/tracestate) and emit
+  correlated spans; command hooks also get env vars. Hook lifecycle events from subagent
+  hooks are recorded on the subagent session and re-emitted on its parent.
+- 'Windows: remote MCP servers protected by Microsoft Entra ID can sign in through
+  the OS authentication broker (WAM); other platforms keep browser/--device-code flow.
+  Enterprise-blocked MCP servers show as blocked in /mcp instead of spinning pending.'
+- 'Also lists: Ctrl+E in /sandbox to open settings.json; sandboxed Windows builds
+  create scratch caches on first run; forceRemoteSettingsRefresh fails closed (blocks
+  non-default MCP until fresh policy); defaultMode/defaultPermissionMode; per-agent
+  usage metrics in --usage-output-file JSON.'
+- In-window prereleases v1.0.81-10..14 (plugins dashboard, Entra WAM, OTEL hooks,
+  resume) are on skip or superseded; this record is the consolidated v1.0.81 tag only.
+interpretation: Stable Copilot CLI cut that productizes the plugins/MCP/skills dashboard,
+  ships a dated MCP protocol support level, and hardens enterprise MCP auth plus OTEL-correlated
+  hooks—central to coding-agent tooling and sandbox policy.
+relatedRefs:
+- https://github.com/github/copilot-cli/releases.atom
+- https://github.com/github/copilot-cli/releases/tag/v1.0.81-13
+- https://github.com/github/copilot-cli/releases/tag/v1.0.81-12
+sourceWarnings:
+- v1.0.81 body is a cumulative changelog; it both mentions PLUGINS_DASHBOARD=false
+  opt-out and later says that opt-out/legacy skills picker were removed (wording from
+  1.0.81-13). Treat as release notes, not a single atomic diff.
+- MCP 2026-07-28 support claim not re-probed against a live client here.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/github/copilot-cli/releases/tag/v1.0.81
+- https://github.com/github/copilot-cli/releases.atom
+verifiedAt: '2026-08-27T21:52:14Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 공식 Copilot CLI v1.0.81. /plugin·/mcp·/skills 대시보드 개방, MCP 2026-07-28
+  지원, OTEL 훅, Entra WAM, /sandbox 정책. MCP·Agent Skills·sandbox·harness에 직접 맞음. 프리릴리스
+  81-10..14 누적 컷. Codex/Claude 교체 ADOPT 근거 아님. 브랜드·트렌딩 비가중.
+expectedBenefit: 코딩 에이전트 CLI에서 MCP/Skills 플러그인 표면과 엔터프라이즈 MCP·샌드박스 정책 체크리스트가 갱신됨.
+switchingCost: 노트 흡수 낮음. Copilot CLI를 기본 하네스로 바꾸면 중간~높음. 엔터프라이즈 MCP 차단 정책은 운영 면이 넓어짐.
+maturity: developing
+risks:
+- 누적 changelog; PLUGINS_DASHBOARD 옵트아웃 제거 문구가 혼재.
+- MCP 2026-07-28 지원은 라이브 클라이언트로 미재검증.
+- forceRemoteSettingsRefresh fail-closed가 비기본 MCP를 막을 수 있음.
+smallestUsefulExperiment: 릴리스 노트에서 /plugin·/mcp·/skills·Entra WAM·sandbox 항목만 현재 Copilot
+  CLI와 대조. CLI 업그레이드·외부 게시 없음.
+recordStatus: approved
+```
+
+## langchain-deepagents-0-7-9
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/28/regional-signal/international/langchain-deepagents-0-7-9.yaml
+- sha256: 8e41cb2a226454dec4384eabf1d84b00c6d81c8aba05c56b678b3f4d94ec087e
+- primaryUrl: https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.9
+
+```yaml
+schemaVersion: regional-signal/v1
+id: langchain-deepagents-0-7-9
+collectionDate: '2026-08-28'
+primaryCategory: international
+relatedCategories: []
+originBasis: Official langchain-ai/deepagents core package release (LangChain multinational).
+  Agent harness library; not KR/JP-local.
+originalTitle: deepagents==0.7.9
+originalLanguage: en
+koreanSummary: deepagents 0.7.9이 미들웨어 트레이싱 입력을 끄고, harness profile의 excluded_tools가
+  있으면 실행에서 도구를 제외하며, RubricMiddleware가 기준을 모두 덮도록 강제하고 execute-timeout 0의 의미를 명확히
+  했다.
+source: official_release
+canonicalId: langchain-ai/deepagents@deepagents==0.7.9
+primaryUrl: https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.9
+author: langchain-ai
+project: langchain-ai/deepagents
+publishedAt: '2026-08-25T21:02:55Z'
+observedFacts:
+- releases.atom entry deepagents==0.7.9 updated 2026-08-25T21:02:55Z (inside window).
+- 'Features: Disabled tracing inputs on middleware (#5377).'
+- 'Bug fixes: Exclude tools from execution when excluded_tools is set in harness profiles
+  (#5809); Enforce full criterion coverage in RubricMiddleware (#5234); Clarified
+  zero execute-timeout semantics (#5752).'
+- Release thanks community contributor Jiahong Dai (@jiahongsigma) and issue reporters
+  including Björn Schotte (@BjoernSchotte).
+interpretation: 'Core harness hardening: profile-level tool exclusion and rubric completeness
+  matter for evaluation and safer agent runs. Small release; facts are release-note
+  only.'
+relatedRefs:
+- https://github.com/langchain-ai/deepagents/releases.atom
+- https://github.com/langchain-ai/deepagents
+sourceWarnings:
+- excluded_tools and RubricMiddleware behavior not re-tested locally.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.9
+- https://github.com/langchain-ai/deepagents/releases.atom
+verifiedAt: '2026-08-27T21:52:14Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: deepagents 0.7.9. harness profile excluded_tools 실행 제외, RubricMiddleware
+  전 기준 강제, execute-timeout 0 의미 명확화. agent-harness·agent-evaluation·sandboxing에 맞음.
+  소규모 하드닝. EXPERIMENT/ADOPT 아님.
+expectedBenefit: 프로필 도구 제외와 루브릭 완전 적용이 평가·안전 실행 체크리스트에 들어옴.
+switchingCost: 노트 흡수 낮음. 프로필에 excluded_tools를 넣으면 낮~중간.
+maturity: early
+risks:
+- excluded_tools·RubricMiddleware 미로컬 재테스트.
+- 트레이싱 입력 비활성은 디버그 가시성을 줄일 수 있음.
+smallestUsefulExperiment: excluded_tools·RubricMiddleware·timeout 0 문장만 읽고 현재 harness
+  프로필과 대조. 실행·외부 게시 없음.
+recordStatus: approved
+```
+
+## langchain-deepagents-code-0-1-63
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/28/regional-signal/international/langchain-deepagents-code-0-1-63.yaml
+- sha256: 544696596aab415fff9043d3832887d47626b34499af13406fefe351e5ae373f
+- primaryUrl: https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.63
+
+```yaml
+schemaVersion: regional-signal/v1
+id: langchain-deepagents-code-0-1-63
+collectionDate: '2026-08-28'
+primaryCategory: international
+relatedCategories: []
+originBasis: Official langchain-ai/deepagents GitHub release (LangChain multinational).
+  Agent harness / coding agent package; not KR/JP-local.
+originalTitle: deepagents-code==0.1.63
+originalLanguage: en
+koreanSummary: LangChain deepagents-code 0.1.63이 모델 스위처에 Baseten zai-org/GLM-5.3-Flash를
+  넣고, 원격 managed config 로드와 모델 노드 transient 오류용 retry middleware를 추가했으며 동적 서브에이전트
+  라이브 비용 추적 버그를 고쳤다.
+source: official_release
+canonicalId: langchain-ai/deepagents@deepagents-code==0.1.63
+primaryUrl: https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.63
+author: langchain-ai
+project: langchain-ai/deepagents
+publishedAt: '2026-08-26T22:03:19Z'
+observedFacts:
+- releases.atom entry deepagents-code==0.1.63 updated 2026-08-26T22:03:19Z (inside
+  window).
+- 'Features: Added Baseten zai-org/GLM-5.3-Flash to the model switcher (#5844); support
+  for loading managed config from a remote source (#5776); retry middleware for transient
+  model errors in model nodes (#4569).'
+- 'Fixes: Fixed live cost tracking for dynamic subagents (#5833); improved clear command
+  descriptions (#5841); allowed instrumental Auto actions (#5832); ensured traces
+  are flushed before server shutdown (#5837); made debug log path click-to-copy (#5845).'
+- Same-day deepagents-talon==0.0.5 (2026-08-26T22:13:23Z) notes Migrated MCP discovery
+  to discover_mcp_config_sources (#5803)—relatedRefs only, not a separate candidate.
+- Prior deepagents-code==0.1.62 (/context-doctor) is on skip-ids; this record is 0.1.63
+  only.
+interpretation: Incremental deepagents coding harness release emphasizing remote managed
+  config, retry/cost tracking for subagents, and an open-weight Flash model in the
+  switcher—alongside a sibling talon MCP discovery migration.
+relatedRefs:
+- https://github.com/langchain-ai/deepagents/releases.atom
+- https://github.com/langchain-ai/deepagents/releases/tag/deepagents-talon%3D%3D0.0.5
+- https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.62
+sourceWarnings:
+- Feature bullets are from the atom content HTML; packages were not installed or run
+  here.
+- GLM-5.3-Flash availability depends on Baseten routing outside this discovery.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.63
+- https://github.com/langchain-ai/deepagents/releases.atom
+verifiedAt: '2026-08-27T21:52:14Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: deepagents-code 0.1.63. Baseten GLM-5.3-Flash 스위처, 원격 managed config,
+  model-node retry, 동적 서브에이전트 비용 추적 수정. langchain·agent-harness·model-routing·open-source-models에
+  인접. 0.1.62(/context-doctor) 다음 증분. ADOPT 아님.
+expectedBenefit: 원격 config·일시 오류 retry·오픈웨이트 Flash 라우팅이 코딩 하네스 옵션으로 추가됨.
+switchingCost: 노트 열람 낮음. 패키지 업은 낮~중간. 원격 managed config는 공급망 면이 생김.
+maturity: early
+risks:
+- atom HTML 피처 불릿만. 패키지 미설치.
+- GLM-5.3-Flash는 Baseten 라우팅 의존.
+- talon MCP discovery 이전은 relatedRefs만.
+smallestUsefulExperiment: 모델 스위처·remote config·retry middleware 문장만 0.1.62와 diff.
+  설치·외부 게시 없음.
+recordStatus: approved
+```
+
+## openai-admin-plugin-2026-08-25
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: international
+- path: intelligence/signals/2026/08/28/regional-signal/international/openai-admin-plugin-2026-08-25.yaml
+- sha256: b002e128279650262c9194b1ffb2ea663404a28ab181fb5bda12e4bafdb48982
+- primaryUrl: https://openai.com/index/introducing-admin-plugin
+
+```yaml
+schemaVersion: regional-signal/v1
+id: openai-admin-plugin-2026-08-25
+collectionDate: '2026-08-28'
+primaryCategory: international
+relatedCategories: []
+originBasis: Official OpenAI product announcement (openai.com). Admin plugin for ChatGPT
+  Work and Codex; multinational vendor; not KR/JP-local.
+originalTitle: Introducing the Admin plugin for ChatGPT Work and Codex
+originalLanguage: en
+koreanSummary: OpenAI가 ChatGPT Work·Codex용 Admin 플러그인을 공개했다. 한 대화에서 워크스페이스 사용량·크레딧,
+  멤버/그룹, 권한, 사용 한도·지출 요청을 조회·변경하고 결과를 확인하도록 해 IT 관리 반복 작업을 줄인다고 설명한다.
+source: official_release
+canonicalId: openai.com/index/introducing-admin-plugin
+primaryUrl: https://openai.com/index/introducing-admin-plugin
+author: OpenAI
+project: OpenAI Codex / ChatGPT Work
+publishedAt: '2026-08-25T00:00:00Z'
+observedFacts:
+- openai.com/news/rss.xml item pubDate Tue, 25 Aug 2026 00:00:00 GMT; link https://openai.com/index/introducing-admin-plugin;
+  title Introducing the Admin plugin for ChatGPT Work and Codex (inside window).
+- Page states OpenAI August 25, 2026; subtitle Understand workspace activity, manage
+  access and usage, and take supported admin actions in one conversation.
+- 'Body: admins can ask a question, explore details, make an authorized change, and
+  confirm the result without writing complex prompts or switching tools; lists Understand
+  adoption and usage (activity and credit usage across ChatGPT Work and Codex), Manage
+  members and groups, Manage access and permissions, Manage usage limits and spending
+  requests.'
+- Sections include Automate recurring admin workflows, Scale administration with existing
+  controls, How OpenAI's IT team uses ChatGPT Work and Codex, Install the Admin plugin
+  for ChatGPT Work.
+interpretation: Codex/Work admin surface moves into a conversational plugin—relevant
+  for org-scale coding-agent governance (usage, permissions, limits). Capabilities
+  listed are marketing/docs claims, not audited here.
+relatedRefs:
+- https://openai.com/news/rss.xml
+- https://openai.com/index/loveholidays
+sourceWarnings:
+- loveholidays Codex case study same RSS window is on skip-ids; not re-listed.
+- Plugin download/install path not exercised; page showed Download plugin Loading…
+  in static HTML.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://openai.com/index/introducing-admin-plugin
+- https://openai.com/news/rss.xml
+verifiedAt: '2026-08-27T21:52:14Z'
+contradictions: []
+judgeAction: WATCH
+judgeRationale: ChatGPT Work·Codex Admin 플러그인 공지. 사용량·멤버·권한·한도를 대화로 관리. Codex 조직 거버넌스에
+  인접하나 코딩 하네스·MCP·Skills 품질 신호가 아님. loveholidays류 롤아웃 내러티브. ADOPT/EXPERIMENT 근거 아님.
+expectedBenefit: Codex/Work 워크스페이스 거버넌스 UI가 대화형 플러그인으로 노출되는 관측점.
+switchingCost: 공지 추적 낮음. 관리 권한을 플러그인에 열면 중간~높음.
+maturity: early
+risks:
+- 마케팅/docs 주장. 설치 경로 미실행(Loading…).
+- 권한 변경이 대화로 이뤄지면 감사 추적이 플러그인에 묶임.
+- loveholidays는 skip-ids.
+smallestUsefulExperiment: 기능 네 줄(usage·members·permissions·limits)만 읽고 현재 Codex 관리
+  면과 대조. 플러그인 설치·외부 게시 없음.
+recordStatus: approved
+```
+
+## highreso-dflash-gemma-mtp
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/28/regional-signal/japan/highreso-dflash-gemma-mtp.yaml
+- sha256: 482a3f880a379e8d0d3ebd05c220b9d7aea588adccd7343a3cc007c7955cfa56
+- primaryUrl: https://zenn.dev/highreso/articles/ab3dbc20ce58ff
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: highreso-dflash-gemma-mtp
+collectionDate: '2026-08-28'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official 株式会社ハイレゾ Zenn publication highreso (国内GPUクラウド GPUSOROBAN). Author Yuichi Tominaga (researcher_yuu) writing on the company blog.
+originalTitle: ドラフトトークンを並列生成する拡散モデル方式「DFlash」をGemmaで試した
+originalLanguage: ja
+koreanSummary: 하이레조가 RTX 3060 12GB·llama.cpp에서 Gemma-4-12B-it의 순정 Assistant MTP와 UCSD Z-lab DFlash 드래프트를 같은 JS 코딩 태스크로 비교했다. DFlash는 출력이 10–20 tps 느리고 추론이 최대 약 20초 뒤진다. 원인은 수락률. --spec-draft-n-max 4→15는 acceptance 0.109(1174/10770, mean len 2.64)로 더 느려졌다. DFlash는 자체 KV를 가져 메모리가 대략 두 배.
+source: technical_article
+canonicalId: zenn:highreso:ab3dbc20ce58ff
+primaryUrl: https://zenn.dev/highreso/articles/ab3dbc20ce58ff
+author: Yuichi Tominaga (researcher_yuu)
+project: HIGHRESO / GPUSOROBAN DFlash vs Gemma Assistant MTP
+publishedAt: '2026-08-27T02:16:31Z'
+observedFacts:
+- 'Zenn highreso (株式会社ハイレゾ) API published_at 2026-08-27T11:16:31.959+09:00 (2026-08-27T02:16:31Z, inside window). Same env as their prior MTP write-up: RTX 3060 12GB, llama.cpp, one JavaScript coding task. DFlash = Z-lab (UCSD / NVIDIA) block-diffusion speculative decoder with dedicated draft GGUFs for Gemma-4, MiniMax, Qwen, Kimi, GLM, gpt-oss, Llama3.1.'
+- Gemma Assistant MTP shares the main model's KV cache; DFlash keeps its own KV, so MTP-related memory was about 2× in their tables. Prompt-eval throughput was similar; decode was 10–20 tokens/s slower on DFlash, with total inference lag under ~20s versus Assistant on this task.
+- 'Author attributes the gap to lower draft acceptance, not prompt ingest. Raising --spec-draft-n-max from 4 to 15 on CUDA0 (--spec-type draft-dflash, gemma-4-12B-it-q4_0 + DFlash draft, -c 163840, q8 KV) made it worse: eval 38.76 tok/s, draft acceptance 0.10901 (1174 accepted / 10770 generated), mean len 2.64.'
+- They also note ELYZA-Diffusion-Instruct-1.0-Dream-7B as a Japan (KDDI/ELYZA) diffusion-LLM data point, but the measurements here are Gemma Assistant vs DFlash only.
+interpretation: 'Japan GPU-cloud measurement on local decoding: a generic diffusion draft lost to Gemma''s first-party MTP on this card because acceptance, not draft length, was the limiter—and lengthening the draft burned more rejected tokens.'
+relatedRefs:
+- https://zenn.dev/highreso/articles/ab3dbc20ce58ff
+sourceWarnings:
+- Numeric tables in the article are images; quoted 38.76 tok/s and 0.109 acceptance come from the n-max=15 experiment log in the body.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/highreso/articles/ab3dbc20ce58ff
+- https://zenn.dev/api/articles/ab3dbc20ce58ff
+- https://zenn.dev/p/highreso/feed
+- https://zenn.dev/api/publications/highreso
+verifiedAt: '2026-08-27T21:57:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: RTX 3060에서 Gemma Assistant MTP vs DFlash 드래프트. DFlash는 10–20 tps 느리고 수락률이 원인. n-max 4→15는 acceptance 0.109로 더 느려짐. 자체 KV로 메모리 ~2×. open-source-models 로컬 디코드에 인접. 에이전트 하네스 교체 근거 아님. DFlash 도입 EXPERIMENT 아님.
+expectedBenefit: 드래프트 길이가 아니라 수락률이 한도. 길이만 늘리면 거절 토큰이 늘어 느려짐.
+switchingCost: 글 흡수 낮음. DFlash GGUF를 기본 디코드로 바꾸면 중간(메모리 2×·수락).
+maturity: experimental
+risks:
+- 숫자 표는 이미지. n-max=15 수치는 본문 로그.
+- JS 코딩 태스크 1건. 카드·모델이 바뀌면 갭이 달라짐.
+- ELYZA-Diffusion은 언급만. 이 측정의 비교 대상 아님.
+smallestUsefulExperiment: 수락률 vs draft n-max, 자체 KV 메모리 두 줄만 현재 스펙큘레이티브 설정과 대조. DFlash 로드·외부 게시 없음.
+```
+
+## hissy-concretecms-mcp-client-dev
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/28/regional-signal/japan/hissy-concretecms-mcp-client-dev.yaml
+- sha256: 39488202c9655f0b5b22a3dcc936d68ef597d9c6f6fe4e7be1736cb9996f26b8
+- primaryUrl: https://zenn.dev/hissy/articles/concretecms-mcp-client-dev
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: hissy-concretecms-mcp-client-dev
+collectionDate: '2026-08-28'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Author 菱川 拓郎 (hissy), CEO of 株式会社マカルーデジタル (Macareux Digital, Inc.). GitHub HTML profile location Tokyo, Japan. Continues Concrete CMS MCP series (parts 4–5 already in skip-ids).
+originalTitle: Concrete CMS MCP Server 入門（6）— 自作クライアントと AI エージェント
+originalLanguage: ja
+koreanSummary: 도쿄 hissy(마카루 디지털)가 Concrete CMS MCP 입문 시리즈 6회에서 자체 에이전트·채팅 UI·CMS 패키지 클라이언트를 정리했다. 대화 루프는 앱, CMS 토큰은 MCP가 들고 MCP_API_KEY는 서버에만 둔다. /mcp는 Bearer+X-Concrete-User-Id, OAuth는 백엔드가 /oauth/start Location을 개조 없이 브라우저로 넘긴다.
+source: technical_article
+canonicalId: zenn:hissy:concretecms-mcp-client-dev
+primaryUrl: https://zenn.dev/hissy/articles/concretecms-mcp-client-dev
+author: 菱川 拓郎 (hissy)
+project: Concrete CMS MCP Server (custom clients)
+publishedAt: '2026-08-27T09:44:12Z'
+observedFacts:
+- 'Zenn API published_at 2026-08-27T18:44:12.338+09:00 (2026-08-27T09:44:12Z, inside window). Author bio: 株式会社マカルーデジタル代表取締役; GitHub profile Home location Tokyo, Japan. Part 6 closes the intro series (part 5 remote HTTP is in skip-ids).'
+- 'Trust split: the app owns the LLM conversation loop; the MCP server owns CMS token storage and tool execution. Clients never receive the CMS refresh token. MCP_API_KEY stays server-side. CONCRETE_API_SCOPE must include account:read.'
+- '/mcp requires Authorization: Bearer <MCP_API_KEY> and X-Concrete-User-Id (401 without key, 400 without user id). Sequence is initialize → notifications/initialized (no id) → tools/list → tools/call. Tool names come from OpenAPI operations plus get_page_content / update_page_content.'
+- 'Per-user OAuth: GET /oauth/status then GET /oauth/start; backend must proxy start with the API key and forward Location unmodified (rewriting query → callback 400). Concrete CMS may replace state on callback; MCP matches the session via PKCE. Re-start while in-flight returns 409.'
+- 'Three client patterns: backend agent (env MCP_SERVER_URL / MCP_API_KEY / CMS_USER_ID, cache tools/list); web chat UI (browser talks only to the app API; backend maps the logged-in user to X-Concrete-User-Id); Concrete CMS package dashboard (encrypted mcp_api_key, CSRF + permission gates, never leak the key into package JS). Checklist includes /health 200, initialize+tools/list, a sample tools/call, revoke, and no token mix across user ids.'
+interpretation: 'Japan MCP client note: custom agents are an identity-and-proxy problem—keep the CMS OAuth token on the MCP side and treat Location/PKCE as an untrusted redirect, not something the app rewrites.'
+relatedRefs:
+- https://zenn.dev/hissy/articles/concretecms-mcp-client-dev
+- https://zenn.dev/hissy/articles/concretecms-mcp-remote-clients
+- https://zenn.dev/hissy/articles/concretecms-mcp-security
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/hissy/articles/concretecms-mcp-client-dev
+- https://zenn.dev/api/articles/concretecms-mcp-client-dev
+- https://zenn.dev/hissy/feed
+- https://github.com/hissy
+verifiedAt: '2026-08-27T21:57:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 어제 part 5(원격 HTTP READ)의 예고된 part 6. 커스텀 클라이언트 3패턴(백엔드 에이전트·웹 채팅·CMS 패키지). 앱이 LLM 루프, MCP가 CMS 토큰. Location 미개조·PKCE·409. MCP·harness에 맞음. 중복 IGNORE 아님. CMS 기동 EXPERIMENT 아님. part 4·5 토큰 글을 이 편만으로 재판단하지 않음.
+expectedBenefit: 커스텀 에이전트를 아이덴티티·프록시 문제로 보는 계약. 키는 서버, Location은 신뢰하지 않음.
+switchingCost: 글 흡수 낮음. 자체 MCP 클라이언트를 붙이면 중간(OAuth 프록시·유저 매핑).
+maturity: developing
+risks:
+- Concrete CMS 전제. 다른 MCP에 그대로 이식되지 않을 수 있음.
+- Location 재작성은 callback 400. 프록시 실수 여지.
+- part 4·5와 같은 시리즈. 토큰 보관은 이 편만으로 재판단하면 안 됨.
+smallestUsefulExperiment: Location 미개조·키 서버 보관·유저 id 헤더 세 줄만 현재 MCP 클라이언트와 대조. CMS 기동·외부 게시 없음.
+```
+
+## jtechjapan-qwen-flash-next-opencode
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/28/regional-signal/japan/jtechjapan-qwen-flash-next-opencode.yaml
+- sha256: 571bff9f562d80dac72437a7c7fa2dae7a9fc0833232b46c3c2da7b9915530d7
+- primaryUrl: https://zenn.dev/jtechjapan_pub/articles/local-llm-qwen-flash-next-eval
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: jtechjapan-qwen-flash-next-opencode
+collectionDate: '2026-08-28'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official ジェイテックジャパンブログ Zenn publication jtechjapan_pub (JTS group). Author tomohisa, CTO of 株式会社ジェイテックジャパン / VPoE of J-Tech Creations, Inc. Japan engineering company.
+originalTitle: MacBook Pro 128GB でローカル LLM がついに実用になった ─ Qwen3.8 Flash Next 実測
+originalLanguage: ja
+koreanSummary: 제이테크재팬 CTO가 M4 Max 128GB+llama.cpp+OpenCode로 Qwen3.8 Flash Next(UD-Q3_K_XL ~90GB)를 자사 OSS intent-system의 머지된 이슈 2건에 돌렸다. 도구 190회 오류 0, 초안 PR·리뷰 1왕복. G735는 로컬 39분 vs Codex Luna Max 14분. dense 27B는 같은 작업 8시간. 테스트 5185+1 실패를 Passed 5186으로 오독한 자기신고 1건.
+source: public_case_study
+canonicalId: zenn:jtechjapan_pub:local-llm-qwen-flash-next-eval
+primaryUrl: https://zenn.dev/jtechjapan_pub/articles/local-llm-qwen-flash-next-eval
+author: tomohisa (高丘) / 株式会社ジェイテックジャパン CTO
+project: J-Tech Creations intent-system local OpenCode eval
+publishedAt: '2026-08-27T20:06:17Z'
+observedFacts:
+- 'Zenn jtechjapan_pub API published_at 2026-08-28T05:06:17.503+09:00 (2026-08-27T20:06:17Z, inside window). Host: MacBook Pro M4 Max 128GB unified, macOS 26.6.1. Model: Qwen3.8 Flash Next UD-Q3_K_XL ~90GB GGUF via llama-server (-ngl 999 -c 65536 -np 1 --port 18082). Agent: OpenCode 1.18.23 against the OpenAI-compatible API.'
+- 'Eval units are already-merged OSS issues on Apache-2.0 intent-system, restored via git worktree to the pre-implementation commit, PR aimed at a frozen base branch: G731 (#1586, +164/−42, 5 files) and G735 (#1594, +284/−26, 11 files). Rules: do not claim unrun tests succeeded; do not edit tests to make them pass. Local PRs #1603/#1604 (closed); human/Codex Luna Max answers #1589/#1599.'
+- 'Two tasks: 190 tool calls, 0 errors (bash 75, read 59, edit 30, grep 19, write 4, todowrite 3). Both found the same blocks as the merged diffs; G735 kept the reject path and narrowed the condition. Weakness: missed sibling surfaces (dry-run branch; guide + compatibility ledger). Review was fetched via gh, not a summary; both passed in one round. G731 rewrote Japanese prose instead of backtick-escaping a test guard.'
+- 'Self-report error on G731 first PR: claimed Failed: 0 / Passed 5186 while actual was Passed 5185 / Failed 1 (sum 5186—misread the Failed! trailer). After review, later reports matched. Dense Qwen3.8 27B Q4 on G731 did not misreport but took ~8h vs ~1h and needed a continue prompt (6.5h first attempt, no commit).'
+- 'G735 wall (delegate→PR): Luna Max ~14 min vs local ~39 min (~2.8×). Effective throughput 9.1/9.8 tok/s (not the 29 tok/s ping). Prompt-cache reuse ~90% (3.26M/2.84M). Auto-compaction 4× (G731) / 2× (G735) at 64k. KV ~35 KiB/token (64k=2.3 GiB); dense 27B ~260 KiB/token because of 4 KV heads + full attention. Author argues the bound is whether the workflow closes in wall time (MoE), not raw smarts. n=2, reviewer is the author.'
+interpretation: 'Japan local-coding-agent eval on real OSS: MoE + cache made a 90GB model close a PR loop in under an hour where dense 27B thrashed on compaction; the remaining failure mode is trailing-log self-report, which CI would catch.'
+relatedRefs:
+- https://zenn.dev/jtechjapan_pub/articles/local-llm-qwen-flash-next-eval
+sourceWarnings:
+- n=2 small units; reviews written and judged by the author; cloud timing is not a controlled A/B.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/jtechjapan_pub/articles/local-llm-qwen-flash-next-eval
+- https://zenn.dev/api/articles/local-llm-qwen-flash-next-eval
+- https://zenn.dev/p/jtechjapan_pub/feed
+- https://zenn.dev/api/publications/jtechjapan_pub
+verifiedAt: '2026-08-27T21:57:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: M4 Max 128GB+llama.cpp+OpenCode로 Qwen3.8 Flash Next ~90GB를 이미 머지된 OSS 이슈 2건에 재구현. 도구 190회 오류 0, 로컬 39분 vs Luna Max 14분, dense 27B는 ~8시간. 테스트 5185+1을 Passed 5186으로 오독. agent-evaluation·harness·open-source-models에 맞음. n=2·저자 리뷰. 로컬 90GB ADOPT/EXPERIMENT 아님. 모델명 비가중.
+expectedBenefit: MoE+캐시가 컴팩션에 죽는 dense보다 PR 루프를 닫는지가 한도. trailing-log 자기보고는 CI가 잡는 실패 모드.
+switchingCost: 글 흡수 낮음. 같은 로컬 루프를 켜면 높음(128GB·90GB GGUF).
+maturity: early
+risks:
+- n=2 소단위. 리뷰 작성·판정이 저자. 클라우드 시간은 통제 A/B 아님.
+- 자기보고 오독 1건. 테스트 가드레일 없이는 재발.
+- 형제 표면(dry-run·가이드·호환 장부) 누락은 품질 구멍이 남음.
+smallestUsefulExperiment: 미실행 테스트 성공 주장 금지와 trailing-log 합계 오독만 읽고 현재 에이전트 보고와 대조. 90GB 로드·외부 게시 없음.
+```
+
+## lincwell-claude-hooks-clawd
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/28/regional-signal/japan/lincwell-claude-hooks-clawd.yaml
+- sha256: 9b9e71c75df34a5c104a1bcacd47109e5c7514a053493d0c418ae8a6673baab7
+- primaryUrl: https://zenn.dev/lincwell_inc/articles/79092d88245748
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: lincwell-claude-hooks-clawd
+collectionDate: '2026-08-28'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official Linc'well, inc. Zenn publication lincwell_inc. Linc'well is a Japan healthcare startup. Author iwaide (kururuku); article states a personal off-hours project published under the company publication.
+originalTitle: Claude Code の承認待ちを見逃さないために、光る Clawd を机に置いた
+originalLanguage: ja
+koreanSummary: Linc'well 엔지니어가 Claude Code v2.1.226 훅 15종을 stdin JSON으로 실측해 M5Atom Lite 상태등을 만들었다. 승인 대기는 Notification이 아니라 PermissionRequest. Yes/No/Ctrl+C는 훅이 없고, PermissionDenied는 오토 분류기 전용. 서브에이전트는 부모 session_id로 이벤트를 보내 빨간불을 덮어썼고, PermissionRequest에는 tool_use_id가 없다.
+source: public_case_study
+canonicalId: zenn:lincwell_inc:79092d88245748
+primaryUrl: https://zenn.dev/lincwell_inc/articles/79092d88245748
+author: iwaide (kururuku)
+project: clawd-heartbeat (Claude Code hooks + M5Atom)
+publishedAt: '2026-08-27T01:00:01Z'
+observedFacts:
+- 'Zenn lincwell_inc API published_at 2026-08-27T10:00:01.529+09:00 (2026-08-27T01:00:01Z, inside window). Publication: Linc''well, inc. (Japan medical startup). Off-hours fan project; repo https://github.com/Iwaide/clawd-heartbeat (MIT) with firmware, hook scripts, CLAUDE.md + skill.'
+- 'Hardware path: Claude Code hooks → HTTP GET to M5Atom Lite :80 → FastLED/SK6812. USB-UART was rejected because DTR/RTS resets the board on every port open. Hooks must set async:true or they block the agent. States: idle blue, working white breathe, wait red blink then solid after 30s, done green, error fast red.'
+- 'Logged all ~15 candidate events on Claude Code v2.1.226. Notification(matcher: permission_prompt) does not fire when the dialog appears—only later as a side-effect. PermissionRequest(matcher: *) fires in the sync path at the permission decision. Yes / No / Ctrl+C fire no hook; PermissionDenied is documented as auto-mode-classifier-only. Red therefore lasts through the approved command''s runtime until PostToolUse.'
+- 'Workaround for deny/interrupt: transcript_path JSONL (The user doesn''t want to proceed… / [Request interrupted by user]) tailed by a short-lived watcher; quote-escaped copies in chat text do not match if the JSON field structure is required. Subagent (Agent tool) events reuse the parent session_id and were overwriting wait with working; they record the pending tool in a marker file and ignore other working events until that call completes, a new prompt, or a 10-minute TTL.'
+- PermissionRequest JSON has no tool_use_id (observed on v2.1.207 and v2.1.226); they join it from the preceding PreToolUse. async hook arrival order is not guaranteed (PreToolUse vs PermissionRequest); retries made inversions worse. Device drops updates older than the last applied millisecond timestamp.
+interpretation: 'Japan Claude Code hooks measurement: the permission UI is not a hook-complete state machine—PermissionRequest plus transcript tailing is what actually tracks wait/deny, and subagents share session_id so a naive aggregator lies.'
+relatedRefs:
+- https://zenn.dev/lincwell_inc/articles/79092d88245748
+- https://github.com/Iwaide/clawd-heartbeat
+sourceWarnings:
+- Hardware gadget is incidental; the durable object is the hook/transcript measurement on v2.1.226.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/lincwell_inc/articles/79092d88245748
+- https://zenn.dev/api/articles/79092d88245748
+- https://zenn.dev/p/lincwell_inc/feed
+- https://zenn.dev/api/publications/lincwell_inc
+- https://github.com/Iwaide/clawd-heartbeat
+- https://raw.githubusercontent.com/Iwaide/clawd-heartbeat/main/LICENSE
+verifiedAt: '2026-08-27T21:57:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Claude Code v2.1.226 훅 ~15종을 stdin JSON으로 실측. 승인 대기는 Notification이 아니라 PermissionRequest. Yes/No/Ctrl+C 훅 없음. 서브에이전트는 부모 session_id. PermissionRequest에 tool_use_id 없음. claude-code·harness에 직접 맞음. 하드웨어 램프는 부수. 훅 집계기 기본 교체 ADOPT 아님. 버전 스냅샷.
+expectedBenefit: 권한 UI를 훅 완전 상태기계로 보지 말 것. wait/deny는 PermissionRequest+transcript tail, 서브에이전트는 session_id를 공유해 나이브 집계가 거짓.
+switchingCost: 글 흡수 낮음. 훅 집계를 이 이벤트 모델에 맞추면 중간.
+maturity: early
+risks:
+- v2.1.207/v2.1.226 관측. 훅 스키마가 버전마다 바뀔 수 있음.
+- async 훅 도착 순서는 보장 없음. 재시도가 역전을 키움.
+- 하드웨어 경로는 부수. 램프 재현이 훅 측정이 아님.
+smallestUsefulExperiment: PermissionRequest vs Notification, 서브에이전트 session_id, tool_use_id 부재 세 줄만 현재 훅 매처와 대조. M5Atom 배선·외부 게시 없음.
+```
+
+## nattosystem-intellij-mcp-agent
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/28/regional-signal/japan/nattosystem-intellij-mcp-agent.yaml
+- sha256: 4eed3e49ddda7b4acd9e4931ffafa84116c5aae1625cb2ea2dc35bc7448f86cd
+- primaryUrl: https://zenn.dev/nattosystem_jp/articles/718e338025c8b7
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: nattosystem-intellij-mcp-agent
+collectionDate: '2026-08-28'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official 株式会社NATTOSYSTEM Zenn publication nattosystem_jp. NATTOSYSTEM is a Japan JetBrains reseller. Author ねばねば (nattogohan), presales engineer at NATTOSYSTEM.
+originalTitle: IntelliJ の MCP サーバーツールをAI エージェントに使わせてみた
+originalLanguage: ja
+koreanSummary: 일본 JetBrains 리셀러 NATTOSYSTEM이 IntelliJ 내장 MCP를 Spring PetClinic(Ultimate 2026.2)에서 에이전트에 연결해 봤다. get_symbol_info는 구현 없는 Spring Data 인터페이스에서 JPQL까지 좌표 한 번에 주고, analyze_calls는 테스트명까지 영향 범위를 낸다. xdebug_* 13개로 런타임 변수·모크를 읽으며, CI 불가·프로젝트 1개 고정·router 모드면 도구가 execute_tool 하나로 접힌다.
+source: public_case_study
+canonicalId: zenn:nattosystem_jp:718e338025c8b7
+primaryUrl: https://zenn.dev/nattosystem_jp/articles/718e338025c8b7
+author: ねばねば (nattogohan)
+project: IntelliJ IDEA built-in MCP server
+publishedAt: '2026-08-27T02:52:51Z'
+observedFacts:
+- 'Zenn nattosystem_jp (株式会社NATTOSYSTEM) API published_at 2026-08-27T11:52:51.880+09:00 (2026-08-27T02:52:51Z, inside window). Bench: IntelliJ IDEA Ultimate 2026.2, Spring PetClinic (Java / Spring Boot 4.1), IntelliJ built-in Claude agent view. MCP server ships enabled since 2025.2; Claude Code / Desktop / Cursor / VS Code / Codex / Windsurf can be auto-configured. Brave mode runs shell/run configs without confirm.'
+- get_symbol_info on PetTypeFormatter#parse (1-based file/line/col) returned declarationFile/line plus the @Query JPQL on PetTypeRepository—an interface with no implementation class (Spring Data generates it). Author contrasts this with 3+ file hops for a text-only agent.
+- analyze_calls INCOMING_CALLS on Owner.addVisit returned both VisitController and ClinicServiceTests (PSI, not grep). OUTGOING_CALLS walked into JDK src.zip. INCOMING on a widely implemented Formatter.parse timed out. search_symbol wasted half its hits on build/generated/aotSources/. Off-by-one column on get_symbol_info returned empty documentation with no error.
+- '13 xdebug_* debugger tools: set breakpoint (returns lineText + owner=agent vs user), start session from a test line (created PetTypeFormatterTests.shouldParse without a saved run config), get_frame_values showed Mockito mock type, size=2 list, text=Bird vs type=Dog, and 112 JUnit/Gradle frames collapsed. resume bundles the next pause + variables. Duplicate thread/breakpoint IDs observed; thread id strings embed RUNNING while state is paused.'
+- 'Limits: requires a running IDE (not CI); projectPath ignored (one open project); router mode can collapse tools to a single execute_tool; Japanese help names do not match real tool ids (search_symbol). lint_files surfaces Spring/JPA inspections javac cannot (unresolved table/column/path variable, JSpecify override).'
+interpretation: 'Japan IDE-MCP case: the useful tools are the ones that expose PSI, inspections, and live frames the agent cannot rebuild from files—plus the operational caveats that those tools only exist while a human IDE is open.'
+relatedRefs:
+- https://zenn.dev/nattosystem_jp/articles/718e338025c8b7
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/nattosystem_jp/articles/718e338025c8b7
+- https://zenn.dev/api/articles/718e338025c8b7
+- https://zenn.dev/p/nattosystem_jp/feed
+- https://zenn.dev/api/publications/nattosystem_jp
+verifiedAt: '2026-08-27T21:57:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: IntelliJ 내장 MCP를 PetClinic에서 에이전트에 연결. get_symbol_info가 구현 없는 Spring Data 인터페이스의 JPQL까지, analyze_calls가 테스트명까지, xdebug_* 13개가 런타임 프레임. IDE-MCP·harness에 맞음. CI 불가·프로젝트 1개·router면 execute_tool 하나로 접힘. IntelliJ 도입 EXPERIMENT 아님. 리셀러 글, 브랜드 비가중.
+expectedBenefit: 파일이 아니라 PSI·인스펙션·라이브 프레임을 주는 도구가 값. 그 도구는 IDE가 열려 있을 때만 존재.
+switchingCost: 글 흡수 낮음. IntelliJ MCP를 코딩 에이전트에 붙이면 중간(IDE 상주).
+maturity: early
+risks:
+- 벤치 1개(PetClinic / Ultimate 2026.2). 도구 품질이 프로젝트마다 다름.
+- INCOMING on 널리 구현된 심볼은 타임아웃. 오프바이원 컬럼은 빈 documentation에 에러 없음.
+- Brave mode는 셸/런 확인 없이 실행. 운영 실수 여지.
+smallestUsefulExperiment: PSI 도구 vs 텍스트 홉, IDE 상주 전제, router 접힘 세 줄만 현재 MCP 도구 집합과 대조. IntelliJ 설치·외부 게시 없음.
+```
+
+## sre-holdings-claude-plugin-marketplace
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/28/regional-signal/japan/sre-holdings-claude-plugin-marketplace.yaml
+- sha256: 74b9e0d2ff000e3fb39919095ca81823913dfa9a64def33bc693b75779375aa2
+- primaryUrl: https://zenn.dev/sre_holdings/articles/3ebb982eee3be7
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: sre-holdings-claude-plugin-marketplace
+collectionDate: '2026-08-28'
+primaryCategory: japan
+relatedCategories: []
+originBasis: Official SRE Holdings 株式会社 Zenn publication sre_holdings. SRE Holdings is a Japan listed company (Tokyo). Author 北川 (tkitagawa), data scientist at the company.
+originalTitle: Claude Code の Plugin Marketplace 入門 ― スキル配布の仕組み・できること
+originalLanguage: ja
+koreanSummary: SRE Holdings가 Claude Code Plugin Marketplace를 팀 스킬 배포 장치로 정리했다. marketplace.json 카탈로그는 넓고 설치는 옵트인, Skill⊂Plugin⊂Marketplace 3층. 캐시에 풀리며 네임스페이스가 붙어 개인 ~/.claude/skills와 공존한다. settings.json은 agent·subagentStatusLine만 배포되고 CLAUDE.md는 읽히지 않으며 version을 안 올리면 기존 유저에게 업데이트가 안 간다.
+source: technical_article
+canonicalId: zenn:sre_holdings:3ebb982eee3be7
+primaryUrl: https://zenn.dev/sre_holdings/articles/3ebb982eee3be7
+author: 北川 (tkitagawa)
+project: SRE Holdings Claude Code Plugin Marketplace
+publishedAt: '2026-08-27T01:55:35Z'
+observedFacts:
+- 'Zenn sre_holdings publication API published_at 2026-08-27T10:55:35.613+09:00 (2026-08-27T01:55:35Z, inside window). Publication display name: SRE Holdings 株式会社. Verified on Claude Code v2.1.215 as of 2026-07, with some author-machine checks.'
+- 'Marketplace is a catalog: one GitHub repo with .claude-plugin/marketplace.json. Catalog can list many plugins; only opted-in plugins install via /plugin install name@marketplace. extraKnownMarketplaces + enabledPlugins in .claude/settings.json is enough for teammates who open the folder.'
+- 'Three layers: Skill (SKILL.md dir) ⊂ Plugin (skills/agents/hooks/MCP) ⊂ Marketplace. Install expands into a home-dir cache, not the project git tree. Installed skills get a namespace (e.g. /review-checklist:skill-name) so they coexist with personal ~/.claude/skills/. Duplicate skills across plugins double-load context.'
+- Cannot ship most settings.json keys through a plugin (only agent and subagentStatusLine; permissions/env/model are ignored—use project or managed settings). Plugin-root CLAUDE.md is not loaded as project context; instructions must be Skills. Cache edits are ephemeral (orphaned after update, deleted after 14 days). Author saw non-kebab-case names break older claude plugin list.
+- Version is plugin-level only; install/enabledPlugins cannot pin a version (as of 2026-07). If marketplace.json sets version and it is not bumped, existing users get no update. Official marketplace auto-updates by default; company marketplaces default off. Compared vs manual copy, git submodule, and a custom CDN.
+interpretation: 'Japan org note on Agent Skills distribution: Marketplace is an opt-in catalog plus cache namespace, not a settings-enforcement plane—pair it with managed settings if you need permissions or model pins.'
+relatedRefs:
+- https://zenn.dev/sre_holdings/articles/3ebb982eee3be7
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/sre_holdings/articles/3ebb982eee3be7
+- https://zenn.dev/api/articles/3ebb982eee3be7
+- https://zenn.dev/p/sre_holdings/feed
+- https://zenn.dev/api/publications/sre_holdings
+verifiedAt: '2026-08-27T21:57:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: Claude Code Plugin Marketplace를 팀 스킬 배포 카탈로그로 정리. Skill⊂Plugin⊂Marketplace, 캐시 네임스페이스, settings.json은 agent·subagentStatusLine만, CLAUDE.md 미로드, version 미인상 시 기존 유저 미갱신. Agent Skills·claude-code에 맞음. skip의 zozo marketplace와 다른 글(배포 제약 실측). 마켓 도입 EXPERIMENT/ADOPT 아님. 브랜드 비가중.
+expectedBenefit: 옵트인 카탈로그+캐시 네임스페이스이지 설정 강제 면이 아님. 권한·모델 핀은 managed settings와 짝.
+switchingCost: 글 흡수 낮음. 팀 마켓을 켜면 중간(카탈로그·opt-in·버전 운용).
+maturity: developing
+risks:
+- 버전은 플러그인 단위만. install/enabledPlugins가 버전을 핀하지 못함(2026-07).
+- 캐시 편집은 업데이트 후 고아, 14일 후 삭제.
+- 플러그인 간 동일 스킬 중복은 컨텍스트 이중 로드.
+smallestUsefulExperiment: 배포 가능 키(agent/subagentStatusLine)·CLAUDE.md 미로드·version bump 세 줄만 현재 스킬 배포와 대조. marketplace.json 게시·외부 게시 없음.
+```
+
+## suwash-webmcp-draft-chrome-ot
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/28/regional-signal/japan/suwash-webmcp-draft-chrome-ot.yaml
+- sha256: ef5f7724ba18024db619cf21fedd31dd35b6ff7994f62d620eff470221e25bcf
+- primaryUrl: https://zenn.dev/suwash/articles/webmcp_20260826
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: suwash-webmcp-draft-chrome-ot
+collectionDate: '2026-08-28'
+primaryCategory: japan
+relatedCategories: []
+originBasis: 'Author suwa-sh / 諏訪真一. Zenn bio: 株式会社プレーサ 取締役 (Japan company), RedAlliance / NoOpsJP. Personal views on a public implementation guide, not a company publication.'
+originalTitle: WebMCP DraftとChrome OT実装の差分を踏まえた実装・運用ガイド
+originalLanguage: ja
+koreanSummary: 일본 회사 프레사 이사회 멤버 스와가 2026-08-26 WebMCP Draft와 Chrome 149–156 Origin Trial 차이를 구현 가이드로 정리했다. 엔트리는 document.modelContext(navigator.modelContext는 Chromium 150에서 deprecated). 백엔드 MCP와 실행 장소·신뢰 경계가 다르고, JSON Schema는 브라우저가 엄격 검증하지 않아 execute·서버에서 인가해야 한다. 크로스 오리진은 allow=tools + exposedTo + fromOrigins 세 조건.
+source: technical_article
+canonicalId: zenn:suwash:webmcp_20260826
+primaryUrl: https://zenn.dev/suwash/articles/webmcp_20260826
+author: suwa-sh / 諏訪真一
+project: WebMCP Draft vs Chrome Origin Trial
+publishedAt: '2026-08-26T15:00:00Z'
+observedFacts:
+- Zenn API published_at 2026-08-27T00:00:00.000+09:00 (2026-08-26T15:00:00Z, inside window). ~24k-letter implementation reference against the 2026-08-26 WebMCP Draft Community Group Report and Chrome 149–156 Origin Trial (shipping proposed at 157; Edge 150 OT). Mozilla position neutral, WebKit oppose.
+- 'Canonical entry is document.modelContext. Early navigator.modelContext left the tool map alive across Document swaps in the same Window and was deprecated in Chromium 150. ModelContext: registerTool / getTools / executeTool / ontoolchange. Designed for human-in-the-loop on the open page (cookies, UI state), not headless autonomy. Backend MCP remains a separate server/process layer.'
+- 'JSON Schema is a contract, not guaranteed browser-enforced validation; authorize and validate inside execute and on the server. execute callbacks stay on the registrar and are not given to discoverers (RegisteredTool is a descriptor). Cross-origin iframes need three gates: parent allow="tools" (Permissions Policy), registrar exposedTo, discoverer fromOrigins.'
+- ModelContext is 1:1 with a Document (tool map + local in-flight map). Traversable tracks in-flight calls across Documents in the same top-level browsing context; executeTool against a tool from another top-level Document raises UnknownError. Also documents AbortSignal unregister/cancel, readOnlyHint / untrustedContentHint, SecureContext and origin-keyed agent cluster, plus Cloudflare HTMLRewriter / MCP-B polyfill as layers in front of the native API—not part of the UA internals.
+interpretation: 'Japan-authored WebMCP field guide: the interesting split is Document-scoped tool maps and a three-part iframe policy, versus treating WebMCP as just MCP-over-the-DOM.'
+relatedRefs:
+- https://zenn.dev/suwash/articles/webmcp_20260826
+sourceWarnings:
+- Personal post; origin is the author's Japan company officer role, not an official Pleasa publication.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/suwash/articles/webmcp_20260826
+- https://zenn.dev/api/articles/webmcp_20260826
+- https://zenn.dev/suwash/feed
+- https://github.com/suwa-sh
+verifiedAt: '2026-08-27T21:57:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 2026-08-26 WebMCP Draft와 Chrome 149–156 OT 차이. 엔트리 document.modelContext(navigator는 Chromium 150 deprecated). JSON Schema는 브라우저가 엄격 검증하지 않음. iframe은 allow=tools + exposedTo + fromOrigins. Document 1:1 툴맵. MCP·computer-use에 맞음. OT·WebKit oppose라 ADOPT 아님. 스펙 구현 EXPERIMENT 아님. 개인 글(sourceWarnings).
+expectedBenefit: WebMCP를 DOM 위 MCP로 보지 않고 Document 스코프 툴맵+3중 iframe 정책으로 보는 구현 체크리스트. execute에서 인가·검증.
+switchingCost: 글 흡수 낮음. 네이티브 WebMCP를 제품에 넣으면 높음(OT·UA 분열).
+maturity: experimental
+risks:
+- Draft + Origin Trial. 157 출시 제안, WebKit 반대, Mozilla 중립.
+- 스키마를 브라우저가 강제하지 않음. execute·서버 인가를 빼면 구멍이 남음.
+- 개인 글. 공식 Pleasa 발행 아님.
+smallestUsefulExperiment: document vs navigator, 스키마 비강제, iframe 3조건만 읽고 현재 페이지 툴 노출과 대조. OT 등록·폴리필 배포·외부 게시 없음.
+```
+
+## takushio-tako-qwen-orchestration
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/28/regional-signal/japan/takushio-tako-qwen-orchestration.yaml
+- sha256: 4cc5d6efc68ed8dcc73cdd8d9140a31c59a819b45c1a6c815b290a4233656bf5
+- primaryUrl: https://zenn.dev/takushio2525/articles/20260821-tako-qwen-orchestration
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: takushio-tako-qwen-orchestration
+collectionDate: '2026-08-28'
+primaryCategory: japan
+relatedCategories: []
+originBasis: 'Author takushio2525 (Takumi Shiozawa). GitHub HTML profile: Home location 2-17-1 Tsudanuma, Narashino, Chiba 275-0016, Japan; Organization Chiba Institute of Technology. Known Japan tako author.'
+originalTitle: ローカルLLMをオーケストレーションしてサイトを作らせてみた
+originalLanguage: ja
+koreanSummary: 지바공대 takushio가 자작 GUI 터미널 tako에서 Claude master/worker 위에 qwen master/worker를 이단으로 쌓아 로컬 LLM 오케스트레이션을 돌렸다. 워커 감시 이벤트(WORKER_IDLE/DIALOG/ERROR), 장시간 벤치는 세션이 아니라 페인+caffeinate, sudo는 show-command 카드로 인간에게만 넘긴다. qwen 검수는 구조를 통과시키고 위조 기술명을 놓쳤다.
+source: public_case_study
+canonicalId: zenn:takushio2525:20260821-tako-qwen-orchestration
+primaryUrl: https://zenn.dev/takushio2525/articles/20260821-tako-qwen-orchestration
+author: たくしお (takushio2525 / Takumi Shiozawa)
+project: tako (Rust+GPUI agent terminal) local-LLM orchestration
+publishedAt: '2026-08-27T05:22:13Z'
+observedFacts:
+- Zenn API published_at 2026-08-27T14:22:13.440+09:00 (2026-08-27T05:22:13Z, inside window). GitHub profile location Narashino, Chiba, Japan; org Chiba Institute of Technology.
+- 'Two stacked master/worker harnesses inside tako: upper Claude (claude-opus-5, permission-mode auto) drives panes; lower qwen3.6:35b-a3b master + qwen3.6:27b workers write the site. tako_orchestrator_spawn returns pane_id; watch emits typed events WORKER_IDLE / WORKER_DIALOG / WORKER_ERROR so the master need not poll pane text. Same master supervised four other project workers concurrently.'
+- Long benches die if left as agent-background jobs (SIGKILL at turn end). Worker spawned a child pane wrapped in caffeinate -i so process lifetime is the terminal pane, not the agent session. Mid-run direction change used tako_send_input without respawn, keeping the single-shot bench as a baseline.
+- 'Host stall: syspolicyd RSS 2.3GB / CPU 42.7% / swap 21.3/22.5GB caused Killed: 9. Claude Code auto-mode classifier denied sudo; master surfaced tako show-command card. Human ran one command after 4h38m while the worker held a select dialog. First monitor (etime hyphen) false-positive; replaced with PID-change check plus re-measure.'
+- 'Lower layer: qwen master had no write_file; 3 workers, 39 round-trips, 48m19s wall, files_written empty. Worker #2 hit the command allowlist (shell pipes) three times and self-corrected. Acceptance checked file existence/syntax/line counts/CSS declarations and missed fabricated Work-section claims (React / IndexedDB / WCAG 2.1 AA) that were not in the brief. Upper Claude found them by diffing the transcript instruction against the original request, not by looking at the page. tako is OSS takushio2525/tako, GPL-3.0-or-later, workers claude/codex/agy.'
+interpretation: 'Japan local-harness case: pane identity is the process sandbox and the control plane; typed watch events plus a human-only sudo card beat polling, but structural acceptance will not catch invented nouns as the stack deepens.'
+relatedRefs:
+- https://zenn.dev/takushio2525/articles/20260821-tako-qwen-orchestration
+- https://zenn.dev/takushio2525/articles/20260821-qwen-portfolio-bench
+- https://github.com/takushio2525/tako/releases/tag/v0.8.0
+sourceWarnings: []
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/takushio2525/articles/20260821-tako-qwen-orchestration
+- https://zenn.dev/api/articles/20260821-tako-qwen-orchestration
+- https://zenn.dev/takushio2525/feed
+- https://github.com/takushio2525
+- https://github.com/takushio2525/tako/releases.atom
+verifiedAt: '2026-08-27T21:57:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: tako 안에서 Claude master/worker 위에 qwen master/worker를 이단으로 쌓음. 페인 수명이 프로세스 샌드박스, typed WORKER_* 이벤트, sudo는 show-command 카드. 구조 수락이 위조 기술명(React/IndexedDB/WCAG)을 놓침. harness·evaluation·routing·sandboxing에 맞음. tako 설치 EXPERIMENT 아님. 모델명 비가중. skip의 tako v0.7.8 릴리스와 다른 아티팩트(사례).
+expectedBenefit: 폴링 대신 typed watch, 인간 전용 sudo 카드, 구조 체크가 발명된 명사를 못 잡는다는 평가 구멍.
+switchingCost: 글 흡수 낮음. tako를 기본 터미널로 바꾸면 높음.
+maturity: early
+risks:
+- '장시간 벤치 1건. 호스트 syspolicyd/스왑으로 Killed: 9.'
+- 수락 기준이 파일 존재·문법·줄 수·CSS. 위조 명사 미검출은 그 기준의 한계.
+- qwen master에 write_file 없음. 하위 층 실패가 오케스트레이션 일반론이 아님.
+smallestUsefulExperiment: typed 이벤트 vs 폴링, sudo 카드, 구조 수락 vs 명사 위조 세 줄만 현재 하네스와 대조. tako 설치·외부 게시 없음.
+```
+
+## takushio-tako-qwen-portfolio-bench
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: japan
+- path: intelligence/signals/2026/08/28/regional-signal/japan/takushio-tako-qwen-portfolio-bench.yaml
+- sha256: 20988b9e877730427054cc2a4011eb94fcd75644d13ff9354eb3975714968518
+- primaryUrl: https://zenn.dev/takushio2525/articles/20260821-qwen-portfolio-bench
+
+```yaml
+schemaVersion: regional-signal/v1
+recordStatus: approved
+id: takushio-tako-qwen-portfolio-bench
+collectionDate: '2026-08-28'
+primaryCategory: japan
+relatedCategories: []
+originBasis: 'Same Japan author as the orchestration companion: Takumi Shiozawa / takushio2525, Chiba Institute of Technology, Narashino, Chiba, Japan (GitHub Home location).'
+originalTitle: デザインガイド1枚で+12点、ローカルLLM生成の実測
+originalLanguage: ja
+koreanSummary: 같은 저자가 M5 Max 36GB에서 qwen에 가상 포트폴리오를 만들게 하고 가이드 유무·모델을 바꿨다. 동일 모델에서 디자인 가이드 1장으로 35점 만점 자기채점 21→33(+12), 시간은 +33%·입력 토큰 +34%. MoE 3분57초가 dense 대비 약 1/5.4. 이 규모에서 master/worker 오케스트레이션은 실시간 2.27배·입력 3.75배에 점수는 33→26으로 내려 수지가 안 맞았다.
+source: public_case_study
+canonicalId: zenn:takushio2525:20260821-qwen-portfolio-bench
+primaryUrl: https://zenn.dev/takushio2525/articles/20260821-qwen-portfolio-bench
+author: たくしお (takushio2525 / Takumi Shiozawa)
+project: tako / qwen portfolio generation bench
+publishedAt: '2026-08-27T05:25:09Z'
+observedFacts:
+- 'Zenn API published_at 2026-08-27T14:25:09.566+09:00 (2026-08-27T05:25:09Z, inside window). Companion to the orchestration article; numbers-only write-up. Host: Apple M5 Max, 18 CPU / 32 GPU, 36GB RAM, macOS 26.4, Ollama 0.32.14.'
+- 'Models (all Q4_K_M, --num-ctx 32768 / --max-iterations 60 / temperature 0.3 / think auto, sequential): qwen3.6:27b dense, qwen3.8:27b dense, qwen3.6:35b-a3b MoE. Times exclude cold load (qwen3.6:27b load_duration 83.25s; MoE switch 22.9s; warm 0.17–4.96s). Parallel Claude Code workers on the same machine; author treats absolute times as noisy and compares relatively.'
+- 'Task: one-page fictional portfolio (凪本 ひなた), 3 files (index.html / css/style.css / js/main.js), 4 required features, network blocked (no CDN/fonts/images). Four single-shot runs all finished with 0 guard violations and 0 retries.'
+- 'Design-guide injection: same model/same task self-score 21 vs 33 of 35 (+12). :focus-visible / clamp() / prefers-reduced-motion / skip-link were all zero without the guide. Cost: wall +33%, input tokens +34%. Speed: MoE 3m57s, about 1/5.4 of dense; author notes thinner polish and display bugs on the fast path.'
+- 'Orchestration (qwen master/worker) on this task: 2.27× wall, 3.75× input tokens, score 33 → 26. Author concludes the extra stack did not pay at this size. Shortest measured 3m57s, longest 37m09s.'
+interpretation: 'Japan local-model eval: a one-page design skill moved quality more than adding a second agent, and orchestration cost showed up as tokens and score, not as a free quality win.'
+relatedRefs:
+- https://zenn.dev/takushio2525/articles/20260821-qwen-portfolio-bench
+- https://zenn.dev/takushio2525/articles/20260821-tako-qwen-orchestration
+sourceWarnings:
+- Self-scored 35-point rubric; host shared with other Claude Code workers so absolute times are noisy.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://zenn.dev/takushio2525/articles/20260821-qwen-portfolio-bench
+- https://zenn.dev/api/articles/20260821-qwen-portfolio-bench
+- https://zenn.dev/takushio2525/feed
+- https://github.com/takushio2525
+verifiedAt: '2026-08-27T21:57:00Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 같은 저자의 숫자 편. 디자인 가이드 1장으로 자기채점 21→33(+12), 오케스트레이션은 시간 2.27배·입력 3.75배에 점수 33→26. Agent Skills·evaluation·context에 맞음. 자매 글 오케스트레이션과 다른 아티팩트. 자기채점 35점. 가이드를 기본 스킬로 ADOPT 아님. 모델명 비가중.
+expectedBenefit: 한 장 스킬이 2단 에이전트보다 품질을 움직였다는 측정. 오케스트레이션 비용이 토큰과 점수로 나타남.
+switchingCost: 글 흡수 낮음. 같은 벤치를 재현하려면 로컬 qwen·가이드 주입이 붙음(중간).
+maturity: early
+risks:
+- 자기채점 35점 루브릭. 호스트에 다른 Claude Code 워커가 있어 절대 시간은 노이즈.
+- n 작은 단일 페이지 포트폴리오. 규모가 바뀌면 오케스트레이션 수지가 달라질 수 있음.
+- 네트워크 차단·3파일 과제. 일반 코딩 에이전트 결론이 아님.
+smallestUsefulExperiment: 가이드 유무 +12와 오케스트레이션 점수 하락만 읽고 현재 스킬 vs 2단 에이전트 가정과 대조. 벤치 재실행·외부 게시 없음.
+```
+
+## github-marker-autorag-minsync-bm25-42b66ff8
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/28/regional-signal/korea/github-marker-autorag-minsync-bm25-42b66ff8.yaml
+- sha256: e503a6522dcd30e1e523b713362f8d252f0f288f4159fd0db6c14550ecfe3ac6
+- primaryUrl: https://github.com/Marker-Inc-Korea/AutoRAG/commit/42b66ff8b03f6b1456c751b43a1745160ee4e10b
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-marker-autorag-minsync-bm25-42b66ff8
+collectionDate: '2026-08-28'
+primaryCategory: korea
+relatedCategories: []
+originBasis: GitHub org Marker-Inc-Korea (https://github.com/Marker-Inc-Korea, HTTP
+  200) titles as Markr.AI and describes an ML research company; org slug includes
+  Korea. Commit author vkehfdl1 profile lists Home location Seoul, South Korea. Related
+  Korea org NomaDamas (itemprop=location Korea, South) states it is backed by Markr
+  AI; MinSync used here is the NomaDamas project.
+originalTitle: 'feat: route BM25 retrieval through MinSync 0.4'
+originalLanguage: en
+koreanSummary: Marker-Inc-Korea/AutoRAG 커밋 42b66ff8(2026-08-26T18:32:24Z)가 문서 미러 BM25
+  검색을 MinSync 0.4.0 어댑터(MinSyncBM25Method, query --mode bm25|hybrid|vector)로 라우팅했다(+234/−71).
+  AutoRAG 2.0 librarian agent의 검색 도구/시스템 프롬프트가 MinSync-backed BM25를 명시한다.
+source: github_repository
+canonicalId: github:Marker-Inc-Korea/AutoRAG@42b66ff8
+primaryUrl: https://github.com/Marker-Inc-Korea/AutoRAG/commit/42b66ff8b03f6b1456c751b43a1745160ee4e10b
+author: vkehfdl1
+project: Marker-Inc-Korea/AutoRAG
+publishedAt: '2026-08-26T18:32:24Z'
+observedFacts:
+- Saved Marker-Inc-Korea org HTML (HTTP 200) uses title 'Markr.AI · GitHub' and meta
+  description 'ML research company for industrial use. Markr.AI has 57 repositories
+  available.'
+- Saved vkehfdl1 profile HTML (HTTP 200) has Home location Seoul, South Korea.
+- Saved NomaDamas org HTML (HTTP 200) has location Korea, South and 'backed by Markr
+  AI.'
+- 'AutoRAG commits/main.atom entry title is ''feat: route BM25 retrieval through MinSync
+  0.4'', author vkehfdl1, updated 2026-08-26T18:32:24Z, link commit 42b66ff8b03f6b1456c751b43a1745160ee4e10b.'
+- 'Commit patch Date: Thu, 27 Aug 2026 03:32:24 +0900 (equals 2026-08-26T18:32:24Z);
+  13 files changed, 234 insertions(+), 71 deletions(-).'
+- Patch adds MinSyncBM25Method / MinSyncQueryMode vector|bm25|hybrid; sets MINSYNC_VERSION
+  = "0.4.0"; search_bm25_documents tool text says 'MinSync-backed lexical BM25 search
+  over parsed document mirrors'; system prompt tells the agent to use MinSync BM25
+  for exact terminology.
+- Patch commit message states MinSync 0.4.0 local EmbeddingGemma QA passed and full
+  89-file test suite / required CI checks passed (claim in commit message only).
+- Raw AutoRAG README (HTTP 200) describes AutoRAG 2.0 as a self-evolving librarian
+  agent customized from the Pi agent loop for document collections.
+interpretation: Korea-origin librarian coding agent (AutoRAG 2.0) wiring lexical BM25
+  through the local MinSync 0.4 indexer instead of a separate Tantivy/TS path—tight
+  coupling between Markr AutoRAG and NomaDamas MinSync. Not a claim that BM25 Hit@k
+  improved; it is an adapter/routing change with installer pin to minsync 0.4.0.
+relatedRefs:
+- https://github.com/Marker-Inc-Korea/AutoRAG
+- https://github.com/Marker-Inc-Korea/AutoRAG/commits/main.atom
+- https://github.com/NomaDamas/MinSync
+- https://github.com/Marker-Inc-Korea/AutoRAG/commit/7eedf7e2fca3526e758cf4cc519acf16982d937f
+sourceWarnings:
+- Verified via GitHub Atom, .patch, raw README, and org/profile HTML (HTTP 200). No
+  GitHub REST and no repo clone.
+- Marker-Inc-Korea org HTML has no itemprop=location; Korea origin rests on org slug/title
+  Markr.AI, author Seoul location, and NomaDamas Markr AI backing—not language alone.
+- Commit-message QA/CI claims were not re-run here.
+- MinSync releases.atom still shows newest public tag v0.3.0; AutoRAG pins cargo install
+  minsync --version 0.4.0 which may rely on crates.io rather than a GitHub release
+  tag.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/Marker-Inc-Korea/AutoRAG/commit/42b66ff8b03f6b1456c751b43a1745160ee4e10b
+- https://github.com/Marker-Inc-Korea/AutoRAG/commit/42b66ff8b03f6b1456c751b43a1745160ee4e10b.patch
+- https://github.com/Marker-Inc-Korea/AutoRAG/commits/main.atom
+- https://github.com/Marker-Inc-Korea
+- https://github.com/NomaDamas
+- https://github.com/vkehfdl1
+- https://raw.githubusercontent.com/Marker-Inc-Korea/AutoRAG/main/README.md
+verifiedAt: '2026-08-27T21:50:04Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: AutoRAG 2.0 librarian agent가 문서 미러 BM25를 MinSync 0.4.0 어댑터(MinSyncBM25Method,
+  query --mode bm25|hybrid|vector)로 라우팅하고 검색 도구/시스템 프롬프트에 MinSync-backed BM25를 명시.
+  agent-harness·context-engineering. Hit@k 향상 주장 아님. 어제 MinSync BM25 READ의 다운스트림 배선이라
+  재EXPERIMENT/ADOPT 아님. 지리 비가중. relatedCategories는 [] 유지.
+expectedBenefit: librarian agent가 정확 용어 검색을 로컬 MinSync BM25에 맡기는 도구/프롬프트 계약과 0.4.0
+  버전 핀.
+switchingCost: 커밋·패치 대조만이면 낮음. AutoRAG와 MinSync를 함께 설치하면 중간.
+maturity: early
+risks:
+- GitHub Releases에 MinSync v0.4.x 태그 없음. crates.io 핀일 수 있음.
+- 커밋 메시지 QA/CI 주장은 재실행되지 않음.
+- 어댑터/라우팅 변경. 검색 품질 측정 없음.
+- 어제 MinSync BM25 READ와 같은 검색 축.
+smallestUsefulExperiment: 패치의 MinSyncBM25Method·search_bm25_documents 도구 문구와 시스템 프롬프트만
+  읽기. 설치·인덱스 구축·외부 게시·SoT 쓰기 없음.
+recordStatus: approved
+```
+
+## github-nomadamas-clawgallery-v0-2-2
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/28/regional-signal/korea/github-nomadamas-clawgallery-v0-2-2.yaml
+- sha256: 35dab4bdfd764b95927c621ba76d020eca5daaff3b8c02479c0535acceadd908
+- primaryUrl: https://github.com/NomaDamas/ClawGallery/releases/tag/v0.2.2
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-nomadamas-clawgallery-v0-2-2
+collectionDate: '2026-08-28'
+primaryCategory: korea
+relatedCategories: []
+originBasis: GitHub org NomaDamas profile (https://github.com/NomaDamas, HTTP 200)
+  sets itemprop=location to 'Korea, South' and describes the org as an AI open-source
+  hacker house in Seoul, Korea; release/commit author vkehfdl1 profile lists Home
+  location Seoul, South Korea.
+originalTitle: ClawGallery v0.2.2 — expose index capabilities and enforce mode contracts
+originalLanguage: en
+koreanSummary: NomaDamas/ClawGallery가 2026-08-27T20:20:18Z에 v0.2.2를 태그했다. 에이전트용 로컬
+  스크린샷/사진 갤러리 CLI로, vdr status의 dense/sparse 가용성 보고·hybrid JSON의 used/skipped/degraded
+  채널·인덱스 없을 때 embedding/lexical 모드 사전 실패를 추가했다. skills/clawgallery/SKILL.md가 함께 유지된다.
+source: official_release
+canonicalId: github:NomaDamas/ClawGallery@v0.2.2
+primaryUrl: https://github.com/NomaDamas/ClawGallery/releases/tag/v0.2.2
+author: vkehfdl1
+project: NomaDamas/ClawGallery
+publishedAt: '2026-08-27T20:20:18Z'
+observedFacts:
+- Saved NomaDamas org HTML (HTTP 200) contains <span itemprop="location">Korea, South</span>
+  and meta description 'AI Open Source Hacker House backed by Markr AI.'
+- 'Saved vkehfdl1 profile HTML (HTTP 200) has aria-label ''Home location: Seoul, South
+  Korea''.'
+- ClawGallery releases.atom entry title is 'v0.2.2', updated 2026-08-27T20:20:18Z,
+  link https://github.com/NomaDamas/ClawGallery/releases/tag/v0.2.2.
+- 'Release HTML (HTTP 200) title is ''Release v0.2.2 · NomaDamas/ClawGallery''; datetime
+  2026-08-27T20:20:18Z; compare link v0.2.1...v0.2.2; cites PR #19 feat(search): expose
+  index capabilities and enforce mode contracts.'
+- 'CHANGELOG.md section [0.2.2] — 2026-08-27 lists: vdr status --json reports dense
+  and sparse index availability; hybrid search JSON adds used_channels, skipped_channels,
+  and degraded; --mode embedding and --mode lexical fail before query embedding when
+  the matching index is missing.'
+- 'Commit 956e2067090e7a966c4a2f0846b21cd81f6acc1b.patch (HTTP 200) Date Fri, 28 Aug
+  2026 01:20:51 +0900 (=2026-08-27T16:20:51Z); Subject feat(search): expose index
+  capabilities and enforce mode contracts; 9 files, +479/-32 including skills/clawgallery/SKILL.md
+  and tests/vdr_cli.rs.'
+- Raw README (HTTP 200) describes ClawGallery as a friendly, agent-native gallery
+  for screenshots/photos with --json outputs for AI agents; default search is hybrid
+  RRF over keyword, V-SPLADE lexical, and dense VDR.
+- Raw skills/clawgallery/SKILL.md (HTTP 200) frontmatter name clawgallery; description
+  covers index/caption/VDR search/JSON for agents; mentions Codex auth paths and Gemini
+  captioning.
+- Prior same-window tag v0.2.1 at 2026-08-26T14:55:59Z fixed V-SPLADE runtime diagnosis;
+  V-SPLADE hybrid itself landed in v0.2.0 (2026-08-20, outside this window).
+interpretation: Korea-origin agent-native local image gallery CLI shipping an Agent
+  Skill and tightening hybrid/lexical/embedding search contracts so agents can see
+  which index channels actually ran. v0.2.2 is a contract/observability increment
+  over v0.2.1, not the first introduction of V-SPLADE (that was v0.2.0 outside the
+  window).
+relatedRefs:
+- https://github.com/NomaDamas/ClawGallery
+- https://github.com/NomaDamas/ClawGallery/releases.atom
+- https://github.com/NomaDamas/ClawGallery/commit/956e2067090e7a966c4a2f0846b21cd81f6acc1b
+- https://raw.githubusercontent.com/NomaDamas/ClawGallery/main/skills/clawgallery/SKILL.md
+- https://github.com/NomaDamas/ClawGallery/releases/tag/v0.2.1
+sourceWarnings:
+- Verified via GitHub Atom, release HTML, CHANGELOG, .patch, raw README/SKILL.md (HTTP
+  200). No GitHub REST and no repo clone.
+- GitHub HTML search returned 429 this pass; candidate found via known-org Atom /
+  user.atom, not global search.
+- Do not treat v0.2.0 V-SPLADE hybrid introduction as in-window; cite v0.2.2 capability/contract
+  changes (and optional same-window v0.2.1 runtime fix) only.
+- Compare v0.2.1...v0.2.2 is the correct in-window delta for this release.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/NomaDamas/ClawGallery/releases/tag/v0.2.2
+- https://github.com/NomaDamas/ClawGallery/releases.atom
+- https://github.com/NomaDamas
+- https://github.com/vkehfdl1
+- https://raw.githubusercontent.com/NomaDamas/ClawGallery/main/CHANGELOG.md
+- https://github.com/NomaDamas/ClawGallery/commit/956e2067090e7a966c4a2f0846b21cd81f6acc1b.patch
+- https://raw.githubusercontent.com/NomaDamas/ClawGallery/main/skills/clawgallery/SKILL.md
+- https://raw.githubusercontent.com/NomaDamas/ClawGallery/main/README.md
+verifiedAt: '2026-08-27T21:50:04Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 에이전트 네이티브 로컬 스크린샷/사진 갤러리 CLI가 SKILL.md와 hybrid 검색을 유지한 채, v0.2.2에서
+  vdr status의 dense/sparse 가용성·hybrid JSON used/skipped/degraded·인덱스 없을 때 embedding/lexical
+  사전 실패를 노출. context-engineering·Agent Skills·Codex 경로에 맞음. V-SPLADE 도입은 v0.2.0(창
+  밖). jikji EXPERIMENT·MinSync READ와 다른 리포이나 같은 로컬 검색/인덱스 축이라 재EXPERIMENT/ADOPT 아님.
+  지리 비가중. relatedCategories는 [] 유지.
+expectedBenefit: 에이전트가 hybrid JSON에서 실제 실행된 인덱스 채널을 보고, 없는 인덱스에 embedding/lexical
+  쿼리를 보내지 않게 하는 계약.
+switchingCost: CHANGELOG·SKILL.md 대조만이면 낮음. 이미지 갤러리 인덱스를 상시 켜면 중간.
+maturity: early
+risks:
+- v0.2.2는 계약/관측 증분. V-SPLADE 도입으로 읽으면 과대.
+- 이미지 갤러리는 코딩 에이전트 코어보다 주변.
+- jikji/MinSync와 같은 로컬 검색 축 중복 실험 가능.
+smallestUsefulExperiment: CHANGELOG [0.2.2]와 SKILL.md의 vdr status/used_channels 계약만
+  읽기. 갤러리 인덱스 구축·외부 게시·SoT 쓰기 없음.
+recordStatus: approved
+```
+
+## github-nomadamas-minsync-watch-harden-eb01e5ce
+
+- artifactRole: factual_sot
+- kind: AI 엔지니어링 신호
+- region: korea
+- path: intelligence/signals/2026/08/28/regional-signal/korea/github-nomadamas-minsync-watch-harden-eb01e5ce.yaml
+- sha256: 4838b33d2bee888483bb7b86e6e5c016fa46db2a26c5b85b0a866d0aca3575fd
+- primaryUrl: https://github.com/NomaDamas/MinSync/commit/eb01e5ce81fb06d9c36928cd1bf8682bdbb34080
+
+```yaml
+schemaVersion: regional-signal/v1
+id: github-nomadamas-minsync-watch-harden-eb01e5ce
+collectionDate: '2026-08-28'
+primaryCategory: korea
+relatedCategories: []
+originBasis: GitHub org NomaDamas profile (https://github.com/NomaDamas, HTTP 200)
+  sets itemprop=location to 'Korea, South' and describes the org as an AI open-source
+  hacker house in Seoul, Korea; commit author vkehfdl1 profile lists Home location
+  Seoul, South Korea and works with NomaDamas.
+originalTitle: 'feat: harden watch integration and sync stats'
+originalLanguage: en
+koreanSummary: NomaDamas/MinSync 커밋 eb01e5ce(2026-08-26T15:56:06Z)가 watch 경로를 강화했다(+390/−36
+  계열). 초기 sync 후 감시, --watch-on-sync-error, 파일/청크 단위 sync 통계 분리를 추가하고 같은 창에서 공식 kiwi-rs
+  2026.8.26으로 올려 Cargo 버전을 0.4.1로 맞췄다. GitHub releases.atom에는 아직 v0.4.x 태그 없음.
+source: github_repository
+canonicalId: github:NomaDamas/MinSync@eb01e5ce
+primaryUrl: https://github.com/NomaDamas/MinSync/commit/eb01e5ce81fb06d9c36928cd1bf8682bdbb34080
+author: vkehfdl1
+project: NomaDamas/MinSync
+publishedAt: '2026-08-26T15:56:06Z'
+observedFacts:
+- Saved NomaDamas org HTML (HTTP 200) contains itemprop=location Korea, South and
+  An AI open-source hacker house in Seoul, Korea.
+- Saved vkehfdl1 profile HTML (HTTP 200) has Home location Seoul, South Korea.
+- 'MinSync commits/main.atom lists feat: harden watch integration and sync stats by
+  vkehfdl1 updated 2026-08-26T15:56:06Z linking eb01e5ce81fb06d9c36928cd1bf8682bdbb34080.'
+- Patch stack Date Wed, 26 Aug 2026 18:45:20 +0900 (first patch) / 23:57:39 +0900
+  (follow-up hash fix); touches src/watch.rs, src/sync/*, README.md/README.ko.md,
+  tests/integration_test.rs; documents minsync watch --watch-on-sync-error and separate
+  files added/modified/deleted vs chunks inserted/reused/removed stats.
+- Same-window commit 1d264ccfd2cf0d6e14580c3cc270d543e4908c8c (2026-08-25T11:10:37Z)
+  switches kiwi-rs-fixed 2026.7.24 to official kiwi-rs 2026.8.26 and bumps package
+  version 0.4.0 → 0.4.1.
+- Same-window 13c9f319991c7a03b48aef05796c8304bf96363c prepares minsync 0.4.0 in Cargo.toml.
+- Raw README (HTTP 200) describes MinSync as git-free incremental vector-DB indexing
+  CLI for agent sandboxes/generated workspaces.
+- releases.atom newest tag remains v0.3.0 (2026-07-28T10:47:36Z); no v0.4.0/v0.4.1
+  GitHub release tag in the feed.
+interpretation: Korea-origin local indexing CLI for agent workspaces hardening continuous
+  watch/re-index behavior and clarifying sync metrics, plus pinning official Kiwi
+  Korean morphology. Distinct from the earlier BM25/hybrid retrieval feature; still
+  untagged on GitHub Releases beyond v0.3.0.
+relatedRefs:
+- https://github.com/NomaDamas/MinSync
+- https://github.com/NomaDamas/MinSync/commits/main.atom
+- https://github.com/NomaDamas/MinSync/commit/1d264ccfd2cf0d6e14580c3cc270d543e4908c8c
+- https://github.com/NomaDamas/MinSync/commit/13c9f319991c7a03b48aef05796c8304bf96363c
+sourceWarnings:
+- Verified via GitHub Atom, .patch, and raw README (HTTP 200). No GitHub REST and
+  no repo clone.
+- Prior radar already covered MinSync BM25/hybrid (b998ffd); this record is the watch/stats
+  + kiwi-rs official pin train only.
+- No GitHub Releases tag for 0.4.x yet despite Cargo.toml 0.4.1.
+- GitHub HTML search returned 429; discovery via known-org Atom.
+verificationStatus: VERIFIED
+verificationEvidenceUrls:
+- https://github.com/NomaDamas/MinSync/commit/eb01e5ce81fb06d9c36928cd1bf8682bdbb34080
+- https://github.com/NomaDamas/MinSync/commit/eb01e5ce81fb06d9c36928cd1bf8682bdbb34080.patch
+- https://github.com/NomaDamas/MinSync/commits/main.atom
+- https://github.com/NomaDamas/MinSync/releases.atom
+- https://github.com/NomaDamas/MinSync/commit/1d264ccfd2cf0d6e14580c3cc270d543e4908c8c.patch
+- https://github.com/NomaDamas
+- https://github.com/vkehfdl1
+- https://raw.githubusercontent.com/NomaDamas/MinSync/main/README.md
+verifiedAt: '2026-08-27T21:50:04Z'
+contradictions: []
+judgeAction: READ
+judgeRationale: 에이전트 샌드박스용 로컬 인덱스 CLI가 초기 sync 후 watch, --watch-on-sync-error, 파일/청크
+  통계 분리와 공식 kiwi-rs 2026.8.26 핀(Cargo 0.4.1)을 추가. sandboxing·agent-harness에 맞음. 어제
+  BM25/hybrid READ와 다른 증분(watch/stats+kiwi). 0.4.x GitHub 태그 없음. 재EXPERIMENT/ADOPT
+  아님. 지리 비가중. relatedCategories는 [] 유지.
+expectedBenefit: 생성 워크스페이스에서 sync 실패 후에도 watch를 유지하고, 파일 단위와 청크 단위 변경을 나눠 보는 계약.
+switchingCost: 커밋·README 플래그 대조만이면 낮음. watch 상시 가동은 중간.
+maturity: early
+risks:
+- releases.atom에 v0.4.0/v0.4.1 없음. Cargo.toml만 0.4.1.
+- 어제 b998ffd BM25 READ와 같은 프로젝트 후속이라 중복 실험 가능.
+- watch 경로가 샌드박스 파일 이벤트를 넓게 구독함.
+smallestUsefulExperiment: README의 `minsync watch --watch-on-sync-error`와 파일/청크 통계
+  설명만 읽기. watch 실행·외부 게시·SoT 쓰기 없음.
+recordStatus: approved
+```

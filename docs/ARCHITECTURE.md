@@ -8,7 +8,7 @@
 GitHub private repository
   desired state + canonical knowledge
             |
-            +--> deterministic validation / GitHub Actions
+            +--> deterministic local-host executor / SHA-bound receipts
             |
             +--> botctl plan/export
             |
@@ -29,7 +29,7 @@ GitHub private repository
 GitHub private repository
   desired state + canonical knowledge
             |
-            +--> deterministic validation / GitHub Actions
+            +--> deterministic local-host executor / SHA-bound receipts
             |
             +--> botctl plan/export
             |
@@ -119,11 +119,27 @@ Blog Publication Verifier is read-only and independently checks the live article
 record IDs, and LLM outputs.
 
 The daily public path is policy-authorized automation: one complete public-only `VERIFIED` record
-is enough for GitHub SoT Writer to persist through the connected GitHub plugin. The SoT push wakes
-the deterministic `publish-intelligence` Action, which creates a missing report with `EMPTY`
-sections for absent regions, validates it, commits it, and deploys the public Docusaurus build.
-The Action runs at 07:45 Asia/Tokyo. A free macOS launchd fallback runs the same deterministic
-publisher from an isolated temporary clone when private GitHub Actions cannot start a runner.
+is enough for GitHub SoT Writer to persist through the connected GitHub plugin. The operator-owned
+local-host executor creates a missing report with `EMPTY` sections for absent regions, validates it,
+commits it, and deploys the public Docusaurus build from an isolated temporary clone. It records a
+`local-execution-receipt/v1` bound to the exact source subject SHA and command set. Its audit commit
+must descend from that subject, because a receipt cannot equal the main HEAD created by committing itself.
+The launchd publisher runs at 07:45 Asia/Tokyo and the PR validator polls Git pull refs every five
+minutes; a Bot can inspect the receipt through the GitHub plugin but cannot invoke it.
+
+The publisher has priority over the 5-minute validator: a stale-recoverable pending marker prevents another
+validator head from starting once a publisher is waiting. Lock ownership records pid, start time, and operation;
+dead or overdue owners are recovered without recursive deletion.
+
+Private clone/fetch operations use the host credential boundary, but every npm/test/build process runs through
+an `env -i` child with an isolated temporary `HOME` and no inherited SSH, GitHub, shell, or user credentials.
+Automatic PR execution remains restricted to diffs whose merge-base range contains only
+`intelligence/signals/**`; the local host never merges a PR.
+
+For publication, `source.sha` remains the checkout that completed the full validation command set, while
+`subject.sha` may be the later deterministic report commit. The local Git pull-ref scan cannot distinguish
+a closed-unmerged pull request from an open one, so it may redundantly validate such a head; only the Grok
+Bot's connected GitHub plugin checks open state and review conditions before any merge.
 Existing approved records and reports are preserved rather than overwritten.
 
 ## Security boundaries

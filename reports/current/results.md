@@ -5,6 +5,7 @@ action: "EXPERIMENT"
 artifactRole: "reader_facing_derivative"
 publicationChannel: "document"
 evidence:
+  - "reports/archive/2026/08/28/ai-engineering-radar.md"
   - "reports/archive/2026/08/27/ai-engineering-radar.md"
   - "reports/archive/2026/08/26/ai-engineering-radar.md"
   - "reports/archive/2026/08/25/ai-engineering-radar.md"
@@ -12,6 +13,28 @@ evidence:
   - "reports/archive/2026/08/23/ai-engineering-radar.md"
   - "reports/archive/2026/08/23/ax-intelligence.md"
 sourceLinks:
+  - "https://github.com/anthropics/claude-code/releases/tag/v2.1.247"
+  - "https://arxiv.org/abs/2608.25091"
+  - "https://arxiv.org/abs/2608.25500"
+  - "https://arxiv.org/abs/2608.25241"
+  - "https://arxiv.org/abs/2608.25399"
+  - "https://factory.com/news/what-it-takes-for-coding-agents-to-complete-large-software-tasks"
+  - "https://github.com/github/copilot-cli/releases/tag/v1.0.81"
+  - "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.9"
+  - "https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.63"
+  - "https://openai.com/index/introducing-admin-plugin"
+  - "https://zenn.dev/highreso/articles/ab3dbc20ce58ff"
+  - "https://zenn.dev/hissy/articles/concretecms-mcp-client-dev"
+  - "https://zenn.dev/jtechjapan_pub/articles/local-llm-qwen-flash-next-eval"
+  - "https://zenn.dev/lincwell_inc/articles/79092d88245748"
+  - "https://zenn.dev/nattosystem_jp/articles/718e338025c8b7"
+  - "https://zenn.dev/sre_holdings/articles/3ebb982eee3be7"
+  - "https://zenn.dev/suwash/articles/webmcp_20260826"
+  - "https://zenn.dev/takushio2525/articles/20260821-tako-qwen-orchestration"
+  - "https://zenn.dev/takushio2525/articles/20260821-qwen-portfolio-bench"
+  - "https://github.com/Marker-Inc-Korea/AutoRAG/commit/42b66ff8b03f6b1456c751b43a1745160ee4e10b"
+  - "https://github.com/NomaDamas/ClawGallery/releases/tag/v0.2.2"
+  - "https://github.com/NomaDamas/MinSync/commit/eb01e5ce81fb06d9c36928cd1bf8682bdbb34080"
   - "https://arxiv.org/abs/2608.23651"
   - "https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.8.0"
   - "https://github.com/github/copilot-cli/releases/tag/v1.0.81-12"
@@ -113,6 +136,28 @@ sourceLinks:
   - "https://www.itmedia.co.jp/enterprise/articles/2608/21/news019.html"
   - "https://www.yna.co.kr/view/AKR20260818061300017"
 records:
+  - "intelligence/signals/2026/08/28/regional-signal/international/anthropic-claude-code-v2-1-247.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/international/arxiv-auto-policy-skills-2608-25091.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/international/arxiv-caskg-skills-2608-25500.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/international/arxiv-ramp-ai-config-2608-25241.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/international/arxiv-token-spend-agentic-coding-2608-25399.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/international/factory-coding-agents-long-horizon-2026-08-27.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/international/github-copilot-cli-v1-0-81.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/international/langchain-deepagents-0-7-9.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/international/langchain-deepagents-code-0-1-63.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/international/openai-admin-plugin-2026-08-25.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/japan/highreso-dflash-gemma-mtp.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/japan/hissy-concretecms-mcp-client-dev.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/japan/jtechjapan-qwen-flash-next-opencode.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/japan/lincwell-claude-hooks-clawd.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/japan/nattosystem-intellij-mcp-agent.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/japan/sre-holdings-claude-plugin-marketplace.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/japan/suwash-webmcp-draft-chrome-ot.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/japan/takushio-tako-qwen-orchestration.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/japan/takushio-tako-qwen-portfolio-bench.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/korea/github-marker-autorag-minsync-bm25-42b66ff8.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/korea/github-nomadamas-clawgallery-v0-2-2.yaml"
+  - "intelligence/signals/2026/08/28/regional-signal/korea/github-nomadamas-minsync-watch-harden-eb01e5ce.yaml"
   - "intelligence/signals/2026/08/27/regional-signal/international/arxiv-feedback-backfires-2608-23651.yaml"
   - "intelligence/signals/2026/08/27/regional-signal/international/chrome-devtools-mcp-v1-8-0.yaml"
   - "intelligence/signals/2026/08/27/regional-signal/international/github-copilot-cli-v1-0-81-12.yaml"
@@ -217,13 +262,23 @@ records:
 
 # 지금 읽을 결과
 
-> 현재 공개된 인텔리전스 6편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
+> 현재 공개된 인텔리전스 7편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
 
 # 지금 읽을 결과
 
-현재 공개된 인텔리전스 6편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
+현재 공개된 인텔리전스 7편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
 
 ## 최신 인텔리전스
+
+### [2026-08-28 AI Engineering Radar](/blog/2026/08/28/ai-engineering-radar)
+
+한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
+
+- 기준일: 2026-08-28
+- 분류: AI 엔지니어링
+- 추천: **작게 실험**
+- 근거 레코드: 22건 — `anthropic-claude-code-v2-1-247`, `arxiv-auto-policy-skills-2608-25091`, `arxiv-caskg-skills-2608-25500`, `arxiv-ramp-ai-config-2608-25241`, `arxiv-token-spend-agentic-coding-2608-25399`, `factory-coding-agents-long-horizon-2026-08-27`, `github-copilot-cli-v1-0-81`, `langchain-deepagents-0-7-9`, `langchain-deepagents-code-0-1-63`, `openai-admin-plugin-2026-08-25`, `highreso-dflash-gemma-mtp`, `hissy-concretecms-mcp-client-dev`, `jtechjapan-qwen-flash-next-opencode`, `lincwell-claude-hooks-clawd`, `nattosystem-intellij-mcp-agent`, `sre-holdings-claude-plugin-marketplace`, `suwash-webmcp-draft-chrome-ot`, `takushio-tako-qwen-orchestration`, `takushio-tako-qwen-portfolio-bench`, `github-marker-autorag-minsync-bm25-42b66ff8`, `github-nomadamas-clawgallery-v0-2-2`, `github-nomadamas-minsync-watch-harden-eb01e5ce`
+- 공개 원문: [원문 1](https://github.com/anthropics/claude-code/releases/tag/v2.1.247) · [원문 2](https://arxiv.org/abs/2608.25091) · [원문 3](https://arxiv.org/abs/2608.25500) · [원문 4](https://arxiv.org/abs/2608.25241) · [원문 5](https://arxiv.org/abs/2608.25399)
 
 ### [2026-08-27 AI Engineering Radar](/blog/2026/08/27/ai-engineering-radar)
 

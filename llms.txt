@@ -16,7 +16,7 @@
 
 ## 승인 보고서
 
-- [지금 읽을 결과](/grok-bot-pages/reports/current/results.md): 현재 공개된 인텔리전스 6편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
+- [지금 읽을 결과](/grok-bot-pages/reports/current/results.md): 현재 공개된 인텔리전스 7편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
 - [Reports](/grok-bot-pages/reports/README.md): `reports/current/results.md` is the current user-facing summary. `reports/daily/` and
 - [2026-08-23 AI Engineering Radar](/grok-bot-pages/2026/08/23/ai-engineering-radar.md): 한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
 - [2026-08-23 AX Intelligence](/grok-bot-pages/2026/08/23/ax-intelligence.md): 한국·일본·국제의 검증된 AX 사례를 업무 전후, 사람 책임과 한계로 비교합니다.
@@ -24,6 +24,7 @@
 - [2026-08-25 AI Engineering Radar](/grok-bot-pages/2026/08/25/ai-engineering-radar.md): 한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
 - [2026-08-26 AI Engineering Radar](/grok-bot-pages/2026/08/26/ai-engineering-radar.md): 한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
 - [2026-08-27 AI Engineering Radar](/grok-bot-pages/2026/08/27/ai-engineering-radar.md): 한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
+- [2026-08-28 AI Engineering Radar](/grok-bot-pages/2026/08/28/ai-engineering-radar.md): 한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
 - [2026-08-23 AI 엔지니어링 일일 다이제스트](/grok-bot-pages/reports/daily/latest.md): 이 파일은 최신 일일 결과를 가리키는 포인터입니다. 사실을 따로 복사하지 않고 날짜별 글과 항목 레코드를 참조합니다.
 - [2026-08-23 주간 AI·AX 다이제스트](/grok-bot-pages/reports/weekly/latest.md): 이 파일은 최신 주간 결과를 가리키는 포인터입니다. 항목별 사실은 11개 YAML 레코드에 있고, 아래 글은 그 레코드를 독자용으로 해설합니다.
 
@@ -45,7 +46,9 @@
 - [Grok VM First-Run Probe](/grok-bot-pages/docs/GROK_VM_FIRST_RUN_PROBE.md): Use this procedure on the actual Grok Bot cloud computer before treating the Miyamae newsroom runtime as operational.
 - [Grok VM Newsroom Runbook](/grok-bot-pages/docs/GROK_VM_NEWSROOM_RUNBOOK.md): This is the execution runbook for the Miyamae local newsroom on Grok Bot's shared user-scoped Linux cloud computer.
 - [Grok VM Operating Model for Miyamae Newsroom](/grok-bot-pages/docs/GROK_VM_OPERATING_MODEL.md): Grok Bot runs on a persistent user-scoped Linux cloud computer with browser, filesystem and terminal. All Bots on the account share that computer, ...
-- [Local Grok Desktop Automation Checklist](/grok-bot-pages/docs/LOCAL_AUTOMATION_CHECKLIST.md): Use this checklist during the Codex App rollout.
+- [Local Grok Desktop Automation Checklist](/grok-bot-pages/docs/LOCAL_AUTOMATION_CHECKLIST.md): Use this checklist during Codex App or Grok Desktop reconciliation. GitHub Actions and required status checks are not part of this procedure.
+- [Local and Grok VM Validation](/grok-bot-pages/docs/LOCAL_VALIDATION.md): This repository intentionally does **not** use CI, required status checks, or remote runners as correctness gates.
+- [Miyamae Agent Engineering Standard](/grok-bot-pages/docs/MIYAMAE_AGENT_ENGINEERING.md): This document is the engineering contract for agentic behavior in the Miyamae newsroom. It is intentionally stricter than a prompt-style guide: pro...
 - [Miyamae Collection Architecture](/grok-bot-pages/docs/MIYAMAE_COLLECTION_ARCHITECTURE.md): Build a low-cost, high-coverage local-information system for 神奈川県川崎市宮前区 that can keep publishing useful information without requiring the human ope...
 - [Miyamae Community Media](/grok-bot-pages/docs/MIYAMAE_COMMUNITY_MEDIA.md): 宮前区で起きている、住民の生活に関係する共有可能な情報を、良いこと・悪いこと・楽しいこと・悲しいことを恣意的に選別せず、検証可能な形で届ける。
 - [Miyamae Editorial & Community Playbook](/grok-bot-pages/docs/MIYAMAE_EDITORIAL_PLAYBOOK.md): Before publishing, answer:

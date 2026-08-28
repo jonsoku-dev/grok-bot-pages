@@ -45,7 +45,7 @@ Use only Codex App built-in Computer Use for Grok Desktop. Never use Orca. Desir
 08:15 live publication verification
 ```
 
-Private GitHub Actions remain the first publisher. The free macOS launchd fallback runs the same deterministic scripts from an isolated temporary clone.
+The local macOS launchd executor is the only publisher. It runs deterministic scripts from an isolated temporary clone and emits a SHA-bound `local-execution-receipt/v1`; hosted CI is not an execution dependency.
 
 ## Completion gates
 

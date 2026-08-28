@@ -9,7 +9,8 @@ This file contains links to documentation sections following the llmstxt.org sta
 - [Architecture](/grok-bot-pages/docs/ARCHITECTURE.md): ```text
 - [Codex App → Grok Bot Desktop Automation](/grok-bot-pages/docs/CODEX_GROK_DESKTOP_AUTOMATION.md): This document is the implementation handoff for Codex App. The goal is to use **Codex Computer Use on the local Mac** to read the canonical desired...
 - [Codex App Handoff](/grok-bot-pages/docs/CODEX_HANDOFF.md): Maintain one Git-backed Grok Bot pipeline: AI Engineering Radar. GitHub is desired state and factual SoT; Grok is runtime state.
-- [Local Grok Desktop Automation Checklist](/grok-bot-pages/docs/LOCAL_AUTOMATION_CHECKLIST.md): Use this checklist during the Codex App rollout.
+- [Local Grok Desktop Automation Checklist](/grok-bot-pages/docs/LOCAL_AUTOMATION_CHECKLIST.md): Use this checklist during Codex App or Grok Desktop reconciliation. GitHub Actions and required status checks are not part of this procedure.
+- [Local and Grok VM Validation](/grok-bot-pages/docs/LOCAL_VALIDATION.md): This repository intentionally does **not** use CI, required status checks, or remote runners as correctness gates.
 - [Obsidian and Drive Workflow](/grok-bot-pages/docs/OBSIDIAN_DRIVE_WORKFLOW.md): Use this repository directly as a plain-Markdown vault. Begin at
 - [Grok Desktop Rollout Receipt — 2026-08-23](/grok-bot-pages/docs/ROLLOUT_RECEIPT_2026-08-23.md): The desktop-automation milestone in `docs/CODEX_GROK_DESKTOP_AUTOMATION.md` was completed against Grok Bot Desktop `0.24.0` on macOS using Codex Ap...
 - [AX Regional Split Live Validation Receipt — 2026-08-23](/grok-bot-pages/docs/ROLLOUT_RECEIPT_AX_REGIONAL_2026-08-23.md): The single three-region AX scout was split into Korea, Japan, and International Scouts. All three run independently, publish one bounded regional `...
