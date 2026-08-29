@@ -65,7 +65,7 @@ Use terminal code for stable machine-readable sources:
 
 Use the agent/browser for work that actually benefits from a computer-using model:
 
-- X and Threads observation in an authorized signed-in session
+- X and Threads observation in a human-authorized incognito session
 - JavaScript-only pages
 - ambiguous local discovery
 - interactive site navigation
@@ -104,13 +104,14 @@ The publication browser is a serialized critical section even if research Bots r
 
 ## Browser session policy
 
-Authentication is completed through human takeover when needed. Once authorized, other Bots may reuse the same session because the VM is shared.
+Authentication is completed through human takeover in a private/incognito window only. Normal-window login is prohibited. Once authorized, other Bots may reuse that session only while the same private window remains open because the VM is shared. Closing it returns the workflow to `AUTH_REQUIRED`.
 
 Bots must:
 
 - never export cookies or session storage
 - never place credentials in prompts or logs
 - request takeover on expired sessions or CAPTCHA
+- never fall back to a normal window or copy browser profile/session material
 - sign out/remove access when the service should no longer be available
 
 ## Offline operation

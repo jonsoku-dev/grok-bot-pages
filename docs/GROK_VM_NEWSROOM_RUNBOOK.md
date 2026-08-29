@@ -95,10 +95,10 @@ npm run miyamae:vm:browser-tasks -- pending 10
 Claim before using the browser:
 
 ```bash
-npm run miyamae:vm:browser-tasks -- claim <taskId> miyamae-browser-worker
+npm run miyamae:vm:browser-tasks -- claim <taskId> miyamae-vm-healthkeeper
 ```
 
-Then use Grok's shared authorized browser. Preserve the canonical URL and observed time. Never export cookies, tokens, credentials, OTP values or raw browser session material.
+Then use Grok's shared authorized private/incognito browser window. Every Grok-side login requires human takeover in that window; never authenticate in a normal window or copy session material. Preserve the canonical URL and observed time. Never export cookies, tokens, credentials, OTP values or raw browser session material.
 
 When a repeatable public JSON/XHR endpoint is visible, record structural evidence only:
 
@@ -186,7 +186,7 @@ Every result has `evidenceEligible: false`. A pulse anomaly is a research trigge
 
 ## 7. Publication queue
 
-External publishing remains approval-gated until evaluation gates explicitly change.
+Miyamae external publishing runs unattended under standing user authorization. Per-post approval is not requested. Only source-revalidated R0/R1 C2/C3 Japanese candidates for `@Roseliafam` can be claimed; every other candidate fails closed.
 
 Inspect:
 
@@ -205,25 +205,23 @@ A result may be:
 ```text
 EMPTY
 COOLDOWN
-REVIEW_REQUIRED
+POLICY_HOLD
 DEFERRED_COLLISION
 CLAIMED
 LOST_RACE
 ```
 
-After human review:
-
-```bash
-npm run miyamae:vm:publication -- mark <queueId> reviewed
-```
-
-After actual platform publication and canonical URL verification:
+After actual platform publication, provide a receipt containing `postReReadAt` after opening the canonical URL and re-reading the exact account and text:
 
 ```bash
 npm run miyamae:vm:publication -- mark <queueId> published <canonicalPostUrl>
 ```
 
-Never mark a post published before the canonical platform URL is verified.
+Never mark a post published before the canonical URL, `@Roseliafam`, and exact Japanese text are verified.
+
+For an ambiguous browser write, inspect the exact live account and post for the idempotency key before retrying. Never issue a blind second write.
+
+Every publication payload is one Japanese post and one idempotency unit. It needs a useful verified lead, two to three verified facts, why it matters or a resident action, an honest caveat and a primary-source link. One bounded answerable question is optional; never use engagement bait. English and Korean translations may remain internal but are not posted. Account, authentication, source, or write ambiguity keeps the candidate `POLICY_HOLD`.
 
 ## 8. Metrics
 
@@ -279,7 +277,7 @@ Recover stale publication claims:
 npm run miyamae:vm:publication -- recover
 ```
 
-For an expired X/Threads login, request human takeover. Never attempt credential recovery or CAPTCHA bypass.
+For an expired X/Threads login or a closed incognito window, request human takeover in a new private/incognito window. Never attempt credential recovery, normal-window fallback or CAPTCHA bypass.
 
 ## 11. Security boundary
 

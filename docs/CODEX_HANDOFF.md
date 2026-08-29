@@ -14,11 +14,11 @@ Maintain one Git-backed Grok Bot pipeline: AI Engineering Radar. GitHub is desir
 
 ## Active roster
 
-- Discovery: Open Signal Scout, GitHub Scout, Release Scout
-- Verification and judgment: Evidence Verifier, Relevance Judge
-- Persistence and recovery: GitHub SoT Writer, SoT PR Reconciler
-- Output and proof: Document Publisher, Blog Publication Verifier
-- On-demand intake: Keyword Radar
+- Discovery: Open Signal Scout
+- Verification and judgment: Intelligence Editor
+- Persistence, PR reconciliation, and document mode: Knowledge Publisher
+- Independent output proof: Publication Verifier
+- Miyamae: Scout, Evidence Verifier, Community Editor, Publisher, Runtime Keeper, Analyst
 
 The only active Group is `ai-engineering-radar`. The active Routines are daily research, daily PR reconciliation, daily publication verification, and weekly review.
 

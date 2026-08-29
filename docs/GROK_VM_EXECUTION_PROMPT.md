@@ -102,7 +102,7 @@ npm run miyamae:vm:browser-tasks -- pending 10
 Claim one before doing browser work:
 
 ```bash
-npm run miyamae:vm:browser-tasks -- claim <taskId> miyamae-browser-worker
+npm run miyamae:vm:browser-tasks -- claim <taskId> miyamae-vm-healthkeeper
 ```
 
 When observing a public JS-rendered source, use the visible page normally. If a repeatable public JSON/XHR endpoint is visible in normal browser/network tooling, record structural metadata only with:
@@ -175,7 +175,7 @@ Confirm the following routines exist in Grok Bot and are enabled only after thei
 - `miyamae-vm-health`
 - `miyamae-vm-selftest`
 - `miyamae-vm-recovery`
-- `miyamae-browser-worker`
+- `miyamae-vm-healthkeeper`
 - source/trend/local-pulse/follow-up/coverage/newsroom routines defined in the repository
 
 The five-minute VM wake-up routine is the correctness layer. The one-minute daemon is experimental optimization only; never make production correctness depend on daemon survival.

@@ -42,7 +42,7 @@ After deterministic checks pass, test the actual Grok browser separately.
 1. Confirm X is reachable in the existing authorized profile.
 2. If login is required, use human takeover; do not automate credential recovery.
 3. From a second Miyamae Bot, confirm the same authorized session can be reused without exporting session material.
-4. Claim one browser task with `miyamae-browser-worker` and verify that another worker cannot claim the same task.
+4. Claim one browser task with `miyamae-vm-healthkeeper` and verify that another worker cannot claim the same task.
 5. Open one public JavaScript-rendered local source and record only structural network observations with `miyamae:vm:browser`.
 6. Complete the task with a canonical public URL or `AUTH_REQUIRED`/`BLOCKED` as appropriate.
 7. Repeat independently before changing any capability confidence.

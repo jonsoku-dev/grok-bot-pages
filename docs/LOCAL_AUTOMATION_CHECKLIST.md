@@ -76,7 +76,7 @@ Use this checklist during Codex App or Grok Desktop reconciliation. GitHub Actio
 - [ ] A PR validation receipt is committed in canonical `main` history and binds the exact unmerged PR head SHA; it does not claim impossible ancestry from that PR head.
 - [ ] A publication receipt commit descends from its `main` publication-input subject; it is never compared for equality with its own post-receipt main HEAD.
 - [ ] The 5-minute PR validator skips heads already merged or covered by a successful exact-subject receipt and never merges a PR itself.
-- [ ] A Git pull-ref scan failure is an error receipt, never an empty-result receipt; closed-unmerged refs may be revalidated but are never merged by the local host.
+- [ ] An open-PR metadata or pull-ref scan failure is an error receipt, never an empty-result receipt; only allowed head prefixes are admitted and the local host never merges.
 - [ ] The publisher writes a stale-recoverable pending marker, waits up to 30 minutes for an active validator, and validator children yield before starting another head.
 
 ## Completion evidence

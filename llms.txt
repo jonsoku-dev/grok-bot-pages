@@ -53,6 +53,8 @@
 - [Miyamae Community Media](/grok-bot-pages/docs/MIYAMAE_COMMUNITY_MEDIA.md): 宮前区で起きている、住民の生活に関係する共有可能な情報を、良いこと・悪いこと・楽しいこと・悲しいことを恣意的に選別せず、検証可能な形で届ける。
 - [Miyamae Editorial & Community Playbook](/grok-bot-pages/docs/MIYAMAE_EDITORIAL_PLAYBOOK.md): Before publishing, answer:
 - [Miyamae Implementation Backlog](/grok-bot-pages/docs/MIYAMAE_IMPLEMENTATION_BACKLOG.md): Turn the existing Git-backed Grok control plane into a second domain: an independent AI-assisted Miyamae local information/community account.
+- [Miyamae Local Media v1 Release Gates](/grok-bot-pages/docs/MIYAMAE_V1_RELEASE_GATES.md): Scope is frozen. New ideas are POST_V1 unless they repair a blocker below.
+- [Miyamae v1 Closure Status](/grok-bot-pages/docs/MIYAMAE_V1_STATUS.md): Status timestamp: 2026-08-28 JST
 - [Obsidian and Drive Workflow](/grok-bot-pages/docs/OBSIDIAN_DRIVE_WORKFLOW.md): Use this repository directly as a plain-Markdown vault. Begin at
 - [Free AI/software-engineering signal sources](/grok-bot-pages/docs/research/free-engineering-signal-sources.md): Research date: 2026-08-23. Scope: public, no-paid-API inputs that can replace X as the discovery layer for `X Signal Scout`. “Free” here means no p...
 - [Grok Bot 공식·사용 레퍼런스](/grok-bot-pages/docs/research/grok-bot/official-and-usage-reference.md): > 기준일: 2026-08-24 (JST)

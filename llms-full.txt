@@ -182,20 +182,32 @@ audit/**                 execution_evidence
 Execution evidence can prove that a Bot ran or a delivery occurred. It cannot substitute for a
 source-bound factual record. A report references record paths; it does not become the record.
 
-## AI Engineering Radar architecture
+## Simple active topology
 
-One bounded group owns the complete pipeline while each Bot keeps one responsibility.
+The user-facing runtime has two Groups and ten Bots. Small source variants and maintenance stages are internal tasks, not separate Bots.
 
 ```text
-External sources -> scouts -> verifier -> evaluator
-                                      |
-                                      v
-                              GitHub SoT Writer
-                              factual YAML records
-                                      |
-                                      v
-                              Document Publisher
-                        document-publication/v1 draft
+AI Engineering Radar (4)
+  Open Signal Scout -> Intelligence Editor -> Knowledge Publisher
+                                          -> Publication Verifier
+
+Miyamae Community Media (6)
+  Scout -> Evidence Verifier -> Community Editor -> Publisher
+                         Runtime Keeper -> Analyst
+```
+
+Use one Routine for each complete scheduled outcome. A new Bot or Routine requires a measured permission, reliability, or independent-verification boundary that cannot fit an existing owner.
+
+## AI Engineering Radar architecture
+
+One bounded group owns the complete pipeline.
+
+```text
+External sources -> Open Signal Scout -> Intelligence Editor
+                                              |
+                                              v
+                                     Knowledge Publisher
+                              factual records + approved documents
                                       |
                        exact hash + target approval
                                       |
@@ -206,9 +218,8 @@ External sources -> scouts -> verifier -> evaluator
                          Blog Publication Verifier
 ```
 
-GitHub SoT Writer changes records only. Document Publisher changes reader-facing documents only.
-Blog Publication Verifier is read-only and independently checks the live article, source links,
-record IDs, and LLM outputs.
+Knowledge Publisher uses policy-separated record and document modes so their approval rules stay distinct.
+Publication Verifier remains read-only and independently checks the live article, source links, record IDs, and LLM outputs.
 
 The daily public path is policy-authorized automation: one complete public-only `VERIFIED` record
 is enough for GitHub SoT Writer to persist through the connected GitHub plugin. The operator-owned
@@ -216,8 +227,9 @@ local-host executor creates a missing report with `EMPTY` sections for absent re
 commits it, and deploys the public Docusaurus build from an isolated temporary clone. It records a
 `local-execution-receipt/v1` bound to the exact source subject SHA and command set. Its audit commit
 must descend from that subject, because a receipt cannot equal the main HEAD created by committing itself.
-The launchd publisher runs at 07:45 Asia/Tokyo and the PR validator polls Git pull refs every five
-minutes; a Bot can inspect the receipt through the GitHub plugin but cannot invoke it.
+The launchd publisher runs at 07:45 Asia/Tokyo and the PR validator reads open PR number, allowed
+head prefix, and exact head SHA through the local host's read-only GitHub CLI every five minutes;
+a Bot can inspect the receipt through the GitHub plugin but cannot invoke the executor.
 
 The publisher has priority over the 5-minute validator: a stale-recoverable pending marker prevents another
 validator head from starting once a publisher is waiting. Lock ownership records pid, start time, and operation;
@@ -229,9 +241,9 @@ Automatic PR execution remains restricted to diffs whose merge-base range contai
 `intelligence/signals/**`; the local host never merges a PR.
 
 For publication, `source.sha` remains the checkout that completed the full validation command set, while
-`subject.sha` may be the later deterministic report commit. The local Git pull-ref scan cannot distinguish
-a closed-unmerged pull request from an open one, so it may redundantly validate such a head; only the Grok
-Bot's connected GitHub plugin checks open state and review conditions before any merge.
+`subject.sha` may be the later deterministic report commit. PR discovery admits only currently open
+`radar-` or `keyword-radar-` heads and rechecks the fetched pull ref against the metadata head SHA.
+Only the Grok Bot's connected GitHub plugin checks review and merge conditions; the local host never merges.
 Existing approved records and reports are preserved rather than overwritten.
 
 ## Security boundaries
@@ -2854,11 +2866,11 @@ Maintain one Git-backed Grok Bot pipeline: AI Engineering Radar. GitHub is desir
 
 ## Active roster
 
-- Discovery: Open Signal Scout, GitHub Scout, Release Scout
-- Verification and judgment: Evidence Verifier, Relevance Judge
-- Persistence and recovery: GitHub SoT Writer, SoT PR Reconciler
-- Output and proof: Document Publisher, Blog Publication Verifier
-- On-demand intake: Keyword Radar
+- Discovery: Open Signal Scout
+- Verification and judgment: Intelligence Editor
+- Persistence, PR reconciliation, and document mode: Knowledge Publisher
+- Independent output proof: Publication Verifier
+- Miyamae: Scout, Evidence Verifier, Community Editor, Publisher, Runtime Keeper, Analyst
 
 The only active Group is `ai-engineering-radar`. The active Routines are daily research, daily PR reconciliation, daily publication verification, and weekly review.
 
@@ -3034,12 +3046,12 @@ Miyamae use:
 
 - `miyamae-source-scout` owns broad discovery;
 - `miyamae-evidence-verifier` independently verifies and risk-classifies;
-- `miyamae-trend-scout` watches X/Threads/Google interest separately;
-- `miyamae-reserve-curator` maintains the evergreen inventory;
-- `miyamae-community-host` handles drafts/questions/follow-ups;
-- later add a `miyamae-correction-watcher` only if correction workload becomes stable enough to justify another long-lived Bot.
+- `miyamae-community-triage` owns community editing, follow-ups, and coverage review;
+- `miyamae-publication-arbiter` owns the single external queue;
+- `miyamae-vm-healthkeeper` owns browser tasks, health, and safe recovery;
+- `miyamae-newsroom-analyst` owns metrics and editorial review.
 
-Do not create many Bots simply because the product supports them. Grok Bot currently documents an account limit of up to 50 Bots and group chats combined. Prefer stable ownership boundaries.
+Keep these six roles until measured reliability, permission, or independent-verification evidence requires another boundary. Platform capacity is not a reason to add a Bot.
 
 ## 4. Group chat as an operations room — BOT-CONFIRMED
 
@@ -3765,7 +3777,7 @@ npm run miyamae:vm:browser-tasks -- pending 10
 Claim one before doing browser work:
 
 ```bash
-npm run miyamae:vm:browser-tasks -- claim <taskId> miyamae-browser-worker
+npm run miyamae:vm:browser-tasks -- claim <taskId> miyamae-vm-healthkeeper
 ```
 
 When observing a public JS-rendered source, use the visible page normally. If a repeatable public JSON/XHR endpoint is visible in normal browser/network tooling, record structural metadata only with:
@@ -3838,7 +3850,7 @@ Confirm the following routines exist in Grok Bot and are enabled only after thei
 - `miyamae-vm-health`
 - `miyamae-vm-selftest`
 - `miyamae-vm-recovery`
-- `miyamae-browser-worker`
+- `miyamae-vm-healthkeeper`
 - source/trend/local-pulse/follow-up/coverage/newsroom routines defined in the repository
 
 The five-minute VM wake-up routine is the correctness layer. The one-minute daemon is experimental optimization only; never make production correctness depend on daemon survival.
@@ -3901,7 +3913,7 @@ After deterministic checks pass, test the actual Grok browser separately.
 1. Confirm X is reachable in the existing authorized profile.
 2. If login is required, use human takeover; do not automate credential recovery.
 3. From a second Miyamae Bot, confirm the same authorized session can be reused without exporting session material.
-4. Claim one browser task with `miyamae-browser-worker` and verify that another worker cannot claim the same task.
+4. Claim one browser task with `miyamae-vm-healthkeeper` and verify that another worker cannot claim the same task.
 5. Open one public JavaScript-rendered local source and record only structural network observations with `miyamae:vm:browser`.
 6. Complete the task with a canonical public URL or `AUTH_REQUIRED`/`BLOCKED` as appropriate.
 7. Repeat independently before changing any capability confidence.
@@ -4029,10 +4041,10 @@ npm run miyamae:vm:browser-tasks -- pending 10
 Claim before using the browser:
 
 ```bash
-npm run miyamae:vm:browser-tasks -- claim <taskId> miyamae-browser-worker
+npm run miyamae:vm:browser-tasks -- claim <taskId> miyamae-vm-healthkeeper
 ```
 
-Then use Grok's shared authorized browser. Preserve the canonical URL and observed time. Never export cookies, tokens, credentials, OTP values or raw browser session material.
+Then use Grok's shared authorized private/incognito browser window. Every Grok-side login requires human takeover in that window; never authenticate in a normal window or copy session material. Preserve the canonical URL and observed time. Never export cookies, tokens, credentials, OTP values or raw browser session material.
 
 When a repeatable public JSON/XHR endpoint is visible, record structural evidence only:
 
@@ -4120,7 +4132,7 @@ Every result has `evidenceEligible: false`. A pulse anomaly is a research trigge
 
 ## 7. Publication queue
 
-External publishing remains approval-gated until evaluation gates explicitly change.
+Miyamae external publishing runs unattended under standing user authorization. Per-post approval is not requested. Only source-revalidated R0/R1 C2/C3 Japanese candidates for `@Roseliafam` can be claimed; every other candidate fails closed.
 
 Inspect:
 
@@ -4139,25 +4151,23 @@ A result may be:
 ```text
 EMPTY
 COOLDOWN
-REVIEW_REQUIRED
+POLICY_HOLD
 DEFERRED_COLLISION
 CLAIMED
 LOST_RACE
 ```
 
-After human review:
-
-```bash
-npm run miyamae:vm:publication -- mark <queueId> reviewed
-```
-
-After actual platform publication and canonical URL verification:
+After actual platform publication, provide a receipt containing `postReReadAt` after opening the canonical URL and re-reading the exact account and text:
 
 ```bash
 npm run miyamae:vm:publication -- mark <queueId> published <canonicalPostUrl>
 ```
 
-Never mark a post published before the canonical platform URL is verified.
+Never mark a post published before the canonical URL, `@Roseliafam`, and exact Japanese text are verified.
+
+For an ambiguous browser write, inspect the exact live account and post for the idempotency key before retrying. Never issue a blind second write.
+
+Every publication payload is one Japanese post and one idempotency unit. It needs a useful verified lead, two to three verified facts, why it matters or a resident action, an honest caveat and a primary-source link. One bounded answerable question is optional; never use engagement bait. English and Korean translations may remain internal but are not posted. Account, authentication, source, or write ambiguity keeps the candidate `POLICY_HOLD`.
 
 ## 8. Metrics
 
@@ -4213,7 +4223,7 @@ Recover stale publication claims:
 npm run miyamae:vm:publication -- recover
 ```
 
-For an expired X/Threads login, request human takeover. Never attempt credential recovery or CAPTCHA bypass.
+For an expired X/Threads login or a closed incognito window, request human takeover in a new private/incognito window. Never attempt credential recovery, normal-window fallback or CAPTCHA bypass.
 
 ## 11. Security boundary
 
@@ -4309,7 +4319,7 @@ Use terminal code for stable machine-readable sources:
 
 Use the agent/browser for work that actually benefits from a computer-using model:
 
-- X and Threads observation in an authorized signed-in session
+- X and Threads observation in a human-authorized incognito session
 - JavaScript-only pages
 - ambiguous local discovery
 - interactive site navigation
@@ -4348,13 +4358,14 @@ The publication browser is a serialized critical section even if research Bots r
 
 ## Browser session policy
 
-Authentication is completed through human takeover when needed. Once authorized, other Bots may reuse the same session because the VM is shared.
+Authentication is completed through human takeover in a private/incognito window only. Normal-window login is prohibited. Once authorized, other Bots may reuse that session only while the same private window remains open because the VM is shared. Closing it returns the workflow to `AUTH_REQUIRED`.
 
 Bots must:
 
 - never export cookies or session storage
 - never place credentials in prompts or logs
 - request takeover on expired sessions or CAPTCHA
+- never fall back to a normal window or copy browser profile/session material
 - sign out/remove access when the service should no longer be available
 
 ## Offline operation
@@ -4458,7 +4469,7 @@ Use this checklist during Codex App or Grok Desktop reconciliation. GitHub Actio
 - [ ] A PR validation receipt is committed in canonical `main` history and binds the exact unmerged PR head SHA; it does not claim impossible ancestry from that PR head.
 - [ ] A publication receipt commit descends from its `main` publication-input subject; it is never compared for equality with its own post-receipt main HEAD.
 - [ ] The 5-minute PR validator skips heads already merged or covered by a successful exact-subject receipt and never merges a PR itself.
-- [ ] A Git pull-ref scan failure is an error receipt, never an empty-result receipt; closed-unmerged refs may be revalidated but are never merged by the local host.
+- [ ] An open-PR metadata or pull-ref scan failure is an error receipt, never an empty-result receipt; only allowed head prefixes are admitted and the local host never merges.
 - [ ] The publisher writes a stale-recoverable pending marker, waits up to 30 minutes for an active validator, and validator children yield before starting another head.
 
 ## Completion evidence
@@ -5500,6 +5511,77 @@ Only if social usage proves demand:
 - resident submission form
 
 A standalone forum is deliberately deferred. Community should first form in X/Threads replies, mentions, reposts and recurring conversations.
+
+---
+
+## Miyamae Local Media v1 Release Gates
+
+
+Scope is frozen. New ideas are POST_V1 unless they repair a blocker below.
+
+## Definition of Done
+Repository v1 is DONE when G0-G8 repository gates are PASS with P0 blockers=0. Capabilities that can only be proven inside the Grok Bot app/VM are allowed to remain `PENDING_RUNTIME_VERIFICATION`; they must never be represented as PASS without evidence.
+
+| Gate | Requirement | Evidence |
+|---|---|---|
+| G0 Constitution | editorial/privacy/R-U-C-I/correction policy fixed | policy + schemas |
+| G1 Sources | free-first official/API/RSS/web/browser sources, health/cursor/fallback | source registry/runtime |
+| G2 Story Pipeline | candidate→LEAD→VERIFYING→CONFIRMED/REJECTED/DISPUTED; claims≠facts | story lifecycle tests |
+| G3 Intelligence | Local Pulse/trend/reserve/coverage are typed; trend is not evidence | runtime contracts |
+| G4 Community | intent triage, SLA, verifier routing, correction intake | community ledger/evals |
+| G5 Publication | one queue, freshness, review, collision, idempotency, correction | publication ledger/tests |
+| G6 Grok Handoff | bootstrap/runbook/capability experiments prepared | Grok docs/experiments |
+| G7 Acceptance | deterministic tests + workflow evals + metrics + fail-closed validators | `npm run verify:runtime` |
+| G8 Operational Handoff | local/VM validation and recovery procedure documented | operator docs |
+| G9 Freeze | P0=0, known limitations recorded, post-v1 work moved out of scope | this document + backlog |
+
+## Numeric acceptance thresholds
+- P0 blockers: 0
+- critical deterministic workflow contracts: 100%
+- safety fixture pass rate: 100%
+- normal scenario fixture pass rate: >=95%
+- duplicate publication fixture pass rate: 100%
+- R2/R3 review bypass: 0
+- trend/Local Pulse evidence upgrades: 0
+- correction/retraction lifecycle fixtures: 100%
+- factual publication without provenance: 0
+
+## Four-round closure
+1. Pipeline Closure — no new product features.
+2. Acceptance/Eval — scenario fixtures and blocker repair only.
+3. Grok Operational Handoff — runtime-only checks and bootstrap instructions only.
+4. Release Audit/Freeze — classify remaining findings as BLOCKER or POST_V1.
+
+## Truthfulness rule
+`PASS` requires executed evidence. Static inspection is `UNVERIFIED`. Grok-only functionality is `PENDING_RUNTIME_VERIFICATION` until executed in Grok. No percentage may be reported as 100% while a required repository gate is unexecuted or failing.
+
+---
+
+## Miyamae v1 Closure Status
+
+
+Status timestamp: 2026-08-28 JST
+
+This file is deliberately conservative. A gate is not PASS without executed evidence.
+
+| Gate | Status | Note |
+|---|---|---|
+| G0 Constitution | IMPLEMENTED_UNVERIFIED | policies/schemas exist |
+| G1 Sources | IMPLEMENTED_UNVERIFIED | free-first collectors, browser fallback, health/cursors exist |
+| G2 Story Pipeline | IMPLEMENTED_UNVERIFIED | deterministic promotion + verification lifecycle now implemented |
+| G3 Intelligence | IMPLEMENTED_UNVERIFIED | Local Pulse/trend/reserve/coverage contracts exist |
+| G4 Community | IMPLEMENTED_UNVERIFIED | triage/SLA/ledger contracts exist |
+| G5 Publication | IMPLEMENTED_UNVERIFIED | global queue/freshness/idempotency/follow-up exist |
+| G6 Grok Handoff | PENDING_RUNTIME_VERIFICATION | requires Grok app/VM evidence |
+| G7 Acceptance | UNVERIFIED | `npm run verify:runtime` has not been executed for current HEAD in this session |
+| G8 Operational Handoff | IMPLEMENTED_UNVERIFIED | operator/bootstrap/recovery docs exist |
+| G9 Freeze | NOT_READY | cannot freeze until repository validation evidence exists and blockers are repaired |
+
+## Current round
+Round 1 Pipeline Closure: implementation complete, execution evidence pending.
+
+## Stop rule
+Do not add new v1 features. Next work is Round 2 Acceptance/Eval. Any finding that is not a release blocker becomes POST_V1.
 
 ---
 

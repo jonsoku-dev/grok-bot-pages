@@ -70,12 +70,12 @@ Miyamae use:
 
 - `miyamae-source-scout` owns broad discovery;
 - `miyamae-evidence-verifier` independently verifies and risk-classifies;
-- `miyamae-trend-scout` watches X/Threads/Google interest separately;
-- `miyamae-reserve-curator` maintains the evergreen inventory;
-- `miyamae-community-host` handles drafts/questions/follow-ups;
-- later add a `miyamae-correction-watcher` only if correction workload becomes stable enough to justify another long-lived Bot.
+- `miyamae-community-triage` owns community editing, follow-ups, and coverage review;
+- `miyamae-publication-arbiter` owns the single external queue;
+- `miyamae-vm-healthkeeper` owns browser tasks, health, and safe recovery;
+- `miyamae-newsroom-analyst` owns metrics and editorial review.
 
-Do not create many Bots simply because the product supports them. Grok Bot currently documents an account limit of up to 50 Bots and group chats combined. Prefer stable ownership boundaries.
+Keep these six roles until measured reliability, permission, or independent-verification evidence requires another boundary. Platform capacity is not a reason to add a Bot.
 
 ## 4. Group chat as an operations room — BOT-CONFIRMED
 
