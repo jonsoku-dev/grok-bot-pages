@@ -5,6 +5,7 @@ action: "EXPERIMENT"
 artifactRole: "reader_facing_derivative"
 publicationChannel: "document"
 evidence:
+  - "reports/archive/2026/08/31/ai-engineering-radar.md"
   - "reports/archive/2026/08/28/ai-engineering-radar.md"
   - "reports/archive/2026/08/27/ai-engineering-radar.md"
   - "reports/archive/2026/08/26/ai-engineering-radar.md"
@@ -13,6 +14,26 @@ evidence:
   - "reports/archive/2026/08/23/ai-engineering-radar.md"
   - "reports/archive/2026/08/23/ax-intelligence.md"
 sourceLinks:
+  - "https://davidgomes.com/worktrees-coding-agents/"
+  - "https://engineeringspec.org/blog/give-coding-agents-permission-not-just-prompts/"
+  - "https://fetchgate.dev/blog/mcp-registry-audit-2026"
+  - "https://github.com/github/copilot-cli/releases/tag/v1.0.82"
+  - "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities"
+  - "https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2"
+  - "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.11"
+  - "https://mouse.dev/blog/running-code-agents-overnight/"
+  - "https://github.com/openai/codex/releases/tag/rust-v0.151.0"
+  - "https://plicara.ai/research/agent-skill-programming-languages/"
+  - "https://quesma.com/blog/codex-pricing/"
+  - "https://github.com/Wholiver/metis/releases/tag/v1.1.9"
+  - "https://zenn.dev/acntechjp/articles/9bda1898b920cf"
+  - "https://devblog.thebase.in/entry/2026/08/29/110000"
+  - "https://zenn.dev/highreso/articles/9d74b825b83e8f"
+  - "https://tech.layerx.co.jp/entry/2026/08/28/180027"
+  - "https://zenn.dev/moneyforward/articles/74d02008ab9ec8"
+  - "https://github.com/shuji-bonji/pdf-reader-mcp/releases/tag/v0.13.0"
+  - "https://github.com/takushio2525/tako/releases/tag/v0.8.2"
+  - "https://zenn.dev/uguisu_blog/articles/f2286418e86de0"
   - "https://github.com/anthropics/claude-code/releases/tag/v2.1.247"
   - "https://arxiv.org/abs/2608.25091"
   - "https://arxiv.org/abs/2608.25500"
@@ -136,6 +157,26 @@ sourceLinks:
   - "https://www.itmedia.co.jp/enterprise/articles/2608/21/news019.html"
   - "https://www.yna.co.kr/view/AKR20260818061300017"
 records:
+  - "intelligence/signals/2026/08/31/regional-signal/international/davidgomes-worktrees-coding-agents-2026-08-28.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/international/engineeringspec-permission-2026-08-29.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/international/fetchgate-mcp-registry-audit-2026-08-28.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/international/github-copilot-cli-v1-0-82.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/international/github-copilot-code-review-2026-08-27.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/international/github-copilot-vs-august-update-2026-08-28.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/international/langchain-deepagents-0-7-11.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/international/mouse-overnight-agents-2026-08-28.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/international/openai-codex-rust-v0-151-0.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/international/plicara-agent-skills-languages-2026-08-30.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/international/quesma-codex-pricing-2026-08-28.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/international/wholiver-metis-v1-1-9.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/japan/acntechjp-skill-design-from-creators.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/japan/base-sentry-analyzer-ai-agent.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/japan/highreso-30b-local-llm-field-compare.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/japan/layerx-bifrost-ai-gateway.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/japan/moneyforward-claude-100-tools-routing.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/japan/shuji-bonji-pdf-reader-mcp-v0-13-0.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/japan/tako-v0-8-2.yaml"
+  - "intelligence/signals/2026/08/31/regional-signal/japan/uguisu-agent-portability-cursor-claude-codex.yaml"
   - "intelligence/signals/2026/08/28/regional-signal/international/anthropic-claude-code-v2-1-247.yaml"
   - "intelligence/signals/2026/08/28/regional-signal/international/arxiv-auto-policy-skills-2608-25091.yaml"
   - "intelligence/signals/2026/08/28/regional-signal/international/arxiv-caskg-skills-2608-25500.yaml"
@@ -262,13 +303,23 @@ records:
 
 # 지금 읽을 결과
 
-> 현재 공개된 인텔리전스 7편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
+> 현재 공개된 인텔리전스 8편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
 
 # 지금 읽을 결과
 
-현재 공개된 인텔리전스 7편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
+현재 공개된 인텔리전스 8편을 최신순으로 모았습니다. 이 페이지는 실행 로그가 아니라 독자가 먼저 읽을 글과 근거를 안내합니다.
 
 ## 최신 인텔리전스
+
+### [2026-08-31 AI Engineering Radar](/blog/2026/08/31/ai-engineering-radar)
+
+한국·일본·국제의 검증된 AI 엔지니어링 신호와 가장 작은 다음 행동을 정리합니다.
+
+- 기준일: 2026-08-31
+- 분류: AI 엔지니어링
+- 추천: **작게 실험**
+- 근거 레코드: 20건 — `davidgomes-worktrees-coding-agents-2026-08-28`, `engineeringspec-permission-2026-08-29`, `fetchgate-mcp-registry-audit-2026-08-28`, `github-copilot-cli-v1-0-82`, `github-copilot-code-review-2026-08-27`, `github-copilot-vs-august-update-2026-08-28`, `langchain-deepagents-0-7-11`, `mouse-overnight-agents-2026-08-28`, `openai-codex-rust-v0-151-0`, `plicara-agent-skills-languages-2026-08-30`, `quesma-codex-pricing-2026-08-28`, `wholiver-metis-v1-1-9`, `acntechjp-skill-design-from-creators`, `base-sentry-analyzer-ai-agent`, `highreso-30b-local-llm-field-compare`, `layerx-bifrost-ai-gateway`, `moneyforward-claude-100-tools-routing`, `shuji-bonji-pdf-reader-mcp-v0-13-0`, `tako-v0-8-2`, `uguisu-agent-portability-cursor-claude-codex`
+- 공개 원문: [원문 1](https://davidgomes.com/worktrees-coding-agents/) · [원문 2](https://engineeringspec.org/blog/give-coding-agents-permission-not-just-prompts/) · [원문 3](https://fetchgate.dev/blog/mcp-registry-audit-2026) · [원문 4](https://github.com/github/copilot-cli/releases/tag/v1.0.82) · [원문 5](https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities)
 
 ### [2026-08-28 AI Engineering Radar](/blog/2026/08/28/ai-engineering-radar)
 
